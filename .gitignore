@@ -1,0 +1,11 @@
+*.o
+*.a
+*.gcda
+*.gcno
+*#*
+*~
+a.out
+unit_tests
+.notes
+binaryname
+file
