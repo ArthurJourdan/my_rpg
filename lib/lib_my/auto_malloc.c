@@ -7,7 +7,8 @@
 
 #include <stdlib.h>
 #include "my.h"
-#include "../../include/a_malloc.h"
+#include "print.h"
+#include "a_malloc.h"
 
 void *a_malloc_return(int size, a_malloc_t *a_list)
 {
@@ -74,7 +75,7 @@ void *a_malloc(unsigned int val)
     a_list = (a_list == NULL) ? a_malloc_list_init(ARRAY_MODE) : a_list;
     if (size == A_MALLOC_FREE) {
         if (a_list[list] == NULL) {
-            (A_MALLOC_WARNING) ? my_fprintf(0, AUTO_FREE_NO_CALL_MSG) : 0;
+            (A_MALLOC_WARNING) ? my_dprintf(0, AUTO_FREE_NO_CALL_MSG) : 0;
             return NULL;
         } else {
             a_free(&a_list[list]);
