@@ -36,7 +36,8 @@ LIGHT_CYAN      =       "\e[96m"
 
 CFLAGS	=       -I ../../include/
 
-SRC     =	my_strlen.c			\
+SRC     =	auto_malloc.c			\
+		my_strlen.c			\
 		my_getnbr.c			\
 		my_getdigit.c			\
 		my_strcmp.c			\
