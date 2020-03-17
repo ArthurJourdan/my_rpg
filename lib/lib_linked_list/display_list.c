@@ -11,8 +11,8 @@
 void my_put_linked_list(node_t *head)
 {
     for (int i = 0; i < 9; i++) {
-        my_fprintf(1, "%i, ", head->nb);
+        my_dprintf(1, "%i, ", head->nb);
         head = head->next;
     }
-    my_fprintf(1, "\n");
+    my_dprintf(1, "\n");
 }

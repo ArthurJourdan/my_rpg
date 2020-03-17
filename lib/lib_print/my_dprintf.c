@@ -47,7 +47,7 @@ void check_arr(int const output, char i, void *type)
     }
 }
 
-void my_fprintf(int const output, char *str, ...)
+void my_dprintf(int const output, char *str, ...)
 {
     va_list ap;
 

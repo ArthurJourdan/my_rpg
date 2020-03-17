@@ -11,15 +11,15 @@
 bool error_msg(int ac, char **av)
 {
     if (ac == 1) {
-        my_fprintf(2, "type -h for help\n");
+        my_dprintf(2, "type -h for help\n");
         return false;
     }
     if (ac = 2)
         if (my_strcmp("-h", av[1])) {
-            my_fprintf(2, "USAGE\n");
-
-            my_fprintf(2, "DESCRIPTION\n");
-
+            my_dprintf(2, "USAGE\n");
+            my_dprintf(2, "\t%s <config_file.xml>\n", av[0]);
+            my_dprintf(2, "DESCRIPTION\n");
+            my_dprintf(2, "\tRPG\n");
             return false;
         }
     return true;

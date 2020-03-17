@@ -51,7 +51,7 @@ typedef struct functions {
     void (*ptr)();
 } functions_t;
 
-void my_fprintf(int const output, char *str, ...);
+void my_dprintf(int const output, char *str, ...);
 void my_putchar(int const output, int c);
 void my_putstr(int const output, char const *str);
 void my_putnbr(int const output, int nb);

@@ -38,7 +38,7 @@ CFLAGS	=       -I ../../include/
 
 LIBDIR	=	../lib
 
-SRC     =	my_fprintf.c		\
+SRC     =	my_dprintf.c		\
 		my_putstr.c		\
 		my_putdouble_arr.c	\
 		my_putchar.c		\
