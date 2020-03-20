@@ -42,14 +42,16 @@ char *my_str_cpy_until_char(char *str, char c)
     int len = 0;
     char *cpy = NULL;
 
-    while (str[++len] != c);
+    if (!str)
+        return NULL;
+    while (str[len] && str[++len] != c);
     if (len == my_strlen(str))
         return NULL;
     cpy = malloc(sizeof(char) * (len + 1));
     if (!cpy)
         return NULL;
     for (int a = 0; a < len; a++) {
-            cpy[a] = str[a];
+        cpy[a] = str[a];
     }
     cpy[len] = '\0';
     return cpy;

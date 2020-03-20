@@ -39,7 +39,8 @@ CFLAGS	+=       -I../../include
 SRC     =	is_file_openable.c		\
 		get_entire_file.c		\
 		get_pos_word_in_str.c		\
-		get_pos_word_in_double_arr.c
+		get_pos_word_in_double_arr.c	\
+		file_len.c
 
 OBJ     =       $(SRC:.c=.o)
 

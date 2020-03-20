@@ -17,3 +17,14 @@ bool is_file_openable(char const *filepath)
     close(fd);
     return true;
 }
+
+bool is_file_fopenable(char const *filepath)
+{
+    FILE *fd = fopen(filepath, "r");
+
+    if (!fd) {
+        return false;
+    }
+    fclose(fd);
+    return true;
+}

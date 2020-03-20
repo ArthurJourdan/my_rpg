@@ -7,9 +7,9 @@
 
 #include "my.h"
 
-int my_strlen(char const *str)
+size_t my_strlen(char const *str)
 {
-    int i = 0;
+    size_t i = 0;
 
     if (str)
         while (*(str + i)) {
@@ -18,19 +18,31 @@ int my_strlen(char const *str)
     return (i);
 }
 
-int my_arrlen(char ** const arr)
+size_t my_arrlen(char *arr[])
 {
-    int i = 0;
+    size_t i = 0;
 
-    while (*(arr + i)) {
-        i++;
-    }
+    if (arr)
+        while (*(arr + i)) {
+            i++;
+        }
     return (i);
 }
 
-int my_len_tot(char const *str)
+size_t my_triplearrlen(char **arr[])
 {
-    static int len = 0;
+    size_t i = 0;
+
+    if (arr)
+        while (*(arr + i)) {
+            i++;
+        }
+    return (i);
+}
+
+size_t my_len_tot(char const *str)
+{
+    static size_t len = 0;
 
     len += my_strlen(str);
     return len;

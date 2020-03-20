@@ -36,22 +36,33 @@ LIGHT_CYAN      =       "\e[96m"
 
 CFLAGS	=       -I ../../include/
 
-SRC     =	auto_malloc.c			\
-		my_strlen.c			\
+SRC     =	my_strlen.c			\
+						\
 		my_getnbr.c			\
 		my_getdigit.c			\
+		my_getfloat.c			\
+		my_reg_nbr.c			\
+						\
 		my_strcmp.c			\
+						\
 		my_strcat.c			\
 		my_strcat_path.c		\
-		my_str_to_word_arr.c		\
-		my_double_arr_cpy.c		\
+		my_arrcat.c			\
+						\
 		my_str_is_alphanum.c		\
 		my_str_is_nothing.c		\
+						\
 		error_msg.c			\
+						\
 		my_strcpy.c			\
-		free_double_arr.c		\
-		my_getfloat.c			\
-		my_reg_nbr.c
+		my_double_arr_dup.c		\
+						\
+		my_str_to_word_arr.c		\
+						\
+		free_arr.c			\
+		free_to_null.c			\
+						\
+		auto_malloc.c			\
 
 OBJ     =       $(SRC:.c=.o)
 

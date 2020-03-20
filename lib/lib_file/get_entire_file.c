@@ -32,14 +32,12 @@ char **get_entire_file_double_arr(char const *filepath)
     FILE *fd = fopen(filepath, "r");
     char *buff = NULL;
     size_t zero = 0;
-    int ret_get_l = 0;
+    ssize_t ret_get_l = 0;
     char **entire_file = NULL;
-    int len = 0;
+    size_t len = file_len(filepath);
 
-    for (; (ret_get_l = getline(&buff, &zero, fd)) != -1; len++);
-    free(buff);
-    fclose(fd);
-    fd = fopen(filepath, "r");
+    if (!fd || !len)
+        return NULL;
     entire_file = malloc(sizeof(char *) * (len + 1));
     entire_file[0] = NULL;
     ret_get_l = getline(&entire_file[0], &zero, fd);

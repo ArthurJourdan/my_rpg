@@ -8,7 +8,7 @@
 #include "my.h"
 #include "print.h"
 
-functions_t arr[11] = {
+static const functions_t arr[11] = {
     {'c', &my_putchar},
     {'s', &my_putstr},
     {'i', &my_putnbr},
@@ -22,7 +22,7 @@ functions_t arr[11] = {
     {'a', &my_putdouble_arr}
 };
 
-int print_str(int const output, char *str)
+static int print_str(int const output, char *str)
 {
     int e = 0;
 
@@ -32,7 +32,7 @@ int print_str(int const output, char *str)
     return e;
 }
 
-void check_arr(int const output, char i, void *type)
+static void check_arr(int const output, char i, void *type)
 {
     int e = 0;
 

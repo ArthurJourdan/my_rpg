@@ -26,9 +26,15 @@
 
 #define USELESS __attribute__((unused))
 
-int my_strlen(char const *str);
-int my_arrlen(char ** const arr);
-int my_len_tot(char const *str);
+typedef struct {
+    int x;
+    int y;
+} vector_t;
+
+size_t my_strlen(char const *str);
+size_t my_arrlen(char *arr[]);
+size_t my_triplearrlen(char **arr[]);
+size_t my_len_tot(char const *str);
 
 int my_getnbr(char *str);
 float my_getfloat(char *str);
@@ -37,6 +43,14 @@ int my_getdigit(char nb);
 char *my_strcat(char const *str1, char const *str2);
 char *my_strcat_free(char *str1, char *str2);
 char *my_strcat_path(char const *str1, char const *str2);
+char **my_arrcat(char **arr1, char **arr2, bool free);
+char ***my_triple_arrcat(char ***arr1, char ***arr2);
+
+char *my_strcpy(char *str);
+char *my_str_n_cpy(char *str, int size);
+char *my_str_cpy_until_char(char *str, char c);
+char *my_str_cpy_quotation(char *str);
+char **double_char_arrcpy(char **src, bool free);
 
 char **my_str_to_word_arr(char *str);
 
@@ -55,12 +69,9 @@ bool my_str_is_nothing(char const *str);
 
 bool error_msg(int ac, char **av);
 
-char *my_strcpy(char *str);
-char *my_str_n_cpy(char *str, int size);
-char *my_str_cpy_until_char(char *str, char c);
-char *my_str_cpy_quotation(char *str);
 
 void free_double_char_arr(char **arr);
+void free_triple_char_arr(char ***arr);
 char *free_char_to_null(char *str);
 
 char *my_reg_nbr(int nb);

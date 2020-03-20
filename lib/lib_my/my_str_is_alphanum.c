@@ -24,6 +24,8 @@ bool my_char_is_alpha_num(char const c, bool alpha, bool num, bool up)
 
 bool my_str_is_alphanum(char const *str)
 {
+    if (!str)
+        return false;
     for (int a = 0; *(str + a); a++) {
         if (!my_char_is_alpha_num(*(str + a), true, true, true))
             return false;
@@ -33,6 +35,8 @@ bool my_str_is_alphanum(char const *str)
 
 bool my_str_is_alpha(char const *str)
 {
+    if (!str)
+        return false;
     for (int a = 0; *(str + a); a++) {
         if (!my_char_is_alpha_num(*(str + a), true, false, false))
             return false;
@@ -42,6 +46,8 @@ bool my_str_is_alpha(char const *str)
 
 bool my_str_upper(char const *str)
 {
+    if (!str)
+        return false;
     for (int a = 0; *(str + a); a++) {
         if (!my_char_is_alpha_num(*(str + a), false, false, true))
             return false;
@@ -51,6 +57,8 @@ bool my_str_upper(char const *str)
 
 bool my_str_is_num(char const *str)
 {
+    if (!str)
+        return false;
     for (int a = 0; *(str + a); a++) {
         if (!my_char_is_alpha_num(*(str + a), false, true, false))
             return false;

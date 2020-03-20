@@ -40,14 +40,14 @@
 
 char *my_strcat(char const *str1, char const *str2)
 {
-    int len1 = my_strlen(str1);
-    int len2 = my_strlen(str2);
-    int len3 = len1 + len2;
+    size_t len1 = my_strlen(str1);
+    size_t len2 = my_strlen(str2);
+    size_t len3 = len1 + len2;
     char *str3 = malloc(sizeof(char) * (len3 + 2));
 
-    for (int a = 0; a < len1; a++)
+    for (size_t a = 0; a < len1; a++)
         *(str3 + a) = *(str1 + a);
-    for (int b = 0; b < len2; b++)
+    for (size_t b = 0; b < len2; b++)
         *(str3 + b + len1) = *(str2 + b);
     *(str3 + (len1 + len2)) = '\0';
     return str3;
@@ -55,17 +55,17 @@ char *my_strcat(char const *str1, char const *str2)
 
 char *my_strcat_free(char *str1, char *str2)
 {
-    int len1 = my_strlen(str1);
-    int len2 = my_strlen(str2);
-    int len3 = len1 + len2;
+    size_t len1 = my_strlen(str1);
+    size_t len2 = my_strlen(str2);
+    size_t len3 = len1 + len2;
     char *str3 = malloc(sizeof(char) * (len3 + 2));
 
-    for (int a = 0; a < len1; a++)
+    for (size_t a = 0; a < len1; a++)
         *(str3 + a) = *(str1 + a);
-    for (int b = 0; b < len2; b++)
+    for (size_t b = 0; b < len2; b++)
         *(str3 + b + len1) = *(str2 + b);
     *(str3 + (len1 + len2)) = '\0';
     free(str1);
-//    free(str2);
+    free(str2);
     return str3;
 }

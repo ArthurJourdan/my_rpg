@@ -7,10 +7,10 @@
 
 #include "my.h"
 
-static int count_words(char *str)
+static size_t count_words(char *str)
 {
-    int a = 0;
-    int nb_words = 1;
+    size_t a = 0;
+    size_t nb_words = 1;
 
     if (str == NULL)
         return 0;
@@ -20,7 +20,7 @@ static int count_words(char *str)
         if (*(str + a) <= ' ') {
             if (*(str + a + 1) >= '!' && *(str + a + 1) <= '~') {
                 nb_words++;
-                a += 2;
+                a++;
             }
         }
         a++;
@@ -28,20 +28,20 @@ static int count_words(char *str)
     return nb_words;
 }
 
-static int len_word(char *word)
+static size_t len_word(char *word)
 {
-    int len = 0;
+    size_t len = 0;
 
-    while (*(word + len) && *(word + len++) != ' ');
+    while (*(word + len) && *(word + ++len) > ' ');
     return len;
 }
 
-static char *fill_word(char *str, int pos_in_str)
+static char *fill_word(char *str, size_t pos_in_str)
 {
-    int len_act_word = len_word(str + pos_in_str);
+    size_t len_act_word = len_word(str + pos_in_str);
     char *word = malloc(sizeof(char) * len_act_word + 1);
 
-    for (int pos_in_word = 0; pos_in_word < len_act_word; pos_in_word++) {
+    for (size_t pos_in_word = 0; pos_in_word < len_act_word; pos_in_word++) {
         word[pos_in_word] = *(str + pos_in_str++);
     }
     word[len_act_word] = '\0';
@@ -50,10 +50,10 @@ static char *fill_word(char *str, int pos_in_str)
 
 char **my_str_to_word_arr(char *str)
 {
-    int pos_in_str = 0;
-    int wich_arr = 0;
+    size_t pos_in_str = 0;
+    size_t wich_arr = 0;
     char **word_arr;
-    int nb_words = count_words(str);
+    size_t nb_words = count_words(str);
 
     if (!nb_words)
         return NULL;

@@ -7,9 +7,9 @@
 
 #include "my.h"
 
-int get_pos_word_in_str(char const  *word, char const *str)
+size_t get_pos_word_in_str(char const  *word, char const *str)
 {
-    int pos = 0;
+    size_t pos = 0;
 
     while (str[pos]) {
         if (my_str_n_cmp(word, str + pos, my_strlen(word))) {
@@ -20,9 +20,9 @@ int get_pos_word_in_str(char const  *word, char const *str)
     return -1;
 }
 
-int get_pos_word_end_in_str(char const *word, char const *str)
+size_t get_pos_word_end_in_str(char const *word, char const *str)
 {
-    int pos = 0;
+    size_t pos = 0;
 
     while (str[pos]) {
         if (my_str_n_cmp(word, str + pos, my_strlen(word))) {
