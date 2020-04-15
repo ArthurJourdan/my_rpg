@@ -44,8 +44,10 @@ void rpg_manager(global_t *global)
 {
     sfClock *game_clock = sfClock_create();
 
+    GS->index = GAME;
     while (sfRenderWindow_isOpen(GW)) {
         rpg_game(global, game_clock);
     }
+    sfClock_destroy(game_clock);
     destroy_game(global);
 }

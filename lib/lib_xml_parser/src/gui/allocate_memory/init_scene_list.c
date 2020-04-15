@@ -12,16 +12,11 @@
 #include "file.h"
 #include "print.h"
 
-static const char *names[10] = {
-    "Home",
-    "Starting",
+static const char *names[5] = {
+    "Starting_menu",
     "Game",
-    "Playground",
     "Pause",
-    "Break",
     "Options",
-    "Option",
-    "How to play",
     "Tutorial"
 };
 
@@ -56,11 +51,11 @@ static bool place_name(gui_t *sc_list, char const *name_sc, const int nb_line)
 {
     for (size_t c = 0; c < ARRAY_SIZE(names); c++) {
         if (my_str_n_cmp(name_sc, names[c], my_strlen(names[c]))) {
-            sc_list->scenes[c / 2]->name = my_strcpy((char *)name_sc);
+            sc_list->scenes[c]->name = my_strcpy((char *)name_sc);
             return true;
         }
     }
-    my_dprintf(2, "%sName not correct at line %i\n", RED, nb_line);
+    my_dprintf(2, "%sName of scene not correct at line %i\n", RED, nb_line);
     return false;
 }
 
@@ -71,26 +66,19 @@ static bool assign_names(gui_t *scene_list, char const **file)
     for (size_t line = 0; file[line]; line++) {
         if (get_pos_word_in_str("Scene", file[line]) != -1 &&
 get_pos_word_in_str("name=", file[line]) != -1) {
-            name_scene = cpy_var_name("name=", file[line]);
-            if (!place_name(scene_list, name_scene, line)) {
-                if (name_scene)
-                    free(name_scene);
-                return false;
+            if ((name_scene = cpy_var_name("name=", file[line]))) {
+                place_name(scene_list, name_scene, line);
+                free(name_scene);
             }
         }
     }
-    free(name_scene);
     return true;
 }
 
 bool init_scene_list(char const **file, gui_t *scene_list)
 {
-    size_t nb_scene = 0;
+    size_t nb_scene = ARRAY_SIZE(names);
 
-    for (size_t a = 0; file[a]; a++) {
-        if (get_pos_word_in_str("/Scene", file[a]) != -1)
-            nb_scene++;
-    }
     if (!malloc_scene(scene_list, nb_scene))
         return false;
     if (!assign_names(scene_list, file))

@@ -37,6 +37,7 @@ N_U sfRenderWindow *window)
         SL[scene_nb]->sound = sfSound_create();
         sfSound_setBuffer(SL[scene_nb]->sound, sound_buffer);
         free(sound_name);
+        sfSoundBuffer_destroy(sound_buffer);
         volume = cpy_var_name("volume=", line);
         if (volume && my_str_is_num(volume)) {
             sfSound_setVolume(SL[scene_nb]->sound, my_getnbr(volume));

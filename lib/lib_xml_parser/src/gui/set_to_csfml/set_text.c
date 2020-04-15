@@ -41,4 +41,6 @@ N_U sfRenderWindow *window)
 
     SCL_T[txt_index] = create_text(SCL_T[txt_index], name, font, size);
     sfText_setPosition(scene_list->scenes[scene_nb]->text[txt_index], pos);
+    if (font)
+        free(font);
 }

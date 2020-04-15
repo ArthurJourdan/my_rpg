@@ -120,4 +120,8 @@ int get_var_index(char const *line, char **list_names);
 
 // ! TOOLS
 
+// FREE
+void free_xml_filepaths(filepaths_t *xml_filepaths);
+// !FREE
+
 #endif /* XML_PARSER_H_ */

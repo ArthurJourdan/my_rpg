@@ -13,6 +13,8 @@ static void destroy_button(button_t *button)
         return;
     if (button->name)
         free(button->name);
+    if (button->text)
+        sfText_destroy(button->text);
     if (button->rect)
         sfRectangleShape_destroy(button->rect);
     if (button->sound) {
@@ -58,5 +60,7 @@ void destroy_game(global_t *global)
     sfRenderWindow_destroy(global->window);
     for (size_t i = 0; GS->scenes[i] != NULL; i++) {
         destroy_scene(GS->scenes[i]);
+        // free(GS->scenes[i]);
     }
+    free(global);
 }
