@@ -7,16 +7,18 @@
 
 #include "file.h"
 #include "my.h"
-#include "print.h"
 
 char *get_entire_file(char const *filepath)
 {
-    FILE *fd = fopen(filepath, "r");
+    FILE *fd = NULL;
     char *buff = NULL;
     size_t zero = 0;
     int ret_get_l = 0;
     char *entire_file = NULL;
 
+    if (!is_file_openable(filepath))
+        return NULL;
+    fd = fopen(filepath, "r");
     ret_get_l = getline(&buff, &zero, fd);
     while (ret_get_l != -1) {
         entire_file = my_strcat_free(entire_file, buff);
@@ -32,20 +34,22 @@ char **get_entire_file_double_arr(char const *filepath)
     FILE *fd = fopen(filepath, "r");
     char *buff = NULL;
     size_t zero = 0;
-    ssize_t ret_get_l = 0;
+    int ret_get_l = 1;
     char **entire_file = NULL;
     size_t len = file_len(filepath);
 
-    if (!fd || !len)
+    if (len <= 0 || !fd)
         return NULL;
     entire_file = malloc(sizeof(char *) * (len + 1));
-    entire_file[0] = NULL;
-    ret_get_l = getline(&entire_file[0], &zero, fd);
-    for (size_t a = 1; ret_get_l != -1; a++) {
+    entire_file[len] = NULL;
+    for (size_t a = 0; a < len; a++) {
         entire_file[a] = NULL;
         ret_get_l = getline(&entire_file[a], &zero, fd);
+        if (ret_get_l == -1 || !entire_file[a])
+            break;
+        if (check_comments(entire_file[a]))
+            free(entire_file[a--]);
     }
-    entire_file[len] = NULL;
     fclose(fd);
     return entire_file;
 }

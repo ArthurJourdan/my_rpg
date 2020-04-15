@@ -7,10 +7,12 @@
 
 #include "my.h"
 
-size_t get_pos_word_in_str(char const  *word, char const *str)
+ssize_t get_pos_word_in_str(char const  *word, char const *str)
 {
     size_t pos = 0;
 
+    if (!word || !str)
+        return -1;
     while (str[pos]) {
         if (my_str_n_cmp(word, str + pos, my_strlen(word))) {
             return pos;
@@ -20,10 +22,12 @@ size_t get_pos_word_in_str(char const  *word, char const *str)
     return -1;
 }
 
-size_t get_pos_word_end_in_str(char const *word, char const *str)
+ssize_t get_pos_word_end_in_str(char const *word, char const *str)
 {
     size_t pos = 0;
 
+    if (!word || !str)
+        return -1;
     while (str[pos]) {
         if (my_str_n_cmp(word, str + pos, my_strlen(word))) {
             return pos + my_strlen(word);

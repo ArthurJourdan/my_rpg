@@ -6,33 +6,18 @@
 ##
 
 ECHO    =       /bin/echo -e
-DEFAULT =       "\033[00m"
-#SHELL  =       "\e[0;0m"
 
 DEFAULT =       "\e[0m"
 BOLD	=       "\e[1m"
-DIM	=       "\e[2m"
-UNDLN	=       "\e[4m"
-SHINE   =       "\e[5;37m"
-RODE    =       "\e[9;30m"
-IDK   =       "\e[5;37m"
 
 BLACK	=       "\e[30m"
-RED	=       "\e[31m"
+RED		=       "\e[31m"
 GREEN	=       "\e[32m"
 YELLOW	=       "\e[33m"
 BLUE	=       "\e[34m"
 MAGENTA	=       "\e[35m"
 CYAN	=       "\e[36m"
 WHITE	=       "\e[37m"
-
-LIGHT_GREY      =       "\e[90m"
-LIGHT_RED       =       "\e[91m"
-LIGHT_GREEN     =       "\e[92m"
-LIGHT_YELLOW    =       "\e[93m"
-LIGHT_BLUE      =       "\e[94m"
-LIGHT_MAGENTA   =       "\e[95m"
-LIGHT_CYAN      =       "\e[96m"
 
 CFLAGS	=       -I ../../include/
 
@@ -53,10 +38,10 @@ OBJ     =       $(SRC:.c=.o)
 
 NAME    =       libprint.a
 
-all:		title $(NAME)
+all:		 $(NAME) title
 
 title:
-		@$(ECHO) $(BOLD) $(YELLOW) Building $(NAME)$(DEFAULT)
+		@$(ECHO) $(BOLD) $(YELLOW) Built $(NAME)$(DEFAULT)
 
 $(NAME):        $(OBJ)
 		@ar rc $(NAME) $(OBJ)
