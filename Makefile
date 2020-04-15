@@ -46,17 +46,29 @@ LIBDIR		=	./lib/
 
 SRCDIR		=	src/
 
-BUTTON		=	button_actions/
+BUTTON		=	$(SRCDIR)button_actions/
 
-SRC		=	${SRCDIR}main.c		\
-			$(SRCDIR)$(BUTTON)go_start.c			\
-			$(SRCDIR)$(BUTTON)go_pause.c			\
-			$(SRCDIR)$(BUTTON)go_out.c				\
-			$(SRCDIR)$(BUTTON)go_options.c			\
-			$(SRCDIR)$(BUTTON)go_htp.c				\
-			$(SRCDIR)$(BUTTON)go_starting_menu.c	\
-			$(SRCDIR)$(BUTTON)go_back_to_game.c		\
-			$(SRCDIR)$(BUTTON)volume.c				\
+EVENT		=	$(SRCDIR)events/
+
+DESTROY		=	$(SRCDIR)destroy/
+
+SRC		=	${SRCDIR}main.c	\
+			\
+			${SRCDIR}rpg_manager.c	\
+			\
+			$(BUTTON)go_start.c	\
+			$(BUTTON)go_pause.c	\
+			$(BUTTON)go_out.c	\
+			$(BUTTON)go_options.c	\
+			$(BUTTON)go_htp.c	\
+			$(BUTTON)go_starting_menu.c	\
+			$(BUTTON)go_back_to_game.c	\
+			$(BUTTON)volume.c	\
+			\
+			$(EVENT)event_management.c	\
+			$(EVENT)stopping_events.c	\
+			\
+			$(DESTROY)destroy_everything.c	\
 
 OBJ		=       $(SRC:.c=.o)
 

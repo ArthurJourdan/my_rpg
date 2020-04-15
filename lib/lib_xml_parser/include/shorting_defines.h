@@ -10,7 +10,9 @@
 
 #define GM global->scene_list
 #define GW global->window
+#define FPS global->fps
 
+#define GS global->scene_list
 #define ACT global->scene_list->index
 #define SC_B global->scene_list->scenes[global->scene_list->index]->buttons
 #define SC_I global->scene_list->scenes[global->scene_list->index]->images

@@ -6,22 +6,12 @@
 */
 
 #include "my.h"
-#include "print.h"
 
 #include "global.h"
 #include "gui.h"
 #include "xml_parser.h"
-#include "sfml_tools.h"
 
-void test_loop(global_t *global)
-{
-    while (sfRenderWindow_isOpen(GW)) {
-        display_images(GW, SC_I);
-        display_buttons(GW, SC_B);
-        display_texts(GW, SC_T);
-        sfRenderWindow_display(GW);
-    }
-}
+#include "my_rpg.h"
 
 int main(int ac, char **av)
 {
@@ -32,6 +22,6 @@ int main(int ac, char **av)
     global = xml_parser(av[1]);
     if (!global)
         return EXIT_FAILURE;
-    test_loop(global);
+    rpg_manager(global);
     return EXIT_SUCCESS;
 }

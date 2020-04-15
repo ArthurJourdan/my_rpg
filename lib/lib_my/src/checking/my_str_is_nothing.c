@@ -22,7 +22,7 @@ bool my_str_is_nothing(char const *str)
 {
     if (!str)
         return false;
-    for (int a = 0; *(str + a) != '\n'; a++) {
+    for (int a = 0; *(str + a); a++) {
         if (my_char_is_nothing(*(str + a), true, true, true))
             return false;
     }
@@ -33,7 +33,7 @@ bool my_quotation_is_nothing(char const *str)
 {
     if (!str)
         return false;
-    for (int a = 0; *(str + a) != '"'; a++) {
+    for (int a = 0; *(str + a) && *(str + a) != '"'; a++) {
         if (my_char_is_nothing(*(str + a), true, true, true))
             return false;
     }

@@ -1,12 +1,12 @@
 <Window heigth="900" width="1600" bbp="32"/>
 <Scene name="Home">
     <Image name="background" image="assets_rpg/GUI/assets_2/image/city.png" fullscreen="true"/>
-    <Button name="start_button" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="50" heigth="75" width="200" size_text="40"/>
-    <Button name="option_button" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="1350" y="50" heigth="75" width="200" size_text="40"/>
-    <Button name="exit_button" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Quit" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="375" y="50" heigth="75" width="200" size_text="40"/>
-    <Text name="my_RPG" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="575" size="200"/>
-    <Button name="How to play" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="50" x="1000" heigth="75" width="275"  size_text="40"/>
-    <Text name="Best score" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="10" y="820" size="40"/>
+    <Button name="start_button" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="50" heigth="75" width="200" size_text="40"/>
+    <Button name="option_button" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Options" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="1350" y="50" heigth="75" width="200" size_text="40"/>
+    <Button name="exit_button" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Quit" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="375" y="50" heigth="75" width="200" size_text="40"/>
+    <Text name="my_RPG" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="100" y="575" size="200"/>
+    <Button name="How to play" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="50" x="1000" heigth="75" width="275"  size_text="40"/>
+    <Text name="Best score" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
 </Scene>
 <Scene name="Game">
     <Button name="Add turret" image="assets_rpg/GUI/assets_2/image/pixel sky.png" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="50" y="600" width="250" heigth="50" size_text="40">

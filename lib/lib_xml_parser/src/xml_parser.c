@@ -46,10 +46,14 @@ maps_t **init_all_maps(char *filepath, sfRenderWindow *window)
 
 global_t *xml_parser(char const *global_filepath)
 {
-    global_t *global = malloc(sizeof(global_t));
-    filepaths_t *xml_files = get_filepaths_xml(global_filepath);
+    global_t *global = NULL;
+    filepaths_t *xml_files = NULL;
 
-    if (!global || !xml_files)
+    if (!is_file_openable(global_filepath))
+        return NULL;
+    if (!(xml_files = get_filepaths_xml(global_filepath)))
+        return NULL;
+    if (!(global = malloc(sizeof(global_t))))
         return NULL;
     if (!(global = init_global_vars(global_filepath, global)))
         return NULL;

@@ -30,10 +30,8 @@ typedef struct scene {
 } scene_t;
 
 typedef struct gui {
-    sfRenderWindow *window;
-    sfRectangleShape *game_board;
     scene_t **scenes;
-    short index;
+    unsigned short index;
 } gui_t;
 
 enum scene_names {
