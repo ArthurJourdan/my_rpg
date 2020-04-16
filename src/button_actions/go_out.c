@@ -10,5 +10,6 @@
 
 global_t *go_out(global_t *global)
 {
+    sfRenderWindow_clode(GW);
     return global;
 }

@@ -46,4 +46,10 @@ struct global_vars *volume_up(struct global_vars *);
 struct global_vars *volume_down(struct global_vars *);
 struct global_vars *go_htp(struct global_vars *);
 
+enum state {
+    IDLE,
+    HOVER,
+    CLICKED
+}
+
  #endif /* !BUTTON_H */

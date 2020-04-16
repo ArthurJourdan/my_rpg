@@ -10,5 +10,6 @@
 
 global_t *go_pause(global_t *global)
 {
+    change_scene(GS, PAUSE);
     return global;
 }

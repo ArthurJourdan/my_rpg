@@ -10,6 +10,8 @@
 
 void change_scene(struct gui *scene_list, int scene_nb)
 {
+    if (!SL[scene_nb])
+        return;
     if (SL[ACT_S]->music)
         sfMusic_pause(SL[ACT_S]->music);
     ACT_S = scene_nb;
