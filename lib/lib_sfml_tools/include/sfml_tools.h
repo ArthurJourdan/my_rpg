@@ -45,6 +45,16 @@ void display_texts(sfRenderWindow *window, sfText **texts);
 
 // SOUND
 sfSound *create_sound(sfSound *sound, char *filepath, float volume);
+
+void change_sound_volume(sfSound *sound, float increase);
+void set_sound_volume(sfSound *sound, float volume);
 // !SOUND
+
+// MUSIC
+void set_music_volume(sfMusic *music, float volume);
+void change_music_volume(sfMusic *music, float increase);
+
+
+// !MUSIC
 
 #endif /* !SFML_TOOLS_H */

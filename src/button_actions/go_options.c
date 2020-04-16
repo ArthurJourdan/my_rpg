@@ -6,8 +6,10 @@
 */
 
 #include "global.h"
+#include "gui.h"
 
 global_t *go_options(global_t *global)
 {
+    change_scene(GS, OPTIONS);
     return global;
 }

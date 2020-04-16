@@ -5,8 +5,8 @@
 ** go_out.c
 */
 
-#include "button.h"
 #include "global.h"
+#include "gui.h"
 
 global_t *go_out(global_t *global)
 {

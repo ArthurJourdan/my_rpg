@@ -52,6 +52,8 @@ EVENT		=	$(SRCDIR)events/
 
 DESTROY		=	$(SRCDIR)destroy/
 
+OPTION		=	$(SRCDIR)options/
+
 SRC		=	${SRCDIR}main.c	\
 			\
 			${SRCDIR}rpg_manager.c	\
@@ -63,11 +65,15 @@ SRC		=	${SRCDIR}main.c	\
 			$(BUTTON)go_htp.c	\
 			$(BUTTON)go_starting_menu.c	\
 			$(BUTTON)go_back_to_game.c	\
-			$(BUTTON)volume.c	\
+			$(BUTTON)music_volume.c	\
+			$(BUTTON)volume_sound.c	\
 			\
 			$(EVENT)event_management.c	\
 			$(EVENT)button_management.c	\
 			$(EVENT)stopping_events.c	\
+			\
+			$(OPTION)change_sounds_volume.c	\
+			$(OPTION)change_music_volume.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
 

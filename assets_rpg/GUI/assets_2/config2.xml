@@ -1,7 +1,7 @@
 <Window heigth="900" width="1600" bbp="32"/>
 <Scene name="Starting_menu">
     <Image name="background" image="assets_rpg/GUI/assets_2/image/city.png" fullscreen="true"/>
-    <Button name="start_button" action="Play" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="50" heigth="75" width="200" size_text="40"/>
+    <Button name="start_button" action="Start" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="50" heigth="75" width="200" size_text="40"/>
     <Button name="option_button" action="Options" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Options" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="1350" y="50" heigth="75" width="200" size_text="40"/>
     <Button name="exit_button" action="Quit" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Quit" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="375" y="50" heigth="75" width="200" size_text="40"/>
     <Text name="my_RPG" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="100" y="575" size="200"/>

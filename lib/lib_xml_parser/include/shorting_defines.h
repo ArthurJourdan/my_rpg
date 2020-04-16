@@ -17,6 +17,7 @@
 #define SC_B global->scene_list->scenes[global->scene_list->index]->buttons
 #define SC_I global->scene_list->scenes[global->scene_list->index]->images
 #define SC_T global->scene_list->scenes[global->scene_list->index]->text
+#define SC_S global->scene_list->scenes[global->scene_list->index]->sound
 
 #define SL scene_list->scenes
 #define ACT_S scene_list->index

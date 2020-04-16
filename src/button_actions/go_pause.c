@@ -5,7 +5,7 @@
 ** go_pause.c
 */
 
-#include "button.h"
+#include "gui.h"
 #include "global.h"
 
 global_t *go_pause(global_t *global)

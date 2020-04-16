@@ -42,8 +42,14 @@ struct global_vars *go_pause(struct global_vars *);
 struct global_vars *go_back_to_game(struct global_vars *);
 struct global_vars *go_options(struct global_vars *);
 struct global_vars *go_starting_menu(struct global_vars *);
-struct global_vars *volume_up(struct global_vars *);
-struct global_vars *volume_down(struct global_vars *);
+struct global_vars *volume_sounds_up(struct global_vars *);
+struct global_vars *volume_sounds_down(struct global_vars *);
+struct global_vars *volume_all_sounds_up(struct global_vars *);
+struct global_vars *volume_all_sounds_down(struct global_vars *);
+struct global_vars *volume_music_down(struct global_vars *);
+struct global_vars *volume_music_up(struct global_vars *);
+struct global_vars *volume_all_musics_down(struct global_vars *);
+struct global_vars *volume_all_musics_up(struct global_vars *);
 struct global_vars *go_htp(struct global_vars *);
 
 enum state {

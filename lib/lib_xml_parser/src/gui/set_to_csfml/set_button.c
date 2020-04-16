@@ -21,8 +21,14 @@ static actions_t all_actions[] = {
     {"Resume", &go_back_to_game},
     {"Options", &go_options},
     {"Starting_menu", &go_starting_menu},
-    {"Volume_p", &volume_up},
-    {"Volume_m", &volume_down},
+    {"Volume_music_up", &volume_music_up},
+    {"Volume_music_down", &volume_music_down},
+    {"Volume_all_musics_up", &volume_all_musics_up},
+    {"Volume_all_musics_down", &volume_all_musics_down},
+    {"Volume_sound_up", &volume_sounds_up},
+    {"Volume_sound_down", &volume_sounds_down},
+    {"Volume_all_sounds_up", &volume_all_sounds_up},
+    {"Volume_all_sounds_down", &volume_all_sounds_down},
     {"Tutorial", &go_htp}
 };
 

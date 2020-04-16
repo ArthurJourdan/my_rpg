@@ -6,8 +6,10 @@
 */
 
 #include "global.h"
+#include "gui.h"
 
 global_t *go_htp(global_t *global)
 {
+    change_scene(GS, TUTO);
     return global;
 }

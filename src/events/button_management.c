@@ -46,7 +46,8 @@ static void activate_button(global_t *global, button_t *button, sfEvent event)
 {
     if (event.type == sfEvtMouseButtonReleased) {
         sfSound_play(button->sound);
-        button->action(global);
+        if (button->action)
+            button->action(global);
     } else {
         change_button_state(button, CLICKED);
     }
@@ -58,12 +59,15 @@ bool button_management(global_t *global, sfEvent event)
 
     if ((nb_button = is_button_pressed(global)) != -1) {
         change_button_state(SC_B[nb_button], HOVER);
-        if (event.type != (sfEvtMouseButtonPressed || sfEvtMouseButtonReleased))
+        if (event.type == sfEvtMouseButtonPressed ||
+        event.type == sfEvtMouseButtonReleased) {
+            printf("%i\n", nb_button);
             activate_button(global, SC_B[nb_button], event);
+        }
     }
     for (int a = 0; SC_B[a]; a++) {
         if (a != nb_button) {
-        change_button_state(SC_B[a], IDLE);
+            change_button_state(SC_B[a], IDLE);
         }
     }
     return false;
