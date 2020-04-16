@@ -6,8 +6,9 @@
 */
 
 #include "events.h"
+#include "button.h"
 
-static int is_button_pressed(global_t *global, sfEvent event)
+static int is_button_pressed(global_t *global)
 {
     sfVector2f size_rect = {0};
     sfVector2f pos_rect = {0};
@@ -25,29 +26,29 @@ static int is_button_pressed(global_t *global, sfEvent event)
     return -1;
 }
 
-void change_button_state(button_t *button, unsigned short state)
+static void change_button_state(button_t *button, unsigned short state)
 {
-    if (button->nb_animations) {
-        move_rect(state, button->nb_animations);
-    }
-    if (state = IDLE) {
+    // if (button->nb_animations) {
+        // move_rect(state, button->nb_animations);
+    // }
+    if (state == IDLE) {
         sfRectangleShape_setOutlineColor(button->rect, sfWhite);
     }
-    if (state = HOVER) {
+    if (state == HOVER) {
         sfRectangleShape_setOutlineColor(button->rect, sfBlack);
     }
-    if (state = CLICKED) {
+    if (state == CLICKED) {
         sfRectangleShape_setOutlineColor(button->rect, sfTransparent);
     }
 }
 
-void activate_button(global_t *global, button_t *button, sfEvent event)
+static void activate_button(global_t *global, button_t *button, sfEvent event)
 {
     if (event.type == sfEvtMouseButtonReleased) {
         sfSound_play(button->sound);
         button->action(global);
     } else {
-        // change_button_state(CLICKED);
+        change_button_state(button, CLICKED);
     }
 }
 
@@ -55,14 +56,15 @@ bool button_management(global_t *global, sfEvent event)
 {
     int nb_button = -1;
 
-    if ((nb_button = is_button_pressed(SC_B, event)) != -1) {
-        // change_button_state(SC_B, HOVER);
+    if ((nb_button = is_button_pressed(global)) != -1) {
+        change_button_state(SC_B[nb_button], HOVER);
         if (event.type != (sfEvtMouseButtonPressed || sfEvtMouseButtonReleased))
             activate_button(global, SC_B[nb_button], event);
     }
-    for (size_t a = 0; SC_B[a]; a++) {
-        if (a != nb_button)
-        // change_button_state(SC_B[a], IDLE);
+    for (int a = 0; SC_B[a]; a++) {
+        if (a != nb_button) {
+        change_button_state(SC_B[a], IDLE);
+        }
     }
     return false;
 }

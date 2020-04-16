@@ -50,6 +50,6 @@ enum state {
     IDLE,
     HOVER,
     CLICKED
-}
+};
 
  #endif /* !BUTTON_H */

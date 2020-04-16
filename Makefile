@@ -66,6 +66,7 @@ SRC		=	${SRCDIR}main.c	\
 			$(BUTTON)volume.c	\
 			\
 			$(EVENT)event_management.c	\
+			$(EVENT)button_management.c	\
 			$(EVENT)stopping_events.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
