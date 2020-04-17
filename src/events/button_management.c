@@ -7,6 +7,7 @@
 
 #include "events.h"
 #include "button.h"
+#include "sfml_tools.h"
 
 static int is_button_pressed(global_t *global)
 {
@@ -29,7 +30,8 @@ static int is_button_pressed(global_t *global)
 static void change_button_state(button_t *button, unsigned short state)
 {
     // if (button->nb_animations) {
-        // move_rect(state, button->nb_animations);
+    //     set_texture_rect_shape(button->rect, button->nb_animations,
+    //     button->size_tot);
     // }
     if (state == IDLE) {
         sfRectangleShape_setOutlineColor(button->rect, sfWhite);
@@ -57,8 +59,10 @@ bool button_management(global_t *global, sfEvent event)
 {
     int nb_button = -1;
 
+    sfRenderWindow_setMouseCursorVisible(GW, sfTrue);
     if ((nb_button = is_button_pressed(global)) != -1) {
         change_button_state(SC_B[nb_button], HOVER);
+        sfRenderWindow_setMouseCursorVisible(GW, sfFalse);
         if (event.type == sfEvtMouseButtonPressed ||
         event.type == sfEvtMouseButtonReleased) {
             printf("%i\n", nb_button);

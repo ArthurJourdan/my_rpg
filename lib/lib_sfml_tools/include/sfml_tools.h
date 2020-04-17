@@ -34,7 +34,11 @@ sfRectangleShape *create_rectshape(sfRectangleShape *rect, sfVector2f size);
 
 void add_texture_RectShape(sfRectangleShape *rect, char *filepath);
 void set_rectshape_color(sfRectangleShape *rectshape,
+
 sfColor in, sfColor out, float outline_thickness);
+
+void set_texture_rect_shape(sfRectangleShape *rect_shape,
+ unsigned short nb_animations, size_t size_tot);
 // !RECTANGLESHAPE
 
 // TEXT

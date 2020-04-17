@@ -39,6 +39,7 @@ SRC     =		$(INIT)create_image.c					\
 				$(SET)set_color.c						\
 				$(SET)set_image_fullscreen.c			\
 				$(SET)set_audio.c						\
+				$(SET)set_texture_rect_shape.c			\
 				$(ADD)add_texture.c						\
 				$(DISP)display_button.c					\
 				$(DISP)display_sprite.c					\
