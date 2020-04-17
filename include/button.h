@@ -36,6 +36,7 @@ void display_buttons(sfRenderWindow *window, button_t **buttons);
 
 // CHANGE SCENE
 void change_scene(struct gui *scene_list, int scene_nb);
+
 struct global_vars *go_out(struct global_vars *);
 struct global_vars *go_start(struct global_vars *);
 struct global_vars *go_pause(struct global_vars *);
@@ -57,5 +58,7 @@ enum state {
     HOVER,
     CLICKED
 };
+
+// !CHANGE SCENE
 
  #endif /* !BUTTON_H */

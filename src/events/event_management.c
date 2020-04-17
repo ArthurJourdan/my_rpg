@@ -8,24 +8,13 @@
 #include "global.h"
 
 #include "events.h"
-
-sfVector2f get_mouse_coo(sfRenderWindow *win)
-{
-    sfVector2f mouse = {0, 0};
-
-    mouse.x = (float)sfMouse_getPositionRenderWindow(win).x;
-    mouse.y = (float)sfMouse_getPositionRenderWindow(win).y;
-    return mouse;
-}
+#include "sfml_tools.h"
 
 void event_management(global_t *global)
 {
-    sfEvent event;
-
-    sfRenderWindow_pollEvent(GW, &event);
-    if (stopping_events(global, event))
+    sfRenderWindow_pollEvent(GW, &global->event);
+    if (stopping_events(global, global->event))
         return;
-    if (button_management(global, event))
+    if (button_management(global, global->event))
         return;
-
 }
