@@ -12,6 +12,8 @@
 #include <SFML/System.h>
 #include <SFML/Audio.h>
 
+#include <stdbool.h>
+
 // WINDOW
 sfRenderWindow *create_window(unsigned int width, unsigned int height,
 unsigned int bbp, char const *name);
@@ -57,8 +59,15 @@ void set_sound_volume(sfSound *sound, float volume);
 // MUSIC
 void set_music_volume(sfMusic *music, float volume);
 void change_music_volume(sfMusic *music, float increase);
-
-
 // !MUSIC
+
+// EVENTS
+sfVector2f get_mouse_coo(sfRenderWindow *win);
+bool left_mouse_pressed(sfEvent event);
+bool right_mouse_pressed(sfEvent event);
+bool left_mouse_released(sfEvent event);
+bool right_mouse_released(sfEvent event);
+
+// !EVENTS
 
 #endif /* !SFML_TOOLS_H */

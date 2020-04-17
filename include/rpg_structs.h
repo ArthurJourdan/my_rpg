@@ -63,7 +63,7 @@ typedef struct map_dict {
     int id;
     mapn_t **mapnodes; //ceci serait les détails de chaque "cases" de la map
     sfVector2u size;
-    void (*fptr)(game_t *game) //si on veut trigger un boss fight ou qqchse en entrant dans la piece/map
+    void (*fptr)(game_t *game); //si on veut trigger un boss fight ou qqchse en entrant dans la piece/map
 }map_dict_t;
 
 typedef struct dict {

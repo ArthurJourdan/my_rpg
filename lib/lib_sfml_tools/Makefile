@@ -27,6 +27,8 @@ INIT	=		$(SRCDIR)init/
 
 SET		=		$(SRCDIR)set/
 
+GET		=		$(SRCDIR)get/
+
 DISP	=		$(SRCDIR)display/
 
 ADD		=		$(SRCDIR)add/
@@ -36,15 +38,19 @@ SRC     =		$(INIT)create_image.c					\
 				$(INIT)create_text.c					\
 				$(INIT)create_audio.c					\
 				$(INIT)create_window.c					\
+				\
 				$(SET)set_color.c						\
 				$(SET)set_image_fullscreen.c			\
 				$(SET)set_audio.c						\
 				$(SET)set_texture_rect_shape.c			\
+				\
+				$(GET)mouse_events.c					\
+				\
 				$(ADD)add_texture.c						\
+				\
 				$(DISP)display_button.c					\
 				$(DISP)display_sprite.c					\
 				$(DISP)display_text.c					\
-				$(SRCDIR)change_scene.c
 
 OBJ     =       $(SRC:.c=.o)
 
