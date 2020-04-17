@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2019
-** my_printf
+** my_dprintf
 ** File description:
 ** print every type of variables
 */

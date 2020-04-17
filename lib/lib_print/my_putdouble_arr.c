@@ -15,6 +15,5 @@ void my_putdouble_arr(int const output, char **arr)
     for (int a = 0; arr[a] != NULL; a++) {
         last_frame = my_strlen(arr[a]);
         my_putstr(output, arr[a]);
-        my_putchar(output, '\n');
     }
 }

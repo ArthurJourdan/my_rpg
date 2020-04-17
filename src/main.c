@@ -1,13 +1,27 @@
 /*
-** EPITECH PROJECT, 2020
-** canevas
+** EPITECH PROJECT, 2019
+** main
 ** File description:
-** my_main
+** generic main
 */
 
 #include "my.h"
 
-int main(USELESS int ac, USELESS char **av)
+#include "global.h"
+#include "gui.h"
+#include "xml_parser.h"
+
+#include "my_rpg.h"
+
+int main(int ac, char **av)
 {
-    return 0;
+    global_t *global = NULL;
+
+    if (!error_msg(ac, av))
+        return EXIT_FAILURE;
+    global = xml_parser(av[1]);
+    if (!global)
+        return EXIT_FAILURE;
+    rpg_manager(global);
+    return EXIT_SUCCESS;
 }

@@ -32,56 +32,89 @@ LIGHT_BLUE      =       "\e[94m"
 LIGHT_MAGEN     =       "\e[95m"
 LIGHT_CYAN      =       "\e[96m"
 
-SRCDIR		=	src/
-
-LIBDIR		=	./lib/
-
 TESTNAME	=	unit_tests
 
-TEST		=       $(TESTNAME) --coverage -lcriterion
+TEST		=   $(TESTNAME) --coverage -lcriterion
 
 INCLUDE		=	-I include
 
-CFLAGS		=	-W -Wall -Werror -Wextra $(INCLUDE)
+CFLAGS		=	-W -Wall -Wextra $(INCLUDE)
 
 RMFLAGS		=	*.gcda *.gcno src/*.gcda src/*.gcno
 
-SRC		=	${SRCDIR}main.c				\
+LIBDIR		=	./lib/
+
+SRCDIR		=	src/
+
+BUTTON		=	$(SRCDIR)button_actions/
+
+EVENT		=	$(SRCDIR)events/
+
+DESTROY		=	$(SRCDIR)destroy/
+
+SRC		=	${SRCDIR}main.c	\
+			\
+			${SRCDIR}rpg_manager.c	\
+			\
+			$(BUTTON)go_start.c	\
+			$(BUTTON)go_pause.c	\
+			$(BUTTON)go_out.c	\
+			$(BUTTON)go_options.c	\
+			$(BUTTON)go_htp.c	\
+			$(BUTTON)go_starting_menu.c	\
+			$(BUTTON)go_back_to_game.c	\
+			$(BUTTON)volume.c	\
+			\
+			$(EVENT)event_management.c	\
+			$(EVENT)stopping_events.c	\
+			\
+			$(DESTROY)destroy_everything.c	\
 
 OBJ		=       $(SRC:.c=.o)
 
 NAME		=	my_rpg
 
-SRC_LIB		=	file		\
-			linked_list	\
-			print		\
-			my		\
+SRC_LIB		=	xml_parser		\
+				file			\
+				print			\
+				my				\
+				sfml_tools		\
+				csfml-graphics	\
+				csfml-system	\
+				csfml-audio
 
-LIB_PATHS	=       $(LIBDIR)lib_my			\
-			$(LIBDIR)lib_print		\
-			$(LIBDIR)lib_linked_list	\
-			$(LIBDIR)lib_file		\
+LIB_PATHS	=       $(LIBDIR)lib_my				\
+					$(LIBDIR)lib_print			\
+					$(LIBDIR)lib_file			\
+					$(LIBDIR)lib_sfml_tools		\
+					$(LIBDIR)lib_xml_parser		\
+
 
 LIBRARIES       =       $(SRC_LIB:%=-l%)
 #LIB_PATHS_FLAG  =       $(LIB_PATHS:%=-L%)
 
-LDFLAGS		=	-L./lib $(LIBRARIES)
+LDFLAGS		=	-L./lib $(LIBRARIES) -lncurses
 
-all:            title $(NAME)
+all:            $(NAME)
 
 title:
-		@$(ECHO)
-		@$(ECHO) $(BOLD) $(YELLOW) Building $(NAME)$(DEFAULT)
+		@nm-online -q -t 2 -x || /bin/false \
+		&& curl http://artii.herokuapp.com/make?text=$(NAME) --max-time 10 --connect-timeout 5 \
+		|| $(ECHO) $(BOLD) $(YELLOW) Building $(NAME)$(DEFAULT)
 		@$(ECHO)
 
-$(NAME):        $(OBJ)
-		@$(ECHO)
-		@for MAKE_PATH in $(LIB_PATHS) ; do \
-			make -C $$MAKE_PATH -s ; \
-		done
-		@$(ECHO)
-		@gcc -o $(NAME) $(OBJ) $(LDFLAGS) \
-		&& $(ECHO) $(BOLD) $(GREEN)"-> BUILD SUCCESS !"$(DEFAULT) || $(ECHO) $(BOLD) $(RED)"-> BUILD FAILED"$(DEFAULT)
+lib:
+	@$(ECHO)
+	@for MAKE_PATH in $(LIB_PATHS) ; do \
+		make -C $$MAKE_PATH -s ; \
+	done
+
+pre_building:
+	@$(ECHO) "\n"$(BOLD) $(CYAN) Building $(NAME) $(DEFAULT)
+
+$(NAME):	lib pre_building $(OBJ)
+	@gcc -o $(NAME) $(OBJ) $(LDFLAGS) \
+	&& $(ECHO) $(BOLD) $(GREEN)"-> BUILD SUCCESS !"$(DEFAULT) || $(ECHO) $(BOLD) $(RED)"-> BUILD FAILED"$(DEFAULT)
 
 clean:
 		@for MAKE_PATH in $(LIB_PATHS) ; do \
@@ -118,10 +151,7 @@ tests_run:
 debug:		CFLAGS += -g
 debug:		re
 
-force:		CFLAGS = -W -Wall -Wextra $(INCLUDE)
-force:		re
-
 %.o :		%.c
 		@gcc -c -o $@ $^ $(CFLAGS) && $(ECHO) -n $(BOLD) $(GREEN)"  [OK] "$(WHITE) || $(ECHO) -n $(BOLD) $(RED)"  [KO] "$(WHITE) && $(ECHO) $(BOLD) $< | rev | cut -d'/' -f 1 | rev
 
-.PHONY:		all title clean fclean re tests_run debug
+.PHONY:		all title clean fclean re tests_run debug lib pre_building

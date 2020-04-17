@@ -34,7 +34,7 @@ typedef struct spell_hitboxes {
 typedef struct spell_dict {
     int id;
     enum stype_e stype;
-    enum scategort_e category;
+    enum scategory_e category;
     int base_damage;
     int mp_cost;
     int cooldown;

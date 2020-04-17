@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2019
-** for my_printf
+** for my_dprintf
 ** File description:
 ** S like put str
 */

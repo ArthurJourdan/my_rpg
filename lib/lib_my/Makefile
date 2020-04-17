@@ -11,14 +11,14 @@ DEFAULT =       "\033[00m"
 
 DEFAULT =       "\e[0m"
 BOLD	=       "\e[1m"
-DIM	=       "\e[2m"
+DIM		=       "\e[2m"
 UNDLN	=       "\e[4m"
 SHINE   =       "\e[5;37m"
 RODE    =       "\e[9;30m"
-IDK   =       "\e[5;37m"
+IDK	=       "\e[5;37m"
 
 BLACK	=       "\e[30m"
-RED	=       "\e[31m"
+RED		=       "\e[31m"
 GREEN	=       "\e[32m"
 YELLOW	=       "\e[33m"
 BLUE	=       "\e[34m"
@@ -34,44 +34,67 @@ LIGHT_BLUE      =       "\e[94m"
 LIGHT_MAGENTA   =       "\e[95m"
 LIGHT_CYAN      =       "\e[96m"
 
-CFLAGS	=       -I ../../include/
+CFLAGS	=   -I ../../include/
 
-SRC     =	my_strlen.c			\
-						\
-		my_getnbr.c			\
-		my_getdigit.c			\
-		my_getfloat.c			\
-		my_reg_nbr.c			\
-						\
-		my_strcmp.c			\
-						\
-		my_strcat.c			\
-		my_strcat_path.c		\
-		my_arrcat.c			\
-						\
-		my_str_is_alphanum.c		\
-		my_str_is_nothing.c		\
-						\
-		error_msg.c			\
-						\
-		my_strcpy.c			\
-		my_double_arr_dup.c		\
-						\
-		my_str_to_word_arr.c		\
-						\
-		free_arr.c			\
-		free_to_null.c			\
-						\
-		auto_malloc.c			\
+SRCDIR	=   src/
+
+CHECK	=   $(SRCDIR)checking/
+
+NUM		=   $(SRCDIR)numbering/
+
+MODIF	=   $(SRCDIR)modifying/
+
+FREE	=	$(SRCDIR)freeing/
+
+NELL	=	$(SRCDIR)nelling/
+
+SRC     =	$(CHECK)my_strlen.c					\
+			$(CHECK)my_int_arr_len.c			\
+			\
+			$(CHECK)my_strcmp.c					\
+			$(CHECK)compare_str.c				\
+			\
+			$(CHECK)my_str_is_alphanum.c		\
+			$(CHECK)my_str_is_nothing.c			\
+			$(CHECK)my_str_is_chars.c			\
+			\
+			$(CHECK)error_msg.c					\
+			\
+			$(NUM)my_getnbr.c					\
+			$(NUM)my_getdigit.c					\
+			$(NUM)my_getfloat.c					\
+			$(NUM)my_reg_nbr.c					\
+			\
+			$(NUM)invert_bool.c					\
+			\
+			$(MODIF)my_strcat.c					\
+			$(MODIF)my_strcat_path.c			\
+			$(MODIF)my_arrcat.c					\
+			$(MODIF)add_str_to_word_arr.c		\
+			\
+			$(MODIF)my_strcpy.c					\
+			$(MODIF)my_double_arr_dup.c			\
+			\
+			$(MODIF)my_str_to_word_arr.c		\
+			\
+			$(MODIF)reverse_arr.c				\
+			$(MODIF)sort_arr_alphabetically.c	\
+			\
+			$(MODIF)my_memset.c					\
+			\
+			$(FREE)free_arr.c					\
+			$(FREE)free_to_null.c				\
+			\
+			$(NELL)auto_malloc.c				\
 
 OBJ     =       $(SRC:.c=.o)
 
 NAME    =       libmy.a
 
-all:		title $(NAME)
+all:		 $(NAME) title
 
 title:
-		@$(ECHO) $(BOLD) $(YELLOW) Building $(NAME)$(DEFAULT)
+		@$(ECHO) $(BOLD) $(YELLOW) Built $(NAME)$(DEFAULT)
 
 $(NAME):        $(OBJ)
 		@ar rc $(NAME) $(OBJ)
@@ -88,4 +111,4 @@ fclean:
 re:		fclean all
 
 %.o :           %.c
-		@gcc $(CFLAGS) -c -o $@ $^ && $(ECHO) -n $(BOLD) $(GREEN)"  [OK] "$(WHITE) || $(ECHO) -n $(BOLD) $(RED)"  [KO] "$(WHITE) && $(ECHO) $(BOLD) $< | rev | cut -d'/' -f 1 | rev
+		@gcc -g $(CFLAGS) -c -o $@ $^ && $(ECHO) -n $(BOLD) $(GREEN)"  [OK] "$(WHITE) || $(ECHO) -n $(BOLD) $(RED)"  [KO] "$(WHITE) && $(ECHO) $(BOLD) $< | rev | cut -d'/' -f 1 | rev
