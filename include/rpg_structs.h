@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** structs
 ** File description:
-** 
+**
 */
 
 #ifndef RPG_STRUCTS_H
@@ -54,7 +54,7 @@ typedef struct enemy_dict {
 
 typedef struct map_node {
     sfVector2u pos;
-    int floor; //si on veux donner du relief sur les map 
+    int floor; //si on veux donner du relief sur les map
     int type;
     void (*fptr)(game_t *game); //si on veux trigger qqchse en passant dessus, comme un piege poison, ou ajouter des mob ou jsp
 }mapn_t;
@@ -103,6 +103,7 @@ typedef struct enemy_obj {
     int *spell_nodes;
     sfVector2f speed;
     sfVector2f pos;
+    sfIntRect *collider;
 }e_obj_t;
 
 typedef struct obj {
@@ -134,6 +135,7 @@ typedef struct player {
     spn_t **spell_nodes; //les spells débloqué/équipé
     sfVector2f speed;
     sfVector2f pos;
+    sfIntRect *collider;
 }player_t;
 
 typedef struct game {
