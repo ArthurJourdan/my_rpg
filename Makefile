@@ -79,6 +79,7 @@ SRC		=	${SRCDIR}main.c	\
 			$(OPTION)change_music_volume.c	\
 			\
 			$(DISPLAY)display_text_struct.c	\
+			$(DISPLAY)display_button.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
 

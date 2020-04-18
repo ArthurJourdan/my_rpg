@@ -9,24 +9,6 @@
 #include "button.h"
 #include "text.h"
 
-static void destroy_button(button_t *button)
-{
-    if (!button)
-        return;
-    if (button->name)
-        free(button->name);
-    if (button->text)
-        sfText_destroy(button->text);
-    if (button->rect)
-        sfRectangleShape_destroy(button->rect);
-    if (button->sound) {
-        sfSound_pause(button->sound);
-        sfSound_stop(button->sound);
-        sfSound_destroy(button->sound);
-    }
-    free(button);
-}
-
 static void destroy_text(text_t *text)
 {
     if (!text)
@@ -38,6 +20,23 @@ static void destroy_text(text_t *text)
     if (text->text_sfml)
         sfText_destroy(text->text_sfml);
     free(text);
+}
+static void destroy_button(button_t *button)
+{
+    if (!button)
+        return;
+    if (button->name)
+        free(button->name);
+    if (button->text)
+        destroy_text(button->text);
+    if (button->rect)
+        sfRectangleShape_destroy(button->rect);
+    if (button->sound) {
+        sfSound_pause(button->sound);
+        sfSound_stop(button->sound);
+        sfSound_destroy(button->sound);
+    }
+    free(button);
 }
 
 static void destroy_loops(scene_t *scene)
