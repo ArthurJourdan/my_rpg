@@ -14,9 +14,12 @@
 
 static void display_everything(global_t *global)
 {
+    static float frame_nb = 0;
+
+    frame_nb++;
     display_images(GW, SC_I);
-    display_buttons(GW, SC_B);
-    display_texts_struct(SC_T, GW, FPS);
+    display_buttons(global);
+    display_texts_struct(global, frame_nb);
     sfRenderWindow_display(GW);
     sfRenderWindow_clear(GW, sfBlack);
 }

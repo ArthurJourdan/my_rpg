@@ -8,6 +8,8 @@
 #include "my.h"
 #include "text.h"
 #include "sfml_tools.h"
+#include "global.h"
+#include "shorting_defines.h"
 
 static void draw_delay_letter(text_t *text, size_t count_time, size_t fps)
 {
@@ -25,8 +27,8 @@ static void draw_delay_letter(text_t *text, size_t count_time, size_t fps)
     }
 }
 
-static void draw_delay_text(text_t *text, sfRenderWindow *window
-, size_t count_time, size_t fps)
+static void draw_delay_text(text_t *text, sfRenderWindow *window,
+size_t count_time, size_t fps)
 {
     if ((float)(count_time / fps) >= text->appear_delay && text->letter_delay) {
         draw_delay_letter(text, count_time, fps);
@@ -36,17 +38,23 @@ static void draw_delay_text(text_t *text, sfRenderWindow *window
     }
 }
 
-void display_texts_struct(text_t **texts, sfRenderWindow *window, size_t fps)
+void display_text_struct(text_t *text, sfRenderWindow *window, size_t fps,
+size_t count_time)
 {
-    static size_t count_time = 0;
-
-    count_time++;
-    if (!texts || !window)
+    if (!text || !window)
         return;
-    for (size_t a = 0; texts[a]; a++) {
-        if (!texts[a]->timed)
-            display_one_text(window, texts[a]->text_sfml);
-        else
-            draw_delay_text(texts[a], window, count_time, fps);
+    if (!text->timed)
+        display_one_text(window, text->text_sfml);
+    else
+        draw_delay_text(text, window, count_time, fps);
+}
+
+void display_texts_struct(global_t *global, size_t count_time)
+{
+    for (size_t a = 0; SC_T[a]; a++) {
+        display_text_struct(SC_T[a], GW, FPS, count_time);
+    }
+    for (size_t b = 0; SC_B[b]; b++) {
+        display_text_struct(SC_B[b]->text, GW, FPS, count_time);
     }
 }

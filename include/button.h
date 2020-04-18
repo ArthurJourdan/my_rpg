@@ -12,13 +12,13 @@
 #include <SFML/System.h>
 #include <SFML/Audio.h>
 
-
+struct text;
 struct gui;
 struct global_vars;
 
 typedef struct button {
     char *name;
-    sfText *text;
+    struct text *text;
     sfRectangleShape *rect;
     sfSprite *sprite;
     unsigned short nb_animations;
@@ -32,7 +32,7 @@ typedef struct act_button {
     struct global_vars *(*action)(struct global_vars *);
 } actions_t;
 
-void display_buttons(sfRenderWindow *window, button_t **buttons);
+void display_buttons(struct global_vars *global);
 
 // CHANGE SCENE
 void change_scene(struct gui *scene_list, int scene_nb);

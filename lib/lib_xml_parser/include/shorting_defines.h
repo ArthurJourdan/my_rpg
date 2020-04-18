@@ -14,6 +14,7 @@
 #define GS global->scene_list
 
 #define ACT global->scene_list->index
+#define SC_A global->scene_list->scenes[global->scene_list->index]
 #define SC_B global->scene_list->scenes[global->scene_list->index]->buttons
 #define SC_I global->scene_list->scenes[global->scene_list->index]->images
 #define SC_T global->scene_list->scenes[global->scene_list->index]->texts

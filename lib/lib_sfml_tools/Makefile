@@ -48,7 +48,6 @@ SRC     =		$(INIT)create_image.c					\
 				\
 				$(ADD)add_texture.c						\
 				\
-				$(DISP)display_button.c					\
 				$(DISP)display_sprite.c					\
 				$(DISP)display_text.c					\
 

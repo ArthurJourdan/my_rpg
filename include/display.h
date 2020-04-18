@@ -14,7 +14,6 @@
 
 #include "text.h"
 
-void display_texts_struct(text_t **texts, sfRenderWindow *window, size_t fps);
 
 
 #endif /* !DISPLAY_H */
