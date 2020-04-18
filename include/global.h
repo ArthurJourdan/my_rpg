@@ -12,7 +12,7 @@
 #include <SFML/System.h>
 #include "time.h"
 #include <SFML/Audio.h>
-
+#include "rpg_structs.h"
 #include "maps.h"
 
 typedef struct global_vars {
@@ -21,7 +21,7 @@ typedef struct global_vars {
     size_t volume;
     gui_t *scene_list;
     maps_t **maps;
-    // game_t *game;
+    game_t game;
 } global_t;
 
 

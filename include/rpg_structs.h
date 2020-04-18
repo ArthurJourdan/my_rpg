@@ -25,6 +25,8 @@ enum scategory_e {blast, instant, sequence}; //un spell blast serait un spell qu
 
 //ceci serait les donnée loadé depuis les fichier, les "dictionnaire".
 
+struct game;
+
 typedef struct spell_hitboxes {
     sfIntRect *hitboxes;
     int lingering_time;
@@ -52,31 +54,14 @@ typedef struct enemy_dict {
     //behaviour_t behaviour; <-- faudrait trouver un moyen de scripter les mob via des struct (aucune idée de comment pour l'instant)
 }e_dict_t;
 
-typedef struct map_node {
-    sfVector2u pos;
-    int floor; //si on veux donner du relief sur les map
-    int type;
-    void (*fptr)(game_t *game); //si on veux trigger qqchse en passant dessus, comme un piege poison, ou ajouter des mob ou jsp
-}mapn_t;
-
-typedef struct map_dict {
-    int id;
-    mapn_t **mapnodes; //ceci serait les détails de chaque "cases" de la map
-    sfVector2u size;
-    void (*fptr)(game_t *game) //si on veut trigger un boss fight ou qqchse en entrant dans la piece/map
-}map_dict_t;
-
 typedef struct dict {
     sp_dict_t **spell_dict;
     e_dict_t **enemy_dict;
-    map_dict_t **map_dict;
 }dict_t;
-
 
 /**************************************/
 /*************** OBJs *****************/
 /**************************************/
-
 
 typedef struct spell_obj {
     bool obj_status;
@@ -125,8 +110,17 @@ typedef struct spell_node {
     sfKeyCode key;
     sfTime last_activation;
     int spell_id;
-    void (*spell_fptr)(game_t *game);
+    void (*spell_fptr)(struct game *game);
 }spn_t;
+
+typedef struct controls {
+    int up;
+    int left;
+    int down;
+    int right;
+    int left_spell;
+    int right_spell;
+}controls_t;
 
 typedef struct player {
     int max_hp;
@@ -136,10 +130,11 @@ typedef struct player {
     sfVector2f speed;
     sfVector2f pos;
     sfIntRect *collider;
+    controls_t controls;
 }player_t;
 
 typedef struct game {
-    player_t *player;
+    player_t player;
     obj_t *obj;
 }game_t;
 

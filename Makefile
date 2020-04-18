@@ -45,6 +45,11 @@ RMFLAGS		=	*.gcda *.gcno src/*.gcda src/*.gcno
 LIBDIR		=	./lib/
 
 SRCDIR		=	src/
+INITDIR		=	$(SRCDIR)init/
+
+INIT		=	$(INITDIR)init_controls.c	\
+			$(INITDIR)init_game.c		\
+			$(INITDIR)init_player.c
 
 BUTTON		=	$(SRCDIR)button_actions/
 
@@ -55,6 +60,7 @@ DESTROY		=	$(SRCDIR)destroy/
 OPTION		=	$(SRCDIR)options/
 
 SRC		=	${SRCDIR}main.c	\
+			$(INIT)	\
 			\
 			${SRCDIR}rpg_manager.c	\
 			\

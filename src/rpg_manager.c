@@ -5,7 +5,6 @@
 ** rpg_manager.c
 */
 
-#include "global.h"
 #include "my_rpg.h"
 #include "sfml_tools.h"
 
