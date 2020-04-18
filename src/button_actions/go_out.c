@@ -8,8 +8,8 @@
 #include "global.h"
 #include "gui.h"
 
-global_t *go_out(global_t *global)
+void go_out(global_t *global)
 {
     sfRenderWindow_close(GW);
-    return global;
+    
 }
