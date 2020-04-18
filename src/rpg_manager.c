@@ -48,7 +48,7 @@ void rpg_manager(global_t *global)
 {
     sfClock *game_clock = sfClock_create();
 
-    GS->index = HOME;
+    change_scene(GS, HOME);
     while (sfRenderWindow_isOpen(GW)) {
         rpg_game(global, game_clock);
     }

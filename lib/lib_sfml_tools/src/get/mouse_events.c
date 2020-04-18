@@ -40,7 +40,7 @@ bool right_mouse_pressed(sfEvent event)
 bool left_mouse_released(sfEvent event)
 {
     if (event.type == sfEvtMouseButtonReleased) {
-        if (event.mouseButton.button == sfMouseRight)
+        if (event.mouseButton.button == sfMouseLeft)
             return true;
     }
     return false;

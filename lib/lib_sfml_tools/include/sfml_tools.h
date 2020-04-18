@@ -51,13 +51,15 @@ void display_one_text(sfRenderWindow *window, sfText *text);
 // !TEXT
 
 // SOUND
-sfSound *create_sound(sfSound *sound, char *filepath, float volume);
+sfSound *create_sound(sfSound *sound, char *file, float volume, bool loop);
 
 void change_sound_volume(sfSound *sound, float increase);
 void set_sound_volume(sfSound *sound, float volume);
 // !SOUND
 
 // MUSIC
+sfMusic *create_music(sfMusic *music, char *file, float volume, bool loop);
+
 void set_music_volume(sfMusic *music, float volume);
 void change_music_volume(sfMusic *music, float increase);
 // !MUSIC

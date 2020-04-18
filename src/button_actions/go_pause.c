@@ -8,8 +8,7 @@
 #include "gui.h"
 #include "global.h"
 
-global_t *go_pause(global_t *global)
+void go_pause(global_t *global)
 {
     change_scene(GS, PAUSE);
-    return global;
 }
