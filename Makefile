@@ -54,6 +54,8 @@ DESTROY		=	$(SRCDIR)destroy/
 
 OPTION		=	$(SRCDIR)options/
 
+DISPLAY		=	$(SRCDIR)display/
+
 SRC		=	${SRCDIR}main.c	\
 			\
 			${SRCDIR}rpg_manager.c	\
@@ -75,6 +77,8 @@ SRC		=	${SRCDIR}main.c	\
 			\
 			$(OPTION)change_sounds_volume.c	\
 			$(OPTION)change_music_volume.c	\
+			\
+			$(DISPLAY)display_text_struct.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
 

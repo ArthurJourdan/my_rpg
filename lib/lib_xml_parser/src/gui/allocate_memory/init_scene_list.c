@@ -26,7 +26,7 @@ static scene_t *init_one_scene(scene_t *scene)
     scene->sound = NULL;
     scene->images = NULL;
     scene->music = NULL;
-    scene->text = NULL;
+    scene->texts = NULL;
     scene->buttons = NULL;
     scene->to_do = NULL;
     return scene;

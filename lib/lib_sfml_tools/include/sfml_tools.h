@@ -47,6 +47,7 @@ void set_texture_rect_shape(sfRectangleShape *rect_shape,
 sfText *create_text(sfText *text, char *str, char *font, int size);
 
 void display_texts(sfRenderWindow *window, sfText **texts);
+void display_one_text(sfRenderWindow *window, sfText *text);
 // !TEXT
 
 // SOUND

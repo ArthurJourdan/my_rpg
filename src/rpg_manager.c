@@ -10,12 +10,13 @@
 #include "sfml_tools.h"
 
 #include "events.h"
+#include "display.h"
 
 static void display_everything(global_t *global)
 {
     display_images(GW, SC_I);
     display_buttons(GW, SC_B);
-    display_texts(GW, SC_T);
+    display_texts_struct(SC_T, GW, FPS);
     sfRenderWindow_display(GW);
     sfRenderWindow_clear(GW, sfBlack);
 }
