@@ -11,22 +11,35 @@
 #include "shorting_defines.h"
 #include "xml_parser.h"
 #include "file.h"
+#include "text.h"
 
-static sfText **malloc_text(size_t nb_text)
+static text_t *init_one_text(text_t *text)
 {
-    sfText **text = NULL;
-
-    text = malloc(sizeof(sfText *) * (nb_text + 1));
-    if (!text)
-        return NULL;
-    for (size_t a = 0; a < nb_text; a++) {
-        text[a] = sfText_create();
-    }
-    text[nb_text] = NULL;
-    return text;
+    text->name = NULL;
+    text->string = NULL;
+    text->text_sfml = NULL;
+    text->timed = false;
+    text->letter_delay = 0;
+    text->appear_delay = 0;
 }
 
-static sfText **assign_names(sfText **text, char const **file, char *name_scene)
+static text_t **malloc_text(size_t nb_text)
+{
+    text_t **texts = NULL;
+
+    texts = malloc(sizeof(text_t *) * (nb_text + 1));
+    if (!texts)
+        return NULL;
+    for (size_t a = 0; a < nb_text; a++) {
+        if (!(texts[a] = malloc(sizeof(text_t))))
+            return NULL;
+        texts[a] = init_one_text(texts[a]);
+    }
+    texts[nb_text] = NULL;
+    return texts;
+}
+
+static text_t **assign_names(text_t **texts, char const **file, char *name_scene)
 {
     int nb_text = 0;
     size_t line = get_to_scene(file, name_scene);
@@ -39,13 +52,13 @@ static sfText **assign_names(sfText **text, char const **file, char *name_scene)
         if (get_pos_word_in_str("Text ", file[line]) != -1) {
             info = cpy_var_name(" name=", file[line]);
             if (info) {
-                sfText_setString(text[nb_text], info);
+                texts[nb_text]->name = my_strcpy(info);
                 info = free_char_to_null(info);
             }
             nb_text++;
         }
     }
-    return text;
+    return texts;
 }
 
 static size_t count_texts(char const **file, char *name_scene)
@@ -64,17 +77,17 @@ static size_t count_texts(char const **file, char *name_scene)
     return nb_text;
 }
 
-sfText **init_text_list(char const **file, char *name_scene)
+text_t **init_text_list(char const **file, char *name_scene)
 {
-    sfText **text = NULL;
+    text_t **texts = NULL;
     size_t nb_text = count_texts(file, name_scene);
 
     if (!nb_text) {
         return NULL;
     }
-    text = malloc_text(nb_text);
-    if (!text)
+    texts = malloc_text(nb_text);
+    if (!texts)
         return NULL;
-    text = assign_names(text, file, name_scene);
-    return text;
+    texts = assign_names(texts, file, name_scene);
+    return texts;
 }

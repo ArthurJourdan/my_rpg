@@ -1,12 +1,12 @@
 <Window heigth="900" width="1600" bbp="32"/>
 <Scene name="Starting_menu">
     <Image name="background" image="assets_rpg/GUI/assets_2/image/city.png" fullscreen="true"/>
-    <Button name="start_button" action="Start" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="50" heigth="75" width="200" size_text="40"/>
+    <Button name="start_button" letter_delay="1" action="Start" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="50" heigth="75" width="200" size_text="40"/>
     <Button name="option_button" action="Options" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Options" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="1350" y="50" heigth="75" width="200" size_text="40"/>
     <Button name="exit_button" action="Quit" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Quit" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="375" y="50" heigth="75" width="200" size_text="40"/>
-    <Text name="my_RPG" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="100" y="575" size="200"/>
+    <Text name="my_RPG" text="my_RPG" appear_delay="1" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="100" y="575" size="200"/>
     <Button name="How to play" action="Tutorial" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="50" x="1000" heigth="75" width="275"  size_text="40"/>
-    <Text name="Best score" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
+    <Text name="Best score" text="Best_score" letter_delay="1" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
 </Scene>
 <Scene name="Game">
     <Button name="Options" action="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="0" y="800"/>

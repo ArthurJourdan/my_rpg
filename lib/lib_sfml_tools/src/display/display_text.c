@@ -15,3 +15,9 @@ void display_texts(sfRenderWindow *window, sfText **texts)
             sfRenderWindow_drawText(window, texts[a], NULL);
         }
 }
+
+void display_one_text(sfRenderWindow *window, sfText *text)
+{
+    if (text && window)
+        sfRenderWindow_drawText(window, text, NULL);
+}

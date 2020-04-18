@@ -52,6 +52,7 @@ bool my_str_is_alphanum(char const *str);
 bool my_str_is_alpha(char const *str);
 bool my_str_is_upper(char const *str);
 bool my_str_is_num(char const *str);
+bool my_str_is_float(char const *str);
 bool my_char_is_nothing(char const c, bool alpha, bool num, bool up);
 bool my_str_is_nothing(char const *str);
 bool my_quotation_is_nothing(char const *str);
