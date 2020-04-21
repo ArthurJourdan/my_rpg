@@ -1,12 +1,12 @@
 <Window heigth="900" width="1600" bbp="32"/>
 <Scene name="Starting_menu">
     <Image name="background" image="assets_rpg/GUI/assets_2/image/city.png" fullscreen="true"/>
-    <Button name="start_button" action="Start" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="50" heigth="75" width="200" size_text="40"/>
-    <Button name="option_button" action="Options" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Options" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="1350" y="50" heigth="75" width="200" size_text="40"/>
-    <Button name="exit_button" action="Quit" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Quit" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="375" y="50" heigth="75" width="200" size_text="40"/>
-    <Text name="my_RPG" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="100" y="575" size="200"/>
-    <Button name="How to play" action="Tutorial" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="50" x="1000" heigth="75" width="275"  size_text="40"/>
-    <Text name="Best score" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
+    <Text name="my_RPG" text="my_RPG" appear_delay="1" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="100" y="575" size="200"/>
+    <Button name="start_button" letter_delay="1" action="Start" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="50" heigth="75" width="200" size="40"/>
+    <Button name="option_button" action="Options" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Options" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="1350" y="50" heigth="75" width="200" size="40"/>
+    <Button name="exit_button" action="Quit" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Quit" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="375" y="50" heigth="75" width="200" size="40"/>
+    <Button name="How to play" action="Tutorial" image="assets_rpg/GUI/assets_2/image/colorful_line_on_black_background-t2.jpg" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="50" x="1000" heigth="75" width="275"  size="40"/>
+    <Text name="Best score" text="Best_score" letter_delay="1" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
 </Scene>
 <Scene name="Game">
     <Button name="Options" action="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="0" y="800"/>
@@ -15,19 +15,19 @@
     <Music name="music1" audio="assets_rpg/GUI/assets_2/audio/it's raining.ogg" volume="40" loop="true"/>
 </Scene>
 <Scene name="Pause">
-    <Button name="Starting menu" action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="100" heigth="125" width="775"  size_text="100"/>
-    <Button name="Resume" action="Resume" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="900" heigth="125" width="415"  size_text="100"/>
-    <Button name="Leave game" action="Quit" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="160" x="700" heigth="125" width="615" size_text="100"/>
-    <Button name="Options" action="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="160" heigth="125" width="420" size_text="100"/>
+    <Button name="Starting menu" action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="100" heigth="125" width="775"  size="100"/>
+    <Button name="Resume" action="Resume" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="900" heigth="125" width="415"  size="100"/>
+    <Button name="Leave game" action="Quit" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="160" x="700" heigth="125" width="615" size="100"/>
+    <Button name="Options" action="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="160" heigth="125" width="420" size="100"/>
     <Text name="pause" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="0000" y="390" size="525"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets/audio/sonar.ogg" volume="40"/>
 </Scene>
 <Scene name="Options">
     <Image name="backg" image="assets_rpg/GUI/assets_2/image/city 2.jpg" fullscreen="true"/>
-    <Button name="Music ++" action="Volume_p" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="601" x="800" heigth="298" width="799" size_text="225"/>
-    <Button name="Music --" image="" action="Volume_m" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="301" x="800" heigth="300" width="799" size_text="225"/>
-    <Button name="Starting menu"  action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="1" x="800" heigth="150" width="799"  size_text="102"/>
-    <Button name="Resume" image="" action="Resume" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="151" x="800" heigth="150" width="799"  size_text="125"/>
+    <Button name="Music ++" action="Volume_p" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="601" x="800" heigth="298" width="799" size="225"/>
+    <Button name="Music --" image="" action="Volume_m" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="301" x="800" heigth="300" width="799" size="225"/>
+    <Button name="Starting menu"  action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="1" x="800" heigth="150" width="799"  size="102"/>
+    <Button name="Resume" image="" action="Resume" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="151" x="800" heigth="150" width="799"  size="125"/>
     <Text name="Options" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" x="100" y="20" size="100"/>
     <Text name="-" font="assets_rpg/GUI/assets/font/ostrich-regular.ttf" x="1500" y="601" size="225"/>
     <Text name="+" font="assets_rpg/GUI/assets/font/ostrich-regular.ttf" x="1500" y="301" size="225"/>
@@ -36,7 +36,7 @@
 </Scene>
 <Scene name="Tutorial">
     <Image name="backg" image="assets_rpg/GUI/assets_2/image/city red.png" fullscreen="true"/>
-    <Button name="Starting menu" action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="800" x="1175" heigth="75" width="400"  size_text="50"/>
+    <Button name="Starting menu" action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="800" x="1175" heigth="75" width="400"  size="50"/>
     <Text name="How to play" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="20" y="750" size="100"/>
     <Text name="The game is simple, all you have to do is to add turrets, trying to avoid rockets to fall on the ground." font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="100" size="25"/>
     <Text name="Your score is your money, one tower equal minus one in score, keep an eye on it." font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="150" size="25"/>

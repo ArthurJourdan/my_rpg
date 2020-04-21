@@ -54,10 +54,13 @@ DESTROY		=	$(SRCDIR)destroy/
 
 OPTION		=	$(SRCDIR)options/
 
+DISPLAY		=	$(SRCDIR)display/
+
 SRC		=	${SRCDIR}main.c	\
 			\
 			${SRCDIR}rpg_manager.c	\
 			\
+			$(BUTTON)change_scene.c	\
 			$(BUTTON)go_start.c	\
 			$(BUTTON)go_pause.c	\
 			$(BUTTON)go_out.c	\
@@ -74,6 +77,9 @@ SRC		=	${SRCDIR}main.c	\
 			\
 			$(OPTION)change_sounds_volume.c	\
 			$(OPTION)change_music_volume.c	\
+			\
+			$(DISPLAY)display_text_struct.c	\
+			$(DISPLAY)display_button.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
 
@@ -159,6 +165,6 @@ debug:		CFLAGS += -g
 debug:		re
 
 %.o :		%.c
-		@gcc -c -o $@ $^ $(CFLAGS) && $(ECHO) -n $(BOLD) $(GREEN)"  [OK] "$(WHITE) || $(ECHO) -n $(BOLD) $(RED)"  [KO] "$(WHITE) && $(ECHO) $(BOLD) $< | rev | cut -d'/' -f 1 | rev
+		@gcc -c -o $@ $^ $(CFLAGS) && $(ECHO) -n $(BOLD) $(GREEN)"  [OK] "$(WHITE) || $(ECHO) -n $(BOLD) $(RED)"  [KO] "$(WHITE) && $(ECHO) $(BOLD) $< | rev | cut -d'/' --fields 1 | rev
 
 .PHONY:		all title clean fclean re tests_run debug lib pre_building

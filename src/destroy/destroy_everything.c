@@ -6,7 +6,21 @@
 */
 
 #include "global.h"
+#include "button.h"
+#include "text.h"
 
+static void destroy_text(text_t *text)
+{
+    if (!text)
+        return;
+    if (text->name)
+        free(text->name);
+    if (text->string)
+        free(text->string);
+    if (text->text_sfml)
+        sfText_destroy(text->text_sfml);
+    free(text);
+}
 static void destroy_button(button_t *button)
 {
     if (!button)
@@ -14,7 +28,7 @@ static void destroy_button(button_t *button)
     if (button->name)
         free(button->name);
     if (button->text)
-        sfText_destroy(button->text);
+        destroy_text(button->text);
     if (button->rect)
         sfRectangleShape_destroy(button->rect);
     if (button->sound) {
@@ -27,9 +41,9 @@ static void destroy_button(button_t *button)
 
 static void destroy_loops(scene_t *scene)
 {
-    if (scene->text)
-        for (size_t a = 0; scene->text[a]; a++)
-            sfText_destroy(scene->text[a]);
+    if (scene->texts)
+        for (size_t a = 0; scene->texts[a]; a++)
+            destroy_text(scene->texts[a]);
     if (scene->images)
         for (size_t a = 0; scene->images[a]; a++)
             sfSprite_destroy(scene->images[a]);

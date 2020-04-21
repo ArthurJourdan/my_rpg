@@ -64,6 +64,7 @@ SRC     =	$(CHECK)my_strlen.c					\
 			$(NUM)my_getdigit.c					\
 			$(NUM)my_getfloat.c					\
 			$(NUM)my_reg_nbr.c					\
+			$(NUM)my_str_is_num.c				\
 			\
 			$(NUM)invert_bool.c					\
 			\
