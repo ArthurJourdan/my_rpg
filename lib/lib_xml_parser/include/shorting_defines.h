@@ -13,6 +13,10 @@
 #define FPS global->fps
 #define GS global->scene_list
 
+//game
+#define GG global->game
+#define GGP global->game.player
+
 #define ACT global->scene_list->index
 #define SC_B global->scene_list->scenes[global->scene_list->index]->buttons
 #define SC_I global->scene_list->scenes[global->scene_list->index]->images

@@ -115,27 +115,49 @@ typedef struct spell_node {
 
 typedef struct controls {
     int up;
+    bool on_up;
     int left;
+    bool on_left;
     int down;
+    bool on_down;
     int right;
+    bool on_right;
+    int sprint;
+    bool on_sprint;
     int left_spell;
     int right_spell;
+    int move_nb;
+    sfClock *clock;
 }controls_t;
 
 typedef struct player {
     int max_hp;
     int hp;
+    int mana;
     int status; //utiliser un mask pour les effets de status
     spn_t **spell_nodes; //les spells débloqué/équipé
-    sfVector2f speed;
+    float speed;
+    float hitbox;
+    sfVector2f collider;
     sfVector2f pos;
-    sfIntRect *collider;
+    sfSprite *sprite;
     controls_t controls;
 }player_t;
 
+typedef struct layers {
+    char ***maps;
+    sfSprite *layer1;
+    sfSprite *layer2;
+    sfSprite *coll;
+    sfImage *collision;
+    int nb;
+}layers_t;
+
 typedef struct game {
+    sfEvent event;
     player_t player;
     obj_t *obj;
+    layers_t layers;
 }game_t;
 
 /**************************************/

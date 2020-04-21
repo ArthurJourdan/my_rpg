@@ -9,16 +9,18 @@
 
 void init_controls(controls_t *controls)
 {
-    printf("controls1\n");
-    controls->up = 10;
-    printf("controls2\n");
+    controls->on_up = false;
+    controls->on_left = false;
+    controls->on_down = false;
+    controls->on_right = false;
+    controls->on_sprint = false;
+    controls->up = sfKeyZ;
     controls->left = sfKeyQ;
-    printf("controls3\n");
     controls->down = sfKeyS;
-    printf("controls4\n");
     controls->right = sfKeyD;
-    printf("controls5\n");
+    controls->sprint = sfKeyLShift;
     controls->left_spell = sfKeyA;
-    printf("controls6\n");
     controls->right_spell = sfKeyE;
+    controls->move_nb = 0;
+    controls->clock = sfClock_create();
 }

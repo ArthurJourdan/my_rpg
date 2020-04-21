@@ -46,10 +46,17 @@ LIBDIR		=	./lib/
 
 SRCDIR		=	src/
 INITDIR		=	$(SRCDIR)init/
+DISPDIR		=	$(SRCDIR)disp/
+GAMEDIR		=	$(SRCDIR)gameplay/
 
 INIT		=	$(INITDIR)init_controls.c	\
 			$(INITDIR)init_game.c		\
-			$(INITDIR)init_player.c
+			$(INITDIR)init_player.c		\
+			$(INITDIR)init_layers.c
+
+GAME		=	$(GAMEDIR)player_movement.c
+
+DISP		=	$(DISPDIR)display_player.c	\
 
 BUTTON		=	$(SRCDIR)button_actions/
 
@@ -61,6 +68,8 @@ OPTION		=	$(SRCDIR)options/
 
 SRC		=	${SRCDIR}main.c	\
 			$(INIT)	\
+			$(DISP)	\
+			$(GAME)	\
 			\
 			${SRCDIR}rpg_manager.c	\
 			\
@@ -94,6 +103,7 @@ SRC_LIB		=	xml_parser		\
 				sfml_tools		\
 				csfml-graphics	\
 				csfml-system	\
+				csfml-window	\
 				csfml-audio
 
 LIB_PATHS	=       $(LIBDIR)lib_my				\
@@ -106,7 +116,7 @@ LIB_PATHS	=       $(LIBDIR)lib_my				\
 LIBRARIES       =       $(SRC_LIB:%=-l%)
 #LIB_PATHS_FLAG  =       $(LIB_PATHS:%=-L%)
 
-LDFLAGS		=	-L./lib $(LIBRARIES) -lncurses
+LDFLAGS		=	-L./lib $(LIBRARIES) -lncurses -lm
 
 all:            $(NAME)
 

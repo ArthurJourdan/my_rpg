@@ -9,6 +9,6 @@
 
 void init_game(game_t *game)
 {
-    printf("game\n");
     init_player(&game->player);
+    init_layers(&game->layers);
 }
