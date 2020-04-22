@@ -20,12 +20,9 @@ sfVector2f get_mouse_coo(sfRenderWindow *win)
 
 void event_management(global_t *global)
 {
-    sfEvent event;
-
-    sfRenderWindow_pollEvent(GW, &event);
-    if (stopping_events(global, event))
+    if (stopping_events(global, GG.event))
         return;
-    if (button_management(global, event))
+    if (button_management(global, GG.event))
         return;
 
 }
