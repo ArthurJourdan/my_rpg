@@ -14,11 +14,13 @@
 #include <SFML/Audio.h>
 #include "rpg_structs.h"
 #include "maps.h"
+#include "gui.h"
 
 typedef struct global_vars {
     sfRenderWindow *window;
     size_t fps;
     size_t volume;
+    sfEvent event;
     gui_t *scene_list;
     maps_t **maps;
     game_t game;

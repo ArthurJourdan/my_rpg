@@ -10,13 +10,14 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
-#include "time.h"
 #include <SFML/Audio.h>
+#include "time.h"
 
 #include "my.h"
-#include "gui.h"
-#include "shorting_defines.h"
 #include "global.h"
+#include "gui.h"
+#include "text.h"
+#include "shorting_defines.h"
 
 typedef struct {
     char *type;
@@ -52,7 +53,7 @@ gui_t *malloc_all_structs(char const **file);
 
 bool init_scene_list(char const **file, gui_t *scene_list);
 button_t **init_button_list(char const **file, char *name_scene);
-sfText **init_text_list(char const **file, char *name_scene);
+text_t **init_text_list(char const **file, char *name_scene);
 sfSprite **init_image_list(char const **file, char *name_scene);
 sfRectangleShape *init_game_board(void);
 // ! MEMORY ALLOCATION

@@ -64,19 +64,11 @@ int scene_nb, int button_index)
 static void set_button_text(char const *line, gui_t *scene_list,
 int scene_nb, int index)
 {
-    char *font = cpy_var_name(" font=", line);
-    char *button_text = cpy_var_name(" text=", line);
     char *button_action = cpy_var_name(" action=", line);
-    int size = cpy_var_int(" size_text=", line);
-    sfVector2f pos = get_coordinates(line);
 
-    SCL_B[index]->text = create_text(SCL_B[index]->text, button_text,
-    font, size);
-    if (font)
-        free(font);
-    if (button_text)
-        free(button_text);
-    sfText_setPosition(SCL_B[index]->text, pos);
+    SCL_B[index]->text = malloc(sizeof(text_t));
+    SCL_B[index]->text->name = my_strcpy(SCL_B[index]->name);
+    set_any_text(line, SCL_B[index]->text);
     if (!button_action)
         return;
     for (size_t a = 0; a < ARRAY_SIZE(all_actions); a++) {

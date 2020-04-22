@@ -46,7 +46,7 @@ static void change_button_state(button_t *button, unsigned short state)
 
 static void activate_button(global_t *global, button_t *button, sfEvent event)
 {
-    if (event.type == sfEvtMouseButtonReleased) {
+    if (left_mouse_released(event)) {
         sfSound_play(button->sound);
         if (button->action)
             button->action(global);
@@ -63,9 +63,7 @@ bool button_management(global_t *global, sfEvent event)
     if ((nb_button = is_button_pressed(global)) != -1) {
         change_button_state(SC_B[nb_button], HOVER);
         sfRenderWindow_setMouseCursorVisible(GW, sfFalse);
-        if (event.type == sfEvtMouseButtonPressed ||
-        event.type == sfEvtMouseButtonReleased) {
-            printf("%i\n", nb_button);
+        if (left_mouse_pressed(event) || left_mouse_released(event)) {
             activate_button(global, SC_B[nb_button], event);
         }
     }
