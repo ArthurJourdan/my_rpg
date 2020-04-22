@@ -101,7 +101,7 @@ void player_movements(player_t *player, layers_t *layers)
 
     player_key_pressed(player);
     check_next_pos(player, &next_pos);
-    color = sfImage_getPixel((*layers).collision, next_pos.x, next_pos.y);
+    color = sfImage_getPixel((*layers).collision, next_pos.x + 1, next_pos.y + 1);
     if (color.r == 255 && color.g == 255 && color.b == 255 &&
         next_pos.x > 0 && next_pos.x < 1920 &&
         next_pos.y > 0 && next_pos.y < 1080) {
