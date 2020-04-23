@@ -36,12 +36,12 @@ static void rpg_game(global_t *global, sfClock *game_clock)
     if (nb_fram >= 1.0f) {
         sfClock_restart(game_clock);
         for (float a = 0; a < nb_fram; a++) {
+            sfRenderWindow_pollEvent(GW, &GG.event);
+            event_management(global);
             if (ACT == GAME) {
                 display_player(GW, GGP, GG.layers);
                 gameplay(global);
             }
-            sfRenderWindow_pollEvent(GW, &GG.event);
-            event_management(global);
             display_everything(global);
             // if (GS[ACT]->to_do)
             // GS[ACT]->to_do(global);

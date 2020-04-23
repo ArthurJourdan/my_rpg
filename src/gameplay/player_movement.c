@@ -97,29 +97,10 @@ void check_next_pos(player_t *player, sfVector2f *next_pos)
 void player_movements(player_t *player, layers_t *layers)
 {
     sfVector2f next_pos = {player->pos.x, player->pos.y};
-    sfColor color;
 
     player_key_pressed(player);
     check_next_pos(player, &next_pos);
-    color = sfImage_getPixel((*layers).collision, next_pos.x + 1, next_pos.y + 1);
-    if (color.r == 255 && color.g == 255 && color.b == 255 &&
-        next_pos.x > 0 && next_pos.x < 1920 &&
-        next_pos.y > 0 && next_pos.y < 1080) {
-        line_player_deplacement(player);
-        diag_player_deplacement(player);
-    } else if (color.r == 255 && color.g == 0 && color.b == 0) {
-        layers->nb++;
-        if (player->pos.x > 1350)
-            player->pos.x = 100;
-        else if (player->pos.x < 300)
-            player->pos.x = 1550;
-        if (player->pos.y > 600)
-            player->pos.y = 100;
-        else if (player->pos.y < 300)
-            player->pos.y = 900;
-        my_putmap(layers,
-                  layers->maps[0][layers->nb % 7],
-                  layers->maps[1][layers->nb % 7],
-                  layers->maps[2][layers->nb % 7]);
-    }
+    move_check(next_pos, player, layers);
+    swap_map(next_pos, player, layers);
+    player_dash(next_pos, player, layers);
 }

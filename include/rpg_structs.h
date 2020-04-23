@@ -122,11 +122,13 @@ typedef struct controls {
     bool on_down;
     int right;
     bool on_right;
-    int sprint;
-    bool on_sprint;
+    int dash;
+    bool on_dash;
+    bool dash_enable;
     int left_spell;
     int right_spell;
     int move_nb;
+    sfClock *dash_clock;
     sfClock *clock;
 }controls_t;
 
@@ -136,16 +138,28 @@ typedef struct player {
     int mana;
     int status; //utiliser un mask pour les effets de status
     spn_t **spell_nodes; //les spells débloqué/équipé
+    float max_speed;
     float speed;
     float hitbox;
+    bool idle;
     sfVector2f collider;
     sfVector2f pos;
     sfSprite *sprite;
     controls_t controls;
+    sfTime time;
+    int move;
+    int frame;
 }player_t;
+
+typedef struct maze {
+    char *lay1;
+    char *lay2;
+    char *coll;
+}maze_map_t;
 
 typedef struct layers {
     char ***maps;
+    maze_map_t **maze;
     sfSprite *layer1;
     sfSprite *layer2;
     sfSprite *coll;

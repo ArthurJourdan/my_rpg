@@ -16,5 +16,4 @@ void event_management(global_t *global)
         return;
     if (button_management(global, GG.event))
         return;
-
 }

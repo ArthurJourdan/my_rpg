@@ -48,11 +48,15 @@ SRCDIR		=	src/
 INITDIR		=	$(SRCDIR)init/
 DISPDIR		=	$(SRCDIR)disp/
 GAMEDIR		=	$(SRCDIR)gameplay/
+TOOLDIR		=	$(SRCDIR)tools/
 
 INIT		=	$(INITDIR)init_controls.c	\
 			$(INITDIR)init_game.c		\
 			$(INITDIR)init_player.c		\
 			$(INITDIR)init_layers.c
+
+TOOLS		=	$(TOOLDIR)colorcmp.c	\
+			$(TOOLDIR)image_cmp.c
 
 GAME		=	$(GAMEDIR)player_movement.c
 
@@ -71,6 +75,7 @@ DISPLAY		=	$(SRCDIR)display/
 SRC		=	${SRCDIR}main.c	\
 			$(INIT)	\
 			$(DISP)	\
+			$(TOOLS)\
 			$(GAME)	\
 			\
 			${SRCDIR}rpg_manager.c	\

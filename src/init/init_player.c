@@ -22,7 +22,9 @@ void put_sprite(player_t *player, char *filepath)
 
 void init_player(player_t *player)
 {
-    player->speed = 10;
+    player->max_speed = 4;
+    player->speed = 4;
+    player->idle = true;
     player->pos = (sfVector2f){200, 500};
     player->hitbox = HITBOX;
     player->collider = COLLIDER;
