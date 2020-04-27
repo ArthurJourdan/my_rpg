@@ -62,9 +62,8 @@ maps_t **init_maps(char dir_path[], sfRenderWindow *window)
     if (!dir_path || !is_dir_openable(dir_path) || !maps)
         return NULL;
     each_dir_path = get_filepaths(dir_path, DT_DIR);
-    if (!each_dir_path)
-        return NULL;
-    for (size_t a = 0; maps[a] && each_dir_path[a]; a++) {
+    my_dprintf(1, "each_dir_path ==\n %A\n", each_dir_path);
+    for (size_t a = 0; each_dir_path[a]; a++) {
         maps[a] = set_one_struct(each_dir_path[a], window);
         if (!maps[a])
             break;

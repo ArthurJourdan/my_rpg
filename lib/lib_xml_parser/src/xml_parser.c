@@ -57,8 +57,8 @@ global_t *xml_parser(char const *global_filepath)
         return NULL;
     if (!(global = init_global_vars(global_filepath, global)))
         return NULL;
-    // if (!(global->maps = init_all_maps(xml_files->maps , GW)))
-    //     return NULL;
+    if (!(global->maps = init_all_maps(xml_files->maps , GW)))
+         return NULL;
     if (!(global->scene_list = fill_in_data_gui(xml_files->gui, GW)))
         return NULL;
     free_xml_filepaths(xml_files);

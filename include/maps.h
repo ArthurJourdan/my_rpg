@@ -27,4 +27,7 @@ maps_t **init_struct_arr_map(char dir_path[]);
 
 maps_t **init_maps(char dir_path[], sfRenderWindow *window);
 
+void display_one_map(sfRenderWindow *window, maps_t *map);
+
+
 #endif /* MAPS_H */

@@ -14,8 +14,6 @@ bool is_file_openable(char const *filepath)
     int fd = -1;
 
     if (!filepath || my_str_is_nothing(filepath)) {
-        my_dprintf(2, "%sFile not openable : ", RED);
-        my_dprintf(2, "missing filepath\n%s", DEFAULT);
         return false;
     }
     fd = open(filepath, O_RDONLY);
@@ -32,8 +30,6 @@ bool is_file_fopenable(char const *filepath)
     FILE *fd = NULL;
 
     if (!filepath || my_str_is_nothing(filepath)) {
-        my_dprintf(2, "%sFile not openable : ", RED);
-        my_dprintf(2, "missing filepath\n%s", DEFAULT);
         return false;
     }
     fd = fopen(filepath, "r");
@@ -50,8 +46,6 @@ bool is_dir_openable(char const *filepath)
     DIR *fd = NULL;
 
     if (!filepath || my_str_is_nothing(filepath)) {
-        my_dprintf(2, "%sDirectory not openable :", RED);
-        my_dprintf(2, " missing filepath\n%s", DEFAULT);
         return false;
     }
     fd = opendir(filepath);

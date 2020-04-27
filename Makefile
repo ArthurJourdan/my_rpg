@@ -81,6 +81,7 @@ SRC		=	${SRCDIR}main.c	\
 			\
 			$(DISPLAY)display_text_struct.c	\
 			$(DISPLAY)display_button.c	\
+			$(DISPLAY)display_map.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
 

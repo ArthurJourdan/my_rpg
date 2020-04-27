@@ -8,10 +8,11 @@
 #ifndef SHORTING_DEFINES_H
 #define SHORTING_DEFINES_H
 
-#define GM global->scene_list
+#define GSC global->scene_list
 #define GW global->window
 #define FPS global->fps
 #define GS global->scene_list
+#define GM global->maps
 
 #define ACT global->scene_list->index
 #define SC_A global->scene_list->scenes[global->scene_list->index]
