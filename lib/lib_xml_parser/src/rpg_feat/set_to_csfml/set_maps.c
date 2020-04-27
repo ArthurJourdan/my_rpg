@@ -40,7 +40,6 @@ static maps_t *set_one_struct(char *dir_path, sfRenderWindow *window)
         return NULL;
     if (!(files = get_filepaths_maps(dir_path, DT_REG)))
         return map;
-    my_dprintf(1, "each file path ==\n%A\n", files);
     if (!(map = malloc(sizeof(maps_t)))) {
         free_double_char_arr(files);
         return NULL;

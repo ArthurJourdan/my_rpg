@@ -19,7 +19,6 @@ maps_t **init_struct_arr_map(char dir_path[])
     maps = malloc(sizeof(maps_t *) * (nb_dirs + 1));
     if (!maps)
         return NULL;
-    my_dprintf(1, "nb_dirs ==   %i\n", nb_dirs);
     maps[nb_dirs] = NULL;
     return maps;
 }
