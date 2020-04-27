@@ -22,7 +22,7 @@ char *cpy_var_name(char var_name[], char const *line)
 char *cpy_var_name_double_arr(char ward[], char var_name[], char *file[])
 {
     char *var = NULL;
-    size_t pos = get_pos_word_in_double_arr(ward, (char const **)file);
+    size_t pos = get_pos_word_in_arr(ward, (char const **)file);
 
     if (pos == -1)
         return NULL;

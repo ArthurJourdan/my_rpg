@@ -25,8 +25,8 @@ char **my_two_str_to_arr(char *str1, char *str2, bool do_free)
 
 char **my_arrcat(char **arr1, char **arr2, bool free)
 {
-    size_t len1 = my_arrlen((char const * const *)arr1);
-    size_t len2 = my_arrlen((char const * const *)arr2);
+    size_t len1 = my_arrlen(arr1);
+    size_t len2 = my_arrlen(arr2);
     size_t len3 = len1 + len2;
     char **arr3 = malloc(sizeof(char *) * (len3 + 1));
 

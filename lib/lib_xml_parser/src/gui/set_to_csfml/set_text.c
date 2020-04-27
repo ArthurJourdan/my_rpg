@@ -29,12 +29,14 @@ static int choose_text(char const *line, gui_t *scene_list, int scene_nb)
     return -1;
 }
 
-void set_delay_text(char const *line, text_t *text)
+static void set_delay_text(char const *line, text_t *text)
 {
     text->letter_delay = cpy_var_float(" letter_delay=", line);
     text->appear_delay = cpy_var_float(" appear_delay=", line);
     if (text->letter_delay || text->appear_delay) {
         text->timed = true;
+    } else {
+        text->timed = false;
     }
 }
 

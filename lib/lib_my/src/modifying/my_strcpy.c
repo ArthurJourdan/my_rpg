@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include "file.h"
 
 char *my_strcpy(char *str)
 {
@@ -48,9 +49,29 @@ char *my_str_cpy_until_char(char *str, char c)
     int len = 0;
     char *cpy = NULL;
 
+    while (str[len] && str[len++] != c);
+    cpy = malloc(sizeof(char) * (len + 1));
     if (!len)
         return NULL;
-    while (str[len] && str[++len] != c);
+    if (!cpy)
+        return NULL;
+    for (int a = 0; a < len; a++) {
+        cpy[a] = str[a];
+    }
+    cpy[len] = '\0';
+    return cpy;
+}
+
+char *my_str_cpy_until_str(char *str, char *cmp)
+{
+    int len = 0;
+    char *cpy = NULL;
+
+    if (!str || !cmp)
+        return NULL;
+    len = get_pos_word_in_str(cmp, str);
+    if (len == -1 || !len)
+        return my_strcpy(str);
     cpy = malloc(sizeof(char) * (len + 1));
     if (!cpy)
         return NULL;
@@ -63,17 +84,14 @@ char *my_str_cpy_until_char(char *str, char c)
 
 char *my_str_cpy_quotation(char *str)
 {
+    int pos = 0;
+    int len = 0;
     char *cpy = NULL;
-    size_t pos = 0;
-    size_t len = 0;
-    size_t str_len = my_strlen(str);
 
-    if (!str_len)
-        return NULL;
-    while (str[++pos] != '"' && pos < str_len);
-    while (str[++pos] != '"' && pos < str_len)
+    while (str[++pos] != '"');
+    while (str[++pos] != '"')
         len++;
-    if (pos == str_len)
+    if (pos == my_strlen(str) || !len)
         return NULL;
     pos -= len;
     cpy = malloc(sizeof(char) * (len + 1));

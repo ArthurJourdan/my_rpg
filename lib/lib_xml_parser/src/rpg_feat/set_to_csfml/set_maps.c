@@ -17,20 +17,17 @@ char **files, sfRenderWindow *window)
 {
     size_t b = 0;
 
-    map->layers = malloc(sizeof(sfSprite *) * nb_layer + 1);
+    map->layers = malloc(sizeof(sfSprite *) * (nb_layer));
     if (!map->layers)
         return;
-    for (size_t a = 0; a + 1 < nb_layer - 1; a++) {
-        map->layers[b] = NULL;
+    for (size_t a = 0; a < nb_layer - 1; a++) {
+        map->layers[a] = NULL;
         if (is_file_openable(files[a])) {
             map->layers[b++] = create_image_fullscreen(NULL, window, files[a]);
         }
     }
-    map->collision = NULL;
-    if (is_file_openable(files[nb_layer - 1]))
-        map->collision = create_image_fullscreen(NULL,
-        window, files[nb_layer - 1]);
-    map->layers[nb_layer] = NULL;
+    map->layers[nb_layer - 1] = NULL;
+    map->collision = create_image_fullscreen(NULL, window, files[nb_layer - 1]);
 }
 
 static maps_t *set_one_struct(char *dir_path, sfRenderWindow *window)
@@ -43,6 +40,7 @@ static maps_t *set_one_struct(char *dir_path, sfRenderWindow *window)
         return NULL;
     if (!(files = get_filepaths_maps(dir_path, DT_REG)))
         return map;
+    my_dprintf(1, "each file path ==\n%A\n", files);
     if (!(map = malloc(sizeof(maps_t)))) {
         free_double_char_arr(files);
         return NULL;
@@ -62,7 +60,6 @@ maps_t **init_maps(char dir_path[], sfRenderWindow *window)
     if (!dir_path || !is_dir_openable(dir_path) || !maps)
         return NULL;
     each_dir_path = get_filepaths(dir_path, DT_DIR);
-    my_dprintf(1, "each_dir_path ==\n %A\n", each_dir_path);
     for (size_t a = 0; each_dir_path[a]; a++) {
         maps[a] = set_one_struct(each_dir_path[a], window);
         if (!maps[a])

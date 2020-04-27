@@ -6,7 +6,6 @@
 */
 
 #include "my.h"
-#include "file.h"
 
 bool my_char_is_alpha_num(char const c, bool alpha, bool num, bool up)
 {

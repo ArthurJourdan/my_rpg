@@ -20,10 +20,6 @@ static void display_everything(global_t *global)
     display_images(GW, SC_I);
     display_buttons(global);
     display_texts_struct(global, frame_nb);
-
-    if (ACT == GAME)
-        display_one_map(GW, GM[0]);
-
     sfRenderWindow_display(GW);
     sfRenderWindow_clear(GW, sfBlack);
 }
