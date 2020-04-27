@@ -11,5 +11,4 @@
 void go_out(global_t *global)
 {
     sfRenderWindow_close(GW);
-    
 }
