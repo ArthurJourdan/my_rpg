@@ -103,6 +103,7 @@ typedef struct enemy_obj {
     int *spell_nodes;
     sfVector2f speed;
     sfVector2f pos;
+    sfIntRect *collider;
 }e_obj_t;
 
 typedef struct obj {
@@ -134,6 +135,7 @@ typedef struct player {
     spn_t **spell_nodes; //les spells débloqué/équipé
     sfVector2f speed;
     sfVector2f pos;
+    sfIntRect *collider;
 }player_t;
 
 typedef struct game {
