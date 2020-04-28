@@ -13,7 +13,7 @@
     <Sound name="soundbegining" audio="assets_rpg/GUI/assets_2/audio/music_trial_menu.ogg" volume="40"/>
 </Scene>
 <Scene name="Game">
-    <Button name="Options" action="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="0" y="800"/>
+    <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="10" y="900"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets/audio/sonar.ogg" volume="40"/>
     <Music name="music1" audio="assets_rpg/GUI/assets_2/audio/it's raining.ogg" volume="40" loop="true"/>
 </Scene>
