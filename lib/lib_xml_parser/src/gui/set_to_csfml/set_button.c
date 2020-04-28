@@ -53,7 +53,7 @@ int scene_nb, int button_index)
     char *info = cpy_var_name(" image=", line);
     size_t info_nb = 0;
 
-    if (info) {
+    if (is_file_openable(info)) {
         add_texture_RectShape(SCL_B[button_index]->rect, info);
         info = free_char_to_null(info);
         info_nb = cpy_var_int(" nb_animations=", line);

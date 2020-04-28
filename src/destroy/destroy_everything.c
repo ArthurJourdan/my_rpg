@@ -23,8 +23,6 @@ static void destroy_text(text_t *text)
 }
 static void destroy_button(button_t *button)
 {
-    sfSoundBuffer *soundbuff = NULL;
-
     if (!button)
         return;
     if (button->name)
