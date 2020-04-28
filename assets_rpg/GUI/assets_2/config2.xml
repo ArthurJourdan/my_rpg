@@ -14,7 +14,6 @@
 </Scene>
 <Scene name="Game">
     <Button name="Options" action="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="0" y="800"/>
-    <Text name="score" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="0" y="00" size="50"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets/audio/sonar.ogg" volume="40"/>
     <Music name="music1" audio="assets_rpg/GUI/assets_2/audio/it's raining.ogg" volume="40" loop="true"/>
 </Scene>
@@ -28,13 +27,11 @@
 </Scene>
 <Scene name="Options">
     <Image name="backg" image="assets_rpg/GUI/assets_2/image/city 2.jpg" fullscreen="true"/>
-    <Button name="Music ++" action="Volume_p" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="601" x="800" heigth="298" width="799" size="225"/>
-    <Button name="Music --" image="" action="Volume_m" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="301" x="800" heigth="300" width="799" size="225"/>
-    <Button name="Starting menu"  action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="1" x="800" heigth="150" width="799"  size="102"/>
-    <Button name="Resume" image="" action="Resume" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="151" x="800" heigth="150" width="799"  size="125"/>
-    <Text name="Options" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" x="100" y="20" size="100"/>
-    <Text name="-" font="assets_rpg/GUI/assets/font/ostrich-regular.ttf" x="1500" y="601" size="225"/>
-    <Text name="+" font="assets_rpg/GUI/assets/font/ostrich-regular.ttf" x="1500" y="301" size="225"/>
+    <Button name="Music ++" text="Music ++" action="Volume_p" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="601" x="800" heigth="298" width="799" size="225"/>
+    <Button name="Music --" text="Music --" image="" action="Volume_m" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="301" x="800" heigth="300" width="799" size="225"/>
+    <Button name="Starting menu"  text="Home" action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="1" x="800" heigth="150" width="799"  size="102"/>
+    <Button name="Resume" image="" text="Resume" action="Resume" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="151" x="800" heigth="150" width="799"  size="125"/>
+    <Text name="Options" text="Options" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" x="100" y="20" size="100"/>
     <Music name="music2" audio="assets_rpg/GUI/assets/audio/soundtrack_defcon.ogg" volume="40" loop="true"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets_2/audio/rebound.ogg" volume="40"/>
 </Scene>
@@ -45,7 +42,5 @@
     <Text name="first" text="The player must find the fountain" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="100" size="30"/>
     <Text name="second" text="find your way trhough the rooms" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="150" size="30"/>
     <Text name="third" text="by killing ennemies or dashing as fast as possible" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="200" size="30"/>
-    <Text name="You are not satisfied with the assets, buttons or texts?" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="500" size="25"/>
-    <Text name="Take a look at the XML file and customize it however you want !" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="600" size="40"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets_2/audio/rebound.ogg" volume="40"/>
 </Scene>
