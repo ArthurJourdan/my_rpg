@@ -17,8 +17,9 @@
 #include "shorting_defines.h"
 
 typedef struct maps {
-    sfSprite **layers;
-    sfSprite *collision;
+    sfSprite **layers1;
+    sfSprite **layers2;
+    sfImage *colision;
 } maps_t;
 
 char **get_filepaths_maps(char *dirpath, unsigned char type);

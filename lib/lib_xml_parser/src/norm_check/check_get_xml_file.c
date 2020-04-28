@@ -9,7 +9,7 @@
 #include "xml_parser.h"
 #include "print.h"
 
-static char * const MSG = "\n%sFile -> %s -> good\n%s\n";
+static char * const MSG = "\n%sFile -> %s -> good\n\n%s";
 
 char **check_get_xml_file(char const *fp)
 {

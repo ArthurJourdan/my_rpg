@@ -20,7 +20,7 @@ gui_t *fill_in_data_gui(char const *filepath, sfRenderWindow *window)
 
     file = check_get_xml_file(filepath);
     if (!file) {
-        my_dprintf(2, "%sFile : %s not good\n\n%s", RED, filepath, DEFAULT);
+        my_dprintf(2, "%sFile -> %s -> not good\n\n%s", RED, filepath, DEFAULT);
         return NULL;
     }
     scene_list = malloc_all_structs((char const **)file);

@@ -42,9 +42,9 @@
     <Image name="backg" image="assets_rpg/GUI/assets_2/image/city red.png" fullscreen="true"/>
     <Button name="Starting menu" action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="800" x="1175" heigth="75" width="400"  size="50"/>
     <Text name="How to play" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="20" y="750" size="100"/>
-    <Text name="The game is simple, all you have to do is to add turrets, trying to avoid rockets to fall on the ground." font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="100" size="25"/>
-    <Text name="Your score is your money, one tower equal minus one in score, keep an eye on it." font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="150" size="25"/>
-    <Text name="Use your mouse or trackpad to interact with the buttons, press 'escape' in game to pause and 'suppr' to end it." font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="250" size="25"/>
+    <Text name="first" text="The player must find the fountain" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="100" size="30"/>
+    <Text name="second" text="find your way trhough the rooms" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="150" size="30"/>
+    <Text name="third" text="by killing ennemies or dashing as fast as possible" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="200" size="30"/>
     <Text name="You are not satisfied with the assets, buttons or texts?" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="500" size="25"/>
     <Text name="Take a look at the XML file and customize it however you want !" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="100" y="600" size="40"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets_2/audio/rebound.ogg" volume="40"/>

@@ -10,6 +10,8 @@
 
 void display_one_map(sfRenderWindow *window, maps_t *map)
 {
-    if (window && map)
-        display_images(window, map->layers);
+    if (window && map) {
+        display_images(window, map->layers1);
+        display_images(window, map->layers2);
+    }
 }

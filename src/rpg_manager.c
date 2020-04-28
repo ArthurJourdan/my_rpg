@@ -33,7 +33,6 @@ static void rpg_game(global_t *global, sfClock *game_clock)
         sfClock_restart(game_clock);
         for (float a = 0; a < nb_fram; a++) {
             // if (ACT == GAME) {
-
             // }
             display_everything(global);
             // if (GS[ACT]->to_do)
