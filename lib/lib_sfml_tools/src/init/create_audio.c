@@ -21,7 +21,6 @@ sfSound *create_sound(sfSound *sound, char *file, float volume, bool loop)
         if (!sound_buffer)
             return sound;
         sfSound_setBuffer(sound, sound_buffer);
-        // sfSoundBuffer_destroy(sound_buffer);
         if (volume >= 0) {
             sfSound_setVolume(sound, volume);
         sfSound_setLoop(sound, loop);

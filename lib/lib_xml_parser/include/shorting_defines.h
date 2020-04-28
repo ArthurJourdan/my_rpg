@@ -16,6 +16,8 @@
 
 //game
 #define GG global->game
+#define GGW global->game.width
+#define GGH global->game.height
 #define GGP global->game.player
 #define GGPC global->game.player.controls
 #define GGPD global->game.player.dash

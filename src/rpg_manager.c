@@ -16,6 +16,11 @@ static void display_everything(global_t *global)
     static float frame_nb = 0;
 
     frame_nb++;
+    if (ACT == GAME) {
+        display_layer1(GW, global);
+        display_player(GW, global);
+        display_layer2(GW, global);
+    }
     display_images(GW, SC_I);
     display_buttons(global);
     display_texts_struct(global, frame_nb);
@@ -25,7 +30,10 @@ static void display_everything(global_t *global)
 
 static void gameplay(global_t *global)
 {
-    player_movements(global);
+    event_management(global);
+    if (ACT == GAME) {
+        player_movements(global);
+    }
 }
 
 static void rpg_game(global_t *global, sfClock *game_clock)
@@ -37,17 +45,12 @@ static void rpg_game(global_t *global, sfClock *game_clock)
         sfClock_restart(game_clock);
         for (float a = 0; a < nb_fram; a++) {
             sfRenderWindow_pollEvent(GW, &GG.event);
-            event_management(global);
-            if (ACT == GAME) {
-                gameplay(global);
-                display_player(GW, global);
-            }
+            gameplay(global);
             display_everything(global);
             // if (GS[ACT]->to_do)
             // GS[ACT]->to_do(global);
         }
     }
-
 }
 
 void rpg_manager(global_t *global)

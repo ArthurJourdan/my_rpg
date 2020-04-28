@@ -9,6 +9,8 @@
 
 void init_game(global_t *global)
 {
+    GGW = sfRenderWindow_getSize(GW).x;
+    GGH = sfRenderWindow_getSize(GW).y;
     init_player(global);
     init_layers(global);
 }

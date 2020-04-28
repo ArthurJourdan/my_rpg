@@ -182,11 +182,6 @@ typedef struct layers {
     char **dante_maps;
     maze_map_t **maze_maps;
     sfVector2i pos;
-    sfSprite *layer1;
-    sfSprite *layer2;
-    sfSprite *coll;
-    sfImage *collision;
-    int nb;
 }layers_t;
 
 typedef struct game {
@@ -194,6 +189,8 @@ typedef struct game {
     player_t player;
     obj_t *obj;
     layers_t layers;
+    int width;
+    int height;
 }game_t;
 
 /**************************************/

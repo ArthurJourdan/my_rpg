@@ -7,15 +7,15 @@
 
 #include "my_rpg.h"
 
-
-
 void init_maze_map(global_t *global)
 {
     char **temp = maze_main();
 
     GGLDM = malloc(sizeof(char *) * 8);
+    GGLMM = malloc(sizeof(maze_map_t *) * 7);
     for (int i = 0; i != 7; i++) {
         GGLDM[i] = malloc(sizeof(char) * 8);
+        GGLMM[i] = malloc(sizeof(maze_map_t) * 7);
         for (int j = 0; j != 7; j++) {
             GGLDM[i][j] = temp[i + 2][j + 2];
         }
