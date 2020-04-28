@@ -77,7 +77,6 @@ typedef struct dict {
 /*************** OBJs *****************/
 /**************************************/
 
-
 typedef struct spell_obj {
     bool obj_status;
     int id;
@@ -90,6 +89,7 @@ typedef struct spell_obj {
     sfVector2f starting_pos;
     sfVector2f speed;
     sfVector2f pos;
+    sfIntRect *collider;
     float range;
 }s_obj_t;
 
@@ -121,7 +121,13 @@ typedef struct sprites {
     sfSprite **maps;
 }spr_t;
 
+typedef struct player_inventory {
+    spn_t **spell_nodes;
+    int nb_spells;
+} player_invent_t;
+
 typedef struct spell_node {
+    sfSprite *spell_image;
     sfKeyCode key;
     sfTime last_activation;
     int spell_id;
@@ -132,7 +138,7 @@ typedef struct player {
     int max_hp;
     int hp;
     int status; //utiliser un mask pour les effets de status
-    spn_t **spell_nodes; //les spells débloqué/équipé
+    player_invent_t *p_invent;
     sfVector2f speed;
     sfVector2f pos;
     sfIntRect *collider;
