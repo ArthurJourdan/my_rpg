@@ -3,3 +3,4 @@
 <FPS fps="60"/>
 <GUI path="assets_rpg/GUI/assets_2/config2.xml"/>
 <Maps path="assets_rpg/images/maps/"/>
+<Game path="assets_rpg/images/config_game.xml"/>

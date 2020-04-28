@@ -59,6 +59,6 @@ void display_texts_struct(global_t *global, size_t count_time)
     if (SC_B) {
         for (size_t b = 0; SC_B[b]; b++) {
             display_text_struct(SC_B[b]->text, GW, FPS, count_time);
-        }
+         }
     }
 }

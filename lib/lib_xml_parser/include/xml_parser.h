@@ -27,6 +27,7 @@ typedef struct {
 typedef struct paths {
     char *gui;
     char *maps;
+    char *game;
 } filepaths_t;
 
 global_t *xml_parser(char const *global_filepath);

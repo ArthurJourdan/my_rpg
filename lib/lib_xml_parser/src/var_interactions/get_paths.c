@@ -29,11 +29,11 @@ static filepaths_t *missing_message(char * const fp_missing, char **file)
 filepaths_t *get_filepaths_xml(const char *global_file_filepath)
 {
     filepaths_t *files = malloc(sizeof(filepaths_t));
-    char **file = check_get_xml_file(global_file_filepath);
+    char **file = NULL;
 
     if (!files)
         return NULL;
-    if (!file) {
+    if (!(file = check_get_xml_file(global_file_filepath))) {
         free(files);
         return NULL;
     }
@@ -43,6 +43,9 @@ filepaths_t *get_filepaths_xml(const char *global_file_filepath)
     if (!(files->maps = cpy_var_name_double_arr("Maps", " path=", file))) {
         return missing_message("Maps", file);
     }
+    /*if (!(files->game = cpy_var_name_double_arr("Game", " path=", file))) {
+        return missing_message("Game", file);
+    }*/
     free_double_char_arr(file);
     return files;
 }
