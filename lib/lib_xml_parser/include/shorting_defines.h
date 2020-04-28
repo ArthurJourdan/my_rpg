@@ -23,6 +23,8 @@
 #define GGL global->game.layers
 #define GGLM global->game.layers.maze
 #define GGLMM global->game.layers.maze_maps
+#define GGLDM global->game.layers.dante_maps
+#define GGLP global->game.layers.pos
 
 #define ACT global->scene_list->index
 #define SC_A global->scene_list->scenes[global->scene_list->index]

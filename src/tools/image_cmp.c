@@ -28,21 +28,27 @@ void swap_map(sfVector2f next, global_t *global)
 {
     sfColor color = sfImage_getPixel(GGL.collision, next.x, next.y);
 
-    if (my_colorcmp(color, sfRed)) {
-        GGL.nb++;
-        if (GGP.pos.x > 1350)
-            GGP.pos.x = 100;
-        else if (GGP.pos.x < 300)
-            GGP.pos.x = 1550;
-        if (GGP.pos.y > 600)
-            GGP.pos.y = 100;
-        else if (GGP.pos.y < 300)
-            GGP.pos.y = 900;
-        my_putmap(global,
-                  GGL.maps[0][GGL.nb % 7],
-                  GGL.maps[1][GGL.nb % 7],
-                  GGL.maps[2][GGL.nb % 7]);
+    if (!my_colorcmp(color, sfRed))
+        return;
+//        GGL.nb++;
+    if (GGP.pos.x > 1350 && GGLMM[GGLP.y][GGLP.x + 1].is_open) {
+        GGP.pos.x = 100;
+        GGLP.x++;
+    } else if (GGP.pos.x < 300 && GGLMM[GGLP.y][GGLP.x - 1].is_open) {
+        GGP.pos.x = 1550;
+        GGLP.x--;
     }
+    if (GGP.pos.y > 600 && GGLMM[GGLP.y + 1][GGLP.x].is_open) {
+        GGP.pos.y = 100;
+        GGLP.y++;
+    } else if (GGP.pos.y < 300 && GGLMM[GGLP.y - 1][GGLP.x].is_open) {
+        GGP.pos.y = 900;
+        GGLP.y--;
+    }
+//        my_putmap(global,
+//                  GGL.maps[0][GGL.nb % 7],
+//                  GGL.maps[1][GGL.nb % 7],
+//                  GGL.maps[2][GGL.nb % 7]);
 }
 
 static void set_rotation_dash(global_t *global)
