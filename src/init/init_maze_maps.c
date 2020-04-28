@@ -7,10 +7,6 @@
 
 #include "my_rpg.h"
 
-void init_walls(global_t *global, int i, int j, char **temp)
-{
-}
-
 void init_maze_map(global_t *global)
 {
     char **temp = maze_main();
@@ -20,7 +16,6 @@ void init_maze_map(global_t *global)
         GGLMM[i] = malloc(sizeof(char) * 8);
         for (int j = 0; j != 7; j++) {
             GGLMM[i][j] = temp[i + 2][j + 2];
-            init_walls(global, i, j, temp);
         }
         GGLMM[i][7] = '\0';
     }

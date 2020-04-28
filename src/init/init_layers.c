@@ -9,7 +9,7 @@
 
 static const char LAYER1[47] = "assets_rpg/images/maps/donjon_3/donjon_3_l1.png";
 static const char LAYER2[47] = "assets_rpg/images/maps/donjon_3/donjon_3_l2.png";
-static const char COLLISION[47] = "assets_rpg/images/maps/donjon_3/donjon_3_lc.png";
+static const char COLLISION[53] = "assets_rpg/images/maps/donjon_3/donjon_3_colision.png";
 
 void my_putsprite(sfSprite **sprite, char *filepath)
 {
@@ -43,13 +43,13 @@ void put_into_map(global_t *global)
     GGL.maps[1][5] = my_strcpy((char *)"assets_rpg/images/maps/donjon_6/donjon_6_l2.png");
     GGL.maps[1][6] = my_strcpy((char *)"assets_rpg/images/maps/donjon_7/donjon_7_l2.png");
 
-    GGL.maps[2][0] = my_strcpy((char *)"assets_rpg/images/maps/donjon_1/donjon_1_lc.png");
-    GGL.maps[2][1] = my_strcpy((char *)"assets_rpg/images/maps/donjon_2/donjon_2_lc.png");
-    GGL.maps[2][2] = my_strcpy((char *)"assets_rpg/images/maps/donjon_3/donjon_3_lc.png");
-    GGL.maps[2][3] = my_strcpy((char *)"assets_rpg/images/maps/donjon_4/donjon_4_lc.png");
-    GGL.maps[2][4] = my_strcpy((char *)"assets_rpg/images/maps/donjon_5/donjon_5_lc.png");
-    GGL.maps[2][5] = my_strcpy((char *)"assets_rpg/images/maps/donjon_6/donjon_6_lc.png");
-    GGL.maps[2][6] = my_strcpy((char *)"assets_rpg/images/maps/donjon_7/donjon_7_lc.png");
+    GGL.maps[2][0] = my_strcpy((char *)"assets_rpg/images/maps/donjon_1/donjon_1_colision.png");
+    GGL.maps[2][1] = my_strcpy((char *)"assets_rpg/images/maps/donjon_2/donjon_2_colision.png");
+    GGL.maps[2][2] = my_strcpy((char *)"assets_rpg/images/maps/donjon_3/donjon_3_colision.png");
+    GGL.maps[2][3] = my_strcpy((char *)"assets_rpg/images/maps/donjon_4/donjon_4_colision.png");
+    GGL.maps[2][4] = my_strcpy((char *)"assets_rpg/images/maps/donjon_5/donjon_5_colision.png");
+    GGL.maps[2][5] = my_strcpy((char *)"assets_rpg/images/maps/donjon_6/donjon_6_colision.png");
+    GGL.maps[2][6] = my_strcpy((char *)"assets_rpg/images/maps/donjon_7/donjon_7_colision.png");
 }
 
 void init_maps_sprites(global_t *global)
