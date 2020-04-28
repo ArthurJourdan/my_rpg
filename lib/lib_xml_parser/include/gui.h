@@ -14,7 +14,6 @@
 #include <SFML/Audio.h>
 
 #include "my.h"
-
 #include "button.h"
 #include "text.h"
 
