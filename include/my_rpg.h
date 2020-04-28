@@ -30,6 +30,8 @@ void init_controls(global_t *global);
 void init_maze_map(global_t *global);
 
 /*DISP*/
+void display_layer1(sfRenderWindow *win, global_t *global);
+void display_layer2(sfRenderWindow *win, global_t *global);
 void display_player(sfRenderWindow *win, global_t *global);
 sfSprite ***spritesheet_load(animd_t *anim);
 sfSprite ***dash_spritesheet_load(animd_t *anim);

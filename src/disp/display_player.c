@@ -7,6 +7,16 @@
 
 #include "my_rpg.h"
 
+void display_layer1(sfRenderWindow *window, global_t *global)
+{
+    sfRenderWindow_drawSprite(window, GGL.layer1, NULL);
+}
+
+void display_layer2(sfRenderWindow *window, global_t *global)
+{
+    sfRenderWindow_drawSprite(window, GGL.layer2, NULL);
+}
+
 static void display_dash(sfRenderWindow *window, global_t *global)
 {
     sfSprite_setPosition(GGPD.dash[0][GGPD.frame], GGPD.pos);
@@ -24,10 +34,8 @@ void display_player(sfRenderWindow *window, global_t *global)
     int timer = time.microseconds - GGPT.microseconds;
 
     sfSprite_setPosition(GGP.sprite, GGP.pos);
-    sfRenderWindow_drawSprite(window, GGL.layer1, NULL);
     display_dash(window, global);
     sfRenderWindow_drawSprite(window, GGP.sprite, NULL);
-    sfRenderWindow_drawSprite(window, GGL.layer2, NULL);
     if (timer > 100000) {
         GGP.frame = ((GGP.frame == 2) ? 0 : GGP.frame + 1);
         GGP.time = sfClock_getElapsedTime(GGP.clock);
