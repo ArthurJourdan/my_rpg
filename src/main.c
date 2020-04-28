@@ -21,7 +21,7 @@ int main(int ac, char **av)
     global = xml_parser(av[1]);
     if (!global)
         return EXIT_FAILURE;
-    init_game(&global->game);
+    init_game(global);
     rpg_manager(global);
     return EXIT_SUCCESS;
 }

@@ -16,6 +16,7 @@
 /**************************************/
 
 enum side_e {ally, enemy};
+enum maze_e {UP, LEFT, DOWN, RIGHT};
 enum stype_e {targeted, range, status};
 enum scategory_e {blast, instant, sequence}; //un spell blast serait un spell qui ne s'active que quand il touche l'ennemis, un spell instan s'activerai instant (genre un lance-flamme) , un sequence serait un spell plus élaboré avec plusieurs étape (genre une onde de choque qui se propage lentement ou jsp)
 
@@ -113,6 +114,13 @@ typedef struct spell_node {
     void (*spell_fptr)(struct game *game);
 }spn_t;
 
+typedef struct anim_data {
+    char *spritesheet;
+    int anim_count;
+    int *anim_frames;
+    sfVector2i unit_size;
+}animd_t;
+
 typedef struct controls {
     int up;
     bool on_up;
@@ -132,6 +140,14 @@ typedef struct controls {
     sfClock *clock;
 }controls_t;
 
+typedef struct dash {
+    sfSprite ***dash;
+    int frame;
+    sfClock *clock;
+    sfVector2f pos;
+    float angle;
+}dash_t;
+
 typedef struct player {
     int max_hp;
     int hp;
@@ -142,23 +158,28 @@ typedef struct player {
     float speed;
     float hitbox;
     bool idle;
+    sfSprite ***ss;
+    dash_t dash;
     sfVector2f collider;
     sfVector2f pos;
     sfSprite *sprite;
     controls_t controls;
     sfTime time;
-    int move;
     int frame;
+    sfClock *clock;
 }player_t;
 
 typedef struct maze {
     char *lay1;
     char *lay2;
     char *coll;
+    bool walls[4];
+    bool is_open;
 }maze_map_t;
 
 typedef struct layers {
     char ***maps;
+    char **maze_maps;
     maze_map_t **maze;
     sfSprite *layer1;
     sfSprite *layer2;

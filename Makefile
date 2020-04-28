@@ -53,7 +53,8 @@ TOOLDIR		=	$(SRCDIR)tools/
 INIT		=	$(INITDIR)init_controls.c	\
 			$(INITDIR)init_game.c		\
 			$(INITDIR)init_player.c		\
-			$(INITDIR)init_layers.c
+			$(INITDIR)init_layers.c		\
+			$(INITDIR)init_maze_maps.c
 
 TOOLS		=	$(TOOLDIR)colorcmp.c	\
 			$(TOOLDIR)image_cmp.c
@@ -73,55 +74,59 @@ OPTION		=	$(SRCDIR)options/
 DISPLAY		=	$(SRCDIR)display/
 
 SRC		=	${SRCDIR}main.c	\
-			$(INIT)	\
-			$(DISP)	\
-			$(TOOLS)\
-			$(GAME)	\
-			\
-			${SRCDIR}rpg_manager.c	\
-			\
-			$(BUTTON)change_scene.c	\
-			$(BUTTON)go_start.c	\
-			$(BUTTON)go_pause.c	\
-			$(BUTTON)go_out.c	\
-			$(BUTTON)go_options.c	\
-			$(BUTTON)go_htp.c	\
+			$(INIT)		\
+			$(DISP)		\
+			$(TOOLS)	\
+			$(GAME)		\
+					\
+			${SRCDIR}rpg_manager.c		\
+							\
+			$(BUTTON)change_scene.c		\
+			$(BUTTON)go_start.c		\
+			$(BUTTON)go_pause.c		\
+			$(BUTTON)go_out.c		\
+			$(BUTTON)go_options.c		\
+			$(BUTTON)go_htp.c		\
 			$(BUTTON)go_starting_menu.c	\
 			$(BUTTON)go_back_to_game.c	\
-			$(BUTTON)music_volume.c	\
-			$(BUTTON)volume_sound.c	\
-			\
+			$(BUTTON)music_volume.c		\
+			$(BUTTON)volume_sound.c		\
+							\
 			$(EVENT)event_management.c	\
 			$(EVENT)button_management.c	\
 			$(EVENT)stopping_events.c	\
-			\
+							\
 			$(OPTION)change_sounds_volume.c	\
 			$(OPTION)change_music_volume.c	\
-			\
+							\
 			$(DISPLAY)display_text_struct.c	\
 			$(DISPLAY)display_button.c	\
-			\
+			$(DISPLAY)sprites_load.c	\
+			$(DISPLAY)dash_load.c		\
+							\
 			$(DESTROY)destroy_everything.c	\
 
 OBJ		=       $(SRC:.c=.o)
 
 NAME		=	my_rpg
 
-SRC_LIB		=	xml_parser		\
-				file			\
-				print			\
-				my				\
-				sfml_tools		\
-				csfml-graphics	\
-				csfml-system	\
-				csfml-window	\
-				csfml-audio
+SRC_LIB		=	xml_parser	\
+			file		\
+			print		\
+			my		\
+			maze		\
+			sfml_tools	\
+			csfml-graphics	\
+			csfml-system	\
+			csfml-window	\
+			csfml-audio
 
-LIB_PATHS	=       $(LIBDIR)lib_my				\
-					$(LIBDIR)lib_print			\
-					$(LIBDIR)lib_file			\
-					$(LIBDIR)lib_sfml_tools		\
-					$(LIBDIR)lib_xml_parser		\
+LIB_PATHS	=       $(LIBDIR)lib_my		\
+			$(LIBDIR)lib_print	\
+			$(LIBDIR)lib_file	\
+			$(LIBDIR)lib_sfml_tools	\
+			$(LIBDIR)lib_xml_parser	\
+			$(LIBDIR)lib_maze
 
 
 LIBRARIES       =       $(SRC_LIB:%=-l%)

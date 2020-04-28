@@ -10,32 +10,40 @@
 
 #include "global.h"
 #include "rpg_structs.h"
+#include "maze.h"
 
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)
 
+#define rect(l, t, w, h) (sfIntRect){l, t, w, h}
+
+/*MAIN*/
 void rpg_manager(global_t *global);
+char **maze_main(void);
 
 /*INIT*/
-void init_game(game_t *game);
-void init_player(player_t *player);
-void init_layers(layers_t *layers);
-void put_sprite(player_t *player, char *filepath);
-void init_controls(controls_t *controls);
+void init_game(global_t *global);
+void init_player(global_t *global);
+void init_layers(global_t *global);
+void put_sprite(global_t *global, char *filepath);
+void init_controls(global_t *global);
+void init_maze_map(global_t *global);
 
 /*DISP*/
-void display_player(sfRenderWindow *win, player_t player, layers_t layers);
+void display_player(sfRenderWindow *win, global_t *global);
+sfSprite ***spritesheet_load(animd_t *anim);
+sfSprite ***dash_spritesheet_load(animd_t *anim);
 
 /*GAME*/
-void line_player_deplacement(player_t *player);
-void diag_player_deplacement(player_t *player);
-void player_movements(player_t *player, layers_t *layers);
-void my_putmap(layers_t *layers, char *layer1, char *layer2, char *coll);
+void line_player_deplacement(global_t *global);
+void diag_player_deplacement(global_t *global);
+void player_movements(global_t *global);
+void my_putmap(global_t *global, char *layer1, char *layer2, char *coll);
 
 /*TOOLS*/
 bool my_colorcmp(sfColor color1, sfColor color2);
-void move_check(sfVector2f next, player_t *player, layers_t *layers);
-void swap_map(sfVector2f next, player_t *player, layers_t *layers);
-void player_dash(sfVector2f next, player_t *player, layers_t *layers);
+void move_check(sfVector2f next, global_t *global);
+void swap_map(sfVector2f next, global_t *global);
+void player_dash(sfVector2f next, global_t *global, sfColor dash_color);
 
 #endif /* !MY_RPG_H */

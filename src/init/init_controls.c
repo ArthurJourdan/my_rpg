@@ -7,22 +7,22 @@
 
 #include "my_rpg.h"
 
-void init_controls(controls_t *controls)
+void init_controls(global_t *global)
 {
-    controls->on_up = false;
-    controls->on_left = false;
-    controls->on_down = false;
-    controls->on_right = false;
-    controls->on_dash = false;
-    controls->dash_enable = true;
-    controls->up = sfKeyZ;
-    controls->left = sfKeyQ;
-    controls->down = sfKeyS;
-    controls->right = sfKeyD;
-    controls->dash = sfKeySpace;
-    controls->left_spell = sfKeyA;
-    controls->right_spell = sfKeyE;
-    controls->move_nb = 0;
-    controls->dash_clock = sfClock_create();
-    controls->clock = sfClock_create();
+    GGPC.on_up = false;
+    GGPC.on_left = false;
+    GGPC.on_down = false;
+    GGPC.on_right = false;
+    GGPC.on_dash = false;
+    GGPC.dash_enable = true;
+    GGPC.up = sfKeyZ;
+    GGPC.left = sfKeyQ;
+    GGPC.down = sfKeyS;
+    GGPC.right = sfKeyD;
+    GGPC.dash = sfKeySpace;
+    GGPC.left_spell = sfKeyA;
+    GGPC.right_spell = sfKeyE;
+    GGPC.move_nb = 0;
+    GGPC.dash_clock = sfClock_create();
+    GGPC.clock = sfClock_create();
 }

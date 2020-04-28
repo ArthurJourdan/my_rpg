@@ -7,8 +7,8 @@
 
 #include "my_rpg.h"
 
-void init_game(game_t *game)
+void init_game(global_t *global)
 {
-    init_player(&game->player);
-    init_layers(&game->layers);
+    init_player(global);
+    init_layers(global);
 }

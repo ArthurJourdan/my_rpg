@@ -16,6 +16,12 @@
 //game
 #define GG global->game
 #define GGP global->game.player
+#define GGPC global->game.player.controls
+#define GGPD global->game.player.dash
+#define GGPT global->game.player.time
+#define GGL global->game.layers
+#define GGLM global->game.layers.maze
+#define GGLMM global->game.layers.maze_maps
 
 #define ACT global->scene_list->index
 #define SC_A global->scene_list->scenes[global->scene_list->index]
@@ -33,5 +39,11 @@
 #define SCL_B scene_list->scenes[scene_nb]->buttons
 #define SCL_I scene_list->scenes[scene_nb]->images
 #define SCL_T scene_list->scenes[scene_nb]->texts
+
+//animd
+#define SPRSH animd->spritesheet
+#define AC animd->anim_count
+#define AF animd->anim_frames
+#define ASIZE animd->unit_size
 
 #endif /* !SHORTING_DEFINES_H */
