@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2019
-** my_dprintf
+** my_printf
 ** File description:
 ** print every type of variables
 */
@@ -8,7 +8,7 @@
 #include "my.h"
 #include "print.h"
 
-static const functions_t arr[11] = {
+static const functions_t arr[13] = {
     {'c', &my_putchar},
     {'s', &my_putstr},
     {'i', &my_putnbr},
@@ -19,7 +19,9 @@ static const functions_t arr[11] = {
     {'b', &my_putbin},
     {'S', &put_non_p},
     {'d', &my_putnbr},
-    {'a', &my_putdouble_arr}
+    {'a', &my_putdouble_arr},
+    {'A', &my_putdouble_arr_newline},
+    {'@', &my_putdouble_arr_one_newline}
 };
 
 static int print_str(int const output, char *str)

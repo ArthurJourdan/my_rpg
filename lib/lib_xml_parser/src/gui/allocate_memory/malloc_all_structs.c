@@ -18,6 +18,7 @@ gui_t *init_each_scene(char const **file, gui_t *scene_list)
         SL[a]->images = init_image_list(file, SL[a]->name);
         SL[a]->music = NULL;
         SL[a]->to_do = NULL;
+        SL[a]->sound = NULL;
     }
     return scene_list;
 }

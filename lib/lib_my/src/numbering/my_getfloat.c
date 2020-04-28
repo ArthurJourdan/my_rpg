@@ -1,44 +1,50 @@
 /*
 ** EPITECH PROJECT, 2020
-** my_getfloat.c
+** my_lib
 ** File description:
-** get the first float occurence
+** my_getfloat.c
 */
 
 #include "my.h"
 
-int next_dot(char *str)
+static float recurs_nbr(char *str)
 {
-    int counter = 0;
+    float nb = 0;
 
-    while (str[counter] != ',' && str[counter] != '.' && str[counter])
-        counter++;
-    return counter;
-}
-
-int count_numb(int nb)
-{
-    int counter = 0;
-
-    while (nb > 0) {
-        nb /= 10;
-        counter++;
+    for (size_t a = 0; *(str + a); a++) {
+        if (*(str + a) != '.') {
+            nb *= 10;
+            nb += str[a] - 48;
+        }
     }
-    return counter;
+    return nb;
 }
 
-float power(int nb, int pow)
+static float put_coma(float nb, char *str)
 {
-    if (!pow)
-        return 1;
-    return (nb * power(nb, pow - 1));
+    float divide = 1;
+
+    for (size_t a = 0; *(str + a); a++) {
+        divide *= 10;
+        if (*(str + a) == '.' || *(str + a) == ',') {
+            nb /= divide;
+            return nb;
+        }
+    }
+    return nb;
 }
 
 float my_getfloat(char *str)
 {
-    int left = my_getnbr(str);
-    int right = my_getnbr(str + next_dot(str));
-    float result = left + right / power(10, count_numb(right));
+    float nb = 0;
 
-    return result;
+    if (!str)
+        return 0;
+    if (str[0] == '-') {
+        nb = recurs_nbr(str + 1);
+        nb *= -1;
+    } else
+        nb = recurs_nbr(str);
+    nb = put_coma(nb, str);
+    return nb;
 }

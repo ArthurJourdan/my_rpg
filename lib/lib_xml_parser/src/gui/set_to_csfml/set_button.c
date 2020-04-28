@@ -29,6 +29,8 @@ static actions_t all_actions[] = {
     {"Volume_sound_down", &volume_sounds_down},
     {"Volume_all_sounds_up", &volume_all_sounds_up},
     {"Volume_all_sounds_down", &volume_all_sounds_down},
+    {"Increase_fps", &increase_fps},
+    {"Decrease_fps", &decrease_fps},
     {"Tutorial", &go_htp}
 };
 

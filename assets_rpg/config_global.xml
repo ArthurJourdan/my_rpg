@@ -2,4 +2,4 @@
 <Volume volume="50"/>
 <FPS fps="60"/>
 <GUI path="assets_rpg/GUI/assets_2/config2.xml"/>
-<Maps path="assets/images/maps/"/>
+<Maps path="assets_rpg/images/maps/"/>

@@ -6,8 +6,9 @@
 */
 
 #include <SFML/Graphics.h>
-#include "a_malloc.h"
 #include "my_rpg.h"
+#include "rpg_anim.h"
+#include "a_malloc.h"
 
 sfSprite *sprite_create(sfTexture *tex, sfIntRect *rect)
 {

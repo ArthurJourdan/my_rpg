@@ -21,8 +21,7 @@ char *my_strcat_path(char const *str1, char const *str2)
         return NULL;
     for (int a = 0; a < len1; a++)
         *(str3 + a) = *(str1 + a);
-    if (*(str1 + len1 - 1) == '/');
-    else {
+    if (*(str1 + len1 - 1) != '/') {
         *(str3 + len1) = '/';
         len1 += 1;
     }

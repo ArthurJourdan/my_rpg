@@ -9,7 +9,7 @@
 
 char **double_char_arr_cpy(char **src, bool free)
 {
-    size_t len = my_arrlen((char const * const *)src);
+    size_t len = my_arrlen(src);
     char **dup = malloc(sizeof(char *) * (len + 1));
 
     if (!dup)
@@ -23,7 +23,7 @@ char **double_char_arr_cpy(char **src, bool free)
     return dup;
 }
 
-void double_char_arr_dup(char const * const *src, char **new)
+void double_char_arr_dup(char **src, char **new)
 {
     size_t len = my_arrlen(src);
 

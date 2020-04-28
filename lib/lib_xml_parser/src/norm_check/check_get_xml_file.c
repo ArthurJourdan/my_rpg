@@ -7,15 +7,19 @@
 
 #include "file.h"
 #include "xml_parser.h"
+#include "print.h"
 
-char **check_get_xml_file(char const *filepath)
+static char * const MSG = "\n%sFile -> %s -> good\n\n%s";
+
+char **check_get_xml_file(char const *fp)
 {
-    char **file = get_entire_file_double_arr(filepath);
+    char **file = get_entire_file_double_arr(fp);
 
     if (!file || !file[0])
         return NULL;
     if (!is_it_xml((char const **)file)) {
         return NULL;
     }
+    my_dprintf(STDERR_FILENO, MSG, LIGHT_GREEN, fp, DEFAULT);
     return file;
 }

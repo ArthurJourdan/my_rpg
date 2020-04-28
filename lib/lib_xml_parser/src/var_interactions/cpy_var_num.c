@@ -26,7 +26,7 @@ int cpy_var_int(char var_name[], char const *line)
 
 int cpy_var_int_double_arr(char ward[], char var_name[], char *file[])
 {
-    size_t pos = get_pos_word_in_double_arr(ward, (char const **)file);
+    size_t pos = get_pos_word_in_arr(ward, (char const **)file);
     int nb = 0;
 
     if (pos == -1)

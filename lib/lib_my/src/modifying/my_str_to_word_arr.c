@@ -6,35 +6,7 @@
 */
 
 #include "my.h"
-
-static bool is_word(char *str, size_t pos)
-{
-    if (*(str + pos) <= ' ') {
-        if (*(str + pos + 1) >= '!' && *(str + pos + 1) <= '~') {
-            return true;
-        }
-    }
-    return false;
-}
-
-static size_t count_words(char *str)
-{
-    size_t pos = 0;
-    size_t nb_words = 1;
-
-    if (!str)
-        return 0;
-    while (*(str + pos) <= ' ')
-        pos++;
-    while (*(str + pos)) {
-        if (is_word(str, pos)) {
-            nb_words++;
-            pos++;
-        }
-        pos++;
-    }
-    return nb_words;
-}
+#include "file.h"
 
 static size_t len_word(char *word)
 {
@@ -61,7 +33,7 @@ char **my_str_to_word_arr(char *str)
     size_t pos_in_str = 0;
     size_t wich_arr = 0;
     char **word_arr;
-    size_t nb_words = count_words(str);
+    size_t nb_words = count_words_in_str(str);
 
     if (!nb_words)
         return NULL;

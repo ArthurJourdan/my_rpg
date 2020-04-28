@@ -89,9 +89,10 @@ SRC		=	${SRCDIR}main.c	\
 			$(BUTTON)go_htp.c		\
 			$(BUTTON)go_starting_menu.c	\
 			$(BUTTON)go_back_to_game.c	\
-			$(BUTTON)music_volume.c		\
-			$(BUTTON)volume_sound.c		\
-							\
+			$(BUTTON)music_volume.c	\
+			$(BUTTON)volume_sound.c	\
+			$(BUTTON)change_fps.c	\
+			\
 			$(EVENT)event_management.c	\
 			$(EVENT)button_management.c	\
 			$(EVENT)stopping_events.c	\
@@ -104,6 +105,8 @@ SRC		=	${SRCDIR}main.c	\
 			$(DISPLAY)sprites_load.c	\
 			$(DISPLAY)dash_load.c		\
 							\
+			$(DISPLAY)display_map.c	\
+			\
 			$(DESTROY)destroy_everything.c	\
 
 OBJ		=       $(SRC:.c=.o)

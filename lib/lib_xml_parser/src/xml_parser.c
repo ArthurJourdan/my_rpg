@@ -20,7 +20,7 @@ gui_t *fill_in_data_gui(char const *filepath, sfRenderWindow *window)
 
     file = check_get_xml_file(filepath);
     if (!file) {
-        my_dprintf(2, "%sFile : %s not good\n\n%s", RED, filepath, DEFAULT);
+        my_dprintf(2, "%sFile -> %s -> not good\n\n%s", RED, filepath, DEFAULT);
         return NULL;
     }
     scene_list = malloc_all_structs((char const **)file);
@@ -57,8 +57,8 @@ global_t *xml_parser(char const *global_filepath)
         return NULL;
     if (!(global = init_global_vars(global_filepath, global)))
         return NULL;
-    // if (!(global->maps = init_all_maps(xml_files->maps , GW)))
-    //     return NULL;
+    if (!(global->maps = init_all_maps(xml_files->maps , GW)))
+         return NULL;
     if (!(global->scene_list = fill_in_data_gui(xml_files->gui, GW)))
         return NULL;
     free_xml_filepaths(xml_files);

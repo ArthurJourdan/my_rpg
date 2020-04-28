@@ -54,9 +54,8 @@ void rpg_manager(global_t *global)
 {
     sfClock *game_clock = sfClock_create();
 
-    GS->index = HOME;
-    sfRenderWindow_setKeyRepeatEnabled(GW, sfFalse);
     sfRenderWindow_setFramerateLimit(GW, 120);
+    change_scene(GS, HOME);
     while (sfRenderWindow_isOpen(GW)) {
         rpg_game(global, game_clock);
     }
