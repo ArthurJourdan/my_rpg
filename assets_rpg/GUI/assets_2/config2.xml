@@ -9,16 +9,16 @@
     <Text name="Best score" text="Best_score" letter_delay="1" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
 </Scene>
 <Scene name="Game">
-    <Button name="Options" action="Starting_menu" text="Menu" size="100" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="10" y="900"/>
+  <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="10" y="900"/>
     <Text name="score" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="0" y="00" size="50"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets/audio/sonar.ogg" volume="40"/>
     <Music name="music1" audio="assets_rpg/GUI/assets_2/audio/it's raining.ogg" volume="40" loop="true"/>
 </Scene>
 <Scene name="Pause">
-    <Button name="Starting menu" action="Starting_menu" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="100" heigth="125" width="775"  size="100"/>
-    <Button name="Resume" action="Resume" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="900" heigth="125" width="415"  size="100"/>
-    <Button name="Leave game" action="Quit" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="160" x="700" heigth="125" width="615" size="100"/>
-    <Button name="Options" action="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="160" heigth="125" width="420" size="100"/>
+    <Button name="Starting menu" action="Starting_menu" text="Menu" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="100" heigth="125" width="775"  size="100"/>
+    <Button name="Resume" action="Resume" text="Resume" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="900" heigth="125" width="415"  size="100"/>
+    <Button name="Leave game" action="Quit" text="Quit" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="160" x="700" heigth="125" width="615" size="100"/>
+    <Button name="Options" action="Options" text="Options" font="assets_rpg/GUI/assets_2/font/Demode.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" x="100" y="160" heigth="125" width="420" size="100"/>
     <Text name="pause" font="assets_rpg/GUI/assets_2/font/Demode.ttf" x="0000" y="390" size="525"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets/audio/sonar.ogg" volume="40"/>
 </Scene>
