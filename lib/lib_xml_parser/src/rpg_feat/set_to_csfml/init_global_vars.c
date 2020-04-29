@@ -18,6 +18,7 @@ global_t *init_global_vars(char const global_filepath[], global_t *global_struct
     global_struct->window = init_window((const char **)file);
     global_struct->fps = cpy_var_int_double_arr("FPS ", " fps=", file);
     global_struct->volume = cpy_var_int_double_arr("Volume ", " volume=", file);
+    global_struct->game.maze_size = cpy_var_int_double_arr("Maze_size ", " size=", file);
     free_double_char_arr(file);
     return global_struct;
 }

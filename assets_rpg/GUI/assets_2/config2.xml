@@ -9,7 +9,7 @@
     <Text name="Best score" text="Best_score" letter_delay="1" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
     <Text name="Welcome" text="Welcome to this beautiful menu!" letter_delay="1" font="assets_rpg/GUI/assets_2/font/Legionary.ttf" x="10" y="920" size="40"/>
     <Music name="music1" audio="assets_rpg/GUI/assets_2/audio/it's raining.ogg" volume="40" loop="true"/>
-    <Sound name="soundbegining" audio="assets_rpg/GUI/assets_2/audio/music_trial_menu.ogg" volume="40"/>
+    <Sound name="soundbegining" audio="assets_rpg/GUI/assets_2/audio/music_trial_menu.ogg" volume="10"/>
 </Scene>
 <Scene name="Game">
     <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="10" y="900"/>

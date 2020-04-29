@@ -9,19 +9,19 @@
 
 void init_maze_map(global_t *global)
 {
-    char **temp = maze_main();
+    char **temp = maze_main(GGM);
 
-    GGLDM = malloc(sizeof(char *) * 8);
-    GGLMM = malloc(sizeof(maze_map_t *) * 7);
-    for (int i = 0; i != 7; i++) {
-        GGLDM[i] = malloc(sizeof(char) * 8);
-        GGLMM[i] = malloc(sizeof(maze_map_t) * 7);
-        for (int j = 0; j != 7; j++) {
+    GGLDM = malloc(sizeof(char *) * (GGM + 1));
+    GGLMM = malloc(sizeof(maze_map_t *) * GGM);
+    for (int i = 0; i != GGM; i++) {
+        GGLDM[i] = malloc(sizeof(char) * (GGM + 1));
+        GGLMM[i] = malloc(sizeof(maze_map_t) * GGM);
+        for (int j = 0; j != GGM; j++) {
             GGLDM[i][j] = temp[i + 2][j + 2];
         }
-        GGLDM[i][7] = '\0';
+        GGLDM[i][GGM] = '\0';
     }
-    GGLDM[7] = NULL;
+    GGLDM[GGM] = NULL;
     for (size_t i = 0; GGLDM[i]; i++) {
         for (size_t j = 0; GGLDM[i][j]; j++)
             printf("%c", GGLDM[i][j]);

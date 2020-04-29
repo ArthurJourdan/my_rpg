@@ -191,6 +191,7 @@ typedef struct game {
     layers_t layers;
     int width;
     int height;
+    int maze_size;
 }game_t;
 
 /**************************************/
