@@ -1,1 +1,2 @@
 <Ennemy image="" nb_anim="" nb_images="" size_one="">
+<Spell id="0" spell_image="path" base_damage="20" mp_cost="10" cooldown="3" activation_radius="10" range="40" travel_speed="4">

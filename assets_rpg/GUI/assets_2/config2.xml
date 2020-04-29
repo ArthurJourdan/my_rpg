@@ -16,6 +16,7 @@
     <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/GUI/assets_2/font/Demode.ttf" image="assets_rpg/GUI/assets_2/image/pixel sky.png" sound="assets_rpg/GUI/assets/audio/button.ogg" width="350" heigth="100" x="10" y="900"/>
     <Sound name="sound" audio="assets_rpg/GUI/assets/audio/sonar.ogg" volume="40"/>
     <Music name="music1" audio="assets_rpg/GUI/assets_2/audio/it's raining.ogg" volume="40" loop="true"/>
+    <Spell id="0" base_damage="20" mp_cost="10" cooldown="3" activation_radius="10" range="40" travel_speed="4">
 </Scene>
 <Scene name="Pause">
     <Button name="Starting menu" action="Starting_menu" text="Menu" font="assets_rpg/GUI/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/GUI/assets/audio/button.ogg" y="20" x="100" heigth="125" width="775"  size="100"/>

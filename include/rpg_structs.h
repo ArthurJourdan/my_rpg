@@ -45,6 +45,7 @@ typedef struct spell_dict {
     float range;
     float travel_speed;
     sphit_t **hitboxes;
+    sfSprite *spell_img;
 }sp_dict_t;
 
 typedef struct enemy_dict {
@@ -111,14 +112,14 @@ typedef struct sprites {
 typedef struct player_inventory {
     spn_t **spell_nodes;
     int nb_spells;
+    sfSprite *invent_bg;
 } player_invent_t;
 
 typedef struct spell_node {
-    sfSprite *spell_image;
     sfKeyCode key;
     sfTime last_activation;
     int spell_id;
-    void (*spell_fptr)(struct game *game);
+    void (*spell_fptr)(struct game*, int);
 }spn_t;
 
 typedef struct anim_data {
@@ -201,6 +202,7 @@ typedef struct game {
     player_t player;
     obj_t *obj;
     layers_t layers;
+    sp_dict_t **spell_dict; //all spells on the ground
 }game_t;
 
 /**************************************/
