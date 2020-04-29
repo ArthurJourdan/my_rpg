@@ -41,6 +41,8 @@ sfColor in, sfColor out, float outline_thickness);
 
 void set_texture_rect_shape(sfRectangleShape *rect_shape,
 unsigned short nb_animations, size_t size_tot);
+void next_texture_rect_shape(sfRectangleShape *rect_shape,
+ unsigned short nb_animations, size_t size_tot, size_t anim_wanted);
 // !RECTANGLESHAPE
 
 // TEXT
