@@ -40,23 +40,28 @@ void set_rectshape_color(sfRectangleShape *rectshape,
 sfColor in, sfColor out, float outline_thickness);
 
 void set_texture_rect_shape(sfRectangleShape *rect_shape,
- unsigned short nb_animations, size_t size_tot);
+unsigned short nb_animations, size_t size_tot);
+void next_texture_rect_shape(sfRectangleShape *rect_shape,
+ unsigned short nb_animations, size_t size_tot, size_t anim_wanted);
 // !RECTANGLESHAPE
 
 // TEXT
 sfText *create_text(sfText *text, char *str, char *font, int size);
 
 void display_texts(sfRenderWindow *window, sfText **texts);
+void display_one_text(sfRenderWindow *window, sfText *text);
 // !TEXT
 
 // SOUND
-sfSound *create_sound(sfSound *sound, char *filepath, float volume);
+sfSound *create_sound(sfSound *sound, char *file, float volume, bool loop);
 
 void change_sound_volume(sfSound *sound, float increase);
 void set_sound_volume(sfSound *sound, float volume);
 // !SOUND
 
 // MUSIC
+sfMusic *create_music(sfMusic *music, char *file, float volume, bool loop);
+
 void set_music_volume(sfMusic *music, float volume);
 void change_music_volume(sfMusic *music, float increase);
 // !MUSIC

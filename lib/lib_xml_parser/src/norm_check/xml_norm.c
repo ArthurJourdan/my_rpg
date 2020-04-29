@@ -58,10 +58,10 @@ bool is_it_xml(char const **file)
         &is_statement_quotation
     };
 
-    for (size_t a = 0; a < ARRAY_SIZE(norm); a++)
+    for (size_t a = 0; a < ARRAY_SIZE(norm); a++) {
         if (!full_check(file, norm[a])) {
             return false;
         }
-    my_dprintf(2, "%sXML file good\n%s\n", LIGHT_GREEN, DEFAULT);
+    }
     return true;
 }

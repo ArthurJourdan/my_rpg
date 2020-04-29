@@ -14,10 +14,11 @@ gui_t *init_each_scene(char const **file, gui_t *scene_list)
 {
     for (size_t a = 0; SL[a]; a++) {
         SL[a]->buttons = init_button_list(file, SL[a]->name);
-        SL[a]->text = init_text_list(file, SL[a]->name);
+        SL[a]->texts = init_text_list(file, SL[a]->name);
         SL[a]->images = init_image_list(file, SL[a]->name);
         SL[a]->music = NULL;
         SL[a]->to_do = NULL;
+        SL[a]->sound = NULL;
     }
     return scene_list;
 }

@@ -37,7 +37,7 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			\
 			$(SRCDIR)norm_check/xml_norm.c						\
 			$(SRCDIR)norm_check/check_norm_line_by_line.c		\
-			$(SRCDIR)norm_check/check_get_xml_file.c		\
+			$(SRCDIR)norm_check/check_get_xml_file.c			\
 			\
 			$(GUI)$(ALLOC)malloc_all_structs.c					\
 			$(GUI)$(ALLOC)init_scene_list.c						\
@@ -70,6 +70,7 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			\
 			$(RPG)$(SF_SET)init_global_vars.c					\
 			$(RPG)$(SF_SET)set_maps.c							\
+			$(RPG)$(SF_SET)order_maps.c							\
 			$(RPG)$(SF_SET)set_window.c							\
 
 OBJ     =	$(SRC:.c=.o)

@@ -17,12 +17,14 @@
 #include <errno.h>
 #include <string.h>
 
+#include <signal.h>
+
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
 #define MAX(a, b) ((a > b) ? a : b)
 #define MIN(a, b) ((a < b) ? a : b)
 
 #undef EXIT_FAILURE
-#define EXIT_FAILURE 84
+#define EXIT_FAILURE (84)
 
 #define N_U __attribute__((unused))
 #define UNUSED __attribute__((unused))
@@ -42,16 +44,18 @@ typedef struct {
 
 // CHECK
 size_t my_strlen(char const *str);
-size_t my_arrlen(char const * const *arr);
+size_t my_arrlen(char **arr);
 size_t my_triplearrlen(char **arr[]);
 size_t my_len_tot(char const *str);
 size_t my_int_arr_len(int *arr);
+size_t my_strlen_until_word(char * const str, char * const word);
 
 bool my_char_is_alpha_num(char const c, bool alpha, bool num, bool up);
 bool my_str_is_alphanum(char const *str);
 bool my_str_is_alpha(char const *str);
 bool my_str_is_upper(char const *str);
 bool my_str_is_num(char const *str);
+bool my_str_is_float(char const *str);
 bool my_char_is_nothing(char const c, bool alpha, bool num, bool up);
 bool my_str_is_nothing(char const *str);
 bool my_quotation_is_nothing(char const *str);
@@ -87,16 +91,23 @@ char **my_two_str_to_arr(char *str1, char *str2, bool free);
 char *my_strcpy(char *str);
 char *my_str_n_cpy(char *str, int size);
 char *my_str_cpy_until_char(char *str, char c);
+char *my_str_cpy_until_str(char *str, char *cmp);
 char *my_str_cpy_quotation(char *str);
 
 char **double_char_arr_cpy(char **src, bool free);
-void double_char_arr_dup(char const * const *src, char **new);
-char **add_str_to_word_arr(char **arr, char *str, bool free_arr, bool free_str);
+void double_char_arr_dup(char **src, char **new);
+char **add_str_to_arr(char **arr, char *str, bool free_arr, bool free_str);
+char **remove_str_to_arr(char **arr, size_t index_str, bool to_free);
 
 char **my_str_to_word_arr(char *str);
+char **my_sep_parser(char * const str, char * const sep);
 
 void sort_arr_alphabetically(char **tetriminos);
 char **reverse_double_arr(char **src, bool to_free);
+
+void replace_char_in_str(char *str, char const old, char new);
+void replace_char_in_arr(char **arr, char const old, char new);
+
 
 void my_memset_str(char *array, int c, size_t len);
 void my_memset_char_arr(char **arr, char *ptr, size_t len);

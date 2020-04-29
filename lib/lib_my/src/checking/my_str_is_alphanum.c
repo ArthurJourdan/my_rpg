@@ -54,14 +54,3 @@ bool my_str_upper(char const *str)
     }
     return true;
 }
-
-bool my_str_is_num(char const *str)
-{
-    if (!str)
-        return false;
-    for (int a = 0; *(str + a); a++) {
-        if (!my_char_is_alpha_num(*(str + a), false, true, false))
-            return false;
-    }
-    return true;
-}

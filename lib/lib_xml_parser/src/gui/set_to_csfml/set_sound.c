@@ -14,11 +14,12 @@
 sfSound *set_any_sound(char const *line)
 {
     char *sound_name = cpy_var_name(" sound=", line);
-    int volume = cpy_var_int(" volume=", line);
+    float volume = cpy_var_float(" volume=", line);
+    bool loop = cpy_var_bool(" loop=", line);
     sfSound *sound = NULL;
 
     if (sound_name) {
-        sound = create_sound(NULL, sound_name, volume);
+        sound = create_sound(NULL, sound_name, volume, loop);
         free(sound_name);
     }
     return sound;
@@ -27,21 +28,12 @@ sfSound *set_any_sound(char const *line)
 void set_sound(char const *line, gui_t *scene_list, size_t scene_nb,
 N_U sfRenderWindow *window)
 {
-    char *sound_name = NULL;
-    char *volume = NULL;
-    sfSoundBuffer *sound_buffer = NULL;
+    char *sound_name = cpy_var_name(" audio=", line);
+    float volume = cpy_var_float(" volume=", line);
+    bool loop = cpy_var_bool(" loop=", line);
 
-    sound_name = cpy_var_name("audio=", line);
     if (sound_name) {
-        sound_buffer = sfSoundBuffer_createFromFile(sound_name);
-        SL[scene_nb]->sound = sfSound_create();
-        sfSound_setBuffer(SL[scene_nb]->sound, sound_buffer);
+        SL[scene_nb]->sound = create_sound(NULL, sound_name, volume, loop);
         free(sound_name);
-        sfSoundBuffer_destroy(sound_buffer);
-        volume = cpy_var_name("volume=", line);
-        if (volume && my_str_is_num(volume)) {
-            sfSound_setVolume(SL[scene_nb]->sound, my_getnbr(volume));
-            free(volume);
-        }
     }
 }

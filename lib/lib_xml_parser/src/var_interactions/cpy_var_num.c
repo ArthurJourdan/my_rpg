@@ -26,7 +26,7 @@ int cpy_var_int(char var_name[], char const *line)
 
 int cpy_var_int_double_arr(char ward[], char var_name[], char *file[])
 {
-    size_t pos = get_pos_word_in_double_arr(ward, (char const **)file);
+    size_t pos = get_pos_word_in_arr(ward, (char const **)file);
     int nb = 0;
 
     if (pos == -1)
@@ -44,7 +44,7 @@ float cpy_var_float(char var_name[], char const *line)
     pos = get_pos_word_end_in_str(var_name, line);
     if (pos != -1)
         var = my_str_cpy_quotation((char *)line + pos - 2);
-    if (var && my_str_is_num(var)) {
+    if (var && my_str_is_float(var)) {
         nb = my_getfloat(var);
         free(var);
     }

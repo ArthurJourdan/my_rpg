@@ -64,21 +64,25 @@ SRC     =	$(CHECK)my_strlen.c					\
 			$(NUM)my_getdigit.c					\
 			$(NUM)my_getfloat.c					\
 			$(NUM)my_reg_nbr.c					\
+			$(NUM)my_str_is_num.c				\
 			\
 			$(NUM)invert_bool.c					\
 			\
 			$(MODIF)my_strcat.c					\
 			$(MODIF)my_strcat_path.c			\
 			$(MODIF)my_arrcat.c					\
-			$(MODIF)add_str_to_word_arr.c		\
+			$(MODIF)add_str_to_arr.c			\
+			$(MODIF)remove_str_to_arr.c			\
 			\
 			$(MODIF)my_strcpy.c					\
 			$(MODIF)my_double_arr_dup.c			\
 			\
 			$(MODIF)my_str_to_word_arr.c		\
+			$(MODIF)my_sep_parser.c				\
 			\
-			$(MODIF)reverse_arr.c				\
 			$(MODIF)sort_arr_alphabetically.c	\
+			\
+			$(MODIF)replace_char_in_str.c	\
 			\
 			$(MODIF)my_memset.c					\
 			\

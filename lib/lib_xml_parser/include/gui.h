@@ -14,8 +14,8 @@
 #include <SFML/Audio.h>
 
 #include "my.h"
-
 #include "button.h"
+#include "text.h"
 
 struct gui;
 
@@ -24,7 +24,7 @@ typedef struct scene {
     sfSound *sound;
     sfSprite **images;
     sfMusic *music;
-    sfText **text;
+    text_t **texts;
     button_t **buttons;
     void (*to_do)(struct gui *);
 } scene_t;

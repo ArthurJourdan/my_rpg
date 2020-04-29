@@ -41,7 +41,7 @@ static sfRenderWindow *set_window(char const *line)
 sfRenderWindow *init_window(char const **file)
 {
     sfRenderWindow *window = NULL;
-    ssize_t position = get_pos_word_in_double_arr("Window ", file);
+    ssize_t position = get_pos_word_in_arr("Window ", file);
 
     if (position != -1) {
         window = set_window(file[position]);

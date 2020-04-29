@@ -13,14 +13,17 @@
 #include "global.h"
 #include "maps.h"
 
-gui_t *fill_in_data_gui(char const *filepath, sfRenderWindow *window)
+static char * const FILE_ERR = "%sFile -> %s -> not good\n\n%s";
+static char * const MAP_ERR = "%sMap(s) not good\n%s";
+
+static gui_t *fill_in_data_gui(char const *filepath, sfRenderWindow *window)
 {
     char **file = NULL;
     gui_t *scene_list = NULL;
 
     file = check_get_xml_file(filepath);
     if (!file) {
-        my_dprintf(2, "%sFile : %s not good\n\n%s", RED, filepath, DEFAULT);
+        my_dprintf(2, FILE_ERR, RED, filepath, DEFAULT);
         return NULL;
     }
     scene_list = malloc_all_structs((char const **)file);
@@ -33,16 +36,37 @@ gui_t *fill_in_data_gui(char const *filepath, sfRenderWindow *window)
     return scene_list;
 }
 
-maps_t **init_all_maps(char *filepath, sfRenderWindow *window)
+static maps_t **init_all_maps(char *filepath, sfRenderWindow *window)
 {
     maps_t **maps = init_maps(filepath, window);
 
     if (!maps) {
-        my_dprintf(2, "%sMap(s) not good\n%s", RED, DEFAULT);
+        my_dprintf(2, MAP_ERR, RED, DEFAULT);
         return NULL;
     }
     return maps;
 }
+/*
+static anim_t *init_game_structs(char * const filepath)
+{
+    char **file = NULL;
+    ma_nouvelle_strct = NULL;
+
+    file = check_get_xml_file(filepath);
+    if (!file) {
+        my_dprintf(2, FILE_ERR, RED, filepath, DEFAULT);
+        return NULL;
+    }
+    malloc_ma_nouvelle_struct
+    if (!ma_nouvelle_strct) {
+        free_double_char_arr(file);
+        return NULL;
+    }
+    fill_in_ma_nouvelle_struct(file, ma_nouvelle_strct);
+    free_double_char_arr(file);
+    return ma_nouvelle_struct;
+}
+ */
 
 global_t *xml_parser(char const *global_filepath)
 {
@@ -57,10 +81,12 @@ global_t *xml_parser(char const *global_filepath)
         return NULL;
     if (!(global = init_global_vars(global_filepath, global)))
         return NULL;
-    // if (!(global->maps = init_all_maps(xml_files->maps , GW)))
-    //     return NULL;
+    if (!(global->maps = init_all_maps(xml_files->maps , GW)))
+         return NULL;
     if (!(global->scene_list = fill_in_data_gui(xml_files->gui, GW)))
         return NULL;
-    free_xml_filepaths(xml_files);
+/*    if (!(global->ma_nouvelle_struct = fill_in_data_gui(xml_files->game, GW)))
+        return NULL;
+  */  free_xml_filepaths(xml_files);
     return global;
 }

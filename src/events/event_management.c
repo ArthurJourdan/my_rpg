@@ -12,9 +12,8 @@
 
 void event_management(global_t *global)
 {
-    sfRenderWindow_pollEvent(GW, &global->event);
-    if (stopping_events(global, global->event))
+    if (stopping_events(global, GG.event))
         return;
-    if (button_management(global, global->event))
+    if (button_management(global, GG.event))
         return;
 }
