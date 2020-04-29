@@ -1,5 +1,4 @@
-<Window heigth="1080" width="1920" bbp="32"/>
-<Scene name="Home">
+<Scene name="Starting_menu">
     <Image name="background" image="assets/image/rocket_and_background/2D/bg.png" x="" y="" fullscreen="true"/>
     <Button name="Start" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="100" heigth="75" width="200" size_text="40"/>
     <Button name="Options" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="300" heigth="75" width="200" size_text="40"/>
@@ -38,7 +37,7 @@
     <Button name="Options" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="800" heigth="125" width="350" size_text="100"/>
     <Text name="pause" font="assets/font/JosefinSans-Thin.ttf" x="1600" y="800" size="100"/>
 </Scene>
-<Scene name="Option">
+<Scene name="Options">
     <Image name="backg" image="assets/image/rocket_and_background/2D/bg.png" x="0" y="0" fullscreen="true"/>
     <Button name="Music ++" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="1400" heigth="140" width="465" size_text="125"/>
     <Button name="Music --" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="800" heigth="140" width="465" size_text="125"/>
@@ -47,7 +46,7 @@
     <Text name="Options" font="assets/font/JosefinSans-Thin.ttf" x="100" y="800" size="100"/>
     <Button name="How to play" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="100" x="100" heigth="125" width="500"  size_text="100"/>
 </Scene>
-<Scene name="How to play">
+<Scene name="Tutorial">
     <Image name="backg" image="assets/image/rocket_and_background/2D/bg.png" fullscreen="true"/>
     <Button name="Starting menu" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="1200" heigth="125" width="600"  size_text="100"/>
     <Button name="Resume" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="800" heigth="125" width="300"  size_text="100"/>
