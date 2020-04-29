@@ -14,14 +14,17 @@
 #include "time.h"
 
 #include "my.h"
+
 #include "global.h"
 #include "gui.h"
 #include "text.h"
 #include "shorting_defines.h"
 
+#include "rpg_structs.h"
+
 typedef struct {
     char *type;
-    void (*ptr)(char const *, gui_t *, size_t, sfRenderWindow *window);
+    void (*ptr)(char const *, gui_t *, size_t, sfRenderWindow *);
 } gui_functions_t;
 
 typedef struct paths {
@@ -58,6 +61,13 @@ button_t **init_button_list(char const **file, char *name_scene);
 text_t **init_text_list(char const **file, char *name_scene);
 sfSprite **init_image_list(char const **file, char *name_scene);
 sfRectangleShape *init_game_board(void);
+
+// RPG_FEAT
+game_t malloc_all_game_structs(char **file);
+
+sp_dict_t **init_spell_dict(char **file);
+// ! RPG_FEAT
+
 // ! MEMORY ALLOCATION
 
 //SET TO SFML
@@ -72,6 +82,7 @@ void set_image(char const *line, gui_t *scene_list, size_t scene_nb,
 sfRenderWindow *window);
 void set_button(char const *line, gui_t *scene_list, size_t scene_nb,
 sfRenderWindow *window);
+void set_color_button(button_t *button, char *const line);
 void set_music(char const *line, gui_t *scene_list, size_t scene_nb,
 sfRenderWindow *window);
 void set_sound(char const *line, gui_t *scene_list, size_t scene_nb,
@@ -79,14 +90,16 @@ sfRenderWindow *window);
 sfSound *set_any_sound(char const *line);
 
 // RPG FEAT
-global_t *init_global_vars(char const global_filepath[], global_t *global_struct);
+global_t *init_global_vars(char const global_filepath[],
+global_t *global_struct);
 sfRenderWindow *init_window(char const **file);
 // ! GUI
 
+game_t set_game_structs(char **file, game_t game, global_t *global);
+
+void set_spell_dict(char **file, sp_dict_t **spell_dict);
 
 // ! RPG FEAT
-
-
 
 // ! SET TO SFML
 

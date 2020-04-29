@@ -17,8 +17,8 @@
 
 enum side_e {ally, enemy};
 enum maze_e {UP, LEFT, DOWN, RIGHT};
-enum stype_e {targeted, range, status};
-enum scategory_e {blast, instant, sequence}; //un spell blast serait un spell qui ne s'active que quand il touche l'ennemis, un spell instan s'activerai instant (genre un lance-flamme) , un sequence serait un spell plus élaboré avec plusieurs étape (genre une onde de choque qui se propage lentement ou jsp)
+enum stype_e {targeted, range, status, NONE_TYPE = -1};
+enum scategory_e {blast, instant, sequence, NONE_CAT = -1}; //un spell blast serait un spell qui ne s'active que quand il touche l'ennemis, un spell instan s'activerai instant (genre un lance-flamme) , un sequence serait un spell plus élaboré avec plusieurs étape (genre une onde de choque qui se propage lentement ou jsp)
 
 /**************************************/
 /*************** DICTS ****************/
@@ -191,6 +191,7 @@ typedef struct game {
     layers_t layers;
     int width;
     int height;
+    sp_dict_t **spell_dict;
 }game_t;
 
 /**************************************/

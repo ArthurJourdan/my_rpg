@@ -45,6 +45,7 @@ SRC     =		$(INIT)create_image.c					\
 				$(SET)set_texture_rect_shape.c			\
 				\
 				$(GET)mouse_events.c					\
+				$(GET)get_color_from_str.c				\
 				\
 				$(ADD)add_texture.c						\
 				\
