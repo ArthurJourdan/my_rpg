@@ -88,10 +88,10 @@ void check_next_pos(global_t *global, sfVector2f *next_pos)
         next_pos->x = 0;
     if (next_pos->y < 0)
         next_pos->y = 0;
-    if (next_pos->x > 1650)
-        next_pos->x = 1650;
-    if (next_pos->y > 990)
-        next_pos->y = 990;
+    if (next_pos->x > GGW)
+        next_pos->x = GGW;
+    if (next_pos->y > GGH)
+        next_pos->y = GGH;
 }
 
 void player_movements(global_t *global)
@@ -108,7 +108,10 @@ void player_movements(global_t *global)
     relat = (sfVector2f){next_pos.x - GGP.pos.x, next_pos.y - GGP.pos.y};
     next = (sfVector2f){next_pos.x + SIGN(relat.x) * 165, next_pos.y + SIGN(relat.y) * 165};
     next = (sfVector2f){((next.x > 0) ? next.x : 1), ((next.y > 0) ? next.y : 1)};
-    next = (sfVector2f){((next.x < 1650) ? next.x : 1649), ((next.y < 990) ? next.y : 989)};
-    color = sfImage_getPixel(GGL.collision, next.x, next.y);
+    next = (sfVector2f){((next.x < GGW) ? next.x : GGW - 1),
+                        ((next.y < GGH) ? next.y : GGH - 1)};
+    color = sfImage_getPixel(GGLMM[GGLP.y][GGLP.x].coll,
+                             next.x * (float)1650 / (float)GGW,
+                             next.y * (float)990 / (float)GGH);
     player_dash(next_pos, global, color);
 }

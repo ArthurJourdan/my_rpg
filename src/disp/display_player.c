@@ -9,12 +9,12 @@
 
 void display_layer1(sfRenderWindow *window, global_t *global)
 {
-    sfRenderWindow_drawSprite(window, GGL.layer1, NULL);
+    sfRenderWindow_drawSprite(window, GGLMM[GGLP.y][GGLP.x].lay1, NULL);
 }
 
 void display_layer2(sfRenderWindow *window, global_t *global)
 {
-    sfRenderWindow_drawSprite(window, GGL.layer2, NULL);
+    sfRenderWindow_drawSprite(window, GGLMM[GGLP.y][GGLP.x].lay2, NULL);
 }
 
 static void display_dash(sfRenderWindow *window, global_t *global)

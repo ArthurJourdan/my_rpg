@@ -33,6 +33,7 @@ static void set_delay_text(char const *line, text_t *text)
 {
     text->letter_delay = cpy_var_float(" letter_delay=", line);
     text->appear_delay = cpy_var_float(" appear_delay=", line);
+    text->disappear_delay = cpy_var_float(" disappear_delay=", line);
     if (text->letter_delay || text->appear_delay) {
         text->timed = true;
     } else {

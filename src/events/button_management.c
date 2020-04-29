@@ -29,18 +29,26 @@ static int is_button_pressed(global_t *global)
 
 static void change_button_state(button_t *button, unsigned short state)
 {
-    // if (button->nb_animations) {
-    //     set_texture_rect_shape(button->rect, button->nb_animations,
-    //     button->size_tot);
-    // }
     if (state == IDLE) {
         sfRectangleShape_setOutlineColor(button->rect, sfWhite);
+        if (button->nb_animations) {
+            next_texture_rect_shape(button->rect, button->nb_animations,
+            button->size_tot, 0);
+        }
     }
     if (state == HOVER) {
         sfRectangleShape_setOutlineColor(button->rect, sfBlack);
+        if (button->nb_animations) {
+            next_texture_rect_shape(button->rect, button->nb_animations,
+            button->size_tot, 1);
+        }
     }
     if (state == CLICKED) {
         sfRectangleShape_setOutlineColor(button->rect, sfTransparent);
+        if (button->nb_animations) {
+            next_texture_rect_shape(button->rect, button->nb_animations,
+            button->size_tot, 2);
+ }
     }
 }
 

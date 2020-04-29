@@ -179,22 +179,18 @@ typedef struct player {
 }player_t;
 
 typedef struct maze {
-    char *lay1;
-    char *lay2;
-    char *coll;
-    bool walls[4];
+    sfSprite *lay1;
+    sfSprite *lay2;
+    sfImage *coll;
     bool is_open;
+    bool is_enemies;
 }maze_map_t;
 
 typedef struct layers {
     char ***maps;
-    char **maze_maps;
-    maze_map_t **maze;
-    sfSprite *layer1;
-    sfSprite *layer2;
-    sfSprite *coll;
-    sfImage *collision;
-    int nb;
+    char **dante_maps;
+    maze_map_t **maze_maps;
+    sfVector2i pos;
 }layers_t;
 
 typedef struct game {
@@ -203,6 +199,8 @@ typedef struct game {
     obj_t *obj;
     layers_t layers;
     sp_dict_t **spell_dict; //all spells on the ground
+    int width;
+    int height;
 }game_t;
 
 /**************************************/

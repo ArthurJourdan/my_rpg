@@ -43,6 +43,8 @@ size_t count_time)
 {
     if (!text || !window)
         return;
+    if (text->disappear_delay && count_time / fps > text->disappear_delay)
+        return;
     if (!text->timed)
         display_one_text(window, text->text_sfml);
     else

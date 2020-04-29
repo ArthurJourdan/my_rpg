@@ -23,6 +23,7 @@ typedef struct text {
     bool timed;
     float letter_delay;
     float appear_delay;
+    float disappear_delay;
 } text_t;
 
 text_t *set_any_text(char const *line, text_t *text);
