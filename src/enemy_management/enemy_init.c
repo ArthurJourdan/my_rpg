@@ -5,6 +5,8 @@
 ** c
 */
 
+#include "my_rpg.h"
+
 void enemy_init(game_t *game, int id, sfVector2f pos)
 {
     int i = 0;
@@ -19,5 +21,5 @@ void enemy_init(game_t *game, int id, sfVector2f pos)
     G_E_OBJ[i]->speed = {0};
     G_E_OBJ[i]->pos = pos;
     G_E_OBJ[i]->collider = G_E_DICT[id]->collider;
-    return;é
+    return;
 }
