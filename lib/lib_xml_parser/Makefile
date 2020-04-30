@@ -49,6 +49,7 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			\
 			$(GUI)$(SF_SET)set_images.c							\
 			$(GUI)$(SF_SET)set_button.c							\
+			$(GUI)$(SF_SET)set_color_button.c					\
 			$(GUI)$(SF_SET)set_music.c							\
 			$(GUI)$(SF_SET)set_sound.c							\
 			$(GUI)$(SF_SET)set_text.c							\
@@ -68,10 +69,17 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			\
 			$(RPG)$(ALLOC)init_maps_list.c						\
 			\
+			$(RPG)$(ALLOC)malloc_game_structs.c					\
+			$(RPG)$(ALLOC)init_spell_dict.c						\
+			\
 			$(RPG)$(SF_SET)init_global_vars.c					\
+			$(RPG)$(SF_SET)set_window.c							\
+			\
 			$(RPG)$(SF_SET)set_maps.c							\
 			$(RPG)$(SF_SET)order_maps.c							\
-			$(RPG)$(SF_SET)set_window.c							\
+			\
+			$(RPG)$(SF_SET)set_game_structs.c					\
+			$(RPG)$(SF_SET)set_spell_dict.c						\
 
 OBJ     =	$(SRC:.c=.o)
 

@@ -47,14 +47,18 @@ static bool malloc_scene(gui_t *scene_list, size_t nb_scene)
     return true;
 }
 
-static bool place_name(gui_t *sc_list, char const *name_sc, const int nb_line)
+static bool place_name(gui_t *sc_list, char *name_sc, int nb_line)
 {
+    if (!name_sc)
+        return false;
     for (size_t c = 0; c < ARRAY_SIZE(names); c++) {
         if (my_str_n_cmp(name_sc, names[c], my_strlen(names[c]))) {
             sc_list->scenes[c]->name = my_strcpy((char *)name_sc);
+            free(name_sc);
             return true;
         }
     }
+    free(name_sc);
     my_dprintf(2, "%sName of scene not correct at line %i\n", RED, nb_line);
     return false;
 }
@@ -66,9 +70,9 @@ static bool assign_names(gui_t *scene_list, char const **file)
     for (size_t line = 0; file[line]; line++) {
         if (get_pos_word_in_str("Scene", file[line]) != -1 &&
 get_pos_word_in_str("name=", file[line]) != -1) {
-            if ((name_scene = cpy_var_name("name=", file[line]))) {
-                place_name(scene_list, name_scene, line);
-                free(name_scene);
+            name_scene = cpy_var_name("name=", file[line]);
+            if (!place_name(scene_list, name_scene, line)) {
+                return false;
             }
         }
     }

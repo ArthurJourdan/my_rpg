@@ -13,7 +13,7 @@
 #include "sfml_tools.h"
 #include "button.h"
 
-static actions_t all_actions[] = {
+static actions_t const all_actions[] = {
     {"Useless", NULL},
     {"Quit", &go_out},
     {"Start", &go_start},
@@ -60,6 +60,8 @@ int scene_nb, int button_index)
         SCL_B[button_index]->nb_animations = info_nb;
         info_nb = cpy_var_int(" size_total=", line);
         SCL_B[button_index]->size_tot = info_nb;
+    } else {
+        sfRectangleShape_setFillColor(SCL_B[button_index]->rect, sfTransparent);
     }
 }
 
@@ -98,15 +100,13 @@ static sfRectangleShape *set_rectangle(char const *line)
 void set_button(char const *line, gui_t *scene_list, size_t scene_nb,
 N_U sfRenderWindow *window)
 {
-    int b_index = choose_button(line, scene_list, scene_nb);
+    int b_idx = choose_button(line, scene_list, scene_nb);
 
-    if (b_index == -1 || scene_nb == -1)
+    if (b_idx == -1 || scene_nb == -1)
         return;
-    SL[scene_nb]->buttons[b_index]->rect = set_rectangle(line);
-    if (get_pos_word_in_str(" image=", line) != -1) {
-        set_button_sprite(scene_list, line, scene_nb, b_index);
-    } else
-        sfRectangleShape_setFillColor(SCL_B[b_index]->rect, sfTransparent);
-    set_button_text(line, scene_list, scene_nb, b_index);
-    SCL_B[b_index]->sound = set_any_sound(line);
+    SCL_B[b_idx]->rect = set_rectangle(line);
+    set_color_button(SCL_B[b_idx], (char * const )line);
+    set_button_sprite(scene_list, line, scene_nb, b_idx);
+    set_button_text(line, scene_list, scene_nb, b_idx);
+    SCL_B[b_idx]->sound = set_any_sound(line);
 }
