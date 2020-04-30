@@ -11,6 +11,7 @@
 #include "global.h"
 #include "rpg_structs.h"
 #include "maze.h"
+#include "player.h"
 
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)

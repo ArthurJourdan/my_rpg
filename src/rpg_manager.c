@@ -20,6 +20,7 @@ static void display_everything(global_t *global)
         display_layer1(GW, global);
         display_player(GW, global);
         display_layer2(GW, global);
+        display_inventory(global);
     }
     display_images(GW, SC_I);
     display_buttons(global);

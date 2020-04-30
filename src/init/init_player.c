@@ -43,7 +43,7 @@ void put_sprite(global_t *global, char *filepath)
 
     GGP.sprite = sfSprite_create();
     sfSprite_setTexture(GGP.sprite, texture, false);
-    sfSprite_setOrigin(GGP.sprite, GGP.collider);
+    sfSprite_setOrigin(GGP.sprite, GGP.col_center);
 }
 
 void init_player(global_t *global)
@@ -54,11 +54,12 @@ void init_player(global_t *global)
     GGP.idle = true;
     GGP.pos = (sfVector2f){200, 500};
     GGP.hitbox = HITBOX;
-    GGP.collider = COLLIDER;
+    GGP.col_center = COLLIDER;
     put_sprite(global, (char *)FILEPATH);
     init_controls(global);
     init_player_sprites(global);
     init_dash_sprites(global);
+    init_player_inventory(&GGP);
     GGP.clock = sfClock_create();
     GGPT = sfClock_getElapsedTime(GGP.clock);
 }

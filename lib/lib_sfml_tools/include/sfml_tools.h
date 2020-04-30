@@ -46,7 +46,8 @@ void next_texture_rect_shape(sfRectangleShape *rect_shape,
 // !RECTANGLESHAPE
 
 // TEXT
-sfText *create_text(sfText *text, char *str, char *font, int size);
+sfText *create_text(sfText *text, char * const str, char * const
+font, int size);
 
 void display_texts(sfRenderWindow *window, sfText **texts);
 void display_one_text(sfRenderWindow *window, sfText *text);

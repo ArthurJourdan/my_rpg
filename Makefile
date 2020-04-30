@@ -73,6 +73,10 @@ OPTION		=	$(SRCDIR)options/
 
 DISPLAY		=	$(SRCDIR)display/
 
+PLAYER 		=	$(SRCDIR)player/
+
+PLAYER_INV	=	$(PLAYER)inventory/
+
 SRC		=	${SRCDIR}main.c	\
 			$(INIT)		\
 			$(DISP)		\
@@ -99,6 +103,14 @@ SRC		=	${SRCDIR}main.c	\
 							\
 			$(OPTION)change_sounds_volume.c	\
 			$(OPTION)change_music_volume.c	\
+							\
+			$(PLAYER)check_collision.c		\
+			$(PLAYER_INV)add_spell.c		\
+			$(PLAYER_INV)check_inventory.c	\
+			$(PLAYER_INV)display_inventory.c	\
+			$(PLAYER_INV)draw_inventory.c		\
+			$(PLAYER_INV)init_inventory.c		\
+			$(PLAYER_INV)show_pickup_text.c		\
 							\
 			$(DISPLAY)display_text_struct.c	\
 			$(DISPLAY)display_button.c	\

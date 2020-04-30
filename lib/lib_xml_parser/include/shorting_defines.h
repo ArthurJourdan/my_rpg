@@ -27,6 +27,11 @@
 #define GGLMM global->game.layers.maze_maps
 #define GGLDM global->game.layers.dante_maps
 #define GGLP global->game.layers.pos
+#define GGS global->game.spell_dict
+
+//player
+#define GGPIS global->game.player.p_invent->spell_nodes
+
 
 #define ACT global->scene_list->index
 #define SC_A global->scene_list->scenes[global->scene_list->index]

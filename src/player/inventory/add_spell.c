@@ -11,17 +11,14 @@
 #include "file.h"
 #include "player.h"
 
-extern const spell1;
-extern const spell2;
-
-void add_spell(player_t *player, game_t *game, int spell_id, int spell_nb)
+void add_spell(player_t *player, int spell_id, int spell_nb)
 {
     if (spell_nb == 0) {
-        player->p_invent->spell_nodes[spell_nb]->spell_id = spell_id;
-        player->p_invent->spell_nodes[spell_nb]->key = spell1;
+        player->p_invent->spell_nodes[spell_nb].spell_id = spell_id;
+        player->p_invent->spell_nodes[spell_nb].key = spell1;
     } else if(spell_nb == 1) {
-        player->p_invent->spell_nodes[spell_nb]->spell_id = spell_id;
-        player->p_invent->spell_nodes[spell_nb]->key = spell2;
+        player->p_invent->spell_nodes[spell_nb].spell_id = spell_id;
+        player->p_invent->spell_nodes[spell_nb].key = spell2;
     }
     player->p_invent->nb_spells++;
 }
@@ -33,7 +30,7 @@ void check_spell(global_t *global, int spell_id, player_t *player)
     if (player->p_invent->nb_spells == 2) {
         replace = show_replace(global);
         if (!replace) {
-            add_spell(player, &GG, spell_id, replace - 1);
+            add_spell(player, spell_id, replace - 1);
             return;
         } else
             return;
@@ -41,5 +38,5 @@ void check_spell(global_t *global, int spell_id, player_t *player)
     if (!show_pickup(global))
         return;
     else
-        add_spell(player, &GG, spell_id, player->p_invent->nb_spells);
+        add_spell(player, spell_id, player->p_invent->nb_spells);
 }

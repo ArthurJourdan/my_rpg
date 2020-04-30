@@ -10,7 +10,7 @@
 int player_is_colliding(game_t *game)
 {
     for (int i = 0; i < 64; i++)
-        if (sfIntRect_intersects(game->player->collider,
+        if (sfIntRect_intersects(game->player.collider,
         game->obj->e_obj[i].collider, NULL))
             return i;
     return 0;

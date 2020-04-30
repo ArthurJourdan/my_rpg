@@ -10,20 +10,13 @@
 #include "sfml_tools.h"
 #include "player.h"
 
-extern const font_path;
-extern const pickup_sen;
-extern const replace_sen;
-extern const text_size;
-extern const pickup;
-extern const spell1;
-extern const spell2;
-
 int show_pickup(global_t *global)
 {
-    sfText *pickup = create_text(pickup, pickup_sen, font_path, text_size);
+    sfText *pickup = create_text(NULL, (char * const)pickup_sen,
+    (char * const)font_path, text_size);
 
     display_one_text(global->window, pickup);
-    if (sfKeyboard_isKeyPressed(pickup)) {
+    if (sfKeyboard_isKeyPressed(pickup_key)) {
         sfText_destroy(pickup);
         return 1;
     } else {
@@ -34,7 +27,8 @@ int show_pickup(global_t *global)
 
 int show_replace(global_t *global)
 {
-    sfText *replace = create_text(replace, replace_sen, font_path, text_size);
+    sfText *replace = create_text(NULL, (char * const)replace_sen,
+    (char * const)font_path, text_size);
 
     display_one_text(global->window, replace);
     if (sfKeyboard_isKeyPressed(spell1))

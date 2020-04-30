@@ -10,7 +10,8 @@
 
 static char *DESCRIPTION[] = {
     "\tRPG game made in CSFML, \n",
-    "\tRead the GDD for more informations\n",
+    "\tRead the GDD for more information:\n",
+    "\thttps://docs.google.com/document/d/1wgLzArjvZyEVo4Af1-HZQ57faSfTBfgGj95InmLxgTc/edit?usp=sharing\n",
     NULL
 };
 

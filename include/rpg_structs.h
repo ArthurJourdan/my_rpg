@@ -109,18 +109,18 @@ typedef struct sprites {
     sfSprite **maps;
 }spr_t;
 
-typedef struct player_inventory {
-    spn_t **spell_nodes;
-    int nb_spells;
-    sfSprite *invent_bg;
-} player_invent_t;
-
 typedef struct spell_node {
     sfKeyCode key;
     sfTime last_activation;
     int spell_id;
     void (*spell_fptr)(struct game*, int);
 }spn_t;
+
+typedef struct player_inventory {
+    spn_t *spell_nodes;
+    int nb_spells;
+    sfSprite *invent_bg;
+} player_invent_t;
 
 typedef struct anim_data {
     char *spritesheet;
@@ -162,20 +162,20 @@ typedef struct player {
     int mana;
     int status; //utiliser un mask pour les effets de status
     player_invent_t *p_invent;
-    sfVector2f speed;
     float max_speed;
     float speed;
     float hitbox;
     bool idle;
     sfSprite ***ss;
     dash_t dash;
-    sfVector2f collider;
+    sfVector2f col_center;
     sfVector2f pos;
     sfSprite *sprite;
     controls_t controls;
     sfTime time;
     int frame;
     sfClock *clock;
+    sfIntRect *collider;
 }player_t;
 
 typedef struct maze {
