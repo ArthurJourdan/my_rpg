@@ -28,15 +28,15 @@ static filepaths_t *missing_message(char * const fp_missing, char **file)
 
 filepaths_t *get_filepaths_xml(const char *global_file_filepath)
 {
-    filepaths_t *files = malloc(sizeof(filepaths_t));
+    filepaths_t *files = NULL;
     char **file = NULL;
 
-    if (!files)
-        return NULL;
     if (!(file = check_get_xml_file(global_file_filepath))) {
-        free(files);
         return NULL;
     }
+    files = malloc(sizeof(filepaths_t));
+    if (!files)
+        return NULL;
     if (!(files->gui = cpy_var_name_double_arr("GUI", " path=", file))) {
         return missing_message("GUI", file);
     }

@@ -12,11 +12,11 @@
 #include "xml_parser.h"
 
 static const gui_functions_t set_functions[] = {
-    {"Image", &set_image},
-    {"Button", &set_button},
-    {"Music", &set_music},
-    {"Text", &set_text},
-    {"Sound", &set_sound}
+    {"Image ", &set_image},
+    {"Button ", &set_button},
+    {"Music ", &set_music},
+    {"Text ", &set_text},
+    {"Sound ", &set_sound}
 };
 
 static void check_line(char const *line, gui_t *sc_list, size_t scene_nb,
@@ -25,7 +25,7 @@ sfRenderWindow *window)
     int pos = 0;
 
     for (size_t b = 0; b < ARRAY_SIZE(set_functions); b++) {
-        pos = get_pos_word_end_in_str(set_functions[b].type, line);
+        pos = get_pos_word_in_str(set_functions[b].type, line);
         if (pos != -1) {
             set_functions[b].ptr(line + pos, sc_list, scene_nb, window);
         }
