@@ -1,58 +1,35 @@
 <Scene name="Starting_menu">
-    <Image name="background" image="assets/image/rocket_and_background/2D/bg.png" x="" y="" fullscreen="true"/>
-    <Button name="Start" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="100" heigth="75" width="200" size_text="40"/>
-    <Button name="Options" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="300" heigth="75" width="200" size_text="40"/>
-    <Button name="Quit" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="500" heigth="75" width="200" size_text="40"/>
-    <Text name="my_defender" font="assets/font/JosefinSans-Thin.ttf" x="700" y="100" size="100"/>
-    <Button name="How to play" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="925" x="1635" heigth="75" width="275"  size_text="50"/>
-    <Text name="Best score" font="assets/font/JosefinSans-Thin.ttf" x="1600" y="200" size="40"/>
+    <Text name="my_RPG" text="my_RPG" text_color="Cyan" font="assets_rpg/gui/assets_2/font/demode.ttf" x="1100" size="200"/>
+    <Button text_color="Cyan" name="start_button" action="Start" text="Play" text_color="Cyan" font="assets_rpg/gui/assets_2/font/demode-negative.ttf" hover_color="Transparent" idle_color="Transparent" sound="assets_rpg/audio/sounds/button.ogg" volume="40" x="100" y="50" heigth="75" width="150" size="40"/>
+    <Button idle_color="Cyan" text_color="Cyan" name="option_button" action="Options" text="Settings" font="assets_rpg/gui/assets_2/font/demode.ttf" x="100" y="250" heigth="75" width="228" size="40"/>
+    <Button idle_color="Cyan" text_color="Cyan" name="exit_button" action="Quit" text="Quit" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" volume="40" x="100" y="350" heigth="75" width="228" size="40"/>
+    <Button idle_color="Cyan" text_color="Cyan" name="How to play" nb_animations="2" size_total="114" action="Tutorial" text="Tutorial" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" volume="40" y="450" x="100" heigth="72" width="228" size="40"/>
+    <Text text_color="Cyan" name="csml" text="Made in CSFML" font="assets_rpg/gui/assets_2/font/demode.ttf" x="1600" y="250" size="40"/>
 </Scene>
 <Scene name="Game">
-    <Image name="city3" image="assets/image/rocket_and_background/2D/bridge.png" x="1000" y="730">
-    <Image name="city1" image="assets/image/rocket_and_background/2D/city01.png" x="100" y="714">
-    <Image name="city2" image="assets/image/rocket_and_background/2D/city02.png" x="250" y="687">
-    <Image name="city3" image="assets/image/rocket_and_background/2D/city03.png" x="500" y="724">
-    <Image name="city3" image="assets/image/rocket_and_background/2D/city04.png" x="750" y="700">
-    <Image name="city3" image="assets/image/rocket_and_background/2D/city05.png" x="1200" y="717">
-    <Game_object id="tower" name="wall" image="assets/image/wall.png" scale="0.4" />
-    <Game_object id="tower" name="wall2" image="assets/image/laser.png" scale="0.40" />
-    <Game_object id="tower" name="wall3" image="assets/image/project1.png" scale="0.40" />
-    <Game_object id="tower" name="wall4" image="assets/image/bricks.png" scale="0.4" />
-    <Game_object id="enemy" name="enemy" image="assets/image/ennemy3.png" x="10" y="10" explosion="assets/image/pixel_explosion_fireworks/round_explosion/spritesheet/spritesheet.png" nb_animations="70" size_tot="1000" scale="0.50" speed="1"/>
-    <Button name="Add turret" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="300" y="900" width="200" heigth="50" size_text="40">
-    <Button name="Remove turret" image="assets/image/rocket_and_background/2D/bg.png" font="assets/font/JosefinSans-Thin.ttf" width="200" heigth="50" x="600" y="900"/>
-    <Button name="Options" font="assets/font/JosefinSans-Thin.ttf" image="" sound="assets/audio/button.ogg" width="200" heigth="50" x="900" y="900"/>
-    <Text name="life" font="assets/font/JosefinSans-Thin.ttf" x="1700" y="100" size="25"/>
-    <Text name="score" font="assets/font/JosefinSans-Thin.ttf" x="1700" y="300" size="25"/>
-    <Text name="enemy remaining" font="assets/font/JosefinSans-Thin.ttf" x="1700" y="400" size="25"/>
-    <Music name="music" audio="assets/audio/soundtrack_defcon.ogg" volume="40" loop="true"/>
-    <Sound name="music" audio="assets/audio/sonar.ogg" volume="40"/>
+    <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" width="350" heigth="100" x="10" y="900"/>
+    <Music name="music1" audio="assets_rpg/audio/musics/undertale-megalovania.ogg" volume="40" loop="true"/>
 </Scene>
 <Scene name="Pause">
-    <Image name="background" image="assets/image/rocket_and_background/2D/bg.png" x="0" y="0" fullscreen="true"/>
-    <Button name="Starting menu" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="100" heigth="125" width="600"  size_text="100"/>
-    <Button name="Resume" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="800" heigth="125" width="300"  size_text="100"/>
-    <Button name="Leave game" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="1200" heigth="125" width="600" size_text="100"/>
-    <Button name="Options" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="800" heigth="125" width="350" size_text="100"/>
-    <Text name="pause" font="assets/font/JosefinSans-Thin.ttf" x="1600" y="800" size="100"/>
+    <Button text_color="Yellow" idle_color="Yellow" name="Starting menu" action="Starting_menu" text="Menu" font="assets_rpg/gui/assets_2/font/demode-negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="20" x="100" heigth="125" width="775"  size="100"/>
+    <Button text_color="Yellow" idle_color="Yellow" name="Resume" action="Resume" text="Resume" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="20" x="900" heigth="125" width="415"  size="100"/>
+    <Button text_color="Yellow" idle_color="Yellow" name="Leave game" action="Quit" text="Quit" font="assets_rpg/gui/assets_2/font/demode-negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="160" x="700" heigth="125" width="615" size="100"/>
+    <Button text_color="Yellow" idle_color="Yellow" name="Options" action="Options" text="Options" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="160" heigth="125" width="420" size="100"/>
+    <Text text_color="Yellow" name="pause" font="assets_rpg/gui/assets_2/font/demode.ttf" x="0000" y="390" size="525"/>
 </Scene>
 <Scene name="Options">
-    <Image name="backg" image="assets/image/rocket_and_background/2D/bg.png" x="0" y="0" fullscreen="true"/>
-    <Button name="Music ++" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="1400" heigth="140" width="465" size_text="125"/>
-    <Button name="Music --" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="800" heigth="140" width="465" size_text="125"/>
-    <Button name="Starting menu" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="100" heigth="125" width="600"  size_text="100"/>
-    <Button name="Resume" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="800" heigth="125" width="300"  size_text="100"/>
-    <Text name="Options" font="assets/font/JosefinSans-Thin.ttf" x="100" y="800" size="100"/>
-    <Button name="How to play" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="100" x="100" heigth="125" width="500"  size_text="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="Music --" text="Music dowm"  action="Volume_m" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="301" x="0" heigth="125" width="625" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="Music ++" text="Music up" action="Volume_p" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="426" x="0" heigth="125" width="625" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="up fps" text="fps up" action="Increase_fps" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="551" x="0" heigth="125" width="625" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="down fps" text="fps down" action="Decrease_fps" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="676" x="0" heigth="125" width="625" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="Starting menu"  text="Home" action="Starting_menu" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="1" x="800" heigth="150" width="799"  size="102"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="Resume" text="Resume" action="Resume" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="151" x="800" heigth="150" width="799"  size="125"/>
+    <Text text_color="Magenta" name="Options" text="Options" font="assets_rpg/gui/assets_2/font/demode-negative.ttf" x="100" y="20" size="100"/>
 </Scene>
 <Scene name="Tutorial">
-    <Image name="backg" image="assets/image/rocket_and_background/2D/bg.png" fullscreen="true"/>
-    <Button name="Starting menu" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="1200" heigth="125" width="600"  size_text="100"/>
-    <Button name="Resume" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="800" heigth="125" width="300"  size_text="100"/>
-    <Text name="How to play" font="assets/font/JosefinSans-Thin.ttf" x="100" y="800" size="100"/>
-    <Text name="The game is simple, all you have to do is to add turrets, trying to avoid rockets to fall on the ground." font="assets/font/JosefinSans-Thin.ttf" x="100" y="100" size="40"/>
-    <Text name="Your score is your money, one tower equal minus one in score, keep an eye on it." font="assets/font/JosefinSans-Thin.ttf" x="100" y="150" size="40"/>
-    <Text name="Use your mouse or trackpad to interact with the buttons, press 'escape' in game to pause and 'suppr' to end it." font="assets/font/JosefinSans-Thin.ttf" x="100" y="250" size="40"/>
-    <Text name="You are not satisfied with the assets, buttons or texts?" font="assets/font/JosefinSans-Thin.ttf" x="100" y="500" size="40"/>
-    <Text name="Take a look at the XML file and customize it however you want !" font="assets/font/JosefinSans-Thin.ttf" x="100" y="600" size="50"/>
+    <Button text_color="Green" idle_color="Green" name="Starting menu" text="home" action="Starting_menu" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="800" x="1175" heigth="75" width="400"  size="50"/>
+    <Text text_color="Green" name="How to play" font="assets_rpg/gui/assets_2/font/demode.ttf" x="20" y="750" size="100"/>
+    <Text text_color="Green" name="first" text="The player must find the fountain" font="assets_rpg/gui/assets_2/font/demode.ttf" x="100" y="100" size="30"/>
+    <Text text_color="Green" name="second" text="find your way trhough the rooms" font="assets_rpg/gui/assets_2/font/demode.ttf" x="100" y="150" size="30"/>
+    <Text text_color="Green" name="third" text="by killing ennemies or dashing as fast as possible" font="assets_rpg/gui/assets_2/font/demode.ttf" x="100" y="200" size="30"/>
 </Scene>
