@@ -76,12 +76,18 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			$(RPG)$(SF_SET)order_maps.c							\
 			\
 			$(RPG)$(ALLOC)malloc_game_structs.c					\
+			\
 			$(RPG)$(ALLOC)init_spell_dict.c						\
 			$(RPG)$(ALLOC)init_ennemy_dict.c					\
+			$(RPG)$(ALLOC)init_npc_list.c						\
 			\
 			$(RPG)$(SF_SET)set_game_structs.c					\
+			\
 			$(RPG)$(SF_SET)set_spell_dict.c						\
 			$(RPG)$(SF_SET)set_ennemy_dict.c					\
+			$(RPG)$(SF_SET)set_npc_list.c						\
+			\
+			$(RPG)$(SF_SET)set_spritesheet_sprite_arr.c			\
 
 OBJ     =	$(SRC:.c=.o)
 

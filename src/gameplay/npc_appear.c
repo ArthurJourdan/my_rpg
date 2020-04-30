@@ -9,6 +9,7 @@
 
 #include "rpg_structs.h"
 #include "global.h"
+#include "sfml_tools.h"
 
 void npc_appear(global_t *global)
 {

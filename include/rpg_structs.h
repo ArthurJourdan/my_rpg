@@ -11,6 +11,8 @@
 #include <SFML/Graphics.h>
 #include <stdbool.h>
 
+#include "npc.h"
+
 /**************************************/
 /*************** ENUMS ****************/
 /**************************************/
@@ -196,6 +198,7 @@ typedef struct game {
     int maze_size;
     sp_dict_t **spell_dict;
     e_dict_t **ennemy_dict;
+    npc_t **npc_list;
 }game_t;
 
 /**************************************/

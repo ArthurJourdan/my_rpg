@@ -18,7 +18,7 @@ void init_player_sprites(global_t *global)
     anim.spritesheet = my_strcpy("src/init/player_sprite/actor3_ss.png");
     anim.anim_count = 4;
     anim.anim_frames = (int[4]){3, 3, 3, 3};
-    anim.unit_size = (sfVector2i){96, 96};
+    anim.unit_size = (sfVector2f){96, 96};
     GGP.ss = spritesheet_load(&anim);
 }
 
@@ -29,7 +29,7 @@ void init_dash_sprites(global_t *global)
     anim.spritesheet = my_strcpy("src/init/player_sprite/mist.png");
     anim.anim_count = 1;
     anim.anim_frames = (int[1]){6};
-    anim.unit_size = (sfVector2i){192, 192};
+    anim.unit_size = (sfVector2f){192, 192};
     GGPD.dash = dash_spritesheet_load(&anim);
     GGPD.frame = 0;
     GGPD.pos = (sfVector2f)GGP.pos;

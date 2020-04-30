@@ -17,5 +17,6 @@ game_t malloc_all_game_structs(char **file)
 
     game.spell_dict = init_spell_dict(file);
     game.ennemy_dict  = init_ennemy_dict(file);
+    game.npc_list  = init_npc_list(file);
     return game;
 }
