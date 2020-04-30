@@ -1,4 +1,4 @@
-y/*
+/*
 ** EPITECH PROJECT, 2020
 ** rpg anim
 ** File description:

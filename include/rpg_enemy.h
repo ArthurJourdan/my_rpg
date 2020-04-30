@@ -19,7 +19,8 @@ typedef struct enemy_obj {
     int hp;
     int damage;
     int *spell_nodes;
-    sfVector2f speed;
+    float speed;
+    sfTime movet;
     sfVector2f pos;
     sfIntRect *collider;
 }e_obj_t;
@@ -32,5 +33,9 @@ typedef struct enemy_obj {
 #define E_DMG enemy->damage
 #define E_SPELL enemy->spell_nodes
 #define E_COLLIDER enemy->collider
+#define E_MOVET enemy->movet
+#define E_CLOCK global->game->obj->e_clock
+
+#define vec2f(x, y) (sfVector2f){(x), (y)}
 
 #endif
