@@ -14,6 +14,11 @@
 
 #include <stdbool.h>
 
+typedef struct sfml_colors {
+    sfColor sf_color;
+    char * const str_color;
+} sfml_colors_t;
+
 // WINDOW
 sfRenderWindow *create_window(unsigned int width, unsigned int height,
 unsigned int bbp, char const *name);
@@ -75,5 +80,9 @@ bool left_mouse_released(sfEvent event);
 bool right_mouse_released(sfEvent event);
 
 // !EVENTS
+
+// COLOR
+sfColor get_color_from_str(char * const str);
+// ! COLOR
 
 #endif /* !SFML_TOOLS_H */

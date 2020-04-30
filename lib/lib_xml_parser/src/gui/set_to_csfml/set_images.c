@@ -6,7 +6,8 @@
 */
 
 #include "my.h"
-#include "print.h"
+#include "file.h"
+
 #include "gui.h"
 #include "shorting_defines.h"
 #include "xml_parser.h"
@@ -20,7 +21,7 @@ sfRenderWindow *window)
     sfVector2f scale = get_scale(line);
     static size_t index_img = 0;
 
-    if (!info)
+    if (!info || !is_file_openable(info))
         return;
     SCL_I[index_img] = create_image(NULL, info);
     info = free_char_to_null(info);

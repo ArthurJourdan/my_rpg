@@ -1,0 +1,58 @@
+<Scene name="Starting_menu">
+    <Image name="background" image="assets/image/rocket_and_background/2D/bg.png" x="" y="" fullscreen="true"/>
+    <Button name="Start" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="100" heigth="75" width="200" size_text="40"/>
+    <Button name="Options" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="300" heigth="75" width="200" size_text="40"/>
+    <Button name="Quit" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="500" heigth="75" width="200" size_text="40"/>
+    <Text name="my_defender" font="assets/font/JosefinSans-Thin.ttf" x="700" y="100" size="100"/>
+    <Button name="How to play" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="925" x="1635" heigth="75" width="275"  size_text="50"/>
+    <Text name="Best score" font="assets/font/JosefinSans-Thin.ttf" x="1600" y="200" size="40"/>
+</Scene>
+<Scene name="Game">
+    <Image name="city3" image="assets/image/rocket_and_background/2D/bridge.png" x="1000" y="730">
+    <Image name="city1" image="assets/image/rocket_and_background/2D/city01.png" x="100" y="714">
+    <Image name="city2" image="assets/image/rocket_and_background/2D/city02.png" x="250" y="687">
+    <Image name="city3" image="assets/image/rocket_and_background/2D/city03.png" x="500" y="724">
+    <Image name="city3" image="assets/image/rocket_and_background/2D/city04.png" x="750" y="700">
+    <Image name="city3" image="assets/image/rocket_and_background/2D/city05.png" x="1200" y="717">
+    <Game_object id="tower" name="wall" image="assets/image/wall.png" scale="0.4" />
+    <Game_object id="tower" name="wall2" image="assets/image/laser.png" scale="0.40" />
+    <Game_object id="tower" name="wall3" image="assets/image/project1.png" scale="0.40" />
+    <Game_object id="tower" name="wall4" image="assets/image/bricks.png" scale="0.4" />
+    <Game_object id="enemy" name="enemy" image="assets/image/ennemy3.png" x="10" y="10" explosion="assets/image/pixel_explosion_fireworks/round_explosion/spritesheet/spritesheet.png" nb_animations="70" size_tot="1000" scale="0.50" speed="1"/>
+    <Button name="Add turret" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="300" y="900" width="200" heigth="50" size_text="40">
+    <Button name="Remove turret" image="assets/image/rocket_and_background/2D/bg.png" font="assets/font/JosefinSans-Thin.ttf" width="200" heigth="50" x="600" y="900"/>
+    <Button name="Options" font="assets/font/JosefinSans-Thin.ttf" image="" sound="assets/audio/button.ogg" width="200" heigth="50" x="900" y="900"/>
+    <Text name="life" font="assets/font/JosefinSans-Thin.ttf" x="1700" y="100" size="25"/>
+    <Text name="score" font="assets/font/JosefinSans-Thin.ttf" x="1700" y="300" size="25"/>
+    <Text name="enemy remaining" font="assets/font/JosefinSans-Thin.ttf" x="1700" y="400" size="25"/>
+    <Music name="music" audio="assets/audio/soundtrack_defcon.ogg" volume="40" loop="true"/>
+    <Sound name="music" audio="assets/audio/sonar.ogg" volume="40"/>
+</Scene>
+<Scene name="Pause">
+    <Image name="background" image="assets/image/rocket_and_background/2D/bg.png" x="0" y="0" fullscreen="true"/>
+    <Button name="Starting menu" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="100" heigth="125" width="600"  size_text="100"/>
+    <Button name="Resume" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="800" heigth="125" width="300"  size_text="100"/>
+    <Button name="Leave game" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="1200" heigth="125" width="600" size_text="100"/>
+    <Button name="Options" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" x="100" y="800" heigth="125" width="350" size_text="100"/>
+    <Text name="pause" font="assets/font/JosefinSans-Thin.ttf" x="1600" y="800" size="100"/>
+</Scene>
+<Scene name="Options">
+    <Image name="backg" image="assets/image/rocket_and_background/2D/bg.png" x="0" y="0" fullscreen="true"/>
+    <Button name="Music ++" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="1400" heigth="140" width="465" size_text="125"/>
+    <Button name="Music --" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="800" heigth="140" width="465" size_text="125"/>
+    <Button name="Starting menu" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="100" heigth="125" width="600"  size_text="100"/>
+    <Button name="Resume" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="400" x="800" heigth="125" width="300"  size_text="100"/>
+    <Text name="Options" font="assets/font/JosefinSans-Thin.ttf" x="100" y="800" size="100"/>
+    <Button name="How to play" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="100" x="100" heigth="125" width="500"  size_text="100"/>
+</Scene>
+<Scene name="Tutorial">
+    <Image name="backg" image="assets/image/rocket_and_background/2D/bg.png" fullscreen="true"/>
+    <Button name="Starting menu" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="1200" heigth="125" width="600"  size_text="100"/>
+    <Button name="Resume" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="800" x="800" heigth="125" width="300"  size_text="100"/>
+    <Text name="How to play" font="assets/font/JosefinSans-Thin.ttf" x="100" y="800" size="100"/>
+    <Text name="The game is simple, all you have to do is to add turrets, trying to avoid rockets to fall on the ground." font="assets/font/JosefinSans-Thin.ttf" x="100" y="100" size="40"/>
+    <Text name="Your score is your money, one tower equal minus one in score, keep an eye on it." font="assets/font/JosefinSans-Thin.ttf" x="100" y="150" size="40"/>
+    <Text name="Use your mouse or trackpad to interact with the buttons, press 'escape' in game to pause and 'suppr' to end it." font="assets/font/JosefinSans-Thin.ttf" x="100" y="250" size="40"/>
+    <Text name="You are not satisfied with the assets, buttons or texts?" font="assets/font/JosefinSans-Thin.ttf" x="100" y="500" size="40"/>
+    <Text name="Take a look at the XML file and customize it however you want !" font="assets/font/JosefinSans-Thin.ttf" x="100" y="600" size="50"/>
+</Scene>

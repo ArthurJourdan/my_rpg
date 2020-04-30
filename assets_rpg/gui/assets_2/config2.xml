@@ -1,0 +1,45 @@
+<Scene name="Starting_menu">
+    <Image name="background" image="assets_rpg/gui/assets_2/image/city.png" fullscreen="true"/>
+    <Text name="my_RPG" text="my_RPG" appear_delay="10" font="assets_rpg/gui/assets_2/font/Legionary.ttf" x="100" y="575" size="200"/>
+    <Button name="start_button" letter_delay="1" action="Start" image="assets_rpg/gui/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/gui/assets_2/font/Legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="50" heigth="75" width="200" size="40"/>
+    <Button name="option_button" action="Options" image="assets_rpg/gui/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Options" font="assets_rpg/gui/assets_2/font/Legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="1350" y="50" heigth="75" width="200" size="40"/>
+    <Button name="exit_button" action="Quit" image="assets_rpg/gui/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Quit" font="assets_rpg/gui/assets_2/font/Legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="375" y="50" heigth="75" width="200" size="40"/>
+    <Button name="How to play" nb_animations="2" size_total="114" action="Tutorial" text="tuto" font="assets_rpg/gui/assets_2/font/Legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="50" x="1000" heigth="72" width="228" size="40"/>
+    <Text name="Best score" text="Best_score" letter_delay="1" font="assets_rpg/gui/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
+    <Text name="Welcome" text="Welcome to this beautiful menu!" letter_delay="1" font="assets_rpg/gui/assets_2/font/Legionary.ttf" x="10" y="920" size="40"/>
+    <Music name="music1" audio="assets_rpg/audio/musics/it_s_raining.ogg" volume="40" loop="true"/>
+    <Sound name="soundbegining" audio="assets_rpg/audio/sounds/music_trial_menu.ogg" volume="40"/>
+</Scene>
+<Scene name="Game">
+    <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/gui/assets_2/font/Demode.ttf" image="assets_rpg/gui/assets_2/image/pixel sky.png" sound="assets_rpg/audio/sounds/button.ogg" width="350" heigth="100" x="10" y="900"/>
+    <Text name="lore" text="It seems that you are trapped in this maze ! aren't you thursty ? Go find a fountain" letter_delay="1" disappear_delay="120" font="assets_rpg/gui/assets_2/font/Legionary.ttf" x="10" y="820" size="40"/>
+    <Sound name="sound" audio="assets_rpg/audio/sounds/sonar.ogg" volume="40"/>
+    <Music name="music1" audio="assets_rpg/audio/musics/undertale-megalovania.ogg" volume="40" loop="true"/>
+</Scene>
+<Scene name="Pause">
+    <Button name="Starting menu" action="Starting_menu" text="Menu" font="assets_rpg/gui/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="20" x="100" heigth="125" width="775"  size="100"/>
+    <Button name="Resume" action="Resume" text="Resume" font="assets_rpg/gui/assets_2/font/Demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="20" x="900" heigth="125" width="415"  size="100"/>
+    <Button name="Leave game" action="Quit" text="Quit" font="assets_rpg/gui/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="160" x="700" heigth="125" width="615" size="100"/>
+    <Button name="Options" action="Options" text="Options" font="assets_rpg/gui/assets_2/font/Demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="160" heigth="125" width="420" size="100"/>
+    <Text name="pause" font="assets_rpg/gui/assets_2/font/Demode.ttf" x="0000" y="390" size="525"/>
+    <Sound name="sound" audio="assets_rpg/audio/sounds/sonar.ogg" volume="40"/>
+</Scene>
+<Scene name="Options">
+    <Image name="backg" image="assets_rpg/gui/assets_2/image/city 2.jpg" fullscreen="true"/>
+    <Button name="Music ++" text="Music ++" action="Volume_p" font="assets_rpg/gui/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="601" x="800" heigth="298" width="799" size="225"/>
+    <Button name="Music --" text="Music --" image="" action="Volume_m" font="assets_rpg/gui/assets_2/font/Demode-Negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="301" x="800" heigth="300" width="799" size="225"/>
+    <Button name="Starting menu"  text="Home" action="Starting_menu" font="assets_rpg/gui/assets_2/font/Demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="1" x="800" heigth="150" width="799"  size="102"/>
+    <Button name="Resume" image="" text="Resume" action="Resume" font="assets_rpg/gui/assets_2/font/Demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="151" x="800" heigth="150" width="799"  size="125"/>
+    <Text name="Options" text="Options" font="assets_rpg/gui/assets_2/font/Demode-Negative.ttf" x="100" y="20" size="100"/>
+    <Music name="music2" audio="assets_rpg/audio/musics/it_s_raining.ogg" volume="40" loop="true"/>
+    <Sound name="sound" audio="assets_rpg/audio/sounds/rebound.ogg" volume="40"/>
+</Scene>
+<Scene name="Tutorial">
+    <Image name="backg" image="assets_rpg/gui/assets_2/image/city red.png" fullscreen="true"/>
+    <Button name="Starting menu" action="Starting_menu" font="assets_rpg/gui/assets_2/font/Demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="800" x="1175" heigth="75" width="400"  size="50"/>
+    <Text name="How to play" font="assets_rpg/gui/assets_2/font/Demode.ttf" x="20" y="750" size="100"/>
+    <Text name="first" text="The player must find the fountain" font="assets_rpg/gui/assets_2/font/Demode.ttf" x="100" y="100" size="30"/>
+    <Text name="second" text="find your way trhough the rooms" font="assets_rpg/gui/assets_2/font/Demode.ttf" x="100" y="150" size="30"/>
+    <Text name="third" text="by killing ennemies or dashing as fast as possible" font="assets_rpg/gui/assets_2/font/Demode.ttf" x="100" y="200" size="30"/>
+    <Sound name="sound" audio="assets_rpg/audio/sounds/rebound.ogg" volume="40"/>
+</Scene>

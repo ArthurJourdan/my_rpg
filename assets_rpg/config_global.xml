@@ -1,6 +1,6 @@
 <Window heigth="1080" width="1920" bbp="32"/>
 <Volume volume="50"/>
 <FPS fps="60"/>
-<GUI path="assets_rpg/GUI/assets_2/config2.xml"/>
+<GUI path="assets_rpg/gui/assets_2/config2.xml"/>
 <Maps path="assets_rpg/images/maps/"/>
 <Game path="assets_rpg/images/config_game.xml"/>
