@@ -59,7 +59,8 @@ INIT		=	$(INITDIR)init_controls.c	\
 TOOLS		=	$(TOOLDIR)colorcmp.c	\
 			$(TOOLDIR)image_cmp.c
 
-GAME		=	$(GAMEDIR)player_movement.c
+GAME		=	$(GAMEDIR)player_movement.c	\
+				$(GAMEDIR)npc_appear.c
 
 DISP		=	$(DISPDIR)display_player.c	\
 

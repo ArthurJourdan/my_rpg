@@ -21,6 +21,7 @@ static npc_t *set_one_to_null(void)
     npc->id = -1;
     npc->sprite = NULL;
     npc->text = NULL;
+    npc->action = NULL;
     return npc;
 }
 

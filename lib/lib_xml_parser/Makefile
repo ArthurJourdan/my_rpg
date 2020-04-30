@@ -57,7 +57,6 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			$(TOOLS)cpy_var_name.c								\
 			$(TOOLS)cpy_var_num.c								\
 			$(TOOLS)cmp_var_name.c								\
-			$(TOOLS)get_id_in_char.c							\
 			$(TOOLS)get_to_scene.c								\
 			$(TOOLS)get_coordinates.c							\
 			$(TOOLS)get_size.c									\

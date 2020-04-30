@@ -1,7 +1,7 @@
 <Scene name="Starting_menu">
     <Image name="background" image="assets_rpg/images/spritsheets/maze_dante_2.png" fullscreen="true"/>
     <Text name="my_RPG" text="my_RPG" appear_delay="10" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="100" y="575" size="200"/>
-    <Button name="start_button" letter_delay="1" action="Start" image="assets_rpg/gui/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Start" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="50" heigth="75" width="100" size="40"/>
+    <Button name="start_button" letter_delay="1" action="Start" image="assets_rpg/images/spritsheets/maze_dante.png" text="Start" font="assets_rpg/gui/assets_2/font/legionary.ttf" text_color="Black" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="50" heigth="75" width="100" size="40"/>
     <Button name="option_button" action="Options" image="assets_rpg/gui/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Options" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="1750" y="50" heigth="75" width="150" size="40"/>
     <Button name="exit_button" action="Quit" image="assets_rpg/gui/assets_2/image/colorful_line_on_black_background-t2.jpg" text="Quit" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="375" y="50" heigth="75" width="200" size="40"/>
     <Button name="How to play" nb_animations="2" size_total="114" action="Tutorial" text="tuto" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="50" x="1000" heigth="72" width="228" size="40"/>

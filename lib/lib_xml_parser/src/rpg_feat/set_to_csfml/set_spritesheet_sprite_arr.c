@@ -7,6 +7,7 @@
 
 #include "xml_parser.h"
 #include "rpg_structs.h"
+#include "my_rpg.h"
 
 static int *fill_anim_arr(char *tmp_frames)
 {

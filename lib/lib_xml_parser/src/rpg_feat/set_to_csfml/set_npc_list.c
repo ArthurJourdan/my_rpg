@@ -12,11 +12,35 @@
 
 #include "rpg_structs.h"
 #include "npc.h"
+#include "button.h"
+
+static actions_t const all_actions[] = {
+    {"None", NULL},
+    {"Discuss", NULL/* &npc_discuss */},
+    {"Zoom", NULL/* &npc_zoom */}
+};
+
+static void *choose_action(char * const line)
+{
+    char *tmp_act_name = cpy_var_name(" action=", line);
+
+    if (!tmp_act_name)
+        return NULL;
+    for (size_t a = 0; a < ARRAY_SIZE(all_actions); a++) {
+        if (my_strcmp(all_actions[a].name_act, tmp_act_name)) {
+            free(tmp_act_name);
+            return all_actions[a].action;
+        }
+    }
+    free(tmp_act_name);
+    return NULL;
+}
 
 static void set_caracteristics(npc_t *npc, char * const line)
 {
     npc->sprite = set_sprite_arr(line);
     npc->text = set_any_text(line, NULL);
+    npc->action = choose_action(line);
 }
 
 void set_npc_list(char **file, npc_t **npc_dict)
