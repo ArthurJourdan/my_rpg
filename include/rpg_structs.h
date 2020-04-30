@@ -50,8 +50,10 @@ typedef struct spell_dict {
 typedef struct enemy_dict {
     int id;
     int damage;
+    int life;
     int *spell_list;
     int move_speed;
+    sfSprite ***sprite;
     //behaviour_t behaviour; <-- faudrait trouver un moyen de scripter les mob via des struct (aucune idée de comment pour l'instant)
 }e_dict_t;
 
@@ -118,7 +120,7 @@ typedef struct anim_data {
     char *spritesheet;
     int anim_count;
     int *anim_frames;
-    sfVector2i unit_size;
+    sfVector2f unit_size;
 }animd_t;
 
 typedef struct controls {
@@ -193,6 +195,7 @@ typedef struct game {
     int height;
     int maze_size;
     sp_dict_t **spell_dict;
+    e_dict_t **ennemy_dict;
 }game_t;
 
 /**************************************/

@@ -16,6 +16,6 @@ game_t malloc_all_game_structs(char **file)
     game_t game;
 
     game.spell_dict = init_spell_dict(file);
-    // game.ennemy = init_spell_dict(file);
+    game.ennemy_dict  = init_ennemy_dict(file);
     return game;
 }

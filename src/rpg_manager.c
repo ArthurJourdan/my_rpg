@@ -34,6 +34,7 @@ static void gameplay(global_t *global)
     if (ACT == GAME) {
         player_movements(global);
     }
+    // npc_appear(global);
 }
 
 static void rpg_game(global_t *global, sfClock **game_clock)
@@ -46,8 +47,6 @@ static void rpg_game(global_t *global, sfClock **game_clock)
         for (float a = 0; a < nb_fram; a++) {
             sfRenderWindow_pollEvent(GW, &GG.event);
             gameplay(global);
-            // if (GS[ACT]->to_do)
-            // GS[ACT]->to_do(global);
         }
         display_everything(global);
     }
