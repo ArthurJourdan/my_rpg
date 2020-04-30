@@ -7,7 +7,6 @@
     <Button name="How to play" image="" font="assets/font/JosefinSans-Thin.ttf" sound="assets/audio/button.ogg" y="925" x="1635" heigth="75" width="275"  size_text="50"/>
     <Text name="Best score" font="assets/font/JosefinSans-Thin.ttf" x="1600" y="200" size="40"/>
 </Scene>
-<Game_board x="0" y="0" heigth="800" width="1650" image="assets/image/rocket_and_background/2D/bg.png"/>
 <Scene name="Game">
     <Image name="city3" image="assets/image/rocket_and_background/2D/bridge.png" x="1000" y="730">
     <Image name="city1" image="assets/image/rocket_and_background/2D/city01.png" x="100" y="714">
