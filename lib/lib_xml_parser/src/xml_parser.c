@@ -75,8 +75,6 @@ global_t *xml_parser(char const *global_filepath)
     global_t *global = NULL;
     filepaths_t *xml_files = NULL;
 
-    if (!is_file_openable(global_filepath))
-        return NULL;
     if (!(xml_files = get_filepaths_xml(global_filepath)))
         return NULL;
     if (!(global = malloc(sizeof(global_t))))
@@ -87,7 +85,7 @@ global_t *xml_parser(char const *global_filepath)
          return NULL;
     if (!(global->scene_list = fill_in_data_gui(xml_files->gui, GW)))
         return NULL;
-    global->game = fill_in_data_game(xml_files->game, global);
+    // global->game = fill_in_data_game(xml_files->game, global);
     free_xml_filepaths(xml_files);
     return global;
 }
