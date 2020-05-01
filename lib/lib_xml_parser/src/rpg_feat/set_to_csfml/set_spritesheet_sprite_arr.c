@@ -66,7 +66,7 @@ sfSprite ***set_sprite_arr(char * const line)
     sfSprite ***sprites = NULL;
     animd_t info = set_infos_sprite(line);
 
-    if (!info.spritesheet || !info.unit_size.x || info.unit_size.y) {
+    if (!info.spritesheet || !info.unit_size.x || !info.unit_size.y) {
         return NULL;
     }
     if (!info.anim_count || !info.anim_frames) {

@@ -18,6 +18,7 @@ static void display_everything(global_t *global)
     frame_nb++;
     if (ACT == GAME) {
         display_layer1(GW, global);
+        npc_appear(global);
         display_player(GW, global);
         display_layer2(GW, global);
     }
@@ -48,7 +49,6 @@ static void rpg_game(global_t *global, sfClock **game_clock)
             gameplay(global);
         }
         display_everything(global);
-        npc_appear(global);
     }
 }
 

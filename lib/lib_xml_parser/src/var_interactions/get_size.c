@@ -15,7 +15,7 @@ sfVector2f get_dimensions(char const *line)
     sfVector2f size = {0};
 
     size.x = cpy_var_int(" width=", line);
-    size.y = cpy_var_int(" heigth=", line);
+    size.y = cpy_var_int(" height=", line);
     return size;
 }
 
