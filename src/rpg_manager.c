@@ -18,12 +18,16 @@ static void display_everything(global_t *global)
     frame_nb++;
     if (ACT == GAME) {
         display_layer1(GW, global);
+        npc_appear(global);
         display_player(GW, global);
+        display_spell_obj(global, GGO->obj_index);
         display_layer2(GW, global);
+        display_inventory(global);
     }
     display_images(GW, SC_I);
     display_buttons(global);
     display_texts_struct(global, frame_nb);
+    display_spell_obj_txt(global, GGO->sp_obj_g[0].show_text);
     sfRenderWindow_display(GW);
     sfRenderWindow_clear(GW, sfBlack);
 }
@@ -33,23 +37,24 @@ static void gameplay(global_t *global)
     event_management(global);
     if (ACT == GAME) {
         player_movements(global);
+        if (player_colliding_spell(&GG, GGO->obj_index) &&
+        GGOSG[GGO->obj_index].active)
+            check_spell(global, 0, &GGP);
     }
 }
 
-static void rpg_game(global_t *global, sfClock *game_clock)
+static void rpg_game(global_t *global, sfClock **game_clock)
 {
-    float nb_sec = sfTime_asSeconds(sfClock_getElapsedTime(game_clock));
+    float nb_sec = sfTime_asSeconds(sfClock_getElapsedTime(*game_clock));
     float nb_fram = nb_sec * FPS;
 
     if (nb_fram >= 1.0f) {
-        sfClock_restart(game_clock);
+        sfClock_restart(*game_clock);
         for (float a = 0; a < nb_fram; a++) {
             sfRenderWindow_pollEvent(GW, &GG.event);
             gameplay(global);
-            display_everything(global);
-            // if (GS[ACT]->to_do)
-            // GS[ACT]->to_do(global);
         }
+        display_everything(global);
     }
 }
 
@@ -57,10 +62,10 @@ void rpg_manager(global_t *global)
 {
     sfClock *game_clock = sfClock_create();
 
-    sfRenderWindow_setFramerateLimit(GW, 120);
+    sfRenderWindow_setFramerateLimit(GW, FPS);
     change_scene(GS, HOME);
     while (sfRenderWindow_isOpen(GW)) {
-        rpg_game(global, game_clock);
+        rpg_game(global, &game_clock);
     }
     sfClock_destroy(game_clock);
     destroy_game(global);

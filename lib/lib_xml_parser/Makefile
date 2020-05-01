@@ -49,6 +49,7 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			\
 			$(GUI)$(SF_SET)set_images.c							\
 			$(GUI)$(SF_SET)set_button.c							\
+			$(GUI)$(SF_SET)set_color_button.c					\
 			$(GUI)$(SF_SET)set_music.c							\
 			$(GUI)$(SF_SET)set_sound.c							\
 			$(GUI)$(SF_SET)set_text.c							\
@@ -56,7 +57,6 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			$(TOOLS)cpy_var_name.c								\
 			$(TOOLS)cpy_var_num.c								\
 			$(TOOLS)cmp_var_name.c								\
-			$(TOOLS)get_id_in_char.c							\
 			$(TOOLS)get_to_scene.c								\
 			$(TOOLS)get_coordinates.c							\
 			$(TOOLS)get_size.c									\
@@ -66,12 +66,27 @@ SRC     =	$(SRCDIR)xml_parser.c								\
 			\
 			$(TOOLS)get_paths.c									\
 			\
+			$(RPG)$(SF_SET)init_global_vars.c					\
+			$(RPG)$(SF_SET)set_window.c							\
+			\
 			$(RPG)$(ALLOC)init_maps_list.c						\
 			\
-			$(RPG)$(SF_SET)init_global_vars.c					\
 			$(RPG)$(SF_SET)set_maps.c							\
 			$(RPG)$(SF_SET)order_maps.c							\
-			$(RPG)$(SF_SET)set_window.c							\
+			\
+			$(RPG)$(ALLOC)malloc_game_structs.c					\
+			\
+			$(RPG)$(ALLOC)init_spell_dict.c						\
+			$(RPG)$(ALLOC)init_ennemy_dict.c					\
+			$(RPG)$(ALLOC)init_npc_list.c						\
+			\
+			$(RPG)$(SF_SET)set_game_structs.c					\
+			\
+			$(RPG)$(SF_SET)set_spell_dict.c						\
+			$(RPG)$(SF_SET)set_ennemy_dict.c					\
+			$(RPG)$(SF_SET)set_npc_list.c						\
+			\
+			$(RPG)$(SF_SET)set_spritesheet_sprite_arr.c			\
 
 OBJ     =	$(SRC:.c=.o)
 

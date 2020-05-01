@@ -48,7 +48,7 @@ typedef struct {
 } vect2f;
 
 /*generator*/
-char **maze_main(void);
+char **maze_main(int maze_size);
 
 //init_maze.c
 void destroy_maze(char **maze, vect2i *stack);

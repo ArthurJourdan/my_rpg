@@ -46,8 +46,9 @@ LIBDIR		=	./lib/
 
 SRCDIR		=	src/
 INITDIR		=	$(SRCDIR)init/
-DISPDIR		=	$(SRCDIR)disp/
+DISPDIR		=	$(SRCDIR)display/
 GAMEDIR		=	$(SRCDIR)gameplay/
+NPC_ACT		=	$(GAMEDIR)npc_actions/
 TOOLDIR		=	$(SRCDIR)tools/
 
 INIT		=	$(INITDIR)init_controls.c	\
@@ -57,11 +58,15 @@ INIT		=	$(INITDIR)init_controls.c	\
 			$(INITDIR)init_maze_maps.c
 
 TOOLS		=	$(TOOLDIR)colorcmp.c	\
-			$(TOOLDIR)image_cmp.c
+				$(TOOLDIR)image_cmp.c
 
-GAME		=	$(GAMEDIR)player_movement.c
+GAME		=	$(GAMEDIR)player_movement.c	\
+				$(GAMEDIR)npc_appear.c
+
+NPC			=	$(NPC_ACT)npc_discuss.c	\
 
 DISP		=	$(DISPDIR)display_player.c	\
+				$(DISPDIR)display_npc.c	\
 
 BUTTON		=	$(SRCDIR)button_actions/
 
@@ -73,11 +78,18 @@ OPTION		=	$(SRCDIR)options/
 
 DISPLAY		=	$(SRCDIR)display/
 
+PLAYER 		=	$(SRCDIR)player/
+
+PLAYER_INV	=	$(PLAYER)inventory/
+
+SPELL		=	$(SRCDIR)spells/
+
 SRC		=	${SRCDIR}main.c	\
 			$(INIT)		\
 			$(DISP)		\
 			$(TOOLS)	\
 			$(GAME)		\
+			$(NPC)		\
 					\
 			${SRCDIR}rpg_manager.c		\
 							\
@@ -99,6 +111,17 @@ SRC		=	${SRCDIR}main.c	\
 							\
 			$(OPTION)change_sounds_volume.c	\
 			$(OPTION)change_music_volume.c	\
+							\
+			$(PLAYER)check_collision.c		\
+			$(PLAYER_INV)add_spell.c		\
+			$(PLAYER_INV)check_inventory.c	\
+			$(PLAYER_INV)display_inventory.c	\
+			$(PLAYER_INV)draw_inventory.c		\
+			$(PLAYER_INV)init_inventory.c		\
+			$(PLAYER_INV)show_pickup_text.c		\
+							\
+			$(SPELL)display_spell_obj.c				\
+			$(SPELL)init_spell_obj.c			\
 							\
 			$(DISPLAY)display_text_struct.c	\
 			$(DISPLAY)display_button.c	\

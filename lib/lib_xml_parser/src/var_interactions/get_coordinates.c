@@ -14,7 +14,7 @@ sfVector2f get_coordinates(char const *line)
 {
     sfVector2f pos = {0, 0};
 
-    pos.x = cpy_var_int(" x=", line);
-    pos.y = cpy_var_int(" y=", line);
+    pos.x = (float)cpy_var_int(" x=", line);
+    pos.y = (float)cpy_var_int(" y=", line);
     return pos;
 }

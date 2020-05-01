@@ -5,11 +5,13 @@
 ** xml_parser.c
 */
 
-#include "xml_parser.h"
 #include "my.h"
-#include "gui.h"
-#include "print.h"
 #include "file.h"
+#include "print.h"
+
+#include "xml_parser.h"
+
+#include "gui.h"
 #include "global.h"
 #include "maps.h"
 
@@ -46,47 +48,40 @@ static maps_t **init_all_maps(char *filepath, sfRenderWindow *window)
     }
     return maps;
 }
-/*
-static anim_t *init_game_structs(char * const filepath)
+
+static game_t fill_in_data_game(char * const filepath, global_t *global)
 {
     char **file = NULL;
-    ma_nouvelle_strct = NULL;
+    game_t game;
 
     file = check_get_xml_file(filepath);
     if (!file) {
         my_dprintf(2, FILE_ERR, RED, filepath, DEFAULT);
-        return NULL;
+        return game;
     }
-    malloc_ma_nouvelle_struct
-    if (!ma_nouvelle_strct) {
-        free_double_char_arr(file);
-        return NULL;
-    }
-    fill_in_ma_nouvelle_struct(file, ma_nouvelle_strct);
+    game = malloc_all_game_structs(file);
+    set_game_structs(file, game, global);
     free_double_char_arr(file);
-    return ma_nouvelle_struct;
+    return game;
 }
- */
+
 
 global_t *xml_parser(char const *global_filepath)
 {
     global_t *global = NULL;
     filepaths_t *xml_files = NULL;
 
-    if (!is_file_openable(global_filepath))
-        return NULL;
     if (!(xml_files = get_filepaths_xml(global_filepath)))
         return NULL;
     if (!(global = malloc(sizeof(global_t))))
         return NULL;
+    global->game = fill_in_data_game(xml_files->game, global);
     if (!(global = init_global_vars(global_filepath, global)))
         return NULL;
     if (!(global->maps = init_all_maps(xml_files->maps , GW)))
          return NULL;
     if (!(global->scene_list = fill_in_data_gui(xml_files->gui, GW)))
         return NULL;
-/*    if (!(global->ma_nouvelle_struct = fill_in_data_gui(xml_files->game, GW)))
-        return NULL;
-  */  free_xml_filepaths(xml_files);
+    free_xml_filepaths(xml_files);
     return global;
 }

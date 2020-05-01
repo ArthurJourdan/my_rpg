@@ -42,6 +42,11 @@ typedef struct {
     int y;
 } vector_t;
 
+typedef struct {
+    char *str;
+    size_t nb;
+} str_nb_t;
+
 // CHECK
 size_t my_strlen(char const *str);
 size_t my_arrlen(char **arr);

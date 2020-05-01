@@ -25,9 +25,12 @@ typedef struct button {
     size_t size_tot;
     void (*action)(struct global_vars *);
     sfSound *sound;
+    sfColor idle_color;
+    sfColor hover_color;
+    sfColor clicked_color;
 } button_t;
 
-typedef struct act_button {
+typedef struct action {
     char * const name_act;
     void (*action)(struct global_vars *);
 } actions_t;

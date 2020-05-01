@@ -34,14 +34,14 @@ void swap_map(sfVector2f next, global_t *global)
 
     if (!my_colorcmp(color, sfRed))
         return;
-    if (GGP.pos.x > GGW - 300 && GGLP.x < 6 && GGLMM[GGLP.y][GGLP.x + 1].is_open) {
+    if (GGP.pos.x > GGW - 300 && GGLP.x < (GGM - 1) && GGLMM[GGLP.y][GGLP.x + 1].is_open) {
         GGP.pos.x = 100;
         GGLP.x++;
     } else if (GGP.pos.x < 300 && GGLP.x > 0 && GGLMM[GGLP.y][GGLP.x - 1].is_open) {
         GGP.pos.x = GGW - 100;
         GGLP.x--;
     }
-    if (GGP.pos.y > GGH - 300 && GGLP.y < 6 && GGLMM[GGLP.y + 1][GGLP.x].is_open) {
+    if (GGP.pos.y > GGH - 300 && GGLP.y < (GGM - 1) && GGLMM[GGLP.y + 1][GGLP.x].is_open) {
         GGP.pos.y = 100;
         GGLP.y++;
     } else if (GGP.pos.y < 300 && GGLP.y > 0 && GGLMM[GGLP.y - 1][GGLP.x].is_open) {
@@ -74,6 +74,7 @@ void player_dash(sfVector2f next, global_t *global, sfColor dash_color)
         GGPD.pos = (sfVector2f)GGP.pos;
         GGPD.frame = 0;
         sfSprite_setRotation(GGPD.dash[0][0], 90);
+        sfSprite_setRotation(GGPD.dash[0][2], 90);
         GGPC.dash_enable = false;
         GGPC.on_dash = true;
         if (my_colorcmp(color, sfWhite) || my_colorcmp(color, sfBlue))

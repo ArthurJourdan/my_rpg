@@ -14,6 +14,11 @@
 
 #include <stdbool.h>
 
+typedef struct sfml_colors {
+    sfColor sf_color;
+    char * const str_color;
+} sfml_colors_t;
+
 // WINDOW
 sfRenderWindow *create_window(unsigned int width, unsigned int height,
 unsigned int bbp, char const *name);
@@ -46,7 +51,8 @@ void next_texture_rect_shape(sfRectangleShape *rect_shape,
 // !RECTANGLESHAPE
 
 // TEXT
-sfText *create_text(sfText *text, char *str, char *font, int size);
+sfText *create_text(sfText *text, char * const str, char * const
+font, int size);
 
 void display_texts(sfRenderWindow *window, sfText **texts);
 void display_one_text(sfRenderWindow *window, sfText *text);
@@ -74,5 +80,9 @@ bool left_mouse_released(sfEvent event);
 bool right_mouse_released(sfEvent event);
 
 // !EVENTS
+
+// COLOR
+sfColor get_color_from_str(char * const str);
+// ! COLOR
 
 #endif /* !SFML_TOOLS_H */
