@@ -18,7 +18,5 @@ char **maze_main(int maze_size)
     stack = init_stack(size.y, size.x);
     maze_maker(maze, stack, 0, false);
     put_last_maze(maze, (vect2i){size.y, size.x});
-//    print_maze(maze, size.x, size.y);
-//    destroy_maze(maze, stack);
     return maze;
 }

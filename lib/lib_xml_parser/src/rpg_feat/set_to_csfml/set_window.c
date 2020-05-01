@@ -15,11 +15,11 @@ static sfVideoMode set_size_video_mode(char const *line)
 {
     sfVideoMode video_mode;
     sfVector2f dimension = get_dimensions(line);
-    int bbp = 32;
+    int bpp = 32;
 
-    if (cpy_var_int("bbp=", line) > 0)
-        bbp = cpy_var_int("bbp=", line);
-    video_mode.bitsPerPixel = bbp;
+    if (cpy_var_int("bpp=", line) > 0)
+        bpp = cpy_var_int("bpp=", line);
+    video_mode.bitsPerPixel = bpp;
     video_mode.width = dimension.x;
     video_mode.height = dimension.y;
     return video_mode;

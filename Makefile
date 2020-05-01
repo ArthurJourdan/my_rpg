@@ -58,7 +58,9 @@ INIT		=	$(INITDIR)init_controls.c	\
 			$(INITDIR)init_maze_maps.c
 
 TOOLS		=	$(TOOLDIR)colorcmp.c	\
-				$(TOOLDIR)image_cmp.c
+			$(TOOLDIR)image_cmp.c	\
+			$(TOOLDIR)make_it_rain.c\
+			$(TOOLDIR)my_goto.c
 
 GAME		=	$(GAMEDIR)player_movement.c	\
 				$(GAMEDIR)npc_appear.c
@@ -78,7 +80,7 @@ OPTION		=	$(SRCDIR)options/
 
 DISPLAY		=	$(SRCDIR)display/
 
-PLAYER 		=	$(SRCDIR)player/
+PLAYER		=	$(SRCDIR)player/
 
 PLAYER_INV	=	$(PLAYER)inventory/
 
@@ -131,6 +133,7 @@ SRC		=	${SRCDIR}main.c	\
 			$(DISPLAY)display_map.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
+			$(DESTROY)pixels_destroy.c
 
 OBJ		=       $(SRC:.c=.o)
 

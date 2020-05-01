@@ -25,6 +25,8 @@ SRCDIR	=		src/
 
 INIT	=		$(SRCDIR)init/
 
+PXL	=		$(SRCDIR)pixels/
+
 SET		=		$(SRCDIR)set/
 
 GET		=		$(SRCDIR)get/
@@ -51,6 +53,8 @@ SRC     =		$(INIT)create_image.c					\
 				\
 				$(DISP)display_sprite.c					\
 				$(DISP)display_text.c					\
+				\
+				$(PXL)pixel_form.c					\
 
 OBJ     =       $(SRC:.c=.o)
 

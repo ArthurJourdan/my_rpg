@@ -16,13 +16,24 @@
 
 //game
 #define GG global->game
+#define GGPXS(a) global->game.pixel[a].speed
+#define GGPX(a) global->game.pixel[a].size
+#define GGPS(a) global->game.pixel[a].start
+#define GGPP(a) global->game.pixel[a].pos
+#define GGPE(a) global->game.pixel[a].end
+#define GGPR(a) global->game.pixel[a].density
 #define GGW global->game.width
 #define GGH global->game.height
-#define GGP global->game.player
+#define GGF global->game.framebuffer
+#define GGTF global->game.texture_fb
+#define GGSF global->game.sprite_fb
 #define GGM global->game.maze_size
+//player
+#define GGP global->game.player
 #define GGPC global->game.player.controls
 #define GGPD global->game.player.dash
 #define GGPT global->game.player.time
+//layers
 #define GGL global->game.layers
 #define GGLM global->game.layers.maze
 #define GGLMM global->game.layers.maze_maps

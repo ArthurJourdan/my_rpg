@@ -200,6 +200,7 @@ typedef struct maze {
     sfImage *coll;
     bool is_open;
     bool is_enemies;
+    int weather;
 }maze_map_t;
 
 typedef struct layers {
@@ -209,8 +210,27 @@ typedef struct layers {
     sfVector2i pos;
 }layers_t;
 
+typedef struct fbuffer{
+    unsigned char *pixels;
+    unsigned int height;
+    unsigned int width;
+} fbuffer_t;
+
+typedef struct pixel{
+    sfVector2f *start;
+    sfVector2f *pos;
+    sfVector2f *end;
+    float *size;
+    float speed;
+    int density;
+} pixel_t;
+
 typedef struct game {
     sfEvent event;
+    pixel_t *pixel;
+    fbuffer_t *framebuffer;
+    sfTexture *texture_fb;
+    sfSprite *sprite_fb;
     player_t player;
     obj_t *obj;
     layers_t layers;
