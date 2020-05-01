@@ -77,6 +77,8 @@ PLAYER 		=	$(SRCDIR)player/
 
 PLAYER_INV	=	$(PLAYER)inventory/
 
+SPELL		=	$(SRCDIR)spells/
+
 SRC		=	${SRCDIR}main.c	\
 			$(INIT)		\
 			$(DISP)		\
@@ -111,6 +113,9 @@ SRC		=	${SRCDIR}main.c	\
 			$(PLAYER_INV)draw_inventory.c		\
 			$(PLAYER_INV)init_inventory.c		\
 			$(PLAYER_INV)show_pickup_text.c		\
+							\
+			$(SPELL)display_spell_obj.c				\
+			$(SPELL)init_spell_obj.c			\
 							\
 			$(DISPLAY)display_text_struct.c	\
 			$(DISPLAY)display_button.c	\

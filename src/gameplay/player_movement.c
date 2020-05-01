@@ -114,4 +114,6 @@ void player_movements(global_t *global)
                              next.x * (float)1650 / (float)GGW,
                              next.y * (float)990 / (float)GGH);
     player_dash(next_pos, global, color);
+    GGP.collider->left = GGP.pos.x;
+    GGP.collider->top = GGP.pos.y;
 }

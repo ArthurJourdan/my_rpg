@@ -65,6 +65,16 @@ typedef struct dict {
 /*************** OBJs *****************/
 /**************************************/
 
+typedef struct spell_obj_ground {
+    int id;
+    sfSprite *image;
+    sfIntRect *collider;
+    sfText *pickup_text;
+    sfText *replace_text;
+    int show_text;
+    int active;
+} s_obj_g;
+
 typedef struct spell_obj {
     bool obj_status;
     int id;
@@ -95,6 +105,8 @@ typedef struct enemy_obj {
 }e_obj_t;
 
 typedef struct obj {
+    s_obj_g *sp_obj_g;
+    int obj_index;
     e_obj_t e_obj[64];
     s_obj_t s_obj[64];
 }obj_t;
@@ -198,7 +210,6 @@ typedef struct game {
     player_t player;
     obj_t *obj;
     layers_t layers;
-    sp_dict_t **spell_dict; //all spells on the ground
     int width;
     int height;
     sp_dict_t **spell_dict;

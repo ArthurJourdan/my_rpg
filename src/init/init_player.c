@@ -55,6 +55,11 @@ void init_player(global_t *global)
     GGP.pos = (sfVector2f){200, 500};
     GGP.hitbox = HITBOX;
     GGP.col_center = COLLIDER;
+    GGP.collider = malloc(sizeof(sfIntRect));
+    GGP.collider->left = COLLIDER.x - 20;
+    GGP.collider->top = COLLIDER.y - 20;
+    GGP.collider->height = 20;
+    GGP.collider->width = 20;
     put_sprite(global, (char *)FILEPATH);
     init_controls(global);
     init_player_sprites(global);

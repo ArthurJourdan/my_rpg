@@ -14,10 +14,10 @@
 static const char inventory_bg_path[45] =
 "assets_rpg/images/player/inventory_cell.png";
 static const char font_path[52] =
-"assets_rpg/GUI/assets/font/Beathy Demo Version.ttf";
+"assets_rpg/gui/assets_2/font/Demode.ttf";
 static const char pickup_sen[15] = "Pick up with F";
 static const char replace_sen[24] = "Choose spell to replace";
-static const int text_size = 10;
+static const int text_size = 30;
 static const sfKeyCode spell1 = sfKeyA;
 static const sfKeyCode spell2 = sfKeyE;
 static const sfKeyCode pickup_key = sfKeyF;

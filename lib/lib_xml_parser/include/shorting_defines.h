@@ -28,10 +28,15 @@
 #define GGLDM global->game.layers.dante_maps
 #define GGLP global->game.layers.pos
 #define GGS global->game.spell_dict
+#define GGO global->game.obj
 
 //player
 #define GGPIS global->game.player.p_invent->spell_nodes
 
+//OBJ
+#define CO collider->left
+#define CT collider->top
+#define GGOSG global->game.obj->sp_obj_g
 
 #define ACT global->scene_list->index
 #define SC_A global->scene_list->scenes[global->scene_list->index]

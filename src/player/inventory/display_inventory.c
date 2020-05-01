@@ -19,8 +19,8 @@ void display_inventory(global_t *global)
     sfSprite_setPosition(GGP.p_invent->invent_bg, invent_pos2);
     sfRenderWindow_drawSprite(GW, GGP.p_invent->invent_bg, NULL);
     if (GGP.p_invent->spell_nodes[0].spell_id != -1) {
-        sfSprite_setPosition(GGS[GGPIS[0].spell_id]->spell_img, invent_pos1);
-        sfRenderWindow_drawSprite(GW, GGS[GGPIS[0].spell_id]->spell_img, NULL);
+      sfSprite_setPosition(GGS[GGPIS[0].spell_id]->spell_img, invent_pos1);
+      sfRenderWindow_drawSprite(GW, GGS[GGPIS[0].spell_id]->spell_img, NULL);
     }
     if (GGP.p_invent->spell_nodes[1].spell_id != -1) {
       sfSprite_setPosition(GGS[GGPIS[1].spell_id]->spell_img, invent_pos2);

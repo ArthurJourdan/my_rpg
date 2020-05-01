@@ -11,4 +11,6 @@
 
 void draw_inventory(player_t *player)
 {
+
+
 }

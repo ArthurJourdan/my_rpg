@@ -13,11 +13,12 @@
 #include "maze.h"
 #include "player.h"
 
+
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)
 
 #define rect(l, t, w, h) (sfIntRect){l, t, w, h}
-
+#define OBJ_SIZE 80
 /*MAIN*/
 void rpg_manager(global_t *global);
 char **maze_main(void);
@@ -49,4 +50,12 @@ void move_check(sfVector2f next, global_t *global);
 void swap_map(sfVector2f next, global_t *global);
 void player_dash(sfVector2f next, global_t *global, sfColor dash_color);
 
+/*OBJ*/
+void init_spell_obj(global_t *global);
+void display_spell_obj(global_t *global, int pos);
+int player_colliding_spell(game_t *game, int pos);
+void display_spell_obj_txt(global_t *global, int text);
+
+/*SPELL*/
+void check_spell(global_t *global, int spell_id, player_t *player);
 #endif /* !MY_RPG_H */

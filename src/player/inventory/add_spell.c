@@ -31,12 +31,16 @@ void check_spell(global_t *global, int spell_id, player_t *player)
         replace = show_replace(global);
         if (!replace) {
             add_spell(player, spell_id, replace - 1);
+            GGO->sp_obj_g[0].show_text = 0;
             return;
         } else
             return;
     }
     if (!show_pickup(global))
         return;
-    else
+    else if (GGO->sp_obj_g[spell_id].active) {
+        GGO->sp_obj_g[spell_id].active = 0;
+        GGO->sp_obj_g[0].show_text = 0;
         add_spell(player, spell_id, player->p_invent->nb_spells);
+    }
 }

@@ -12,25 +12,17 @@
 
 int show_pickup(global_t *global)
 {
-    sfText *pickup = create_text(NULL, (char * const)pickup_sen,
-    (char * const)font_path, text_size);
-
-    display_one_text(global->window, pickup);
+    GGO->sp_obj_g[0].show_text = 1;
     if (sfKeyboard_isKeyPressed(pickup_key)) {
-        sfText_destroy(pickup);
         return 1;
     } else {
-        sfText_destroy(pickup);
         return 0;
     }
 }
 
 int show_replace(global_t *global)
 {
-    sfText *replace = create_text(NULL, (char * const)replace_sen,
-    (char * const)font_path, text_size);
-
-    display_one_text(global->window, replace);
+    GGO->sp_obj_g[0].show_text = 2;
     if (sfKeyboard_isKeyPressed(spell1))
         return 1;
     else if (sfKeyboard_isKeyPressed(spell2))
