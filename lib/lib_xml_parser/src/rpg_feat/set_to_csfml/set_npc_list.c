@@ -14,9 +14,9 @@
 #include "npc.h"
 #include "button.h"
 
-static actions_t const all_actions[] = {
+static actions_npc_t const all_actions[] = {
     {"None", NULL},
-    {"Discuss", NULL/* &npc_discuss */},
+    {"Discuss", &npc_discuss},
     {"Zoom", NULL/* &npc_zoom */}
 };
 
@@ -39,8 +39,11 @@ static void *choose_action(char * const line)
 static void set_caracteristics(npc_t *npc, char * const line)
 {
     npc->sprite = set_sprite_arr(line);
+    npc->map_pos.x = cpy_var_int(" map_pos_x=", line);
+    npc->map_pos.y = cpy_var_int(" map_pos_y=", line);
     npc->text = set_any_text(line, NULL);
     npc->action = choose_action(line);
+    npc->pos = get_coordinates(line);
 }
 
 void set_npc_list(char **file, npc_t **npc_dict)

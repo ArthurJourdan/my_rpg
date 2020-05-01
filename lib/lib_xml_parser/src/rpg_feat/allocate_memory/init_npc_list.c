@@ -22,6 +22,9 @@ static npc_t *set_one_to_null(void)
     npc->sprite = NULL;
     npc->text = NULL;
     npc->action = NULL;
+    npc->pos = (sfVector2f){0, 0};
+    npc->idx_texture = (sfVector2i){0, 0};
+    npc->map_pos = (sfVector2i){0, 0};
     return npc;
 }
 

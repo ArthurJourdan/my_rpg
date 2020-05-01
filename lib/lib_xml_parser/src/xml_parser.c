@@ -60,10 +60,6 @@ static game_t fill_in_data_game(char * const filepath, global_t *global)
         return game;
     }
     game = malloc_all_game_structs(file);
-    if (!game.spell_dict) {
-        free_double_char_arr(file);
-        return game;
-    }
     set_game_structs(file, game, global);
     free_double_char_arr(file);
     return game;

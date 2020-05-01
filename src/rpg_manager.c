@@ -34,7 +34,6 @@ static void gameplay(global_t *global)
     if (ACT == GAME) {
         player_movements(global);
     }
-    // npc_appear(global);
 }
 
 static void rpg_game(global_t *global, sfClock **game_clock)
@@ -49,6 +48,7 @@ static void rpg_game(global_t *global, sfClock **game_clock)
             gameplay(global);
         }
         display_everything(global);
+        npc_appear(global);
     }
 }
 

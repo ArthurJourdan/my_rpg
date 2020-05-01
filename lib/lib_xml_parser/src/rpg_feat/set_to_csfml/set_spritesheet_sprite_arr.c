@@ -5,6 +5,8 @@
 ** set_spritesheet_sprite_arr.c
 */
 
+#include "file.h"
+
 #include "xml_parser.h"
 #include "rpg_structs.h"
 #include "my_rpg.h"
@@ -21,6 +23,7 @@ static int *fill_anim_arr(char *tmp_frames)
     anim_count = malloc(sizeof(int) * (nb_lines + 1));
     if (!anim_count)
         return NULL;
+    rm_char_in_double_arr(tmp_nb_frames, ' ');
     for (size_t a = 0; tmp_nb_frames[a]; a++) {
         if (my_str_is_num(tmp_nb_frames[a]))
             anim_count[a] = my_getnbr(tmp_nb_frames[a]);
@@ -29,6 +32,17 @@ static int *fill_anim_arr(char *tmp_frames)
     }
     anim_count[nb_lines] = -1;
     return anim_count;
+}
+
+static int count_anims(animd_t infos_sprite)
+{
+    int nb_anims = 0;
+
+    if (!infos_sprite.anim_frames)
+        return 0;
+    for (size_t a = 0; infos_sprite.anim_frames[a] != -1; a++)
+        nb_anims++;
+    return nb_anims;
 }
 
 static animd_t set_infos_sprite(char * const line)
@@ -42,8 +56,7 @@ static animd_t set_infos_sprite(char * const line)
         infos_sprite.anim_frames = fill_anim_arr(tmp_frames);
         free(tmp_frames);
     }
-    for (size_t a = 0; infos_sprite.anim_frames[a] != -1; a++)
-        infos_sprite.anim_count++;
+    infos_sprite.anim_count = count_anims(infos_sprite);
     infos_sprite.unit_size = get_dimensions(line);
     return infos_sprite;
 }
@@ -57,8 +70,16 @@ sfSprite ***set_sprite_arr(char * const line)
         return NULL;
     }
     if (!info.anim_count || !info.anim_frames) {
+        free(info.spritesheet);
+        return NULL;
+    }
+    if (!is_file_openable(info.spritesheet)) {
+        free(info.spritesheet);
+        free(info.anim_frames);
         return NULL;
     }
     sprites = spritesheet_load(&info);
+    free(info.spritesheet);
+    free(info.anim_frames);
     return sprites;
 }

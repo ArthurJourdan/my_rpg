@@ -28,7 +28,18 @@
 #define GGLMM global->game.layers.maze_maps
 #define GGLDM global->game.layers.dante_maps
 #define GGLP global->game.layers.pos
+
+// NPC
 #define GGNPC global->game.npc_list
+#define NPC_XY global->game.npc_list[npc_idx]->idx_texture
+#define NPCX global->game.npc_list[npc_idx]->idx_texture.x
+#define NPCY global->game.npc_list[npc_idx]->idx_texture.y
+#define NPCS global->game.npc_list[npc_idx]->sprite[NPCX][NPCY]
+#define NPCS_ONE global->game.npc_list[npc_idx]->sprite
+#define NPC_MAPX global->game.npc_list[npc_idx]->map_pos.x
+#define NPC_MAPY global->game.npc_list[npc_idx]->map_pos.y
+#define NPC_POS global->game.npc_list[npc_idx]->pos
+// ! NPC
 
 #define ACT global->scene_list->index
 #define SC_A global->scene_list->scenes[global->scene_list->index]
@@ -46,6 +57,7 @@
 #define SCL_B scene_list->scenes[scene_nb]->buttons
 #define SCL_I scene_list->scenes[scene_nb]->images
 #define SCL_T scene_list->scenes[scene_nb]->texts
+// !INIT
 
 //animd
 #define SPRSH animd->spritesheet

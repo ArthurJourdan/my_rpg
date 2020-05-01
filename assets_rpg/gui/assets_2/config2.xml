@@ -7,7 +7,7 @@
     <Button name="How to play" nb_animations="2" size_total="114" action="Tutorial" text="tuto" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="50" x="1000" heigth="72" width="228" size="40"/>
     <Text name="Best score" text="Best_score" letter_delay="1" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="10" y="820" size="40"/>
     <Text name="Welcome" text="Welcome to this beautiful menu!" letter_delay="1" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="10" y="920" size="40"/>
-    <Music name="music1" audio="assets_rpg/audio/musics/it_s_raining.ogg" volume="40" loop="true"/>
+    <Music name="music1" audio="assets_rpg/audio/musics/it_s_raining.ogg" volume="30" loop="true"/>
     <Sound name="soundbegining" audio="assets_rpg/audio/musics/music_trial_menu.ogg" volume="40"/>
 </Scene>
 <Scene name="Game">
