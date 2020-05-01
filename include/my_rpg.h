@@ -47,5 +47,12 @@ bool my_colorcmp(sfColor color1, sfColor color2);
 void move_check(sfVector2f next, global_t *global);
 void swap_map(sfVector2f next, global_t *global);
 void player_dash(sfVector2f next, global_t *global, sfColor dash_color);
+sfVector2f my_goto(sfVector2f *pos, sfVector2f start, sfVector2f target, float speed);
+
+/*PIXELS*/
+fbuffer_t *framebuffer_create(unsigned int width, unsigned int heght);
+void make_it_rain(global_t *global);
+void make_it_snow(global_t *global);
+void pixels_destroy(global_t *global);
 
 #endif /* !MY_RPG_H */

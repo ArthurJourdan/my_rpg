@@ -8,6 +8,8 @@
 #include "global.h"
 #include "button.h"
 #include "text.h"
+#include "sfml_tools.h"
+#include "my_rpg.h"
 
 static void destroy_text(text_t *text)
 {
@@ -76,5 +78,6 @@ void destroy_game(global_t *global)
         destroy_scene(GS->scenes[i]);
         // free(GS->scenes[i]);
     }
+    pixels_destroy(global);
     free(global);
 }

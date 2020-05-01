@@ -8,13 +8,13 @@
     <Text name="Best score" text="Best_score" letter_delay="1" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="10" y="820" size="40"/>
     <Text name="Welcome" text="Welcome to this beautiful menu!" letter_delay="1" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="10" y="920" size="40"/>
     <Music name="music1" audio="assets_rpg/audio/musics/it_s_raining.ogg" volume="40" loop="true"/>
-    <Sound name="soundbegining" audio="assets_rpg/audio/musics/music_trial_menu.ogg" volume="40"/>
+    <Sound name="soundbegining" audio="assets_rpg/audio/musics/music_trial_menu.ogg" volume="20"/>
 </Scene>
 <Scene name="Game">
     <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/gui/assets_2/font/demode.ttf" image="assets_rpg/gui/assets_2/image/pixel sky.png" sound="assets_rpg/audio/sounds/button.ogg" width="350" heigth="100" x="10" y="900"/>
     <Text name="lore" text="It seems that you are trapped in this maze ! aren't you thursty ? Go find a fountain" letter_delay="1" disappear_delay="120" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="10" y="820" size="40"/>
     <Sound name="sound" audio="assets_rpg/audio/sounds/sonar.ogg" volume="40"/>
-    <Music name="music1" audio="assets_rpg/audio/musics/undertale-megalovania.ogg" volume="40" loop="true"/>
+    <Music name="music1" audio="assets_rpg/audio/musics/undertale-megalovania.ogg" volume="20" loop="true"/>
 </Scene>
 <Scene name="Pause">
     <Button name="Starting menu" action="Starting_menu" text="Menu" font="assets_rpg/gui/assets_2/font/demode-negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="20" x="100" heigth="125" width="775"  size="100"/>
