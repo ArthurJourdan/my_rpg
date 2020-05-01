@@ -41,7 +41,8 @@ static void set_caracteristics(npc_t *npc, char * const line)
     npc->sprite = set_sprite_arr(line);
     npc->map_pos.x = cpy_var_int(" map_pos_x=", line);
     npc->map_pos.y = cpy_var_int(" map_pos_y=", line);
-    npc->text = set_any_text(line, NULL);
+    npc->text = malloc(sizeof(text_t));
+    npc->text = set_any_text(line, npc->text);
     npc->action = choose_action(line);
     npc->pos = get_coordinates(line);
 }
