@@ -10,7 +10,8 @@
 
 void enemy_tab_init(global_t *global)
 {
-    G_E_OBJ = a_malloc(sizeof(e_obj_t *) * 64 | A_LIST(1));
+    //G_E_OBJ = a_malloc(sizeof(e_obj_t *) * 64 | A_LIST(1));
+    E_CLOCK = sfClock_create();
     
     for (int i = 0; i < 64; i++) {
         G_E_OBJ[i] = a_malloc(sizeof(e_obj_t) | A_LIST(1));
