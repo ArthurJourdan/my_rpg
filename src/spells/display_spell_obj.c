@@ -11,6 +11,8 @@
 
 void display_spell_obj_txt(global_t *global, int text)
 {
+    if (!GGO)
+        return;
     if (text == 0)
         return;
     else if (text == 1) {

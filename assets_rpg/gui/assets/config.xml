@@ -7,7 +7,7 @@
     <Text text_color="Cyan" name="csml" text="Made in CSFML" font="assets_rpg/gui/assets_2/font/demode.ttf" x="1600" y="250" size="40"/>
 </Scene>
 <Scene name="Game">
-    <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" width="350" height="100" x="10" y="900"/>
+    <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" width="350" height="100" x="1500" y="900"/>
     <Music name="music1" audio="assets_rpg/audio/musics/undertale-megalovania.ogg" volume="40" loop="true"/>
 </Scene>
 <Scene name="Pause">
