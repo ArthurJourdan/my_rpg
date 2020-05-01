@@ -21,7 +21,7 @@
 #define OBJ_SIZE 80
 /*MAIN*/
 void rpg_manager(global_t *global);
-char **maze_main(void);
+char **maze_main(int maze_size);
 
 /*INIT*/
 void init_game(global_t *global);

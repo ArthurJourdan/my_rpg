@@ -30,7 +30,7 @@ typedef struct button {
     sfColor clicked_color;
 } button_t;
 
-typedef struct act_button {
+typedef struct action {
     char * const name_act;
     void (*action)(struct global_vars *);
 } actions_t;

@@ -41,6 +41,18 @@ static void set_delay_text(char const *line, text_t *text)
     }
 }
 
+static void set_color_text(char const *line, text_t *text)
+{
+    char *color_str = cpy_var_name(" text_color=", line);
+    sfColor color = sfWhite;
+
+    if (color_str) {
+        color = get_color_from_str(color_str);
+        sfText_setColor(text->text_sfml, color);
+        free_char_to_null(color_str);
+    }
+}
+
 text_t *set_any_text(char const *line, text_t *text)
 {
     sfVector2f pos = get_coordinates(line);
@@ -57,8 +69,8 @@ text_t *set_any_text(char const *line, text_t *text)
     else
         text->text_sfml = create_text(NULL, NULL, font, size);
     sfText_setPosition(text->text_sfml, pos);
-    if (font)
-        free(font);
+    font = free_char_to_null(font);
+    set_color_text(line, text);
     return text;
 }
 

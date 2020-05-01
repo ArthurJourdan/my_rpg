@@ -26,7 +26,7 @@ static str_nb_t categories[3] = {
     {"sequence", sequence},
 };
 
-static game_t set_caracteristics(sp_dict_t *spell_page, char * const line)
+static void set_caracteristics(sp_dict_t *spell_page, char * const line)
 {
     char *image = cpy_var_name(" image=", line);
 
@@ -42,7 +42,7 @@ static game_t set_caracteristics(sp_dict_t *spell_page, char * const line)
     spell_page->travel_speed = cpy_var_float(" travel_speed=", line);
 }
 
-static game_t set_type_category(sp_dict_t *spell_page, char * const line)
+static void set_type_category(sp_dict_t *spell_page, char * const line)
 {
     char *info = NULL;
 

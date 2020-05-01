@@ -60,10 +60,6 @@ static game_t fill_in_data_game(char * const filepath, global_t *global)
         return game;
     }
     game = malloc_all_game_structs(file);
-    if (!game.spell_dict) {
-        free_double_char_arr(file);
-        return game;
-    }
     set_game_structs(file, game, global);
     free_double_char_arr(file);
     return game;
@@ -75,19 +71,17 @@ global_t *xml_parser(char const *global_filepath)
     global_t *global = NULL;
     filepaths_t *xml_files = NULL;
 
-    if (!is_file_openable(global_filepath))
-        return NULL;
     if (!(xml_files = get_filepaths_xml(global_filepath)))
         return NULL;
     if (!(global = malloc(sizeof(global_t))))
         return NULL;
+    global->game = fill_in_data_game(xml_files->game, global);
     if (!(global = init_global_vars(global_filepath, global)))
         return NULL;
     if (!(global->maps = init_all_maps(xml_files->maps , GW)))
          return NULL;
     if (!(global->scene_list = fill_in_data_gui(xml_files->gui, GW)))
         return NULL;
-    global->game = fill_in_data_game(xml_files->game, global);
     free_xml_filepaths(xml_files);
     return global;
 }

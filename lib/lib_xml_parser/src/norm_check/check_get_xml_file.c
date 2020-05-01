@@ -13,8 +13,11 @@ static char * const MSG = "\n%sFile -> %s -> good\n\n%s";
 
 char **check_get_xml_file(char const *fp)
 {
-    char **file = get_entire_file_double_arr(fp);
+    char **file = NULL;
 
+    if (!fp)
+        return NULL;
+    file = get_entire_file_double_arr(fp);
     if (!file || !file[0])
         return NULL;
     if (!is_it_xml((char const **)file)) {

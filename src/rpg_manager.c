@@ -42,20 +42,19 @@ static void gameplay(global_t *global)
     }
 }
 
-static void rpg_game(global_t *global, sfClock *game_clock)
+static void rpg_game(global_t *global, sfClock **game_clock)
 {
-    float nb_sec = sfTime_asSeconds(sfClock_getElapsedTime(game_clock));
+    float nb_sec = sfTime_asSeconds(sfClock_getElapsedTime(*game_clock));
     float nb_fram = nb_sec * FPS;
 
     if (nb_fram >= 1.0f) {
-        sfClock_restart(game_clock);
+        sfClock_restart(*game_clock);
         for (float a = 0; a < nb_fram; a++) {
             sfRenderWindow_pollEvent(GW, &GG.event);
             gameplay(global);
-            display_everything(global);
-            // if (GS[ACT]->to_do)
-            // GS[ACT]->to_do(global);
         }
+        display_everything(global);
+        npc_appear(global);
     }
 }
 
@@ -63,9 +62,10 @@ void rpg_manager(global_t *global)
 {
     sfClock *game_clock = sfClock_create();
 
+    sfRenderWindow_setFramerateLimit(GW, FPS);
     change_scene(GS, HOME);
     while (sfRenderWindow_isOpen(GW)) {
-        rpg_game(global, game_clock);
+        rpg_game(global, &game_clock);
     }
     sfClock_destroy(game_clock);
     destroy_game(global);

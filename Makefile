@@ -46,8 +46,9 @@ LIBDIR		=	./lib/
 
 SRCDIR		=	src/
 INITDIR		=	$(SRCDIR)init/
-DISPDIR		=	$(SRCDIR)disp/
+DISPDIR		=	$(SRCDIR)display/
 GAMEDIR		=	$(SRCDIR)gameplay/
+NPC_ACT		=	$(GAMEDIR)npc_actions/
 TOOLDIR		=	$(SRCDIR)tools/
 
 INIT		=	$(INITDIR)init_controls.c	\
@@ -57,11 +58,15 @@ INIT		=	$(INITDIR)init_controls.c	\
 			$(INITDIR)init_maze_maps.c
 
 TOOLS		=	$(TOOLDIR)colorcmp.c	\
-			$(TOOLDIR)image_cmp.c
+				$(TOOLDIR)image_cmp.c
 
-GAME		=	$(GAMEDIR)player_movement.c
+GAME		=	$(GAMEDIR)player_movement.c	\
+				$(GAMEDIR)npc_appear.c
+
+NPC			=	$(NPC_ACT)npc_discuss.c	\
 
 DISP		=	$(DISPDIR)display_player.c	\
+				$(DISPDIR)display_npc.c	\
 
 BUTTON		=	$(SRCDIR)button_actions/
 
@@ -84,6 +89,7 @@ SRC		=	${SRCDIR}main.c	\
 			$(DISP)		\
 			$(TOOLS)	\
 			$(GAME)		\
+			$(NPC)		\
 					\
 			${SRCDIR}rpg_manager.c		\
 							\

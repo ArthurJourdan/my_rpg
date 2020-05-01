@@ -22,7 +22,7 @@ static char *checks[7] = {
 
 bool are_equals_filled(char const *line, USELESS int check, int nb_line)
 {
-    for (size_t b = 0; line[b] != '\n'; b++) {
+    for (size_t b = 0; line[b]; b++) {
         if (line[b] == '=') {
             if (!line[b + 1] || line[b + 1] != '"')
                 return xml_error_msg('=', nb_line, b);
@@ -39,11 +39,11 @@ bool are_quotes_filled(char const *line, int check, int nb_line)
 {
     size_t avoid = 0;
 
-    for (size_t b = 0; line[b] != '\n' && line[b]; b++) {
+    for (size_t b = 0; line[b] && line[b]; b++) {
         if (b == avoid)
             b++;
         if (line[b] == '"') {
-            for (int c = b + 1; line[c] != '\n'; c++) {
+            for (int c = b + 1; line[c]; c++) {
                 if (line[c] == '"') {
                     check++;
                     avoid = c;
@@ -62,7 +62,7 @@ bool are_quotes_filled(char const *line, int check, int nb_line)
 
 bool are_wards_good(char const *line, int check, int nb_line)
 {
-    for (size_t b = 0; line[b] != '\n'; b++) {
+    for (size_t b = 0; line[b]; b++) {
         if (line[b] == '<') {
             if (check == 2) {
                 check = 1;
@@ -91,8 +91,8 @@ bool is_statement_quotation(char const *line, int check, int nb_line)
         pos = get_pos_word_end_in_str(line, checks[a]);
         if (pos != -1)
             if (line[pos++] != '"') {
-                my_dprintf(2, "%swrong position for \"%s\"", RED, checks[a]);
-                my_dprintf(2, " statement at line %i, pos %i\n\n", nb_line, pos);
+                my_dprintf(2, "%swrong position for \"%s\" ", RED, checks[a]);
+                my_dprintf(2, "statement at line %i, pos %i\n\n", nb_line, pos);
                 check++;
             }
     }

@@ -26,7 +26,6 @@ typedef struct global_vars {
     game_t game;
 } global_t;
 
-
 void destroy_game(global_t *global);
 
 #endif /* !GLOBAL_H */
