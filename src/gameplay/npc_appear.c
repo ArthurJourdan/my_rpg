@@ -38,7 +38,6 @@ void npc_appear(global_t *global)
     }
     for (size_t npc_idx = 0; GGNPC[npc_idx]; npc_idx++) {
         if (GGNPC[npc_idx]->actioning && GGNPC[npc_idx]->action) {
-            // my_dprintf(1, "\n== %i\n", npc_idx);
             GGNPC[npc_idx]->action(global, npc_idx);
         }
     }

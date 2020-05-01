@@ -9,5 +9,6 @@
 
 void npc_discuss(global_t *global, size_t npc_idx)
 {
+    // my_dprintf(1, "\n== %s\n", GGNPC[npc_idx]->text->string);
     display_text_struct(GGNPC[npc_idx]->text, GW, FPS, 0);
 }
