@@ -45,6 +45,7 @@ static void set_caracteristics(npc_t *npc, char * const line)
     npc->text = set_any_text(line, npc->text);
     npc->action = choose_action(line);
     npc->pos = get_coordinates(line);
+    npc->time_action = cpy_var_float(" time_action=", line);
 }
 
 void set_npc_list(char **file, npc_t **npc_list)

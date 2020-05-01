@@ -24,8 +24,21 @@ static void action_npc(global_t *global, size_t npc_idx)
     if (left_mouse_pressed(global->event)) {
         if (sfFloatRect_contains(&sprite_coo, pos_mouse.x, pos_mouse.y)) {
             GGNPC[npc_idx]->actioning = true;
+            sfClock_restart(GGNPC[npc_idx]->clock);
         }
     }
+}
+
+static void npc_disappear(global_t *global)
+{
+    sfTime passed;
+
+    for (size_t npc_idx = 0; GGNPC[npc_idx]; npc_idx++) {
+        passed = sfClock_getElapsedTime(GGNPC[npc_idx]->clock);
+        if (sfTime_asSeconds(passed) > GGNPC[npc_idx]->time_action)
+            GGNPC[npc_idx]->actioning = false;
+    }
+
 }
 
 void npc_appear(global_t *global)
@@ -41,4 +54,5 @@ void npc_appear(global_t *global)
             GGNPC[npc_idx]->action(global, npc_idx);
         }
     }
+    npc_disappear(global);
 }

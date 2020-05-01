@@ -63,6 +63,7 @@ static void rpg_game(global_t *global, sfClock **game_clock)
 void rpg_manager(global_t *global)
 {
     sfClock *game_clock = sfClock_create();
+
     sfRenderWindow_setFramerateLimit(GW, FPS);
     change_scene(GS, HOME);
     while (sfRenderWindow_isOpen(GW)) {
