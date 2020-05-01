@@ -22,12 +22,13 @@ void init_spell_obj(global_t *global)
 {
     sfVector2f s_pos = {500, 500};
     int arr_len = -1;
-    int i;
 
+    if (!GGS)
+        return;
     while (GGS[++arr_len]);
     GGO->sp_obj_g = malloc(sizeof(s_obj_g) * arr_len);
     init_spell_text(&GGO->sp_obj_g[0]);
-    for (i = 0; i < arr_len; i++) {
+    for (int i = 0; i < arr_len; i++) {
         GGO->sp_obj_g[i].active = 1;
         GGO->sp_obj_g[i].id = GGS[i]->id;
         GGO->sp_obj_g[i].image = sfSprite_copy(GGS[i]->spell_img);
@@ -37,5 +38,5 @@ void init_spell_obj(global_t *global)
         GGO->sp_obj_g[i].collider->width = OBJ_SIZE;
         GGO->sp_obj_g[i].collider->height = OBJ_SIZE;
     }
-    GGO->sp_obj_g[i].id = -1;
+    GGO->sp_obj_g[arr_len].id = -1;
 }
