@@ -34,7 +34,13 @@ typedef struct enemy_obj {
 #define E_SPELL enemy->spell_nodes
 #define E_COLLIDER enemy->collider
 #define E_MOVET enemy->movet
+#define E_HP enemy->hp
+#define E_MHP enemy->max_hp
 #define E_CLOCK global->game->obj->e_clock
+
+
+#define GGOE global->game->obj->e_obj
+#define E_DICT global->game->dict->enemy_dict
 
 #define vec2f(x, y) (sfVector2f){(x), (y)}
 
