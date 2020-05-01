@@ -8,7 +8,7 @@
 </Scene>
 <Scene name="Game">
     <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/gui/assets_2/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" width="350" height="100" x="1500" y="900"/>
-  #  <Music name="music1" audio="assets_rpg/audio/musics/undertale-megalovania.ogg" volume="40" loop="true"/>
+    <Music name="music1" audio="assets_rpg/audio/musics/undertale-megalovania.ogg" volume="40" loop="true"/>
 </Scene>
 <Scene name="Pause">
     <Button text_color="Yellow" idle_color="Yellow" name="Starting menu" action="Starting_menu" text="Menu" font="assets_rpg/gui/assets_2/font/demode-negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="20" x="100" height="125" width="775"  size="100"/>
