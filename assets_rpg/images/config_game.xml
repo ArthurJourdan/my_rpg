@@ -1,3 +1,2 @@
-<Ennemy image="" nb_anim="" nb_images="" size_one="">
-<Spell id="0" image="assets_rpg/images/player/spells/fireball_spell.png" base_damage="20" mp_cost="10" cooldown="3" activation_radius="10" range="40" travel_speed="4">
-<NPC map_pos_x="0" map_pos_y="0" x="100" y="100" text="Coucou" font="assets_rpg/gui/assets_2/font/legionary.ttf" action="Discuss" anim_size="3, 3, 3" image="assets_rpg/images/spritsheets/old_man.png" width="144" height="192"/>
+<Ennemy image="" nb_anim="" nb_images="" size_one="" />
+<NPC map_pos_x="0" map_pos_y="0" x="450" y="450" text="Coucou" font="assets_rpg/gui/assets_2/font/legionary.ttf" action="Discuss" anim_size="3, 3, 3, 3" image="assets_rpg/images/spritsheets/old_man.png" width="96" height="96"/>
