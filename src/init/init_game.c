@@ -52,12 +52,15 @@ void init_game(global_t *global)
 {
     GGW = sfRenderWindow_getSize(GW).x;
     GGH = sfRenderWindow_getSize(GW).y;
+    GG.obj = malloc(sizeof(obj_t));
+    GG.obj->obj_index = 0;
     init_player(global);
+    init_spell_obj(global);
     init_layers(global);
     GGF = framebuffer_create(GGW, GGH);
-    GGT = sfTexture_create(GGW, GGH);
-    GGS = sfSprite_create();
-    sfSprite_setTexture(GGS, GGT, sfFalse);
+    GGTF = sfTexture_create(GGW, GGH);
+    GGSF = sfSprite_create();
+    sfSprite_setTexture(GGSF, GGTF, sfFalse);
     GG.pixel = malloc(sizeof(pixel_t) * 2);
     init_game_rain(global);
     init_game_snow(global);

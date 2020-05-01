@@ -20,7 +20,7 @@ void init_player_sprites(global_t *global)
     anim.spritesheet = my_strcpy((char *)PLAYER_SHEET);
     anim.anim_count = 4;
     anim.anim_frames = (int[4]){3, 3, 3, 3};
-    anim.unit_size = (sfVector2i){96, 96};
+    anim.unit_size = (sfVector2f){96, 96};
     GGP.ss = spritesheet_load(&anim);
 }
 
@@ -31,7 +31,7 @@ void init_dash_sprites(global_t *global)
     anim.spritesheet = my_strcpy((char *)DASH_SHEET);
     anim.anim_count = 1;
     anim.anim_frames = (int[1]){6};
-    anim.unit_size = (sfVector2i){192, 192};
+    anim.unit_size = (sfVector2f){192, 192};
     GGPD.dash = dash_spritesheet_load(&anim);
     GGPD.frame = 0;
     GGPD.pos = (sfVector2f)GGP.pos;
@@ -45,7 +45,7 @@ void put_sprite(global_t *global, char *filepath)
 
     GGP.sprite = sfSprite_create();
     sfSprite_setTexture(GGP.sprite, texture, false);
-    sfSprite_setOrigin(GGP.sprite, GGP.collider);
+    sfSprite_setOrigin(GGP.sprite, GGP.col_center);
 }
 
 void init_player(global_t *global)
@@ -56,11 +56,17 @@ void init_player(global_t *global)
     GGP.idle = true;
     GGP.pos = (sfVector2f){200, 500};
     GGP.hitbox = HITBOX;
-    GGP.collider = COLLIDER;
+    GGP.col_center = COLLIDER;
+    GGP.collider = malloc(sizeof(sfIntRect));
+    GGP.collider->left = COLLIDER.x - 20;
+    GGP.collider->top = COLLIDER.y - 20;
+    GGP.collider->height = 20;
+    GGP.collider->width = 20;
     put_sprite(global, (char *)FILEPATH);
     init_controls(global);
     init_player_sprites(global);
     init_dash_sprites(global);
+    init_player_inventory(&GGP);
     GGP.clock = sfClock_create();
     GGPT = sfClock_getElapsedTime(GGP.clock);
 }

@@ -11,12 +11,14 @@
 #include "global.h"
 #include "rpg_structs.h"
 #include "maze.h"
+#include "player.h"
+
 
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)
 
 #define rect(l, t, w, h) (sfIntRect){l, t, w, h}
-
+#define OBJ_SIZE 80
 /*MAIN*/
 void rpg_manager(global_t *global);
 char **maze_main(int maze_size);
@@ -55,4 +57,12 @@ void make_it_rain(global_t *global);
 void make_it_snow(global_t *global);
 void pixels_destroy(global_t *global);
 
+/*OBJ*/
+void init_spell_obj(global_t *global);
+void display_spell_obj(global_t *global, int pos);
+int player_colliding_spell(game_t *game, int pos);
+void display_spell_obj_txt(global_t *global, int text);
+
+/*SPELL*/
+void check_spell(global_t *global, int spell_id, player_t *player);
 #endif /* !MY_RPG_H */

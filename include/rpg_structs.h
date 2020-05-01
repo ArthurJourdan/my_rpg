@@ -11,6 +11,8 @@
 #include <SFML/Graphics.h>
 #include <stdbool.h>
 
+#include "npc.h"
+
 /**************************************/
 /*************** ENUMS ****************/
 /**************************************/
@@ -45,13 +47,16 @@ typedef struct spell_dict {
     float range;
     float travel_speed;
     sphit_t **hitboxes;
+    sfSprite *spell_img;
 }sp_dict_t;
 
 typedef struct enemy_dict {
     int id;
     int damage;
+    int life;
     int *spell_list;
     int move_speed;
+    sfSprite ***sprite;
     //behaviour_t behaviour; <-- faudrait trouver un moyen de scripter les mob via des struct (aucune idée de comment pour l'instant)
 }e_dict_t;
 
@@ -63,6 +68,16 @@ typedef struct dict {
 /**************************************/
 /*************** OBJs *****************/
 /**************************************/
+
+typedef struct spell_obj_ground {
+    int id;
+    sfSprite *image;
+    sfIntRect *collider;
+    sfText *pickup_text;
+    sfText *replace_text;
+    int show_text;
+    int active;
+} s_obj_g;
 
 typedef struct spell_obj {
     bool obj_status;
@@ -76,6 +91,7 @@ typedef struct spell_obj {
     sfVector2f starting_pos;
     sfVector2f speed;
     sfVector2f pos;
+    sfIntRect *collider;
     float range;
 }s_obj_t;
 
@@ -93,6 +109,8 @@ typedef struct enemy_obj {
 }e_obj_t;
 
 typedef struct obj {
+    s_obj_g *sp_obj_g;
+    int obj_index;
     e_obj_t e_obj[64];
     s_obj_t s_obj[64];
 }obj_t;
@@ -111,14 +129,20 @@ typedef struct spell_node {
     sfKeyCode key;
     sfTime last_activation;
     int spell_id;
-    void (*spell_fptr)(struct game *game);
+    void (*spell_fptr)(struct game*, int);
 }spn_t;
+
+typedef struct player_inventory {
+    spn_t *spell_nodes;
+    int nb_spells;
+    sfSprite *invent_bg;
+} player_invent_t;
 
 typedef struct anim_data {
     char *spritesheet;
     int anim_count;
     int *anim_frames;
-    sfVector2i unit_size;
+    sfVector2f unit_size;
 }animd_t;
 
 typedef struct controls {
@@ -153,20 +177,21 @@ typedef struct player {
     int hp;
     int mana;
     int status; //utiliser un mask pour les effets de status
-    spn_t **spell_nodes; //les spells débloqué/équipé
+    player_invent_t *p_invent;
     float max_speed;
     float speed;
     float hitbox;
     bool idle;
     sfSprite ***ss;
     dash_t dash;
-    sfVector2f collider;
+    sfVector2f col_center;
     sfVector2f pos;
     sfSprite *sprite;
     controls_t controls;
     sfTime time;
     int frame;
     sfClock *clock;
+    sfIntRect *collider;
 }player_t;
 
 typedef struct maze {
@@ -213,6 +238,8 @@ typedef struct game {
     int height;
     int maze_size;
     sp_dict_t **spell_dict;
+    e_dict_t **ennemy_dict;
+    npc_t **npc_list;
 }game_t;
 
 /**************************************/

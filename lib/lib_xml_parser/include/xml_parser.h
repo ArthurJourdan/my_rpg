@@ -21,6 +21,7 @@
 #include "shorting_defines.h"
 
 #include "rpg_structs.h"
+#include "npc.h"
 
 typedef struct {
     char *type;
@@ -66,6 +67,8 @@ sfRectangleShape *init_game_board(void);
 game_t malloc_all_game_structs(char **file);
 
 sp_dict_t **init_spell_dict(char **file);
+e_dict_t **init_ennemy_dict(char **file);
+npc_t **init_npc_list(char **file);
 // ! RPG_FEAT
 
 // ! MEMORY ALLOCATION
@@ -93,11 +96,16 @@ sfSound *set_any_sound(char const *line);
 global_t *init_global_vars(char const global_filepath[],
 global_t *global_struct);
 sfRenderWindow *init_window(char const **file);
+
 // ! GUI
 
 game_t set_game_structs(char **file, game_t game, global_t *global);
 
 void set_spell_dict(char **file, sp_dict_t **spell_dict);
+void set_ennemy_dict(char **file, e_dict_t **ennemy_dict);
+void set_npc_list(char **file, npc_t **npc_dict);
+
+sfSprite ***set_sprite_arr(char * const line);
 
 // ! RPG FEAT
 

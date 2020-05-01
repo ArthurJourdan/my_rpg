@@ -25,8 +25,8 @@
 #define GGW global->game.width
 #define GGH global->game.height
 #define GGF global->game.framebuffer
-#define GGT global->game.texture_fb
-#define GGS global->game.sprite_fb
+#define GGTF global->game.texture_fb
+#define GGSF global->game.sprite_fb
 #define GGM global->game.maze_size
 //player
 #define GGP global->game.player
@@ -39,6 +39,28 @@
 #define GGLMM global->game.layers.maze_maps
 #define GGLDM global->game.layers.dante_maps
 #define GGLP global->game.layers.pos
+#define GGS global->game.spell_dict
+#define GGO global->game.obj
+
+//player
+#define GGPIS global->game.player.p_invent->spell_nodes
+
+//OBJ
+#define CO collider->left
+#define CT collider->top
+#define GGOSG global->game.obj->sp_obj_g
+
+// NPC
+#define GGNPC global->game.npc_list
+#define NPC_XY global->game.npc_list[npc_idx]->idx_texture
+#define NPCX global->game.npc_list[npc_idx]->idx_texture.x
+#define NPCY global->game.npc_list[npc_idx]->idx_texture.y
+#define NPCS global->game.npc_list[npc_idx]->sprite[NPCX][NPCY]
+#define NPCS_ONE global->game.npc_list[npc_idx]->sprite
+#define NPC_MAPX global->game.npc_list[npc_idx]->map_pos.x
+#define NPC_MAPY global->game.npc_list[npc_idx]->map_pos.y
+#define NPC_POS global->game.npc_list[npc_idx]->pos
+// ! NPC
 
 #define ACT global->scene_list->index
 #define SC_A global->scene_list->scenes[global->scene_list->index]
@@ -56,6 +78,7 @@
 #define SCL_B scene_list->scenes[scene_nb]->buttons
 #define SCL_I scene_list->scenes[scene_nb]->images
 #define SCL_T scene_list->scenes[scene_nb]->texts
+// !INIT
 
 //animd
 #define SPRSH animd->spritesheet

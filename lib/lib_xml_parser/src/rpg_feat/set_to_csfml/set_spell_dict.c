@@ -11,6 +11,7 @@
 #include "xml_parser.h"
 
 #include "rpg_structs.h"
+#include "sfml_tools.h"
 #include "global.h"
 
 static str_nb_t types[3] = {
@@ -25,8 +26,14 @@ static str_nb_t categories[3] = {
     {"sequence", sequence},
 };
 
-static game_t set_caracteristics(sp_dict_t *spell_page, char * const line)
+static void set_caracteristics(sp_dict_t *spell_page, char * const line)
 {
+    char *image = cpy_var_name(" image=", line);
+
+    if (image) {
+        spell_page->spell_img = create_image(NULL, image);
+        free(image);
+    }
     spell_page->base_damage = cpy_var_int(" base_damage=", line);
     spell_page->mp_cost = cpy_var_int(" mp_cost=", line);
     spell_page->cooldown = cpy_var_int(" cooldown=", line);
@@ -35,7 +42,7 @@ static game_t set_caracteristics(sp_dict_t *spell_page, char * const line)
     spell_page->travel_speed = cpy_var_float(" travel_speed=", line);
 }
 
-static game_t set_type_category(sp_dict_t *spell_page, char * const line)
+static void set_type_category(sp_dict_t *spell_page, char * const line)
 {
     char *info = NULL;
 
