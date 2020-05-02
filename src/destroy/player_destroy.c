@@ -18,19 +18,21 @@ static void game_destroy(global_t *global)
 
 static void layers_destroy(global_t *global)
 {
-    for (int i = 0; GGLDM[i]; i++) {
+    for (int i = 0; GGLDM[i]; i++)
         for (int j = 0; GGLDM[i][j]; j++) {
             sfSprite_destroy(GGLMM[i][j].lay1);
             sfSprite_destroy(GGLMM[i][j].lay2);
             sfImage_destroy(GGLMM[i][j].coll);
         }
-    }
     for (int i = 0; i != GGM; i++) {
         free(GGLDM[i]);
         free(GGLMM[i]);
     }
     free(GGLDM);
     free(GGLMM);
+    for (int i = 0; i != 4; i++)
+        sfSprite_destroy(GGL.wall[i]);
+    free(GGL.wall);
 }
 
 void player_destroy(global_t *global)

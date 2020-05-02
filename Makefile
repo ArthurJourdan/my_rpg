@@ -63,6 +63,8 @@ TOOLS		=	$(TOOLDIR)colorcmp.c	\
 			$(TOOLDIR)my_goto.c
 
 GAME		=	$(GAMEDIR)player_movement.c	\
+			$(GAMEDIR)line_movement.c	\
+			$(GAMEDIR)diag_movement.c	\
 				$(GAMEDIR)npc_appear.c
 
 NPC			=	$(NPC_ACT)npc_discuss.c	\

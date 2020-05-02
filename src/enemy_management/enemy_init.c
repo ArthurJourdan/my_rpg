@@ -54,10 +54,10 @@ void enemy_init(global_t *global, int id, sfVector2f pos)
 
 void enemy_generate_hord(global_t *global)
 {
-    sfVector2u s = sfRenderWindow_getSize(GW);
     sfVector2f pos;
+
     for (int i = 0; i < 3; i++) {
-        pos = vec2f(rand() % s.x, rand() % s.y);
+        pos = vec2f(rand() % (GGW - 200) + 100, rand() % (GGH - 200) + 100);
         enemy_init(global, 0, pos);
     }
     return;

@@ -10,6 +10,14 @@
 void display_layer1(sfRenderWindow *window, global_t *global)
 {
     sfRenderWindow_drawSprite(window, GGLMM[GGLP.y][GGLP.x].lay1, NULL);
+    if (GGLP.x >= (GGM - 1) || !GGLMM[GGLP.y][GGLP.x + 1].is_open)
+        sfRenderWindow_drawSprite(window, GGL.wall[2], NULL);
+    if (GGLP.x <= 0 || !GGLMM[GGLP.y][GGLP.x - 1].is_open)
+        sfRenderWindow_drawSprite(window, GGL.wall[0], NULL);
+    if (GGLP.y >= (GGM - 1) || !GGLMM[GGLP.y + 1][GGLP.x].is_open)
+        sfRenderWindow_drawSprite(window, GGL.wall[1], NULL);
+    if (GGLP.y <= 0 || !GGLMM[GGLP.y - 1][GGLP.x].is_open)
+        sfRenderWindow_drawSprite(window, GGL.wall[3], NULL);
 }
 
 void display_layer2(sfRenderWindow *window, global_t *global)

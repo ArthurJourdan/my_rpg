@@ -11,46 +11,6 @@
 #include "my_rpg.h"
 #include "sfml_tools.h"
 
-void line_player_deplacement(global_t *global)
-{
-    if (GGPC.on_up && !GGPC.on_left &&
-        !GGPC.on_down && !GGPC.on_right) {
-        GGP.pos.y -= GGP.speed;
-    }
-    if (!GGPC.on_up && GGPC.on_left &&
-        !GGPC.on_down && !GGPC.on_right) {
-        GGP.pos.x -= GGP.speed;
-    }
-    if (!GGPC.on_up && !GGPC.on_left &&
-        GGPC.on_down && !GGPC.on_right) {
-        GGP.pos.y += GGP.speed;
-    }
-    if (!GGPC.on_up && !GGPC.on_left &&
-        !GGPC.on_down && GGPC.on_right) {
-        GGP.pos.x += GGP.speed;
-    }
-}
-
-void diag_player_deplacement(global_t *global)
-{
-    if (GGPC.on_up && GGPC.on_left) {
-        GGP.pos.y -= sin(M_PI / 4) * GGP.speed;
-        GGP.pos.x -= cos(M_PI / 4) * GGP.speed;
-    }
-    if (GGPC.on_left && GGPC.on_down) {
-        GGP.pos.y += sin(M_PI / 4) * GGP.speed;
-        GGP.pos.x -= cos(M_PI / 4) * GGP.speed;
-    }
-    if (GGPC.on_down && GGPC.on_right) {
-        GGP.pos.y += sin(M_PI / 4) * GGP.speed;
-        GGP.pos.x += cos(M_PI / 4) * GGP.speed;
-    }
-    if (GGPC.on_right && GGPC.on_up) {
-        GGP.pos.y -= sin(M_PI / 4) * GGP.speed;
-        GGP.pos.x += cos(M_PI / 4) * GGP.speed;
-    }
-}
-
 void player_key_pressed(global_t *global)
 {
     if (sfKeyboard_isKeyPressed(GGPC.up)) {

@@ -202,10 +202,12 @@ typedef struct maze {
     sfImage *coll;
     bool is_open;
     bool is_enemies;
+    bool spawn;
     int weather;
 }maze_map_t;
 
 typedef struct layers {
+    sfSprite **wall;
     char **dante_maps;
     maze_map_t **maze_maps;
     sfVector2i pos;

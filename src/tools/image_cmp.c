@@ -26,6 +26,19 @@ void move_check(sfVector2f next, global_t *global)
     }
 }
 
+void generate_enemies(global_t *global, sfColor color)
+{
+    if (GGLMM[GGLP.y][GGLP.x].is_enemies) {
+        if (GGLMM[GGLP.y][GGLP.x].spawn &&
+            my_colorcmp(color, sfRed)) {
+            enemy_tab_clear(global);
+            enemy_generate_hord(global);
+            GGLMM[GGLP.y][GGLP.x].spawn = false;
+        }
+    } else
+        enemy_tab_clear(global);
+}
+
 void swap_map(sfVector2f next, global_t *global)
 {
     sfVector2f scale = {(float)1650 / (float)GGW, (float)990 / (float)GGH};
@@ -34,7 +47,6 @@ void swap_map(sfVector2f next, global_t *global)
 
     if (!my_colorcmp(color, sfRed))
         return;
-    enemy_tab_clear(global);
     if (GGP.pos.x > GGW - 300 && GGLP.x < (GGM - 1) && GGLMM[GGLP.y][GGLP.x + 1].is_open) {
         GGP.pos.x = 100;
         GGLP.x++;
@@ -49,7 +61,7 @@ void swap_map(sfVector2f next, global_t *global)
         GGP.pos.y = GGH - 100;
         GGLP.y--;
     }
-    enemy_generate_hord(global);
+    generate_enemies(global, color);
 }
 
 void dash_cooldown(global_t *global)
