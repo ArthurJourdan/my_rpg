@@ -23,8 +23,10 @@ void init_spell_obj(global_t *global)
     sfVector2f s_pos = {500, 500};
     int arr_len = -1;
 
-    if (!GGS)
+    if (!GGS) {
+        GGO = NULL;
         return;
+    }
     while (GGS[++arr_len]);
     GGO->sp_obj_g = malloc(sizeof(s_obj_g) * arr_len);
     init_spell_text(&GGO->sp_obj_g[0]);
