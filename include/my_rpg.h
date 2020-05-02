@@ -13,7 +13,6 @@
 #include "maze.h"
 #include "player.h"
 
-
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)
 
@@ -24,7 +23,7 @@
 #define OBJ_SIZE 80
 /*MAIN*/
 void rpg_manager(global_t *global);
-char **maze_main(int maze_size);
+void maze_main(int maze_size, char ***maze);
 
 /*INIT*/
 void init_game(global_t *global);
@@ -60,7 +59,10 @@ sfVector2f my_goto(sfVector2f *pos, sfVector2f start, sfVector2f target, float s
 fbuffer_t *framebuffer_create(unsigned int width, unsigned int heght);
 void make_it_rain(global_t *global);
 void make_it_snow(global_t *global);
+
+/*DESTROY*/
 void pixels_destroy(global_t *global);
+void player_destroy(global_t *global);
 
 /*OBJ*/
 void init_spell_obj(global_t *global);

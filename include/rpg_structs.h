@@ -207,7 +207,6 @@ typedef struct maze {
 }maze_map_t;
 
 typedef struct layers {
-    char ***maps;
     char **dante_maps;
     maze_map_t **maze_maps;
     sfVector2i pos;
