@@ -11,13 +11,9 @@ sfVector2f get_knockback(sfVector2f ppos, sfVector2f epos)
 {
     sfVector2f v = vec2f(ppos.x - epos.x, ppos.y - epos.y);
     float derivative;
-    bool xneg = (v.x < 0) ? true : false;
-    bool yneg = (v.y < 0) ? true : false;
     derivative = sqrtf(powf(v.x, 2) + powf(v.y, 2));
-    v.x = v.x / derivative * 30;
-    v.y = v.y / derivative * 30;
-    v.x = (xneg) ? -v.x : v.x;
-    v.y = (yneg) ? -v.y : v.y;
+    v.x = v.x / derivative * 50;
+    v.y = v.y / derivative * 50;
     return v;
 }
 
@@ -54,7 +50,7 @@ void check_enemy_collision(global_t *global, e_obj_t *enemy)
 {
     sfIntRect e_rect = rect(E_POS.x + E_BOX.left, E_POS.y + E_BOX.top,
     E_BOX.width, E_BOX.height);
-    sfIntRect p_rect = rect(GGP.pos.x, GGP.pos.y, 96, 96);
+    sfIntRect p_rect = rect(GGP.pos.x * 2, GGP.pos.y * 2, 96, 96);
     sfVector2f kb;
     if (!rect_collide_check(e_rect, p_rect))
         return;

@@ -150,6 +150,7 @@ SRC		=	${SRCDIR}main.c	\
 			$(ENEMYDIR)enemy_management.c	\
 			$(ENEMYDIR)enemy_movement.c	\
 			$(ENEMYDIR)placeholder_load.c	\
+			$(ENEMYDIR)enemy_collision.c	\
 
 OBJ		=       $(SRC:.c=.o)
 
