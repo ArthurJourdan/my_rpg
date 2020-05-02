@@ -43,6 +43,8 @@ static void npc_disappear(global_t *global)
 
 void npc_appear(global_t *global)
 {
+    if (!GGNPC)
+        return;
     for (size_t npc_idx = 0; GGNPC[npc_idx]; npc_idx++) {
         if (GGLP.x == NPC_MAPX && GGLP.y == NPC_MAPY) {
             display_npc(global, npc_idx);
