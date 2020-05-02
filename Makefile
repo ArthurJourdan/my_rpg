@@ -113,6 +113,7 @@ SRC		=	${SRCDIR}main.c	\
 			$(OPTION)change_music_volume.c	\
 							\
 			$(PLAYER)check_collision.c		\
+			$(PLAYER)player_spells.c		\
 			$(PLAYER_INV)add_spell.c		\
 			$(PLAYER_INV)check_inventory.c	\
 			$(PLAYER_INV)display_inventory.c	\
@@ -121,7 +122,10 @@ SRC		=	${SRCDIR}main.c	\
 			$(PLAYER_INV)show_pickup_text.c		\
 							\
 			$(SPELL)display_spell_obj.c				\
-			$(SPELL)init_spell_obj.c			\
+			$(SPELL)init_spell_obj_ground.c			\
+			$(SPELL)spell_fct.c						\
+			$(SPELL)init_spell_obj.c				\
+			$(SPELL)check_activation.c				\
 							\
 			$(DISPLAY)display_text_struct.c	\
 			$(DISPLAY)display_button.c	\

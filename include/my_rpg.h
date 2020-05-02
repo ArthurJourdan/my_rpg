@@ -51,11 +51,16 @@ void swap_map(sfVector2f next, global_t *global);
 void player_dash(sfVector2f next, global_t *global, sfColor dash_color);
 
 /*OBJ*/
-void init_spell_obj(global_t *global);
-void display_spell_obj(global_t *global, int pos);
+void init_spell_obj_g(global_t *global);
+void display_spell_obj_ground(global_t *global, int pos);
 int player_colliding_spell(game_t *game, int pos);
 void display_spell_obj_txt(global_t *global, int text);
+void display_spell(global_t *global);
 
 /*SPELL*/
 void check_spell(global_t *global, int spell_id, player_t *player);
+void check_spell_active(global_t *global);
+void init_spell_obj(global_t *global);
+void targeted_spell(game_t *game, int id, int index);
+void player_spells(global_t *global);
 #endif /* !MY_RPG_H */

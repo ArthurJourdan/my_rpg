@@ -19,7 +19,8 @@ static void display_everything(global_t *global)
     if (ACT == GAME) {
         display_layer1(GW, global);
         display_player(GW, global);
-        display_spell_obj(global, GGO->obj_index);
+        display_spell_obj_ground(global, GGO->obj_index);
+        display_spell(global);
         display_layer2(GW, global);
         display_inventory(global);
     }
@@ -34,11 +35,13 @@ static void display_everything(global_t *global)
 static void gameplay(global_t *global)
 {
     event_management(global);
+    check_spell_active(global);
     if (ACT == GAME) {
         player_movements(global);
         if (player_colliding_spell(&GG, GGO->obj_index) &&
         GGOSG[GGO->obj_index].active)
             check_spell(global, 0, &GGP);
+        player_spells(global);
     }
 }
 
