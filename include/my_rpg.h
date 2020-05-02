@@ -75,7 +75,7 @@ void display_spell(global_t *global);
 void check_spell(global_t *global, int spell_id, player_t *player);
 void check_spell_active(global_t *global);
 void init_spell_obj(global_t *global);
-void targeted_spell(game_t *game, int id, int index);
+void targeted_spell(game_t *game, int index);
 void player_spells(global_t *global);
 
 /*ENEMY*/

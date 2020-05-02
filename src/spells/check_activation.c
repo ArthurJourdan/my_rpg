@@ -16,7 +16,7 @@ void check_spell_type(int id, global_t *global, int index)
 {
     for (int i = 0; i < 1; i++) {
         if (GG.spell_dict[id]->stype == spells[i].type)
-            spells[i].spell_fptr(&GG, id, index);
+            spells[i].spell_fptr(&GG, index);
     }
 }
 

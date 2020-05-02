@@ -24,10 +24,19 @@ void enemy_tab_init(global_t *global)
         GGOE[i]->spell_nodes = NULL;
         GGOE[i]->speed = 0;
         GGOE[i]->pos = vec2f(0, 0);
-        GGOE[i]->collider = NULL;
+        //GGOE[i]->collider = NULL;
     }
     return;
 }
+
+// void enemy_init_cod(global_t *global, int i, int id)
+// {
+//     GGOE[i]->collider = malloc(sizeof(sfIntRect));
+//     GGOE[i]->collider->height = E_DICT[id]->hitbox.height;
+//     GGOE[i]->collider->width = E_DICT[id]->hitbox.width;
+//     GGOE[i]->collider->left = E_DICT[id]->hitbox.left;
+//     GGOE[i]->collider->top = E_DICT[id]->hitbox.top;
+// }
 
 void enemy_init(global_t *global, int id, sfVector2f pos)
 {
@@ -45,8 +54,8 @@ void enemy_init(global_t *global, int id, sfVector2f pos)
     GGOE[i]->damage = E_DICT[id]->damage;
     GGOE[i]->spell_nodes = E_DICT[id]->spell_list;
     GGOE[i]->speed = E_DICT[id]->move_speed;
+    GGOE[i]->collider = E_DICT[id]->hitbox;
     GGOE[i]->pos = pos;
-    GGOE[i]->collider = NULL;
     GGOE[i]->movet = sfClock_getElapsedTime(E_CLOCK);
     GGOE[i]->framet = sfClock_getElapsedTime(E_CLOCK);
     return;

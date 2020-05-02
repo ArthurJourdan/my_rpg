@@ -109,7 +109,7 @@ typedef struct enemy_obj {
     sfTime movet;
     sfTime framet;
     sfVector2f pos;
-    sfIntRect *collider;
+    sfIntRect collider;
 }e_obj_t;
 
 typedef struct obj {
@@ -125,7 +125,7 @@ typedef struct obj {
 
 typedef struct spell_types {
     enum stype_e type;
-    void (*spell_fptr)(struct game *, int, int);
+    void (*spell_fptr)(struct game *, int);
 }s_types_t;
 
 typedef struct sprites {
