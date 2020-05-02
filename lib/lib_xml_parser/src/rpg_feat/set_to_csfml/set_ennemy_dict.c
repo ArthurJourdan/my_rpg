@@ -27,14 +27,14 @@ static void set_caracteristics(e_dict_t *ennemy_page, char * const line)
 void set_ennemy_dict(char **file, e_dict_t **ennemy_dict)
 {
     size_t nb_ennemies = count_occurences("Ennemy ", file);
-    size_t pos = 0;
+    size_t page = 0;
 
-    for (size_t page = 0; page < nb_ennemies; page++) {
-        pos += get_pos_word_in_arr("Ennemy ", (char const **)file + pos);
-        if (get_pos_word_in_arr("Ennemy ", (char const **)file + pos) == -1)
-            break;
-        ennemy_dict[page]->id = page;
-        set_caracteristics(ennemy_dict[page], file[pos]);
-        ennemy_dict[pos]->sprite = set_sprite_arr(file[pos]);
+    for (size_t a = 0; file[a]; a++) {
+        if (get_pos_word_in_str("Ennemy ", file[a]) == -1)
+            continue;
+        ennemy_dict[page]->id = a;
+        set_caracteristics(ennemy_dict[page], file[a]);
+        ennemy_dict[page]->sprite = set_sprite_arr(file[a]);
+        page++;
     }
 }
