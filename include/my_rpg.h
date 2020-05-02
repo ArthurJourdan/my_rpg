@@ -17,6 +17,9 @@
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)
 
+#define vec2f(x, y) (sfVector2f){(x), (y)}
+#define msec(x) (x).microseconds / 1000
+
 #define rect(l, t, w, h) (sfIntRect){l, t, w, h}
 #define OBJ_SIZE 80
 /*MAIN*/
@@ -30,6 +33,8 @@ void init_layers(global_t *global);
 void put_sprite(global_t *global, char *filepath);
 void init_controls(global_t *global);
 void init_maze_map(global_t *global);
+sfSprite *sprite_create_from_file(char *path);
+e_dict_t *placeholder_load(void);
 
 /*DISP*/
 void display_layer1(sfRenderWindow *win, global_t *global);
@@ -65,4 +70,15 @@ void display_spell_obj_txt(global_t *global, int text);
 
 /*SPELL*/
 void check_spell(global_t *global, int spell_id, player_t *player);
+
+/*ENEMY*/
+void enemy_management(global_t *global);
+void enemy_clear(e_obj_t *enemy);
+void enemy_tab_clear(global_t *global);
+void display_enemy(global_t *global);
+void enemy_zombie_ai(global_t *global, e_obj_t *enemy);
+void enemy_tab_init(global_t *global);
+void enemy_init(global_t *global, int id, sfVector2f pos);
+void enemy_generate_hord(global_t *global);
+
 #endif /* !MY_RPG_H */

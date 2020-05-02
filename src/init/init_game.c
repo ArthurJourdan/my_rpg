@@ -64,4 +64,7 @@ void init_game(global_t *global)
     GG.pixel = malloc(sizeof(pixel_t) * 2);
     init_game_rain(global);
     init_game_snow(global);
+    HEALTHBARSPR = sprite_create_from_file(HEALTHBARPATH);
+    enemy_tab_init(global);
+    global->game.ennemy_dict[0] = placeholder_load(); //PLACEHOLDER
 }

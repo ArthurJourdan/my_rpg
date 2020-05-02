@@ -86,4 +86,24 @@
 #define AF animd->anim_frames
 #define ASIZE animd->unit_size
 
+//enemy
+#define E_OBJ_STATUS enemy->obj_status
+#define E_ID enemy->id
+#define E_FRAME enemy->frame
+#define E_FACING enemy->facing
+#define E_POS enemy->pos
+#define E_SPEED enemy->speed
+#define E_DMG enemy->damage
+#define E_SPELL enemy->spell_nodes
+#define E_COLLIDER enemy->collider
+#define E_MOVET enemy->movet
+#define E_FRAMET enemy->framet
+#define E_HP enemy->hp
+#define E_MHP enemy->max_hp
+#define E_CLOCK global->game.e_clock
+#define GGOE global->game.e_obj
+#define E_DICT global->game.ennemy_dict
+#define HEALTHBARSPR global->game.healthbar
+#define HEALTHBARPATH "assets_rpg/images/spritsheets/healthbar.png"
+
 #endif /* !SHORTING_DEFINES_H */
