@@ -19,6 +19,8 @@ void event_management(global_t *global);
 
 bool stopping_events(global_t *global, sfEvent event);
 
+bool pause_events(global_t *global, sfEvent event);
+
 sfVector2f get_mouse_coo(sfRenderWindow *win);
 
 bool button_management(global_t *global, sfEvent event);

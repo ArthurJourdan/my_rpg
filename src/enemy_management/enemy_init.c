@@ -29,10 +29,21 @@ void enemy_tab_init(global_t *global)
     return;
 }
 
+// void enemy_init_cod(global_t *global, int i, int id)
+// {
+//     GGOE[i]->collider = malloc(sizeof(sfIntRect));
+//     GGOE[i]->collider->height = E_DICT[id]->hitbox.height;
+//     GGOE[i]->collider->width = E_DICT[id]->hitbox.width;
+//     GGOE[i]->collider->left = E_DICT[id]->hitbox.left;
+//     GGOE[i]->collider->top = E_DICT[id]->hitbox.top;
+// }
+
 void enemy_init(global_t *global, int id, sfVector2f pos)
 {
     int i = 0;
 
+    if (!GGEN)
+        return;
     for (i = 0; GGOE[i]->obj_status == true; i++);
     GGOE[i]->obj_status = true;
     GGOE[i]->id = id;
@@ -43,6 +54,7 @@ void enemy_init(global_t *global, int id, sfVector2f pos)
     GGOE[i]->damage = E_DICT[id]->damage;
     GGOE[i]->spell_nodes = E_DICT[id]->spell_list;
     GGOE[i]->speed = E_DICT[id]->move_speed;
+    GGOE[i]->collider = E_DICT[id]->hitbox;
     GGOE[i]->pos = pos;
     GGOE[i]->collider = E_DICT[id]->hitbox;
     GGOE[i]->movet = sfClock_getElapsedTime(E_CLOCK);
@@ -52,10 +64,10 @@ void enemy_init(global_t *global, int id, sfVector2f pos)
 
 void enemy_generate_hord(global_t *global)
 {
-    sfVector2u s = sfRenderWindow_getSize(GW);
     sfVector2f pos;
+
     for (int i = 0; i < 3; i++) {
-        pos = vec2f(rand() % s.x, rand() % s.y);
+        pos = vec2f(rand() % (GGW - 200) + 100, rand() % (GGH - 200) + 100);
         enemy_init(global, 0, pos);
     }
     return;

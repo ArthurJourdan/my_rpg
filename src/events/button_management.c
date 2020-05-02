@@ -15,6 +15,8 @@ static int is_button_pressed(global_t *global)
     sfVector2f pos_rect = {0};
     sfVector2f mouse = get_mouse_coo(GW);
 
+    if (!SC_B)
+        return -1;
     for (int nb_button = 0; SC_B[nb_button]; nb_button++) {
         pos_rect = sfRectangleShape_getPosition(SC_B[nb_button]->rect);
         size_rect = sfRectangleShape_getSize(SC_B[nb_button]->rect);
@@ -35,20 +37,18 @@ static void change_button_state(button_t *button, unsigned short state)
             next_texture_rect_shape(button->rect, button->nb_animations,
             button->size_tot, 0);
         }
-    }
-    if (state == HOVER) {
+    } if (state == HOVER) {
         sfRectangleShape_setOutlineColor(button->rect, button->hover_color);
         if (button->nb_animations && button->nb_animations > 1) {
             next_texture_rect_shape(button->rect, button->nb_animations,
             button->size_tot, 1);
         }
-    }
-    if (state == CLICKED) {
+    } if (state == CLICKED) {
         sfRectangleShape_setOutlineColor(button->rect, button->clicked_color);
         if (button->nb_animations && button->nb_animations > 2) {
             next_texture_rect_shape(button->rect, button->nb_animations,
             button->size_tot, 2);
- }
+        }
     }
 }
 
@@ -73,6 +73,8 @@ bool button_management(global_t *global, sfEvent event)
             activate_button(global, SC_B[nb_button], event);
         }
     }
+    if (!SC_B)
+        return false;
     for (int a = 0; SC_B[a]; a++) {
         if (a != nb_button) {
             change_button_state(SC_B[a], IDLE);

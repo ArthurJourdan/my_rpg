@@ -13,7 +13,7 @@ static const char *DASH_SHEET = "assets_rpg/images/player_sprite/mist.png";
 static const sfVector2f COLLIDER = {50, 75};
 static const float HITBOX = 20;
 
-void init_player_sprites(global_t *global)
+static void init_player_sprites(global_t *global)
 {
     animd_t anim;
 
@@ -22,9 +22,10 @@ void init_player_sprites(global_t *global)
     anim.anim_frames = (int[4]){3, 3, 3, 3};
     anim.unit_size = (sfVector2f){96, 96};
     GGP.ss = spritesheet_load(&anim);
+    free(anim.spritesheet);
 }
 
-void init_dash_sprites(global_t *global)
+static void init_dash_sprites(global_t *global)
 {
     animd_t anim;
 
@@ -37,6 +38,7 @@ void init_dash_sprites(global_t *global)
     GGPD.pos = (sfVector2f)GGP.pos;
     GGPD.clock = sfClock_create();
     GGPD.angle = 0;
+    free(anim.spritesheet);
 }
 
 void put_sprite(global_t *global, char *filepath)

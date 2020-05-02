@@ -7,56 +7,55 @@
 
 ECHO    =       /bin/echo -e
 DEFAULT =       "\e[0;00m"
-RED	=       "\e[1;31m"
+RED     =       "\e[1;31m"
 GREEN   =       "\e[1;32m"
 TEAL    =       "\e[1;36m"
 YELLOW  =       "\e[1;33m"
 MAGENTA =       "\e[1;35m"
 
-SRCDIR	=	src/
-INCDIR	=	include/
+SRCDIR  =       src/
+INCDIR  =       include/
 
-SRC	=	$(SRCDIR)maze_main.c		\
+SRC     =       $(SRCDIR)maze_main.c		\
 		$(SRCDIR)init_maze.c		\
 		$(SRCDIR)backtracking.c		\
-		$(SRCDIR)displayer.c		\
 		$(SRCDIR)pathfinder.c		\
 		$(SRCDIR)tools.c
 
-OBJ	=	$(SRC:.c=.o)
+OBJ     =       $(SRC:.c=.o)
 
-ARRC	=	ar rc
-
-CFLAGS	+=	-Wall -W -g	\
+CFLAGS  +=      -Wall -W -g     \
 		-I $(INCDIR)
 
-NAME	=	libmaze.a
+NAME    =       libmaze.a
 
-all:		title $(NAME)
+all:            title $(NAME)
 
 title:
-		@$(ECHO) $(MAGENTA)★★★ ♬ ♫ ♪♩	\
-		$(RED)Building $(NAME)		\
+		@$(ECHO) $(MAGENTA)★★★ ♬ ♫ ♪♩   \
+		$(RED)Building $(NAME)          \
 		$(MAGENTA)♩♪♫ ♬ ★★★$(DEFAULT)
 
-$(NAME):	$(OBJ)
-		@$(ARRC) $(NAME) $(OBJ) &&			\
-		$(ECHO) $(GREEN)✓$(YELLOW)" BUILD SUCCESS !"	\
-		$(GREEN)✓$(DEFAULT) ||				\
-		$(ECHO) $(RED)✗$(YELLOW)" BUILD FAILED !"	\
+$(NAME):        $(OBJ)
+		@ar rc $(NAME) $(OBJ) &&			\
+		$(ECHO) $(GREEN)✓$(YELLOW)" BUILD SUCCESS !"    \
+		$(GREEN)✓$(DEFAULT) ||                          \
+		$(ECHO) $(RED)✗$(YELLOW)" BUILD FAILED !"       \
 		$(RED)✗$(DEFAULT)
-		@mv $(NAME) ../
+		mv $(NAME) ../
 
 clean:
 		@$(RM) $(OBJ)
+		@$(ECHO) $(GREEN)✓" CLEAN "$(NAME)$(DEFAULT)
 
-fclean:		clean
+fclean:         clean
 		@$(RM) ../$(NAME)
+		@$(ECHO) $(GREEN)✓" FCLEAN "$(NAME)$(DEFAULT)
 
-re:		fclean all
+re:             fclean all
 
 %.o : %.c
-		@gcc -c -o $@ $^ $(CFLAGS) &&		\
-		$(ECHO) -n $(GREEN)"  [OK] "$(TEAL) ||	\
-		$(ECHO) -n $(RED)"  [NO] "$(TEAL) &&	\
+		@gcc -c -o $@ $^ $(CFLAGS) &&           \
+		$(ECHO) -n $(GREEN)"  [OK] "$(TEAL) ||  \
+		$(ECHO) -n $(RED)"  [NO] "$(TEAL) &&    \
 		$(ECHO) $< | rev | cut -d'/' -f 1 | rev

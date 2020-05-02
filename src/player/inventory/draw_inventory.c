@@ -9,7 +9,7 @@
 #include "rpg_structs.h"
 #include "sfml_tools.h"
 
-void draw_inventory(player_t *player)
+void draw_inventory(UNUSED player_t *player)
 {
 
 

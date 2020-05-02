@@ -20,7 +20,7 @@
 enum side_e {ally, enemy};
 enum maze_e {UP, LEFT, DOWN, RIGHT};
 enum stype_e {targeted, range, status, NONE_TYPE = -1};
-enum scategory_e {blast, instant, sequence, NONE_CAT = -1}; //un spell blast serait un spell qui ne s'active que quand il touche l'ennemis, un spell instan s'activerai instant (genre un lance-flamme) , un sequence serait un spell plus élaboré avec plusieurs étape (genre une onde de choque qui se propage lentement ou jsp)
+enum scategory_e {blast, instant, sequence, NONE_CAT = -1};
 
 /**************************************/
 /*************** DICTS ****************/
@@ -58,7 +58,6 @@ typedef struct enemy_dict {
     int move_speed;
     sfIntRect hitbox;
     sfSprite ***sprite;
-    //behaviour_t behaviour; <-- faudrait trouver un moyen de scripter les mob via des struct (aucune idée de comment pour l'instant)
 }e_dict_t;
 
 typedef struct dict {
@@ -93,6 +92,7 @@ typedef struct spell_obj {
     sfVector2f speed;
     sfVector2f pos;
     sfIntRect *collider;
+    sfSprite *img;
     float range;
 }s_obj_t;
 
@@ -115,12 +115,18 @@ typedef struct enemy_obj {
 typedef struct obj {
     s_obj_g *sp_obj_g;
     int obj_index;
-    s_obj_t s_obj[64];
+    e_obj_t e_obj[64];
+    s_obj_t *s_obj;
 }obj_t;
 
 /**************************************/
 /************** OTHERS ****************/
 /**************************************/
+
+typedef struct spell_types {
+    enum stype_e type;
+    void (*spell_fptr)(struct game *, int);
+}s_types_t;
 
 typedef struct sprites {
     sfSprite ****enemies;
@@ -203,11 +209,12 @@ typedef struct maze {
     sfImage *coll;
     bool is_open;
     bool is_enemies;
+    bool spawn;
     int weather;
 }maze_map_t;
 
 typedef struct layers {
-    char ***maps;
+    sfSprite **wall;
     char **dante_maps;
     maze_map_t **maze_maps;
     sfVector2i pos;

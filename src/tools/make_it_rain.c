@@ -11,21 +11,21 @@
 static void rain_create(global_t *global, sfColor color)
 {
     for (int i = 0; i != GGPR(0); i++) {
-        put_square(GGF, GGPP(0)[i], sfV2F{GGPX(0)[i], GGPX(0)[i]}, color);
+        put_square(global, GGPP(0)[i], sfV2F{GGPX(0)[i], GGPX(0)[i]}, color);
     }
 }
 
 static void rain_destroy(global_t *global, sfColor color)
 {
     for (int i = 0; i != GGPR(0); i++) {
-        put_square(GGF, GGPP(0)[i], sfV2F{GGPX(0)[i], GGPX(0)[i]}, color);
+        put_square(global, GGPP(0)[i], sfV2F{GGPX(0)[i], GGPX(0)[i]}, color);
     }
 }
 
 static void snow_create(global_t *global, sfColor color)
 {
     for (int i = 0; i != GGPR(1); i++) {
-        put_square(GGF, GGPP(1)[i], sfV2F{GGPX(1)[i], GGPX(1)[i]}, color);
+        put_square(global, GGPP(1)[i], sfV2F{GGPX(1)[i], GGPX(1)[i]}, color);
     }
 }
 

@@ -13,7 +13,6 @@
 #include "maze.h"
 #include "player.h"
 
-
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)
 
@@ -28,7 +27,7 @@
 #define OBJ_SIZE 80
 /*MAIN*/
 void rpg_manager(global_t *global);
-char **maze_main(int maze_size);
+void maze_main(int maze_size, char ***maze);
 
 /*INIT*/
 void init_game(global_t *global);
@@ -37,6 +36,8 @@ void init_layers(global_t *global);
 void put_sprite(global_t *global, char *filepath);
 void init_controls(global_t *global);
 void init_maze_map(global_t *global);
+sfSprite *sprite_create_from_file(char *path);
+e_dict_t *placeholder_load(void);
 
 /*DISP*/
 void display_layer1(sfRenderWindow *win, global_t *global);
@@ -62,16 +63,24 @@ sfVector2f my_goto(sfVector2f *pos, sfVector2f start, sfVector2f target, float s
 fbuffer_t *framebuffer_create(unsigned int width, unsigned int heght);
 void make_it_rain(global_t *global);
 void make_it_snow(global_t *global);
+
+/*DESTROY*/
 void pixels_destroy(global_t *global);
+void player_destroy(global_t *global);
 
 /*OBJ*/
-void init_spell_obj(global_t *global);
-void display_spell_obj(global_t *global, int pos);
+void init_spell_obj_g(global_t *global);
+void display_spell_obj_ground(global_t *global, int pos);
 int player_colliding_spell(game_t *game, int pos);
 void display_spell_obj_txt(global_t *global, int text);
+void display_spell(global_t *global);
 
 /*SPELL*/
 void check_spell(global_t *global, int spell_id, player_t *player);
+void check_spell_active(global_t *global);
+void init_spell_obj(global_t *global);
+void targeted_spell(game_t *game, int index);
+void player_spells(global_t *global);
 
 /*ENEMY*/
 void enemy_management(global_t *global);
@@ -82,5 +91,6 @@ void enemy_zombie_ai(global_t *global, e_obj_t *enemy);
 void enemy_tab_init(global_t *global);
 void enemy_init(global_t *global, int id, sfVector2f pos);
 void check_enemy_collision(global_t *global, e_obj_t *enemy);
+void enemy_generate_hord(global_t *global);
 
 #endif /* !MY_RPG_H */

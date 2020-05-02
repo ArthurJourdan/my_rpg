@@ -38,7 +38,7 @@ TEST		=   $(TESTNAME) --coverage -lcriterion
 
 INCLUDE		=	-I include
 
-CFLAGS		=	-W -Wall -Wextra $(INCLUDE) -g
+CFLAGS		=	-W -Wall -Wextra $(INCLUDE)
 
 RMFLAGS		=	*.gcda *.gcno src/*.gcda src/*.gcno
 
@@ -63,6 +63,8 @@ TOOLS		=	$(TOOLDIR)colorcmp.c	\
 			$(TOOLDIR)my_goto.c
 
 GAME		=	$(GAMEDIR)player_movement.c	\
+			$(GAMEDIR)line_movement.c	\
+			$(GAMEDIR)diag_movement.c	\
 				$(GAMEDIR)npc_appear.c
 
 NPC			=	$(NPC_ACT)npc_discuss.c	\
@@ -117,6 +119,7 @@ SRC		=	${SRCDIR}main.c	\
 			$(OPTION)change_music_volume.c	\
 							\
 			$(PLAYER)check_collision.c		\
+			$(PLAYER)player_spells.c		\
 			$(PLAYER_INV)add_spell.c		\
 			$(PLAYER_INV)check_inventory.c	\
 			$(PLAYER_INV)display_inventory.c	\
@@ -125,7 +128,10 @@ SRC		=	${SRCDIR}main.c	\
 			$(PLAYER_INV)show_pickup_text.c		\
 							\
 			$(SPELL)display_spell_obj.c				\
-			$(SPELL)init_spell_obj.c			\
+			$(SPELL)init_spell_obj_ground.c			\
+			$(SPELL)spell_fct.c						\
+			$(SPELL)init_spell_obj.c				\
+			$(SPELL)check_activation.c				\
 							\
 			$(DISPLAY)display_text_struct.c	\
 			$(DISPLAY)display_button.c	\
@@ -136,6 +142,8 @@ SRC		=	${SRCDIR}main.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
 			$(DESTROY)pixels_destroy.c	\
+			$(DESTROY)player_destroy.c	\
+			\
 			$(ENEMYDIR)enemy_clear.c	\
 			$(ENEMYDIR)enemy_display.c	\
 			$(ENEMYDIR)enemy_init.c		\
