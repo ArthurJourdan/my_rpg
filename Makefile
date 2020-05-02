@@ -86,6 +86,8 @@ PLAYER_INV	=	$(PLAYER)inventory/
 
 SPELL		=	$(SRCDIR)spells/
 
+ENEMYDIR	=	$(SRCDIR)enemy_management/
+
 SRC		=	${SRCDIR}main.c	\
 			$(INIT)		\
 			$(DISP)		\
@@ -133,7 +135,13 @@ SRC		=	${SRCDIR}main.c	\
 			$(DISPLAY)display_map.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
-			$(DESTROY)pixels_destroy.c
+			$(DESTROY)pixels_destroy.c	\
+			$(ENEMYDIR)enemy_clear.c	\
+			$(ENEMYDIR)enemy_display.c	\
+			$(ENEMYDIR)enemy_init.c		\
+			$(ENEMYDIR)enemy_management.c	\
+			$(ENEMYDIR)enemy_movement.c	\
+			$(ENEMYDIR)placeholder_load.c	\
 
 OBJ		=       $(SRC:.c=.o)
 

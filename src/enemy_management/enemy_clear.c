@@ -8,24 +8,25 @@
 #include "a_malloc.h"
 #include "my_rpg.h"
 
-void enemy_clear(global_t *global, int i)
+void enemy_clear(e_obj_t *enemy)
 {
-    G_E_OBJ[i]->obj_status = false;
-    G_E_OBJ[i]->id = 0;
-    G_E_OBJ[i]->frame = 0;
-    G_E_OBJ[i]->max_hp = 0;
-    G_E_OBJ[i]->hp = 0;
-    G_E_OBJ[i]->damage = 0;
-    G_E_OBJ[i]->spell_nodes = NULL;
-    G_E_OBJ[i]->speed = {0};
-    G_E_OBJ[i]->pos = {0};
-    G_E_OBJ[i]->collider = NULL;
+    E_OBJ_STATUS = false;
+    E_ID = 0;
+    E_FRAME = 0;
+    E_FACING = 0;
+    E_MHP = 0;
+    E_HP = 0;
+    E_DMG = 0;
+    E_SPELL = NULL;
+    E_SPEED = 0;
+    E_POS = vec2f(0, 0);
+    E_COLLIDER = NULL;
     return;
 }
 
 void enemy_tab_clear(global_t *global)
 {
     for (int i = 0; i < 64; i++)
-        enemy_clear(global, i);
+        enemy_clear(GGOE[i]);
     return;
 }

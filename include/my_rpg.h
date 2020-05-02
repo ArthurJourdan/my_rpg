@@ -17,6 +17,9 @@
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)
 
+#define vec2f(x, y) (sfVector2f){(x), (y)}
+#define msec(x) (x).microseconds / 1000
+
 #define rect(l, t, w, h) (sfIntRect){l, t, w, h}
 #define OBJ_SIZE 80
 /*MAIN*/
@@ -65,4 +68,14 @@ void display_spell_obj_txt(global_t *global, int text);
 
 /*SPELL*/
 void check_spell(global_t *global, int spell_id, player_t *player);
+
+/*ENEMY*/
+void enemy_management(global_t *global);
+void enemy_clear(e_obj_t *enemy);
+void enemy_tab_clear(global_t *global);
+void display_enemy(global_t *global);
+void enemy_zombie_ai(global_t *global, e_obj_t *enemy);
+void enemy_tab_init(global_t *global);
+void enemy_init(global_t *global, int id, sfVector2f pos);
+
 #endif /* !MY_RPG_H */

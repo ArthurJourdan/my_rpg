@@ -34,6 +34,7 @@ void swap_map(sfVector2f next, global_t *global)
 
     if (!my_colorcmp(color, sfRed))
         return;
+    enemy_tab_clear(global);
     if (GGP.pos.x > GGW - 300 && GGLP.x < (GGM - 1) && GGLMM[GGLP.y][GGLP.x + 1].is_open) {
         GGP.pos.x = 100;
         GGLP.x++;
@@ -48,6 +49,7 @@ void swap_map(sfVector2f next, global_t *global)
         GGP.pos.y = GGH - 100;
         GGLP.y--;
     }
+    enemy_generate_hord(global);
 }
 
 void dash_cooldown(global_t *global)

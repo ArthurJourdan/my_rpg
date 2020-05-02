@@ -19,6 +19,7 @@ static void display_everything(global_t *global)
     if (ACT == GAME) {
         display_layer1(GW, global);
         npc_appear(global);
+        display_enemy(global);
         display_player(GW, global);
         display_spell_obj(global, GGO->obj_index);
         display_layer2(GW, global);
@@ -54,6 +55,7 @@ static void rpg_game(global_t *global, sfClock **game_clock)
             sfRenderWindow_pollEvent(GW, &GG.event);
             gameplay(global);
         }
+        enemy_management(global);
         display_everything(global);
     }
 }
