@@ -92,6 +92,7 @@ typedef struct spell_obj {
     sfVector2f speed;
     sfVector2f pos;
     sfIntRect *collider;
+    sfSprite *img;
     float range;
 }s_obj_t;
 
@@ -108,18 +109,24 @@ typedef struct enemy_obj {
     sfTime movet;
     sfTime framet;
     sfVector2f pos;
-    sfIntRect *collider;
+    sfIntRect collider;
 }e_obj_t;
 
 typedef struct obj {
     s_obj_g *sp_obj_g;
     int obj_index;
-    s_obj_t s_obj[64];
+    e_obj_t e_obj[64];
+    s_obj_t *s_obj;
 }obj_t;
 
 /**************************************/
 /************** OTHERS ****************/
 /**************************************/
+
+typedef struct spell_types {
+    enum stype_e type;
+    void (*spell_fptr)(struct game *, int);
+}s_types_t;
 
 typedef struct sprites {
     sfSprite ****enemies;
