@@ -2,43 +2,26 @@
 ** EPITECH PROJECT, 2020
 ** init_spell_obj
 ** File description:
-** inits the spell objs on the ground
+** inits the spell obj when activated
 */
 
 #include "my_rpg.h"
-#include "rpg_structs.h"
-#include "sfml_tools.h"
-
-void init_spell_text(s_obj_g *obj_ground)
-{
-    obj_ground->show_text = 0;
-    obj_ground->pickup_text = create_text(NULL, (char * const)pickup_sen,
-    (char * const)font_path, text_size);
-    obj_ground->replace_text = create_text(NULL, (char * const)replace_sen,
-    (char * const)font_path, text_size);
-}
 
 void init_spell_obj(global_t *global)
 {
-    sfVector2f s_pos = {500, 500};
-    int arr_len = -1;
-
-    if (!GGS) {
-        GGO = NULL;
-        return;
+    for (int i = 0; i < 2; i++) {
+        GGO->s_obj[i].obj_status = false;
+        GGO->s_obj[i].activation_radius = 0;
+        GGO->s_obj[i].id = -1;
+        GGO->s_obj[i].frame = 0;
+        GGO->s_obj[i].side = 0;
+        GGO->s_obj[i].type = -1;
+        GGO->s_obj[i].category = -1;
+        GGO->s_obj[i].activation_radius = 0;
+        GGO->s_obj[i].starting_pos = (sfVector2f){0};
+        GGO->s_obj[i].speed = (sfVector2f){0};
+        GGO->s_obj[i].pos = (sfVector2f){0};
+        GGO->s_obj[i].collider = malloc(sizeof(sfIntRect));
+        GGO->s_obj[i].range = 0;
     }
-    while (GGS[++arr_len]);
-    GGO->sp_obj_g = malloc(sizeof(s_obj_g) * (arr_len + 1));
-    init_spell_text(&GGO->sp_obj_g[0]);
-    for (int i = 0; i < arr_len; i++) {
-        GGO->sp_obj_g[i].active = 1;
-        GGO->sp_obj_g[i].id = GGS[i]->id;
-        GGO->sp_obj_g[i].image = sfSprite_copy(GGS[i]->spell_img);
-        GGO->sp_obj_g[i].collider = malloc(sizeof(sfIntRect));
-        GGO->sp_obj_g[i].collider->left = s_pos.x;
-        GGO->sp_obj_g[i].collider->top = s_pos.y;
-        GGO->sp_obj_g[i].collider->width = OBJ_SIZE;
-        GGO->sp_obj_g[i].collider->height = OBJ_SIZE;
-    }
-    GGO->sp_obj_g[arr_len].id = -1;
 }

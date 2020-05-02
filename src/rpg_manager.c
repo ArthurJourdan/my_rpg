@@ -17,7 +17,8 @@ static void display_game(global_t *global)
     npc_appear(global);
     display_player(GW, global);
     if (GGO)
-        display_spell_obj(global, GGO->obj_index);
+        display_spell_obj_ground(global, GGO->obj_index);
+    display_spell(global);
     display_layer2(GW, global);
     display_enemy(global);
     display_inventory(global);
@@ -42,12 +43,14 @@ static void display_everything(global_t *global)
 static void gameplay(global_t *global)
 {
     event_management(global);
+    check_spell_active(global);
     if (ACT == GAME) {
         player_movements(global);
         enemy_management(global);
         if (GGO && player_colliding_spell(&GG, GGO->obj_index) &&
         GGOSG[GGO->obj_index].active)
-        check_spell(global, 0, &GGP);
+            check_spell(global, 0, &GGP);
+        player_spells(global);
     }
 }
 
@@ -70,6 +73,7 @@ void rpg_manager(global_t *global)
 {
     sfClock *game_clock = sfClock_create();
 
+    sfRenderWindow_setKeyRepeatEnabled(GW, true);
     sfRenderWindow_setFramerateLimit(GW, FPS);
     change_scene(GS, HOME);
     while (sfRenderWindow_isOpen(GW)) {
