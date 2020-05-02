@@ -65,14 +65,14 @@ static void set_type_category(sp_dict_t *spell_page, char * const line)
 void set_spell_dict(char **file, sp_dict_t **spell_dict)
 {
     size_t nb_spells = count_occurences("Spell ", file);
-    size_t pos = 0;
+    size_t page = 0;
 
-    for (size_t page = 0; page < nb_spells; page++) {
-        pos += get_pos_word_in_arr("Spell ", (char const **)file + pos);
-        if (get_pos_word_in_arr("Spell ", (char const **)file + pos) == -1)
-            break;
+    for (size_t a = 0; file[a]; a++) {
+        if (get_pos_word_in_str("Spell ", file[a]) == -1)
+            continue;
         spell_dict[page]->id = page;
-        set_type_category(spell_dict[page], file[pos]);
-        set_caracteristics(spell_dict[page], file[pos]);
+        set_type_category(spell_dict[page], file[a]);
+        set_caracteristics(spell_dict[page], file[a]);
+        page++;
     }
 }
