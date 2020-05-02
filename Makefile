@@ -38,7 +38,7 @@ TEST		=   $(TESTNAME) --coverage -lcriterion
 
 INCLUDE		=	-I include
 
-CFLAGS		=	-W -Wall -Wextra $(INCLUDE) -g
+CFLAGS		=	-W -Wall -Wextra $(INCLUDE)
 
 RMFLAGS		=	*.gcda *.gcno src/*.gcda src/*.gcno
 
