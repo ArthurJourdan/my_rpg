@@ -115,8 +115,6 @@ typedef struct enemy_obj {
 typedef struct obj {
     s_obj_g *sp_obj_g;
     int obj_index;
-    sfClock *e_clock;
-    e_obj_t **e_obj;
     s_obj_t s_obj[64];
 }obj_t;
 
@@ -243,6 +241,8 @@ typedef struct game {
     int width;
     int height;
     int maze_size;
+    e_obj_t **e_obj;
+    sfClock *e_clock;
     sp_dict_t **spell_dict;
     e_dict_t **ennemy_dict;
     npc_t **npc_list;

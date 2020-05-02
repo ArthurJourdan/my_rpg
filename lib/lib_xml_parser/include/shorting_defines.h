@@ -100,8 +100,8 @@
 #define E_FRAMET enemy->framet
 #define E_HP enemy->hp
 #define E_MHP enemy->max_hp
-#define E_CLOCK global->game.obj->e_clock
-#define GGOE global->game.obj->e_obj
+#define E_CLOCK global->game.e_clock
+#define GGOE global->game.e_obj
 #define E_DICT global->game.ennemy_dict
 #define HEALTHBARSPR global->game.healthbar
 #define HEALTHBARPATH "assets_rpg/images/spritsheets/healthbar.png"
