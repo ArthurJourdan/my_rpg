@@ -56,6 +56,7 @@ typedef struct enemy_dict {
     int life;
     int *spell_list;
     int move_speed;
+    sfIntRect hitbox;
     sfSprite ***sprite;
     //behaviour_t behaviour; <-- faudrait trouver un moyen de scripter les mob via des struct (aucune idée de comment pour l'instant)
 }e_dict_t;
@@ -98,12 +99,15 @@ typedef struct spell_obj {
 typedef struct enemy_obj {
     bool obj_status;
     int id;
+    int facing;
     int frame;
     int max_hp;
     int hp;
     int damage;
     int *spell_nodes;
-    sfVector2f speed;
+    float speed;
+    sfTime movet;
+    sfTime framet;
     sfVector2f pos;
     sfIntRect *collider;
 }e_obj_t;
@@ -111,7 +115,6 @@ typedef struct enemy_obj {
 typedef struct obj {
     s_obj_g *sp_obj_g;
     int obj_index;
-    e_obj_t e_obj[64];
     s_obj_t s_obj[64];
 }obj_t;
 
@@ -231,12 +234,15 @@ typedef struct game {
     fbuffer_t *framebuffer;
     sfTexture *texture_fb;
     sfSprite *sprite_fb;
+    sfSprite *healthbar;
     player_t player;
     obj_t *obj;
     layers_t layers;
     int width;
     int height;
     int maze_size;
+    e_obj_t **e_obj;
+    sfClock *e_clock;
     sp_dict_t **spell_dict;
     e_dict_t **ennemy_dict;
     npc_t **npc_list;
