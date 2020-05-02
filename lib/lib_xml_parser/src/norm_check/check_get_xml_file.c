@@ -15,7 +15,7 @@ char **check_get_xml_file(char const *fp)
 {
     char **file = NULL;
 
-    if (!fp)
+    if (!fp || !is_file_openable(fp))
         return NULL;
     file = get_entire_file_double_arr(fp);
     if (!file || !file[0])

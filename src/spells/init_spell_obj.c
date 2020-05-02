@@ -28,7 +28,7 @@ void init_spell_obj(global_t *global)
         return;
     }
     while (GGS[++arr_len]);
-    GGO->sp_obj_g = malloc(sizeof(s_obj_g) * arr_len);
+    GGO->sp_obj_g = malloc(sizeof(s_obj_g) * (arr_len + 1));
     init_spell_text(&GGO->sp_obj_g[0]);
     for (int i = 0; i < arr_len; i++) {
         GGO->sp_obj_g[i].active = 1;

@@ -12,12 +12,16 @@
 
 #include "rpg_structs.h"
 #include "global.h"
+#include "my_rpg.h"
 
 static void set_caracteristics(e_dict_t *ennemy_page, char * const line)
 {
-    ennemy_page->damage = cpy_var_int(" base_damage=", line);
-    ennemy_page->move_speed = cpy_var_int(" move_speed=", line);
+    sfVector2f hitbox_tmp = get_dimensions(line);
+
+    ennemy_page->damage = cpy_var_int(" damage=", line);
+    ennemy_page->move_speed = cpy_var_int(" speed=", line);
     ennemy_page->life = cpy_var_int(" life=", line);
+    ennemy_page->hitbox = rect(0, 0, (int)hitbox_tmp.x, (int)hitbox_tmp.y);
 }
 
 void set_ennemy_dict(char **file, e_dict_t **ennemy_dict)

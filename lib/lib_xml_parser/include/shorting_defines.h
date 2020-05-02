@@ -40,6 +40,7 @@
 #define GGLDM global->game.layers.dante_maps
 #define GGLP global->game.layers.pos
 #define GGS global->game.spell_dict
+#define GGEN global->game.ennemy_dict
 #define GGO global->game.obj
 
 //player
@@ -104,6 +105,6 @@
 #define GGOE global->game.e_obj
 #define E_DICT global->game.ennemy_dict
 #define HEALTHBARSPR global->game.healthbar
-#define HEALTHBARPATH "assets_rpg/images/spritsheets/healthbar.png"
+#define HEALTHBARPATH "assets_rpg/images/healthbar.png"
 
 #endif /* !SHORTING_DEFINES_H */

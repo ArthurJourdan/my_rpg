@@ -14,6 +14,8 @@ void event_management(global_t *global)
 {
     if (stopping_events(global, GG.event))
         return;
+    if (pause_events(global, GG.event))
+        return;
     if (button_management(global, GG.event))
         return;
 }

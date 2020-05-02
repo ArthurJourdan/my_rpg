@@ -9,7 +9,7 @@
 #include "my.h"
 #include "print.h"
 
-static size_t const CHECK = 100;
+static size_t const CHECK = 500;
 
 bool check_first_line(char const *filepath)
 {

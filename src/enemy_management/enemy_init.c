@@ -33,6 +33,8 @@ void enemy_init(global_t *global, int id, sfVector2f pos)
 {
     int i = 0;
 
+    if (!GGEN)
+        return;
     for (i = 0; GGOE[i]->obj_status == true; i++);
     GGOE[i]->obj_status = true;
     GGOE[i]->id = id;
