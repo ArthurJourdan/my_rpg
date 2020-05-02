@@ -14,6 +14,7 @@ static void manage_enemy(global_t *global, e_obj_t *enemy)
         enemy_clear(enemy);
         return;
     }
+    check_enemy_collision(global, enemy);
     enemy_zombie_ai(global, enemy);
     if (msec(time) - msec(E_FRAMET) > 200) {
         E_FRAMET = sfClock_getElapsedTime(E_CLOCK);

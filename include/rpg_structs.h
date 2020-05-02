@@ -109,7 +109,7 @@ typedef struct enemy_obj {
     sfTime movet;
     sfTime framet;
     sfVector2f pos;
-    sfIntRect *collider;
+    sfIntRect collider;
 }e_obj_t;
 
 typedef struct obj {
