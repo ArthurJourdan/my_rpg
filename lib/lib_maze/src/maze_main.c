@@ -7,16 +7,15 @@
 
 #include "maze.h"
 
-char **maze_main(int maze_size)
+void maze_main(int maze_size, char ***maze)
 {
-    char **maze;
     vect2i size;
     vect2i *stack;
 
     size = (vect2i){maze_size, maze_size};
-    maze = init_maze(size.y, size.x);
+    *maze = init_maze(size.y, size.x);
     stack = init_stack(size.y, size.x);
-    maze_maker(maze, stack, 0, false);
-    put_last_maze(maze, (vect2i){size.y, size.x});
-    return maze;
+    maze_maker(*maze, stack, 0, false);
+    put_last_maze(*maze, (vect2i){size.y, size.x});
+    free(stack);
 }

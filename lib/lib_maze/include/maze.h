@@ -20,16 +20,6 @@
 #define UNSD __attribute__((unused))
 #define BONUS (false)
 
-#define DEFAULT "\e[0;00m"
-#define BLACK   "\e[7;30m"
-#define RED     "\e[7;31m"
-#define GREEN   "\e[7;32m"
-#define YELLOW  "\e[7;33m"
-#define BLUE    "\e[7;34m"
-#define MAGENTA "\e[7;35m"
-#define TEAL    "\e[7;36m"
-#define WHITE   "\e[7;37m"
-
 #define NORTH(a) (maze[pos->x - a][pos->y])
 #define SOUTH(a) (maze[pos->x + a][pos->y])
 #define EAST(a)  (maze[pos->x][pos->y + a])
@@ -48,7 +38,7 @@ typedef struct {
 } vect2f;
 
 /*generator*/
-char **maze_main(int maze_size);
+void maze_main(int maze_size, char ***maze);
 
 //init_maze.c
 void destroy_maze(char **maze, vect2i *stack);
@@ -71,10 +61,5 @@ void maze_maker(char **maze, vect2i *stack, int pos, bool show);
 //pathfinder.c
 int geta_random_path(char **maze, vect2i *pos);
 vect2i pathfinder(char **maze, vect2i *pos);
-
-//displayer.c
-void conditional_print(char **maze, int i, int j, vect2i size);
-void print_maze(char **maze, int x, int y);
-void print_colored_maze(char **maze);
 
 #endif /*MAZE_H*/

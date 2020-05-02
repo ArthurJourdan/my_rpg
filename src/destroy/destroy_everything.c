@@ -78,6 +78,7 @@ void destroy_game(global_t *global)
         destroy_scene(GS->scenes[i]);
         // free(GS->scenes[i]);
     }
+    player_destroy(global);
     pixels_destroy(global);
     free(global);
 }

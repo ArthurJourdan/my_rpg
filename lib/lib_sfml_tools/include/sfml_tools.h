@@ -14,7 +14,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
-#include "rpg_structs.h"
+#include "my_rpg.h"
 
 #define UI unsigned int
 #define sfC (sfColor)
@@ -32,10 +32,10 @@ void framebuffer_destroy(fbuffer_t *buffer);
 // !WINDOW
 
 //PIXELS
-void put_pixel(fbuffer_t *fb, UI x, UI y, sfColor color);
-void put_square(fbuffer_t *fb, sfVector2f pos, sfVector2f size, sfColor color);
-void put_circle(fbuffer_t *fb, sfVector2f pos, UI radius, sfColor color);
-void put_disc(fbuffer_t *fb, sfVector2f pos, UI radius, sfColor color);
+void put_pixel(global_t *global, UI x, UI y, sfColor color);
+void put_square(global_t *global, sfVector2f pos, sfVector2f size, sfColor color);
+void put_circle(global_t *global, sfVector2f pos, UI radius, sfColor color);
+void put_disc(global_t *global, sfVector2f pos, UI radius, sfColor color);
 // !PIXELS
 
 // SPRITE

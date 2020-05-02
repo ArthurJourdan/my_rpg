@@ -10,7 +10,7 @@
 void imperfect(char **maze, int i)
 {
     for (int j = 2; maze[i + 2][j + 2]; j++)
-        if (maze[i][j] == 'X' && !(rand() % 10))
+        if (maze[i][j] == 'X' && !(rand() % 12))
             maze[i][j] = '*';
 }
 

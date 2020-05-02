@@ -136,6 +136,8 @@ SRC		=	${SRCDIR}main.c	\
 			\
 			$(DESTROY)destroy_everything.c	\
 			$(DESTROY)pixels_destroy.c	\
+			$(DESTROY)player_destroy.c	\
+			\
 			$(ENEMYDIR)enemy_clear.c	\
 			$(ENEMYDIR)enemy_display.c	\
 			$(ENEMYDIR)enemy_init.c		\

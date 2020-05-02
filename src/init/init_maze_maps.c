@@ -6,11 +6,13 @@
 */
 
 #include "my_rpg.h"
+#include "print.h"
 
 void init_maze_map(global_t *global)
 {
-    char **temp = maze_main(GGM);
+    char **temp = NULL;
 
+    maze_main(GGM, &temp);
     GGLDM = malloc(sizeof(char *) * (GGM + 1));
     GGLMM = malloc(sizeof(maze_map_t *) * GGM);
     for (int i = 0; i != GGM; i++) {
@@ -22,9 +24,8 @@ void init_maze_map(global_t *global)
         GGLDM[i][GGM] = '\0';
     }
     GGLDM[GGM] = NULL;
-    for (size_t i = 0; GGLDM[i]; i++) {
-        for (size_t j = 0; GGLDM[i][j]; j++)
-            printf("%c", GGLDM[i][j]);
-        printf("\n");
-    }
+    my_dprintf(1, "%@\n", GGLDM);
+    for (size_t i = 0; temp[i]; i++)
+        free(temp[i]);
+    free(temp);
 }
