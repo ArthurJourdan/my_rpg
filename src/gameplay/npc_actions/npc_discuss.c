@@ -10,4 +10,4 @@
 void npc_discuss(global_t *global, size_t npc_idx)
 {
     display_text_struct(GGNPC[npc_idx]->text, GW, FPS, 0);
-}
+    }

@@ -16,19 +16,31 @@
 
 //game
 #define GG global->game
+#define GGPXS(a) global->game.pixel[a].speed
+#define GGPX(a) global->game.pixel[a].size
+#define GGPS(a) global->game.pixel[a].start
+#define GGPP(a) global->game.pixel[a].pos
+#define GGPE(a) global->game.pixel[a].end
+#define GGPR(a) global->game.pixel[a].density
 #define GGW global->game.width
 #define GGH global->game.height
-#define GGP global->game.player
+#define GGF global->game.framebuffer
+#define GGTF global->game.texture_fb
+#define GGSF global->game.sprite_fb
 #define GGM global->game.maze_size
+//player
+#define GGP global->game.player
 #define GGPC global->game.player.controls
 #define GGPD global->game.player.dash
 #define GGPT global->game.player.time
+//layers
 #define GGL global->game.layers
 #define GGLM global->game.layers.maze
 #define GGLMM global->game.layers.maze_maps
 #define GGLDM global->game.layers.dante_maps
 #define GGLP global->game.layers.pos
 #define GGS global->game.spell_dict
+#define GGEN global->game.ennemy_dict
 #define GGO global->game.obj
 
 //player
@@ -74,5 +86,25 @@
 #define AC animd->anim_count
 #define AF animd->anim_frames
 #define ASIZE animd->unit_size
+
+//enemy
+#define E_OBJ_STATUS enemy->obj_status
+#define E_ID enemy->id
+#define E_FRAME enemy->frame
+#define E_FACING enemy->facing
+#define E_POS enemy->pos
+#define E_SPEED enemy->speed
+#define E_DMG enemy->damage
+#define E_SPELL enemy->spell_nodes
+#define E_COLLIDER enemy->collider
+#define E_MOVET enemy->movet
+#define E_FRAMET enemy->framet
+#define E_HP enemy->hp
+#define E_MHP enemy->max_hp
+#define E_CLOCK global->game.e_clock
+#define GGOE global->game.e_obj
+#define E_DICT global->game.ennemy_dict
+#define HEALTHBARSPR global->game.healthbar
+#define HEALTHBARPATH "assets_rpg/images/healthbar.png"
 
 #endif /* !SHORTING_DEFINES_H */

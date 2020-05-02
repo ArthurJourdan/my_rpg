@@ -27,6 +27,8 @@ typedef struct npc {
     text_t *text;
     void (*action)(struct global_vars *, size_t);
     bool actioning;
+    sfClock *clock;
+    float time_action;
 } npc_t;
 
 typedef struct actions_npc {

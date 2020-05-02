@@ -24,6 +24,10 @@ void init_spell_obj_g(global_t *global)
     int arr_len = -1;
     int i;
 
+    if (!GGS) {
+        GGO = NULL;
+        return;
+    }
     while (GGS[++arr_len]);
     GGO->sp_obj_g = malloc(sizeof(s_obj_g) * arr_len);
     init_spell_text(&GGO->sp_obj_g[0]);

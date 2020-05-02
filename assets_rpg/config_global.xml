@@ -1,7 +1,7 @@
-<Window heigth="1080" width="1920" bbp="32"/>
-<Volume volume="50"/>
+<Window height="1080" width="1920" bbp="32"/>
+<Volume volume="20"/>
 <FPS fps="60"/>
-<Maze_size size="3"/>
-<GUI path="assets_rpg/gui/assets/config.xml"/>
+<Maze_size size="7"/>
+<GUI path="assets_rpg/gui/assets_2/config2.xml"/>
 <Maps path="assets_rpg/images/maps/"/>
 <Game path="assets_rpg/images/config_game.xml"/>

@@ -12,7 +12,13 @@
 #include <SFML/System.h>
 #include <SFML/Audio.h>
 
+#include <stdlib.h>
 #include <stdbool.h>
+#include "my_rpg.h"
+
+#define UI unsigned int
+#define sfC (sfColor)
+#define sfV2F (sfVector2f)
 
 typedef struct sfml_colors {
     sfColor sf_color;
@@ -20,9 +26,17 @@ typedef struct sfml_colors {
 } sfml_colors_t;
 
 // WINDOW
-sfRenderWindow *create_window(unsigned int width, unsigned int height,
-unsigned int bbp, char const *name);
+fbuffer_t *framebuffer_create(UI width, UI height);
+sfRenderWindow *create_window(UI width, UI height, UI bbp, char const *name);
+void framebuffer_destroy(fbuffer_t *buffer);
 // !WINDOW
+
+//PIXELS
+void put_pixel(global_t *global, UI x, UI y, sfColor color);
+void put_square(global_t *global, sfVector2f pos, sfVector2f size, sfColor color);
+void put_circle(global_t *global, sfVector2f pos, UI radius, sfColor color);
+void put_disc(global_t *global, sfVector2f pos, UI radius, sfColor color);
+// !PIXELS
 
 // SPRITE
 sfSprite *create_image(sfSprite *sprite, char const *filepath);

@@ -21,18 +21,16 @@ sfVector2f get_mouse_coo(sfRenderWindow *win)
 
 bool left_mouse_pressed(sfEvent event)
 {
-    if (event.type == sfEvtMouseButtonPressed) {
-        if (event.mouseButton.button == sfMouseLeft)
-            return true;
+    if (sfMouse_isButtonPressed(sfMouseLeft)) {
+        return true;
     }
     return false;
 }
 
 bool right_mouse_pressed(sfEvent event)
 {
-    if (event.type == sfEvtMouseButtonPressed) {
-        if (event.mouseButton.button == sfMouseRight)
-            return true;
+    if (sfMouse_isButtonPressed(sfMouseRight)) {
+        return true;
     }
     return false;
 }

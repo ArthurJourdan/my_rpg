@@ -20,7 +20,7 @@
 enum side_e {ally, enemy};
 enum maze_e {UP, LEFT, DOWN, RIGHT};
 enum stype_e {targeted, range, status, NONE_TYPE = -1};
-enum scategory_e {blast, instant, sequence, NONE_CAT = -1}; //un spell blast serait un spell qui ne s'active que quand il touche l'ennemis, un spell instan s'activerai instant (genre un lance-flamme) , un sequence serait un spell plus élaboré avec plusieurs étape (genre une onde de choque qui se propage lentement ou jsp)
+enum scategory_e {blast, instant, sequence, NONE_CAT = -1};
 
 /**************************************/
 /*************** DICTS ****************/
@@ -56,8 +56,8 @@ typedef struct enemy_dict {
     int life;
     int *spell_list;
     int move_speed;
+    sfIntRect hitbox;
     sfSprite ***sprite;
-    //behaviour_t behaviour; <-- faudrait trouver un moyen de scripter les mob via des struct (aucune idée de comment pour l'instant)
 }e_dict_t;
 
 typedef struct dict {
@@ -99,12 +99,15 @@ typedef struct spell_obj {
 typedef struct enemy_obj {
     bool obj_status;
     int id;
+    int facing;
     int frame;
     int max_hp;
     int hp;
     int damage;
     int *spell_nodes;
-    sfVector2f speed;
+    float speed;
+    sfTime movet;
+    sfTime framet;
     sfVector2f pos;
     sfIntRect *collider;
 }e_obj_t;
@@ -206,23 +209,45 @@ typedef struct maze {
     sfImage *coll;
     bool is_open;
     bool is_enemies;
+    int weather;
 }maze_map_t;
 
 typedef struct layers {
-    char ***maps;
     char **dante_maps;
     maze_map_t **maze_maps;
     sfVector2i pos;
 }layers_t;
 
+typedef struct fbuffer{
+    unsigned char *pixels;
+    unsigned int height;
+    unsigned int width;
+} fbuffer_t;
+
+typedef struct pixel{
+    sfVector2f *start;
+    sfVector2f *pos;
+    sfVector2f *end;
+    float *size;
+    float speed;
+    int density;
+} pixel_t;
+
 typedef struct game {
     sfEvent event;
+    pixel_t *pixel;
+    fbuffer_t *framebuffer;
+    sfTexture *texture_fb;
+    sfSprite *sprite_fb;
+    sfSprite *healthbar;
     player_t player;
     obj_t *obj;
     layers_t layers;
     int width;
     int height;
     int maze_size;
+    e_obj_t **e_obj;
+    sfClock *e_clock;
     sp_dict_t **spell_dict;
     e_dict_t **ennemy_dict;
     npc_t **npc_list;

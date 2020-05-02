@@ -64,7 +64,8 @@ sfSprite **init_image_list(char const **file, char *name_scene);
 sfRectangleShape *init_game_board(void);
 
 // RPG_FEAT
-game_t malloc_all_game_structs(char **file);
+game_t init_game_null(void);
+game_t malloc_all_game_structs(char **file, game_t game);
 
 sp_dict_t **init_spell_dict(char **file);
 e_dict_t **init_ennemy_dict(char **file);
@@ -93,8 +94,7 @@ sfRenderWindow *window);
 sfSound *set_any_sound(char const *line);
 
 // RPG FEAT
-global_t *init_global_vars(char const global_filepath[],
-global_t *global_struct);
+global_t *init_global_vars(char const global_fp[], global_t *global_struct);
 sfRenderWindow *init_window(char const **file);
 
 // ! GUI

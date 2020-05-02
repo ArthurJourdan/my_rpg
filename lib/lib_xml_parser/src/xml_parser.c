@@ -52,14 +52,16 @@ static maps_t **init_all_maps(char *filepath, sfRenderWindow *window)
 static game_t fill_in_data_game(char * const filepath, global_t *global)
 {
     char **file = NULL;
-    game_t game;
+    game_t game = init_game_null();
 
     file = check_get_xml_file(filepath);
     if (!file) {
         my_dprintf(2, FILE_ERR, RED, filepath, DEFAULT);
         return game;
     }
-    game = malloc_all_game_structs(file);
+    game = malloc_all_game_structs(file, game);
+    if (!game.spell_dict || !game.ennemy_dict)
+        return game;
     set_game_structs(file, game, global);
     free_double_char_arr(file);
     return game;

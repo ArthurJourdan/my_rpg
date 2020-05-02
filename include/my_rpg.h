@@ -13,15 +13,17 @@
 #include "maze.h"
 #include "player.h"
 
-
 #define ABS(a) ((a > 0) ? a : (-a))
 #define SIGN(a) ((!a) ? 0 : ABS(a) / a)
+
+#define vec2f(x, y) (sfVector2f){(x), (y)}
+#define msec(x) (x).microseconds / 1000
 
 #define rect(l, t, w, h) (sfIntRect){l, t, w, h}
 #define OBJ_SIZE 80
 /*MAIN*/
 void rpg_manager(global_t *global);
-char **maze_main(int maze_size);
+void maze_main(int maze_size, char ***maze);
 
 /*INIT*/
 void init_game(global_t *global);
@@ -30,6 +32,8 @@ void init_layers(global_t *global);
 void put_sprite(global_t *global, char *filepath);
 void init_controls(global_t *global);
 void init_maze_map(global_t *global);
+sfSprite *sprite_create_from_file(char *path);
+e_dict_t *placeholder_load(void);
 
 /*DISP*/
 void display_layer1(sfRenderWindow *win, global_t *global);
@@ -49,6 +53,16 @@ bool my_colorcmp(sfColor color1, sfColor color2);
 void move_check(sfVector2f next, global_t *global);
 void swap_map(sfVector2f next, global_t *global);
 void player_dash(sfVector2f next, global_t *global, sfColor dash_color);
+sfVector2f my_goto(sfVector2f *pos, sfVector2f start, sfVector2f target, float speed);
+
+/*PIXELS*/
+fbuffer_t *framebuffer_create(unsigned int width, unsigned int heght);
+void make_it_rain(global_t *global);
+void make_it_snow(global_t *global);
+
+/*DESTROY*/
+void pixels_destroy(global_t *global);
+void player_destroy(global_t *global);
 
 /*OBJ*/
 void init_spell_obj_g(global_t *global);
@@ -63,4 +77,15 @@ void check_spell_active(global_t *global);
 void init_spell_obj(global_t *global);
 void targeted_spell(game_t *game, int id, int index);
 void player_spells(global_t *global);
+
+/*ENEMY*/
+void enemy_management(global_t *global);
+void enemy_clear(e_obj_t *enemy);
+void enemy_tab_clear(global_t *global);
+void display_enemy(global_t *global);
+void enemy_zombie_ai(global_t *global, e_obj_t *enemy);
+void enemy_tab_init(global_t *global);
+void enemy_init(global_t *global, int id, sfVector2f pos);
+void enemy_generate_hord(global_t *global);
+
 #endif /* !MY_RPG_H */

@@ -18,7 +18,6 @@ bool can_move(char **maze, vect2i *pos)
 void anim(char **maze, int timer, vect2i *pos)
 {
     maze[pos->x][pos->y] = 'O';
-    print_colored_maze(maze);
     printf("\n");
     usleep(timer);
     for (int i = 0; maze[i]; i++)

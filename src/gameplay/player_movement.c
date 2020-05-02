@@ -9,6 +9,7 @@
 #include <SFML/Window/Keyboard.h>
 #include <math.h>
 #include "my_rpg.h"
+#include "sfml_tools.h"
 
 void line_player_deplacement(global_t *global)
 {
@@ -105,10 +106,10 @@ void player_movements(global_t *global)
     check_next_pos(global, &next_pos);
     move_check(next_pos, global);
     swap_map(next_pos, global);
-    relat = (sfVector2f){next_pos.x - GGP.pos.x, next_pos.y - GGP.pos.y};
-    next = (sfVector2f){next_pos.x + SIGN(relat.x) * 165, next_pos.y + SIGN(relat.y) * 165};
-    next = (sfVector2f){((next.x > 0) ? next.x : 1), ((next.y > 0) ? next.y : 1)};
-    next = (sfVector2f){((next.x < GGW) ? next.x : GGW - 1),
+    relat = sfV2F{next_pos.x - GGP.pos.x, next_pos.y - GGP.pos.y};
+    next = sfV2F{next_pos.x + SIGN(relat.x) * 200, next_pos.y + SIGN(relat.y) * 200};
+    next = sfV2F{((next.x > 0) ? next.x : 1), ((next.y > 0) ? next.y : 1)};
+    next = sfV2F{((next.x < GGW) ? next.x : GGW - 1),
                         ((next.y < GGH) ? next.y : GGH - 1)};
     color = sfImage_getPixel(GGLMM[GGLP.y][GGLP.x].coll,
                              next.x * (float)1650 / (float)GGW,
