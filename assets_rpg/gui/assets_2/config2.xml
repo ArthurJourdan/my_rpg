@@ -43,10 +43,10 @@
     <Text name="first" text="You must find the fountain, " font="assets_rpg/gui/assets_2/font/legionary.ttf" x="100" y="100" size="50"/>
     <Text name="second" text="run trhough the rooms and reach the end of this maze" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="100" y="200" size="50"/>
     <Text name="third" text="by killing ennemies or dashing as fast as possible" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="100" y="300" size="50"/>
-    <Text name="keys" text="Use" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="10" y="575" size="40"/>
-    <Text name="keyZ" text="'Z' to go up" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="650" size="30"/>
-    <Text name="keyQ" text="'Q' to go left" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="750" size="30"/>
-    <Text name="keyS" text="'S' to go down" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="850" size="30"/>
-    <Text name="keyD" text="'D' to go right" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="950" size="30"/>
-    <Text name="xml parser" text="Have a look at the xml files and cutomize it !" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="1150" y="950" size="30"/>
+    <Text text_color="White" name="keys" text="Use" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="10" y="575" size="40"/>
+    <Text text_color="White"  name="keyZ" text="'Z' to go up" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="650" size="30"/>
+    <Text text_color="White"  name="keyQ" text="'Q' to go left" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="750" size="30"/>
+    <Text text_color="White"  name="keyS" text="'S' to go down" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="850" size="30"/>
+    <Text text_color="White"  name="keyD" text="'D' to go right" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="950" size="30"/>
+    <Text text_color="White"  name="xml parser" text="Have a look at the xml files and cutomize it !" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="1150" y="950" size="30"/>
 </Scene>
