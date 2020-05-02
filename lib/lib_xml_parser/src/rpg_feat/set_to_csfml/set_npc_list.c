@@ -51,13 +51,13 @@ static void set_caracteristics(npc_t *npc, char * const line)
 void set_npc_list(char **file, npc_t **npc_list)
 {
     size_t nb_npcs = count_occurences("NPC ", file);
-    size_t pos = 0;
+    size_t idx = 0;
 
-    for (size_t a = 0; a < nb_npcs; a++) {
-        pos += get_pos_word_in_arr("NPC ", (char const **)file + pos);
-        if (get_pos_word_in_arr("NPC ", (char const **)file + pos) == -1)
-            break;
-        npc_list[a]->id = a;
-        set_caracteristics(npc_list[a], file[pos]);
+    for (size_t a = 0; file[a]; a++) {
+        if (get_pos_word_in_str("NPC ", file[a]) == -1)
+            continue;
+        npc_list[idx]->id = idx;
+        set_caracteristics(npc_list[idx], file[a]);
+        idx++;
     }
 }
