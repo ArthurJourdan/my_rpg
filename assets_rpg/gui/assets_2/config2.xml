@@ -1,12 +1,12 @@
 <Scene name="Starting_menu">
     <Image name="cobble" image="assets_rpg/images/cobblestones3.png" fullscreen="true"/>
-    <Text name="my_RPG" text="my_RPG" appear_delay="10" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="100" y="575" size="200"/>
-    <Button name="start_button" letter_delay="1" action="Start" image="assets_rpg/images/starlitsky.png" text="Start" font="assets_rpg/gui/assets_2/font/legionary.ttf" text_color="White" idle_color="Black" hover_color="White" clicked_color="Magenta" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="50" height="75" width="100" size="40"/>
-    <Button name="option_button" action="Options" image="assets_rpg/images/starlitsky.png" text="Options" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="1750" y="50" height="75" width="150" size="40"/>
-    <Button name="exit_button" action="Quit" image="assets_rpg/images/starlitsky.png" text="Quit" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="375" y="50" height="75" width="200" size="40"/>
-    <Button name="How to play" nb_animations="2" image="assets_rpg/images/starlitsky.png" size_total="114" action="Tutorial" text="tuto" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="50" x="1000" height="72" width="228" size="40"/>
-    <Music name="music1" audio="assets_rpg/audio/musics/it_s_raining.ogg" volume="10" loop="true"/>
-    <Sound name="soundbegining" audio="assets_rpg/audio/musics/music_trial_menu.ogg" volume="10"/>
+    <Text name="my_RPG" text="my_RPG" appear_delay="2" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="100" y="575" size="200"/>
+    <Button name="start_button" letter_delay="1" action="Start" image="assets_rpg/images/starlitsky.png" text="Start" font="assets_rpg/gui/assets_2/font/legionary.ttf" text_color="White" idle_color="Black" hover_color="White" clicked_color="Magenta" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="200" height="75" width="250" size="40"/>
+    <Button name="option_button" action="Options" image="assets_rpg/images/starlitsky.png" text="Options" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="300" height="75" width="250" size="40"/>
+    <Button name="exit_button" action="Quit" image="assets_rpg/images/starlitsky.png" text="Quit" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" x="100" y="500" height="75" width="250" size="40"/>
+    <Button name="How to play" nb_animations="2" image="assets_rpg/images/starlitsky.png" size_total="114" action="Tutorial" text="tuto" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="400" x="100" height="75" width="250" size="40"/>
+    <Music name="music1" audio="assets_rpg/audio/musics/it_s_raining.ogg" volume="0" loop="true"/>
+    <Sound name="soundbegining" audio="assets_rpg/audio/musics/music_trial_menu.ogg" volume="0"/>
 </Scene>
 <Scene name="Game">
     <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" width="225" height="100" x="1670" y="890"/>
