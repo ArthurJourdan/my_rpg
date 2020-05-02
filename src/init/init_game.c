@@ -50,6 +50,8 @@ static void init_game_snow(global_t *global)
 
 void init_game(global_t *global)
 {
+    if (GGM > 20)
+        GGM = 20;
     GGW = sfRenderWindow_getSize(GW).x;
     GGH = sfRenderWindow_getSize(GW).y;
     GG.obj = malloc(sizeof(obj_t));
