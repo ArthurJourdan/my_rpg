@@ -33,6 +33,8 @@ void init_layers(global_t *global);
 void put_sprite(global_t *global, char *filepath);
 void init_controls(global_t *global);
 void init_maze_map(global_t *global);
+sfSprite *sprite_create_from_file(char *path);
+e_dict_t *placeholder_load(void);
 
 /*DISP*/
 void display_layer1(sfRenderWindow *win, global_t *global);
@@ -77,5 +79,6 @@ void display_enemy(global_t *global);
 void enemy_zombie_ai(global_t *global, e_obj_t *enemy);
 void enemy_tab_init(global_t *global);
 void enemy_init(global_t *global, int id, sfVector2f pos);
+void enemy_generate_hord(global_t *global);
 
 #endif /* !MY_RPG_H */
