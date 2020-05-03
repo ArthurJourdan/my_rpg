@@ -29,7 +29,7 @@ void check_spell_active(global_t *global)
     !GGO->s_obj[0].obj_status) {
         GGO->s_obj[0].img = sfSprite_copy(GGS[GGPIS[0].spell_id]->spell_img);
         origin = sfSprite_getGlobalBounds(GGO->s_obj[0].img);
-        origin_pos = (sfVector2f){origin.width, origin.height};
+        origin_pos = (sfVector2f){origin.width / 2, origin.height / 2};
         sfSprite_setOrigin(GGO->s_obj[0].img, origin_pos);
         GGO->s_obj[0].speed.x = GGS[GGPIS[0].spell_id]->travel_speed;
         GGO->s_obj[0].speed.y = GGS[GGPIS[0].spell_id]->travel_speed;
