@@ -24,7 +24,7 @@ void enemy_tab_init(global_t *global)
         GGOE[i]->spell_nodes = NULL;
         GGOE[i]->speed = 0;
         GGOE[i]->pos = vec2f(0, 0);
-        //GGOE[i]->collider = NULL;
+        GGOE[i]->collider = rect(0, 0, 0, 0);
     }
     return;
 }
@@ -56,6 +56,7 @@ void enemy_init(global_t *global, int id, sfVector2f pos)
     GGOE[i]->speed = E_DICT[id]->move_speed;
     GGOE[i]->collider = E_DICT[id]->hitbox;
     GGOE[i]->pos = pos;
+    GGOE[i]->collider = E_DICT[id]->hitbox;
     GGOE[i]->movet = sfClock_getElapsedTime(E_CLOCK);
     GGOE[i]->framet = sfClock_getElapsedTime(E_CLOCK);
     return;

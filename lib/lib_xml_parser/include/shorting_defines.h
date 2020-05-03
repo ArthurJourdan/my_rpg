@@ -102,6 +102,7 @@
 #define E_HP enemy->hp
 #define E_MHP enemy->max_hp
 #define E_CLOCK global->game.e_clock
+#define E_BOX enemy->collider
 #define GGOE global->game.e_obj
 #define E_DICT global->game.ennemy_dict
 #define HEALTHBARSPR global->game.healthbar

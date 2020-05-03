@@ -18,6 +18,10 @@
 
 #define vec2f(x, y) (sfVector2f){(x), (y)}
 #define msec(x) (x).microseconds / 1000
+#define rect_topleft(rect) ((sfVector2f){rect.left, rect.top})
+#define rect_topright(rect) ((sfVector2f){rect.left + rect.width, rect.top})
+#define rect_botleft(rect) ((sfVector2f){rect.left, rect.top + rect.height})
+#define rect_botright(r) ((sfVector2f){r.left + r.width, r.top + r.height})
 
 #define rect(l, t, w, h) (sfIntRect){l, t, w, h}
 #define OBJ_SIZE 80
@@ -86,6 +90,7 @@ void display_enemy(global_t *global);
 void enemy_zombie_ai(global_t *global, e_obj_t *enemy);
 void enemy_tab_init(global_t *global);
 void enemy_init(global_t *global, int id, sfVector2f pos);
+void check_enemy_collision(global_t *global, e_obj_t *enemy);
 void enemy_generate_hord(global_t *global);
 
 #endif /* !MY_RPG_H */

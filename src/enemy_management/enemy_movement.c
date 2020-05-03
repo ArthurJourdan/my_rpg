@@ -30,16 +30,12 @@ void enemy_zombie_ai(global_t *global, e_obj_t *enemy)
     float derivative;
     sfTime time = sfClock_getElapsedTime(E_CLOCK);
     float timem = msec(time) - msec(E_MOVET);
-    bool xneg = (E_POS.x < 0) ? true : false;
-    bool yneg = (E_POS.y < 0) ? true : false;
 
     dir = vec2f(GGP.pos.x - E_POS.x, GGP.pos.y - E_POS.y);
     set_enemy_facing(enemy, dir);
     derivative = sqrtf(powf(dir.x, 2) + powf(dir.y, 2));
     dir.x = dir.x / derivative * E_SPEED * (timem / 1000);
-    dir.x = (xneg) ? -dir.x : dir.x;
     dir.y = dir.y / derivative * E_SPEED * (timem / 1000);
-    dir.y = (yneg) ? -dir.y : dir.y;
     E_POS = vec2f(E_POS.x + dir.x, E_POS.y + dir.y);
     E_COLLIDER.left = E_POS.x;
     E_COLLIDER.top = E_POS.y;
