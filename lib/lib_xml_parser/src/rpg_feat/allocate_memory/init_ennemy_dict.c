@@ -9,10 +9,11 @@
 #include "file.h"
 
 #include "rpg_structs.h"
+#incldue "a_malloc.h"
 
 static e_dict_t *set_page_to_null(void)
 {
-    e_dict_t *spell_page = malloc(sizeof(e_dict_t));
+    e_dict_t *spell_page = a_malloc(sizeof(e_dict_t) | A_LIST(2));
 
     if (!spell_page)
         return NULL;
@@ -31,7 +32,7 @@ e_dict_t **init_ennemy_dict(char **file)
 
     if (!nb_ennemies)
         return NULL;
-    ennemy_dict = malloc(sizeof(e_dict_t *) * (nb_ennemies + 1));
+    ennemy_dict = a_malloc(sizeof(e_dict_t *) * (nb_ennemies + 1) | A_LIST(2));
     for (size_t page = 0; page < nb_ennemies; page++) {
         ennemy_dict[page] = set_page_to_null();
         if (!ennemy_dict[page])

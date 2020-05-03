@@ -9,12 +9,12 @@
 #include "file.h"
 
 #include "sfml_tools.h"
-
+#include "a_malloc.h"
 #include "npc.h"
 
 static npc_t *set_one_to_null(void)
 {
-    npc_t *npc = malloc(sizeof(npc_t));
+    npc_t *npc = a_malloc(sizeof(npc_t) | A_LIST(2));
 
     if (!npc)
         return NULL;
@@ -38,7 +38,7 @@ npc_t **init_npc_list(char **file)
 
     if (!nb_npc)
         return NULL;
-    npc = malloc(sizeof(npc_t *) * (nb_npc + 1));
+    npc = a_malloc(sizeof(npc_t *) * (nb_npc + 1) | A_LIST(2));
     for (size_t page = 0; page < nb_npc; page++) {
         npc[page] = set_one_to_null();
         if (!npc[page])

@@ -7,7 +7,7 @@
 
 #include "my.h"
 #include "file.h"
-
+#include "a_malloc.h"
 #include "my_rpg.h"
 
 static sp_dict_t *set_page_to_null(void)
@@ -34,7 +34,7 @@ sp_dict_t **init_spell_dict(char **file)
 
     if (!nb_spells)
         return NULL;
-    spell_dict = malloc(sizeof(sp_dict_t *) * (nb_spells + 1));
+    spell_dict = a_malloc(sizeof(sp_dict_t *) * (nb_spells + 1) | A_LIST(2));
     for (size_t page = 0; page < nb_spells; page++) {
         spell_dict[page] = set_page_to_null();
         if (!spell_dict[page])

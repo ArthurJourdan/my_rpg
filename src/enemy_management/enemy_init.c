@@ -11,9 +11,9 @@
 void enemy_tab_init(global_t *global)
 {
     E_CLOCK = sfClock_create();
-    GGOE = a_malloc(sizeof(e_obj_t *) * 64 | A_LIST(1));
+    GGOE = a_malloc(sizeof(e_obj_t *) * 64 | A_LIST(2));
     for (int i = 0; i < 64; i++) {
-        GGOE[i] = a_malloc(sizeof(e_obj_t) | A_LIST(1));
+        GGOE[i] = a_malloc(sizeof(e_obj_t) | A_LIST(2));
         GGOE[i]->obj_status = false;
         GGOE[i]->id = 0;
         GGOE[i]->frame = 0;

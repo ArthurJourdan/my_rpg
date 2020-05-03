@@ -8,6 +8,7 @@
 #include "xml_parser.h"
 #include "file.h"
 #include "maps.h"
+#include "a_malloc.h"
 
 maps_t **init_struct_arr_map(char dir_path[])
 {
@@ -16,7 +17,7 @@ maps_t **init_struct_arr_map(char dir_path[])
 
     if (!dir_path || !is_dir_openable(dir_path) || !nb_dirs)
         return NULL;
-    maps = malloc(sizeof(maps_t *) * (nb_dirs + 1));
+    maps = a_malloc(sizeof(maps_t *) * (nb_dirs + 1) | A_LIST(2));
     if (!maps)
         return NULL;
     maps[nb_dirs] = NULL;
