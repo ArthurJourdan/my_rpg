@@ -34,17 +34,22 @@ void move_spell(global_t *global, int i)
 void check_spell_collision(s_obj_t *spell, global_t *global)
 {
     sfBool intersects = sfFalse;
+    sfIntRect rect = rect(0, 0, 0, 0);
+    sfIntRect srect = rect(0, 0, 0, 0);
 
     if (!GG.e_obj)
         return;
     for (int i = 0; i < 64; i++) {
-        intersects = sfIntRect_intersects(spell->collider,
-        &GG.e_obj[i]->collider, NULL);
-        if (intersects == sfTrue) {
-            if (GG.e_obj[i]->hp > 0) {
-                GG.e_obj[i]->hp -= GGS[spell->id]->base_damage;
+        if (GG.e_obj[i]->obj_status) {
+            rect = rect(GG.e_obj[i]->pos.x, GG.e_obj[i]->pos.y, 96, 96);
+            srect = rect(spell->pos.x, spell->pos.y, 96, 96);
+            intersects = rect_collide_check(srect, rect);
+            if (intersects == sfTrue) {
+                if (GG.e_obj[i]->hp > 0) {
+                    GG.e_obj[i]->hp -= GGS[0]->base_damage;
+                }
+                intersects = sfFalse;
             }
-            intersects = sfFalse;
         }
     }
 

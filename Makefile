@@ -60,6 +60,7 @@ INIT		=	$(INITDIR)init_controls.c	\
 TOOLS		=	$(TOOLDIR)colorcmp.c	\
 			$(TOOLDIR)image_cmp.c	\
 			$(TOOLDIR)make_it_rain.c\
+			$(TOOLDIR)swap_map.c	\
 			$(TOOLDIR)my_goto.c
 
 GAME		=	$(GAMEDIR)player_movement.c	\

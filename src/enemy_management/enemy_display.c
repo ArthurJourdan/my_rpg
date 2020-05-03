@@ -10,6 +10,7 @@
 static void display_enemy_sprite(global_t *global, e_obj_t *enemy)
 {
     sfVector2u size = sfTexture_getSize(sfSprite_getTexture(HEALTHBARSPR));
+
     size.x = size.x * E_HP / E_MHP;
     sfSprite_setTextureRect(HEALTHBARSPR, rect(0, 0, size.x, size.y));
     sfSprite_setPosition(E_DICT[E_ID]->sprite[E_FACING][E_FRAME], E_POS);

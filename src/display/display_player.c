@@ -44,7 +44,12 @@ void display_player(sfRenderWindow *window, global_t *global)
 {
     sfTime time = sfClock_getElapsedTime(GGP.clock);
     int timer = time.microseconds - GGPT.microseconds;
+    sfVector2u size = sfTexture_getSize(sfSprite_getTexture(PHEALTHBARSPR));
 
+    size.x = size.x * GGP.hp / GGP.max_hp;
+    sfSprite_setTextureRect(PHEALTHBARSPR, rect(0, 0, size.x, size.y));
+    sfSprite_setPosition(PHEALTHBARSPR, vec2f(GGP.pos.x, GGP.pos.y - 30));
+    sfRenderWindow_drawSprite(GW, PHEALTHBARSPR, NULL);
     sfSprite_setPosition(GGP.sprite, GGP.pos);
     display_dash(window, global);
     sfRenderWindow_drawSprite(window, GGP.sprite, NULL);

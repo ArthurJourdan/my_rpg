@@ -55,6 +55,8 @@ void check_enemy_collision(global_t *global, e_obj_t *enemy)
     if (!rect_collide_check(e_rect, p_rect))
         return;
     GGP.hp -= E_DMG;
+    if (GGP.hp <= 0)
+        GGP.hp = 0;
     kb = get_knockback(GGP.pos, E_POS);
     GGP.pos = vec2f(GGP.pos.x + kb.x, GGP.pos.y + kb.y);
     return;

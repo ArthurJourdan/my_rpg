@@ -58,7 +58,8 @@ bool my_colorcmp(sfColor color1, sfColor color2);
 void move_check(sfVector2f next, global_t *global);
 void swap_map(sfVector2f next, global_t *global);
 void player_dash(sfVector2f next, global_t *global, sfColor dash_color);
-sfVector2f my_goto(sfVector2f *pos, sfVector2f start, sfVector2f target, float speed);
+sfVector2f my_goto(sfVector2f *pos, sfVector2f start,
+sfVector2f target, float speed);
 sfColor get_pixel_color(sfVector2f next, global_t *global);
 
 /*PIXELS*/
@@ -94,5 +95,6 @@ void enemy_tab_init(global_t *global);
 void enemy_init(global_t *global, int id, sfVector2f pos);
 void check_enemy_collision(global_t *global, e_obj_t *enemy);
 void enemy_generate_hord(global_t *global);
+int rect_collide_check(sfIntRect rect1, sfIntRect rect2);
 
 #endif /* !MY_RPG_H */

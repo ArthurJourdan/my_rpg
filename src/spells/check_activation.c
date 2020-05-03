@@ -33,6 +33,7 @@ void check_spell_active(global_t *global)
         sfSprite_setOrigin(GGO->s_obj[0].img, origin_pos);
         GGO->s_obj[0].speed.x = GGS[GGPIS[0].spell_id]->travel_speed;
         GGO->s_obj[0].speed.y = GGS[GGPIS[0].spell_id]->travel_speed;
+        GGO->s_obj[0].collider = &GGS[GGPIS[0].spell_id]->collider;
         GGO->s_obj[0].dir = GGPL;
         GGO->s_obj[0].range = GGS[GGPIS[0].spell_id]->range;
         check_spell_type(GGPIS[0].spell_id, global, 0);

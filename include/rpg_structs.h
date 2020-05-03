@@ -30,24 +30,16 @@ enum scategory_e {blast, instant, sequence, NONE_CAT = -1};
 
 struct game;
 
-typedef struct spell_hitboxes {
-    sfIntRect *hitboxes;
-    int lingering_time;
-    int activation_delay;
-}sphit_t;
-
 typedef struct spell_dict {
     int id;
     enum stype_e stype;
     enum scategory_e category;
     int base_damage;
-    int mp_cost;
-    int cooldown;
     int activation_radius;
     float range;
     float travel_speed;
-    sphit_t **hitboxes;
     sfSprite *spell_img;
+    sfIntRect collider;
 }sp_dict_t;
 
 typedef struct enemy_dict {
@@ -87,7 +79,6 @@ typedef struct spell_obj {
     enum stype_e type;
     enum scategory_e category;
     int activation_radius;
-    sphit_t **sphit;
     sfVector2f starting_pos;
     sfVector2f speed;
     sfVector2f pos;
@@ -244,6 +235,7 @@ typedef struct game {
     sfTexture *texture_fb;
     sfSprite *sprite_fb;
     sfSprite *healthbar;
+    sfSprite *phealthbar;
     player_t player;
     obj_t *obj;
     layers_t layers;

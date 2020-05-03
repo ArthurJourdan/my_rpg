@@ -109,5 +109,7 @@
 #define E_DICT global->game.ennemy_dict
 #define HEALTHBARSPR global->game.healthbar
 #define HEALTHBARPATH "assets_rpg/images/healthbar.png"
+#define PHEALTHBARSPR global->game.phealthbar
+#define PHEALTHBARPATH "assets_rpg/images/phealthbar.png"
 
 #endif /* !SHORTING_DEFINES_H */

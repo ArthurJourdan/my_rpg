@@ -24,46 +24,6 @@ void move_check(sfVector2f next, global_t *global)
     }
 }
 
-void generate_enemies(global_t *global, sfColor color)
-{
-    if (GGLMM[GGLP.y][GGLP.x].is_enemies) {
-        if (GGLMM[GGLP.y][GGLP.x].spawn &&
-            my_colorcmp(color, sfRed)) {
-            enemy_tab_clear(global);
-            enemy_generate_hord(global);
-            GGLMM[GGLP.y][GGLP.x].spawn = false;
-        }
-    } else
-        enemy_tab_clear(global);
-}
-
-void swap_map(sfVector2f next, global_t *global)
-{
-    sfColor color = get_pixel_color(next, global);
-
-    if (!my_colorcmp(color, sfRed))
-        return;
-    if (GGP.pos.x > GGW - 300 && GGLP.x < (GGM - 1) &&
-        GGLMM[GGLP.y][GGLP.x + 1].is_open) {
-        GGP.pos.x = 100;
-        GGLP.x++;
-    } else if (GGP.pos.x < 300 && GGLP.x > 0 &&
-    GGLMM[GGLP.y][GGLP.x - 1].is_open) {
-        GGP.pos.x = GGW - 100;
-        GGLP.x--;
-    }
-    if (GGP.pos.y > GGH - 300 && GGLP.y < (GGM - 1) &&
-        GGLMM[GGLP.y + 1][GGLP.x].is_open) {
-        GGP.pos.y = 100;
-        GGLP.y++;
-    } else if (GGP.pos.y < 300 && GGLP.y > 0 &&
-    GGLMM[GGLP.y - 1][GGLP.x].is_open) {
-        GGP.pos.y = GGH - 100;
-        GGLP.y--;
-    }
-    generate_enemies(global, color);
-}
-
 void dash_cooldown(global_t *global)
 {
     if (sfClock_getElapsedTime(GGPC.clock).microseconds > 100000) {

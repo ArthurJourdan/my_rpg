@@ -13,7 +13,7 @@ void display_spell_obj_txt(global_t *global, int text)
 {
     if (!GGO)
         return;
-    if (GGO->sp_obj_g[text].active && !GGLP.x && !GGLP.y) {
+    if (!GGLP.x && !GGLP.y) {
         if (text == 0)
             return;
         else if (text == 1) {

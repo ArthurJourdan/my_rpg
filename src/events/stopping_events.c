@@ -31,5 +31,9 @@ bool stopping_events(global_t *global, sfEvent event)
         sfRenderWindow_close(GW);
         return true;
     }
+    if (GGP.hp <= 0) {
+        sfRenderWindow_close(GW);
+        return true;
+    }
     return false;
 }

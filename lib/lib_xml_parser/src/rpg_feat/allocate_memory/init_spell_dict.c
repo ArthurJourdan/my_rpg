@@ -8,7 +8,7 @@
 #include "my.h"
 #include "file.h"
 
-#include "rpg_structs.h"
+#include "my_rpg.h"
 
 static sp_dict_t *set_page_to_null(void)
 {
@@ -20,12 +20,10 @@ static sp_dict_t *set_page_to_null(void)
     spell_page->stype = 0;
     spell_page->category = 0;
     spell_page->base_damage = 0;
-    spell_page->mp_cost = 0;
-    spell_page->cooldown = 0;
     spell_page->activation_radius = 0;
     spell_page->range = NONE_TYPE;
     spell_page->travel_speed = NONE_CAT;
-    spell_page->hitboxes = NULL;
+    spell_page->collider = rect(0, 0, 0, 0);
     return spell_page;
 }
 

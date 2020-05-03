@@ -52,6 +52,8 @@ void put_sprite(global_t *global, char *filepath)
 
 void init_player(global_t *global)
 {
+    GGP.max_hp = 100;
+    GGP.hp = 100;
     GGP.max_speed = 4;
     GGP.speed = 4;
     GGP.frame = 0;

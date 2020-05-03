@@ -71,5 +71,6 @@ void init_game(global_t *global)
     init_game_rain(global);
     init_game_snow(global);
     HEALTHBARSPR = sprite_create_from_file(HEALTHBARPATH);
+    PHEALTHBARSPR = sprite_create_from_file(PHEALTHBARPATH);
     enemy_tab_init(global);
 }
