@@ -1,5 +1,5 @@
-<Ennemy image="assets_rpg/images/spritsheets/monster1.png" anim_size="3, 3, 3, 3" width="96" height="96" damage="20" life="100" speed="50"/>
-<Spell id="0" image="assets_rpg/images/player/spells/fireball_spell.png" damage="1" radius="10" range="600" speed="6" width="100" height="100"/>
+<Ennemy image="assets_rpg/images/spritsheets/monster1.png" anim_size="3, 3, 3, 3" width="96" height="96" damage="20" life="150" speed="100"/>
+<Spell id="0" image="assets_rpg/images/player/spells/fireball_spell.png" damage="2" radius="10" range="600" speed="6" width="100" height="100"/>
 <NPC action="Zoom" map_pos_x="0" map_pos_y="0" x="950" y="620" size="30" time_action="7" anim_size="3, 3, 3, 3" image="assets_rpg/images/spritsheets/old_man.png" width="96" height="96"/>
 <NPC action="Discuss" map_pos_x="0" map_pos_y="0" x="950" y="620" text="It seems that you are trapped in this maze !@Aren't you thursty ?@Go find a fountain !" font="assets_rpg/font/legionary.ttf" size="30" time_action="7" anim_size="3, 3, 3, 3" image="assets_rpg/images/spritsheets/old_man.png" width="96" height="96"/>
 <NPC map_pos_x="4" map_pos_y="4" x="850" y="200" text="Congratulation !@You completed the maze,@you found the funtain !" font="assets_rpg/font/legionary.ttf" size="30" action="Discuss" time_action="7" anim_size="3, 3, 3, 3" image="assets_rpg/images/spritsheets/old_man.png" width="96" height="96"/>

@@ -58,7 +58,7 @@ void enemy_generate_hord(global_t *global)
     sfVector2f pos;
 
     for (int i = 0; i < 3; i++) {
-        pos = vec2f(rand() % (GGW - 200) + 100, rand() % (GGH - 200) + 100);
+        pos = vec2f(rand() % (GGW - 500) + 250, rand() % (GGH - 500) + 250);
         enemy_init(global, 0, pos);
     }
     return;

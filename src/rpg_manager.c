@@ -22,9 +22,9 @@ static void display_game(global_t *global)
         display_spell_obj_ground(global, GGO->obj_index);
         display_spell_obj_txt(global, GGO->sp_obj_g[0].show_text);
     }
-    display_spell(global);
     display_layer2(GW, global);
     display_enemy(global);
+    display_spell(global);
     display_inventory(global);
 }
 

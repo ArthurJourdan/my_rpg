@@ -14,6 +14,7 @@ static void game_destroy(global_t *global)
     sfTexture_destroy(GGTF);
     sfSprite_destroy(GGSF);
     sfSprite_destroy(HEALTHBARSPR);
+    sfSprite_destroy(PHEALTHBARSPR);
 }
 
 static void layers_destroy(global_t *global)
