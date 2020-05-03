@@ -14,9 +14,9 @@ sfSprite *create_image(sfSprite *sprite, char const *filepath)
 
     if (!sprite)
         sprite = sfSprite_create();
-    if (!is_file_openable(filepath))
+    if (!sprite)
         return NULL;
-    if (!(sprite = sfSprite_create()))
+    if (!is_file_openable(filepath))
         return NULL;
     if (!(texture = sfTexture_createFromFile(filepath, NULL)))
         return NULL;
