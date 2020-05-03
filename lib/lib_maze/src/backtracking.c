@@ -15,24 +15,10 @@ bool can_move(char **maze, vect2i *pos)
     return false;
 }
 
-void anim(char **maze, int timer, vect2i *pos)
-{
-    maze[pos->x][pos->y] = 'O';
-    usleep(timer);
-    for (int i = 0; maze[i]; i++)
-        for (int j = 0; maze[i][j]; j++)
-            if (maze[i][j] == 'O')
-                maze[i][j] = '*';
-    if (!can_move(maze, pos))
-        maze[pos->x][pos->y] = '+';
-}
-
-void maze_maker(char **maze, vect2i *stack, int pos, bool show)
+void maze_maker(char **maze, vect2i *stack, int pos, UNSD bool show)
 {
     while (pos >= 0) {
         maze[stack[pos].x][stack[pos].y] = '*';
-        if (show)
-            anim(maze, 7000, stack + pos);
         if (can_move(maze, stack + pos)) {
             stack[pos + 1] = pathfinder(maze, stack + pos);
             pos++;

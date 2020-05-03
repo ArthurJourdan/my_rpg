@@ -33,7 +33,7 @@ char **init_maze(int lines, int columns)
 {
     char **maze = malloc(sizeof(char *) * (lines + 5));
 
-    srand(getpid() * time(NULL));
+    srand(time(NULL));
     for (int i = 0; i != lines + 4; i++) {
         maze[i] = malloc(sizeof(char) * (columns + 5));
         for (int j = 0; j != columns + 4; j++)
