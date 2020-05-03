@@ -1,0 +1,41 @@
+<Scene name="Starting_menu">
+    <Text name="my_RPG" text="my_RPG" text_color="Cyan" font="assets_rpg/font/demode.ttf" x="1100" size="200"/>
+    <Button text_color="Cyan" name="start_button" action="Start" text="Play" text_color="Cyan" font="assets_rpg/font/demode-negative.ttf" letter_delay="1" hover_color="Transparent" idle_color="Transparent" sound="assets_rpg/audio/sounds/button.ogg" volume="40" x="700" y="500" height="400" width="700" size="300"/>
+    <Button idle_color="Cyan" text_color="Cyan" name="option_button" action="Options" text="Settings" font="assets_rpg/font/demode.ttf" x="100" y="250" height="75" width="228" size="40"/>
+    <Button idle_color="Cyan" text_color="Cyan" name="exit_button" action="Quit" text="Quit" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" volume="40" x="100" y="450" height="75" width="228" size="40"/>
+    <Button idle_color="Cyan" text_color="Cyan" name="How to play" action="Tutorial" text="Tutorial" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" volume="10" y="350" x="100" height="72" width="228" size="40"/>
+    <Text text_color="Cyan" name="csml" text="Made in CSFML" font="assets_rpg/font/demode.ttf" x="1600" y="250" size="40"/>
+</Scene>
+<Scene name="Game">
+    <Button name="Options" action="Pause" text="Pause" size="100" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" width="350" height="100" x="1500" y="900"/>
+    <Music name="music1" audio="assets_rpg/audio/musics/undertale-megalovania.ogg" volume="10" loop="true"/>
+</Scene>
+<Scene name="Pause">
+    <Button text_color="Yellow" idle_color="Yellow" name="Starting menu" action="Starting_menu" text="Menu" font="assets_rpg/font/demode-negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="20" x="100" height="125" width="775"  size="100"/>
+    <Button text_color="Yellow" idle_color="Yellow" name="Resume" action="Resume" text="Resume" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="20" x="900" height="125" width="415"  size="100"/>
+    <Button text_color="Yellow" idle_color="Yellow" name="Leave game" action="Quit" text="Quit" font="assets_rpg/font/demode-negative.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="160" x="700" height="125" width="615" size="100"/>
+    <Button text_color="Yellow" idle_color="Yellow" name="Options" action="Options" text="Options" font="assets_rpg/font/demode.ttf" x="100" y="160" height="125" width="420" size="100"/>
+    <Text text_color="Yellow" name="pause" font="assets_rpg/font/demode.ttf" x="0000" y="390" size="525"/>
+</Scene>
+<Scene name="Options">
+    <Button idle_color="Magenta" text_color="Magenta" action="Volume_music_down" name="Music --" text="Music dowm"  font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="140" x="200" height="125" width="625" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" action="Volume_music_up" name="Music ++" text="Music up" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="270" x="200" height="125" width="625" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" action="Volume_sound_down" name="Sound --" text="Sound up" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="400" x="650" height="125" width="675" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" action="Volume_sound_up" name="Sound ++" text="Sound down" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="530" x="650" height="125" width="675" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="up fps" text="fps up" action="Increase_fps" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="660" x="1000" height="125" width="625" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="down fps" text="fps down" action="Decrease_fps" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="790" x="1000" height="125" width="625" size="100"/>
+    <Button idle_color="Magenta" text_color="Magenta" name="Starting menu"  text="Home" action="Starting_menu" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="100" x="1000" height="150" width="700"  size="102"/>
+    <Text text_color="Magenta" name="Options" text="Options" font="assets_rpg/font/demode-negative.ttf" x="100" y="700" size="100"/>
+</Scene>
+<Scene name="Tutorial">
+    <Button text_color="Green" idle_color="Green" name="Starting menu" text="home" action="Starting_menu" font="assets_rpg/font/demode.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="100" x="1175" height="75" width="400"  size="50"/>
+    <Text text_color="Green" name="How to play" font="assets_rpg/font/demode.ttf" x="20" y="750" size="100"/>
+    <Text text_color="Green" name="first" text="You must find the fountain, " font="assets_rpg/font/demode.ttf" x="100" y="300" size="50"/>
+    <Text text_color="Green" name="second" text="run trhough the rooms and reach the end of this maze" font="assets_rpg/font/demode.ttf" x="100" y="400" size="50"/>
+    <Text text_color="Green" name="third" text="by killing ennemies or dashing as fast as possible" font="assets_rpg/font/demode.ttf" x="100" y="500" size="50"/>
+    <Text text_color="Green" name="keyZ" text="Use 'Z' to go up" font="assets_rpg/font/demode.ttf" x="10" y="650" size="30"/>
+    <Text text_color="Green" name="keyQ" text="Use 'Q' to go left" font="assets_rpg/font/demode.ttf" x="10" y="750" size="30"/>
+    <Text text_color="Green" name="keyS" text="Use 'S' to go down" font="assets_rpg/font/demode.ttf" x="10" y="850" size="30"/>
+    <Text text_color="Green" name="keyD" text="Use 'D' to go right" font="assets_rpg/font/demode.ttf" x="10" y="950" size="30"/>
+    <Text text_color="Green" name="xml parser" text="Have a look at the xml files and cutomize it !" font="assets_rpg/font/demode.ttf" x="1150" y="950" size="30"/>
+</Scene>

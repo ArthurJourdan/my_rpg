@@ -14,7 +14,7 @@
 static const char inventory_bg_path[45] =
 "assets_rpg/images/player/inventory_cell.png";
 static const char font_path[52] =
-"assets_rpg/gui/assets_2/font/demode.ttf";
+"assets_rpg/font/demode.ttf";
 static const char pickup_sen[15] = "Pick up with F";
 static const char replace_sen[24] = "Choose spell to replace";
 static const int text_size = 30;
