@@ -9,7 +9,7 @@
 #include "sfml_tools.h"
 #include "file.h"
 
-void add_texture_RectShape(sfRectangleShape *rect, char *filepath)
+void add_texture_rectshape(sfRectangleShape *rect, char *filepath)
 {
     sfTexture *texture = NULL;
 

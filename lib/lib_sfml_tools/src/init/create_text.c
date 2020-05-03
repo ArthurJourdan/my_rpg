@@ -8,8 +8,8 @@
 #include "sfml_tools.h"
 #include "file.h"
 
-sfText *create_text(sfText *text, char * const str, char * const
-path_font, int size)
+sfText *create_text(sfText *text, char * const str, char * const path_font,
+int size)
 {
     sfFont *font = NULL;
 

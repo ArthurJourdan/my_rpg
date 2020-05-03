@@ -54,7 +54,7 @@ void display_images(sfRenderWindow *window, sfSprite **images);
 // RECTANGLESHAPE
 sfRectangleShape *create_rectshape(sfRectangleShape *rect, sfVector2f size);
 
-void add_texture_RectShape(sfRectangleShape *rect, char *filepath);
+void add_texture_rectshape(sfRectangleShape *rect, char *filepath);
 void set_rectshape_color(sfRectangleShape *rectshape,
 
 sfColor in, sfColor out, float outline_thickness);
