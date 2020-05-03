@@ -13,16 +13,18 @@ void display_spell_obj_txt(global_t *global, int text)
 {
     if (!GGO)
         return;
-    if (text == 0)
-        return;
-    else if (text == 1) {
-        sfText_setPosition(GGO->sp_obj_g[0].pickup_text,
-        (sfVector2f){400, 500});
-        display_one_text(GW, GGO->sp_obj_g[0].pickup_text);
-    } else {
-        sfText_setPosition(GGO->sp_obj_g[0].replace_text,
-        (sfVector2f){400, 500});
-        display_one_text(GW, GGO->sp_obj_g[0].replace_text);
+    if (GGO->sp_obj_g[text].active && !GGLP.x && !GGLP.y) {
+        if (text == 0)
+            return;
+        else if (text == 1) {
+            sfText_setPosition(GGO->sp_obj_g[0].pickup_text,
+            (sfVector2f){400, 500});
+            display_one_text(GW, GGO->sp_obj_g[0].pickup_text);
+        } else {
+            sfText_setPosition(GGO->sp_obj_g[0].replace_text,
+            (sfVector2f){400, 500});
+            display_one_text(GW, GGO->sp_obj_g[0].replace_text);
+        }
     }
 }
 

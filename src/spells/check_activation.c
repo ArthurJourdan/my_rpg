@@ -22,12 +22,14 @@ void check_spell_type(int id, global_t *global, int index)
 
 void check_spell_active(global_t *global)
 {
+    sfFloatRect origin = {0, 0, 0, 0};
+    sfVector2f origin_pos = {0, 0};
 
     if (GGPIS[0].spell_id != -1 && sfKeyboard_isKeyPressed(GGPIS[0].key) &&
     !GGO->s_obj[0].obj_status) {
         GGO->s_obj[0].img = sfSprite_copy(GGS[GGPIS[0].spell_id]->spell_img);
-        sfFloatRect origin = sfSprite_getGlobalBounds(GGO->s_obj[0].img);
-        sfVector2f origin_pos = {origin.width, origin.height};
+        origin = sfSprite_getGlobalBounds(GGO->s_obj[0].img);
+        origin_pos = (sfVector2f){origin.width, origin.height};
         sfSprite_setOrigin(GGO->s_obj[0].img, origin_pos);
         GGO->s_obj[0].speed.x = GGS[GGPIS[0].spell_id]->travel_speed;
         GGO->s_obj[0].range = GGS[GGPIS[0].spell_id]->range;

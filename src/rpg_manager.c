@@ -16,8 +16,10 @@ static void display_game(global_t *global)
     display_layer1(GW, global);
     npc_appear(global);
     display_player(GW, global);
-    if (GGO)
+    if (GGO) {
         display_spell_obj_ground(global, GGO->obj_index);
+        display_spell_obj_txt(global, GGO->sp_obj_g[0].show_text);
+    }
     display_spell(global);
     display_layer2(GW, global);
     display_enemy(global);
@@ -34,8 +36,6 @@ static void display_everything(global_t *global)
     display_images(GW, SC_I);
     display_buttons(global);
     display_texts_struct(global, frame_nb);
-    if (GGO)
-        display_spell_obj_txt(global, GGO->sp_obj_g[0].show_text);
     sfRenderWindow_display(GW);
     sfRenderWindow_clear(GW, sfBlack);
 }

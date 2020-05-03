@@ -17,7 +17,7 @@
 static actions_npc_t const all_actions[] = {
     {"None", NULL},
     {"Discuss", &npc_discuss},
-    {"Zoom", NULL/* &npc_zoom */}
+    {"Zoom", &npc_zoom}
 };
 
 static void *choose_action(char * const line)

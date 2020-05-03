@@ -68,6 +68,7 @@ GAME		=	$(GAMEDIR)player_movement.c	\
 				$(GAMEDIR)npc_appear.c
 
 NPC			=	$(NPC_ACT)npc_discuss.c	\
+				$(NPC_ACT)npc_zoom.c
 
 DISP		=	$(DISPDIR)display_player.c	\
 				$(DISPDIR)display_npc.c	\

@@ -11,6 +11,7 @@
 #include "global.h"
 #include "sfml_tools.h"
 #include "shorting_defines.h"
+#include "npc.h"
 
 static void action_npc(global_t *global, size_t npc_idx)
 {
@@ -38,7 +39,6 @@ static void npc_disappear(global_t *global)
         if (sfTime_asSeconds(passed) > GGNPC[npc_idx]->time_action)
             GGNPC[npc_idx]->actioning = false;
     }
-
 }
 
 void npc_appear(global_t *global)

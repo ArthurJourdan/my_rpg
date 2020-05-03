@@ -42,6 +42,7 @@ void display_npc(struct global_vars *global, size_t npc_idx);
 
 // ACTIONS
 void npc_discuss(struct global_vars *global, size_t npc_idx);
+void npc_zoom(struct global_vars *global, size_t npc_idx);
 
 // ! ACTIONS
 
