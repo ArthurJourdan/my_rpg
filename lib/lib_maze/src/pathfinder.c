@@ -20,7 +20,7 @@ int geta_random_path(char **maze, vect2i *pos)
         list[move++] = '2';
     if (WEST(2) == '.')
         list[move] = '3';
-    return (list[rand() % strlen(list)] - '0');
+    return (list[rand() % my_strlen(list)] - '0');
 }
 
 vect2i pathfinder(char **maze, vect2i *pos)

@@ -33,14 +33,22 @@ void move_spell(global_t *global, int i)
 
 void check_spell_collision(s_obj_t *spell, global_t *global)
 {
+    sfBool intersects = sfFalse;
+
     if (!GG.e_obj)
         return;
     for (int i = 0; i < 64; i++) {
-        if (sfIntRect_intersects(spell->collider,
-        &GG.e_obj[i]->collider, NULL)) {
-            if (GG.e_obj[i]->hp != 0) {
+        printf("top == %i\n", spell->collider->top);
+        printf("left == %i\n", spell->collider->left);
+        printf("width == %i\n", spell->collider->width);
+        printf("height == %i\n", spell->collider->height);
+        intersects = sfIntRect_intersects(spell->collider,
+        &GG.e_obj[i]->collider, NULL);
+        if (intersects == sfTrue) {
+            if (GG.e_obj[i]->hp > 0) {
                 GG.e_obj[i]->hp -= GGS[spell->id]->base_damage;
             }
+            intersects = sfFalse;
         }
     }
 

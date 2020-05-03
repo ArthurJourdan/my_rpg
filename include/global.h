@@ -24,6 +24,7 @@ typedef struct global_vars {
     gui_t *scene_list;
     maps_t **maps;
     game_t game;
+    bool cinematic;
 } global_t;
 
 void destroy_game(global_t *global);

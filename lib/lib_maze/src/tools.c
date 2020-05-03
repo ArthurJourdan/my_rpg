@@ -52,19 +52,3 @@ bool is_number(char const *str)
             return false;
     return true;
 }
-
-bool on_errors(int ac, char *av[])
-{
-    if (ac != 4 && ac != 3 )
-        return true;
-    if (ac == 4 && strcmp(av[3], "perfect") && strcmp(av[3], "imperfect"))
-        return true;
-    for (int i = 1; i != 3; i++)
-        if (!is_number(av[i]))
-            return true;
-    if (atoi(av[1]) == 1 && atoi(av[2]) == 1) {
-        printf("*");
-        exit(0);
-    }
-    return false;
-}

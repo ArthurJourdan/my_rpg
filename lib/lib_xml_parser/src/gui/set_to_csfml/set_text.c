@@ -63,6 +63,7 @@ text_t *set_any_text(char const *line, text_t *text)
         return NULL;
     font = cpy_var_name(" font=", line);
     text->string = cpy_var_name(" text=", line);
+    replace_char_in_str(text->string, '@', '\n');
     set_delay_text(line, text);
     if (!text->letter_delay)
         text->text_sfml = create_text(NULL, text->string, font, size);
