@@ -23,6 +23,7 @@ typedef struct global_vars {
     sfEvent event;
     gui_t *scene_list;
     maps_t **maps;
+    char *fp_game;
     game_t game;
     bool cinematic;
 } global_t;

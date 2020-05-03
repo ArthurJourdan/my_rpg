@@ -11,6 +11,8 @@
 #include "events.h"
 #include "display.h"
 
+#include "a_malloc.h"
+
 static void display_game(global_t *global)
 {
     display_layer1(GW, global);
@@ -82,5 +84,6 @@ void rpg_manager(global_t *global)
         rpg_game(global, &game_clock);
     }
     sfClock_destroy(game_clock);
+    a_malloc(A_MALLOC_FREE | A_LIST(2));
     destroy_game(global);
 }

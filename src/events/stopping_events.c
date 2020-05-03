@@ -7,6 +7,7 @@
 
 #include "global.h"
 #include "shorting_defines.h"
+#include "button.h"
 
 bool pause_events(global_t *global, N_U sfEvent event)
 {
@@ -32,7 +33,7 @@ bool stopping_events(global_t *global, sfEvent event)
         return true;
     }
     if (GGP.hp <= 0) {
-        sfRenderWindow_close(GW);
+        go_restart(global);
         return true;
     }
     return false;

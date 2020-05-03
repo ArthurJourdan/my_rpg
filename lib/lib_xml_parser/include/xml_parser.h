@@ -36,6 +36,8 @@ typedef struct paths {
 
 global_t *xml_parser(char const *global_filepath);
 
+game_t fill_in_data_game(char * const filepath, global_t *global);
+
 char **check_get_xml_file(char const *filepath);
 // NORM
 bool is_it_xml(char const **file);

@@ -9,7 +9,7 @@
 #include "file.h"
 
 #include "rpg_structs.h"
-#incldue "a_malloc.h"
+#include "a_malloc.h"
 
 static e_dict_t *set_page_to_null(void)
 {

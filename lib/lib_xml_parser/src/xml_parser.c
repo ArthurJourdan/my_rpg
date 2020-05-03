@@ -49,7 +49,7 @@ static maps_t **init_all_maps(char *filepath, sfRenderWindow *window)
     return maps;
 }
 
-static game_t fill_in_data_game(char * const filepath, global_t *global)
+game_t fill_in_data_game(char * const filepath, global_t *global)
 {
     char **file = NULL;
     game_t game = init_game_null();
@@ -77,6 +77,7 @@ global_t *xml_parser(char const *global_filepath)
     if (!(global = malloc(sizeof(global_t))))
         return NULL;
     global->game = fill_in_data_game(xml_files->game, global);
+    global->fp_game = my_strcpy(xml_files->game);
     if (!(global = init_global_vars(global_filepath, global)))
         return NULL;
     if (!(global->maps = init_all_maps(xml_files->maps , GW)))

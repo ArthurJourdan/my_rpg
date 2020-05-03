@@ -42,6 +42,7 @@ void change_scene(struct gui *scene_list, int scene_nb);
 
 void go_out(struct global_vars *);
 void go_start(struct global_vars *);
+void go_restart(struct global_vars *);
 void go_pause(struct global_vars *);
 void go_back_to_game(struct global_vars *);
 void go_options(struct global_vars *);
