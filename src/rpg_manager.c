@@ -54,10 +54,6 @@ static void gameplay(global_t *global)
             check_spell(global, 0, &GGP);
         player_spells(global);
     }
-    if (GGLMM[GGLP.y][GGLP.x].weather == 0)
-        make_it_rain(global);
-    if (GGLMM[GGLP.y][GGLP.x].weather == 1)
-        make_it_snow(global);
 }
 
 static void rpg_game(global_t *global, sfClock **game_clock)

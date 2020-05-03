@@ -50,7 +50,7 @@ void put_sprite(global_t *global, char *filepath)
     sfSprite_setOrigin(GGP.sprite, GGP.col_center);
 }
 
-void init_player(global_t *global)
+static void init_player_vars(global_t *global)
 {
     GGP.max_hp = 100;
     GGP.hp = 100;
@@ -61,6 +61,11 @@ void init_player(global_t *global)
     GGP.pos = (sfVector2f){200, 500};
     GGP.hitbox = HITBOX;
     GGP.col_center = COLLIDER;
+}
+
+void init_player(global_t *global)
+{
+    init_player_vars(global);
     GGP.collider = malloc(sizeof(sfIntRect));
     GGP.collider->left = COLLIDER.x - 20;
     GGP.collider->top = COLLIDER.y - 20;

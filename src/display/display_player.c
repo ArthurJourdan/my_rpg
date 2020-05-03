@@ -23,10 +23,10 @@ void display_layer1(sfRenderWindow *window, global_t *global)
 void display_layer2(sfRenderWindow *window, global_t *global)
 {
     sfRenderWindow_drawSprite(window, GGLMM[GGLP.y][GGLP.x].lay2, NULL);
-//    if (GGLMM[GGLP.y][GGLP.x].weather == 0)
-//        make_it_rain(global);
-//    if (GGLMM[GGLP.y][GGLP.x].weather == 1)
-//        make_it_snow(global);
+    if (GGLMM[GGLP.y][GGLP.x].weather == 0)
+        make_it_rain(global);
+    if (GGLMM[GGLP.y][GGLP.x].weather == 1)
+        make_it_snow(global);
 }
 
 static void display_dash(sfRenderWindow *window, global_t *global)

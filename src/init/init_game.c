@@ -50,19 +50,12 @@ static void init_game_snow(global_t *global)
     }
 }
 
-void init_game(global_t *global)
+static void init_game_vars(global_t *global)
 {
     if (GGM > 20 || GGM <= 0)
         GGM = 5;
     GGW = sfRenderWindow_getSize(GW).x;
     GGH = sfRenderWindow_getSize(GW).y;
-    GG.obj = malloc(sizeof(obj_t));
-    GG.obj->s_obj = malloc(sizeof(s_obj_t) * 2);
-    GG.obj->obj_index = 0;
-    init_spell_obj(global);
-    init_player(global);
-    init_spell_obj_g(global);
-    init_layers(global);
     GGF = framebuffer_create(GGW, GGH);
     GGTF = sfTexture_create(GGW, GGH);
     GGSF = sfSprite_create();
@@ -70,6 +63,18 @@ void init_game(global_t *global)
     GG.pixel = malloc(sizeof(pixel_t) * 2);
     init_game_rain(global);
     init_game_snow(global);
+}
+
+void init_game(global_t *global)
+{
+    init_game_vars(global);
+    GG.obj = malloc(sizeof(obj_t));
+    GG.obj->s_obj = malloc(sizeof(s_obj_t) * 2);
+    GG.obj->obj_index = 0;
+    init_spell_obj(global);
+    init_player(global);
+    init_spell_obj_g(global);
+    init_layers(global);
     HEALTHBARSPR = sprite_create_from_file(HEALTHBARPATH);
     PHEALTHBARSPR = sprite_create_from_file(PHEALTHBARPATH);
     enemy_tab_init(global);
