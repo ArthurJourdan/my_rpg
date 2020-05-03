@@ -33,7 +33,8 @@ void framebuffer_destroy(fbuffer_t *buffer);
 
 //PIXELS
 void put_pixel(global_t *global, UI x, UI y, sfColor color);
-void put_square(global_t *global, sfVector2f pos, sfVector2f size, sfColor color);
+void put_square(global_t *global, sfVector2f pos,
+sfVector2f size, sfColor color);
 void put_circle(global_t *global, sfVector2f pos, UI radius, sfColor color);
 void put_disc(global_t *global, sfVector2f pos, UI radius, sfColor color);
 // !PIXELS
@@ -61,7 +62,7 @@ sfColor in, sfColor out, float outline_thickness);
 void set_texture_rect_shape(sfRectangleShape *rect_shape,
 unsigned short nb_animations, size_t size_tot);
 void next_texture_rect_shape(sfRectangleShape *rect_shape,
- unsigned short nb_animations, size_t size_tot, size_t anim_wanted);
+unsigned short nb_animations, size_t size_tot, size_t anim_wanted);
 // !RECTANGLESHAPE
 
 // TEXT
@@ -97,6 +98,6 @@ bool right_mouse_released(sfEvent event);
 
 // COLOR
 sfColor get_color_from_str(char * const str);
-// ! COLOR
+// !COLOR
 
 #endif /* !SFML_TOOLS_H */

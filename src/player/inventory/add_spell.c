@@ -16,7 +16,7 @@ void add_spell(player_t *player, int spell_id, int spell_nb)
     if (spell_nb == 0) {
         player->p_invent->spell_nodes[spell_nb].spell_id = spell_id;
         player->p_invent->spell_nodes[spell_nb].key = spell1;
-    } else if(spell_nb == 1) {
+    } else if (spell_nb == 1) {
         player->p_invent->spell_nodes[spell_nb].spell_id = spell_id;
         player->p_invent->spell_nodes[spell_nb].key = spell2;
     }

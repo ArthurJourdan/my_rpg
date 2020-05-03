@@ -63,7 +63,7 @@
 #define NPC_MAPX global->game.npc_list[npc_idx]->map_pos.x
 #define NPC_MAPY global->game.npc_list[npc_idx]->map_pos.y
 #define NPC_POS global->game.npc_list[npc_idx]->pos
-// ! NPC
+// !NPC
 
 #define ACT global->scene_list->index
 #define SC_A global->scene_list->scenes[global->scene_list->index]

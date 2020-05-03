@@ -66,4 +66,4 @@ enum state {
 
 // !CHANGE SCENE
 
- #endif /* !BUTTON_H */
+#endif /* !BUTTON_H */

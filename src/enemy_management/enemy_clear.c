@@ -20,7 +20,7 @@ void enemy_clear(e_obj_t *enemy)
     E_SPELL = NULL;
     E_SPEED = 0;
     E_POS = vec2f(0, 0);
-    E_COLLIDER = rect(0,0,0,0);
+    E_COLLIDER = rect(0, 0, 0, 0);
     return;
 }
 

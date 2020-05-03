@@ -5,7 +5,6 @@
 ** init_text_list
 */
 
-
 #include "my.h"
 #include "gui.h"
 #include "shorting_defines.h"
@@ -39,11 +38,11 @@ static text_t **malloc_text(size_t nb_text)
     return texts;
 }
 
-static text_t **assign_names(text_t **texts, char const **file, char *name_scene)
+static text_t **assign_names(text_t **texts, char const **file, char *namescene)
 {
     int nb_text = 0;
-    size_t line = get_to_scene(file, name_scene);
-    size_t end = get_end_scene(file, name_scene);
+    size_t line = get_to_scene(file, namescene);
+    size_t end = get_end_scene(file, namescene);
     char *info = NULL;
 
     if (line == (size_t)-1)

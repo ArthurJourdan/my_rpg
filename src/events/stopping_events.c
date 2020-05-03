@@ -27,7 +27,7 @@ bool stopping_events(global_t *global, sfEvent event)
         sfRenderWindow_close(GW);
         return true;
     }
-    if(sfKeyboard_isKeyPressed(sfKeyDelete)) {
+    if (sfKeyboard_isKeyPressed(sfKeyDelete)) {
         sfRenderWindow_close(GW);
         return true;
     }

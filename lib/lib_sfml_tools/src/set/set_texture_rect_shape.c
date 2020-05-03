@@ -8,7 +8,7 @@
 #include "sfml_tools.h"
 
 void set_texture_rect_shape(sfRectangleShape *rect_shape,
- unsigned short nb_animations, size_t size_tot)
+unsigned short nb_animations, size_t size_tot)
 {
     size_t offset = size_tot / nb_animations;
     sfIntRect rectangle = sfRectangleShape_getTextureRect(rect_shape);
@@ -21,7 +21,7 @@ void set_texture_rect_shape(sfRectangleShape *rect_shape,
 }
 
 void next_texture_rect_shape(sfRectangleShape *rect_shape,
- unsigned short nb_animations, size_t size_tot, size_t anim_wanted)
+unsigned short nb_animations, size_t size_tot, size_t anim_wanted)
 {
     size_t offset = size_tot / nb_animations;
     sfIntRect rectangle = sfRectangleShape_getTextureRect(rect_shape);

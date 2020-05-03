@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** structs
 ** File description:
-**
+** rpg structs
 */
 
 #ifndef RPG_STRUCTS_H
@@ -139,7 +139,7 @@ typedef struct spell_node {
     sfKeyCode key;
     sfTime last_activation;
     int spell_id;
-    void (*spell_fptr)(struct game*, int);
+    void (*spell_fptr)(struct game *, int);
 }spn_t;
 
 typedef struct player_inventory {
@@ -186,7 +186,7 @@ typedef struct player {
     int max_hp;
     int hp;
     int mana;
-    int status; //utiliser un mask pour les effets de status
+    int status;
     player_invent_t *p_invent;
     float max_speed;
     float speed;

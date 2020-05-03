@@ -11,5 +11,4 @@
 void go_options(global_t *global)
 {
     change_scene(GS, OPTIONS);
-    
 }

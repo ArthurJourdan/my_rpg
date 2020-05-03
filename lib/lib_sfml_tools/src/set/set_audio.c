@@ -25,6 +25,7 @@ void set_sound_volume(sfSound *sound, float volume)
         sfSound_setVolume(sound, volume);
     }
 }
+
 void set_music_volume(sfMusic *music, float volume)
 {
     if (!music)

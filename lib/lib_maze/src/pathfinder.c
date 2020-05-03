@@ -7,6 +7,15 @@
 
 #include "maze.h"
 
+static int mystrlen(char *str)
+{
+    int counter = 0;
+
+    while (str[counter])
+        counter++;
+    return counter;
+}
+
 int geta_random_path(char **maze, vect2i *pos)
 {
     int move = 0;
@@ -20,7 +29,7 @@ int geta_random_path(char **maze, vect2i *pos)
         list[move++] = '2';
     if (WEST(2) == '.')
         list[move] = '3';
-    return (list[rand() % my_strlen(list)] - '0');
+    return (list[rand() % mystrlen(list)] - '0');
 }
 
 vect2i pathfinder(char **maze, vect2i *pos)

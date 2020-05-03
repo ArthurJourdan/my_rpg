@@ -27,7 +27,7 @@ bool are_equals_filled(char const *line, USELESS int check, int nb_line)
             if (!line[b + 1] || line[b + 1] != '"')
                 return xml_error_msg('=', nb_line, b);
             b--;
-            if(!line[b] || !my_char_is_alpha_num(line[b], true, true, true))
+            if (!line[b] || !my_char_is_alpha_num(line[b], true, true, true))
                 return xml_error_msg('=', nb_line, ++b);
             b++;
         }

@@ -10,7 +10,5 @@
 
 void go_start(global_t *global)
 {
-    // reset_all_game(global);
     change_scene(GS, GAME);
-    
 }

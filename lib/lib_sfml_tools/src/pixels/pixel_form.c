@@ -20,7 +20,8 @@ void put_pixel(global_t *global, UI x, UI y, sfColor color)
     }
 }
 
-void put_square(global_t *global, sfVector2f pos, sfVector2f size, sfColor color)
+void put_square(global_t *global, sfVector2f pos,
+sfVector2f size, sfColor color)
 {
     if ((int)size.x % 2)
         size.x++;

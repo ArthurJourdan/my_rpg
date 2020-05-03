@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** auto_malloc
 ** File description:
-** a
+** auto malloc
 */
 
 #include <stdlib.h>

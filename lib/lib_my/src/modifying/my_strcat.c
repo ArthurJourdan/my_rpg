@@ -19,8 +19,7 @@ char *my_strcat_tot(size_t ac, ...)
     for (size_t a = 0; a < ac; a++)
         len_tot = my_len_tot(va_arg(ap, char *));
     va_end(ap);
-    str = malloc(sizeof(char) * (len_tot + 1));
-    if (!(len_tot = 0) && !str)
+    if (!(len_tot = 0) && !(str = malloc(sizeof(char) * (len_tot + 1))))
         return NULL;
     va_start(ap, ac);
     for (size_t a = 0; a < ac; a++) {

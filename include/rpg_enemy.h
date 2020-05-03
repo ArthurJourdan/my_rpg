@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2020
-** enemy 
+** enemy
 ** File description:
 ** incldue
 */

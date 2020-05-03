@@ -11,5 +11,4 @@
 void go_starting_menu(global_t *global)
 {
     change_scene(GS, HOME);
-    
 }

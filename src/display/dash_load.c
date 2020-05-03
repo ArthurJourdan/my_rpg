@@ -26,7 +26,8 @@ sfSprite *dash_sprite_create_from_file(char *path)
     return spr;
 }
 
-sfSprite **dash_sprite_array_load(sfTexture *tex, sfIntRect rect, int amnt, int h)
+sfSprite **dash_sprite_array_load(sfTexture *tex, sfIntRect rect,
+int amnt, int h)
 {
     sfSprite **sprarr = a_malloc(sizeof(sfSprite*) * (amnt + 1) | A_LIST(1));
     sfIntRect rect_c = rect;
