@@ -8,9 +8,9 @@
 #include "global.h"
 #include "shorting_defines.h"
 
-bool pause_events(global_t *global, sfEvent event)
+bool pause_events(global_t *global, N_U sfEvent event)
 {
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyEscape) {
+    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         if (ACT == GAME) {
             change_scene(GSC, PAUSE);
         } else if (ACT == HOME) {
@@ -27,7 +27,7 @@ bool stopping_events(global_t *global, sfEvent event)
         sfRenderWindow_close(GW);
         return true;
     }
-    if(event.type == sfEvtKeyPressed && event.key.code == sfKeyDelete) {
+    if(sfKeyboard_isKeyPressed(sfKeyDelete)) {
         sfRenderWindow_close(GW);
         return true;
     }
