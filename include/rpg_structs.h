@@ -94,6 +94,7 @@ typedef struct spell_obj {
     sfIntRect *collider;
     sfSprite *img;
     float range;
+    int dir;
 }s_obj_t;
 
 typedef struct enemy_obj {
@@ -201,6 +202,7 @@ typedef struct player {
     int frame;
     sfClock *clock;
     sfIntRect *collider;
+    int look;
 }player_t;
 
 typedef struct maze {

@@ -50,6 +50,7 @@ sfSprite ***dash_spritesheet_load(animd_t *anim);
 void line_player_deplacement(global_t *global);
 void diag_player_deplacement(global_t *global);
 void player_movements(global_t *global);
+void player_key_pressed(global_t *global);
 void my_putmap(global_t *global, char *layer1, char *layer2, char *coll);
 
 /*TOOLS*/

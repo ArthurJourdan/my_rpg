@@ -23,5 +23,6 @@ void init_spell_obj(global_t *global)
         GGO->s_obj[i].pos = (sfVector2f){0};
         GGO->s_obj[i].collider = malloc(sizeof(sfIntRect));
         GGO->s_obj[i].range = 0;
+        GGO->s_obj[i].dir = 1;
     }
 }

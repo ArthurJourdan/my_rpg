@@ -9,10 +9,26 @@
 
 void move_spell(global_t *global, int i)
 {
-    GGO->s_obj[i].pos.x += GGO->s_obj[i].speed.x;
-    GGO->s_obj[i].pos.y += GGO->s_obj[i].speed.y;
-    if (GGO->s_obj[i].pos.x > GGO->s_obj[i].starting_pos.x + GGO->s_obj[i].range)
-        GGO->s_obj[i].obj_status = false;
+    if (GGOS(i).dir == 0) {
+        GGOS(i).pos.x -= GGOS(i).speed.x;
+        if (GGOS(i).pos.x < GGOS(i).starting_pos.x - GGOS(i).range)
+            GGOS(i).obj_status = false;
+    }
+    if (GGOS(i).dir == 1) {
+        GGOS(i).pos.y += GGOS(i).speed.y;
+        if (GGOS(i).pos.y > GGOS(i).starting_pos.y + GGOS(i).range)
+            GGOS(i).obj_status = false;
+    }
+    if (GGOS(i).dir == 2) {
+        GGOS(i).pos.x += GGOS(i).speed.x;
+        if (GGOS(i).pos.x > GGOS(i).starting_pos.x + GGOS(i).range)
+            GGOS(i).obj_status = false;
+    }
+    if (GGOS(i).dir == 3) {
+        GGOS(i).pos.y -= GGOS(i).speed.y;
+        if (GGOS(i).pos.y < GGOS(i).starting_pos.y - GGOS(i).range)
+            GGOS(i).obj_status = false;
+    }
 }
 
 void check_spell_collision(s_obj_t *spell, global_t *global)

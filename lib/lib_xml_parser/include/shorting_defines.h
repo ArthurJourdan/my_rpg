@@ -30,6 +30,7 @@
 #define GGM global->game.maze_size
 //player
 #define GGP global->game.player
+#define GGPL global->game.player.look
 #define GGPC global->game.player.controls
 #define GGPD global->game.player.dash
 #define GGPT global->game.player.time
@@ -45,6 +46,7 @@
 
 //player
 #define GGPIS global->game.player.p_invent->spell_nodes
+#define GGOS(a) global->game.obj->s_obj[a]
 
 //OBJ
 #define CO collider->left

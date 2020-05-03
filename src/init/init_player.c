@@ -71,4 +71,5 @@ void init_player(global_t *global)
     init_player_inventory(&GGP);
     GGP.clock = sfClock_create();
     GGPT = sfClock_getElapsedTime(GGP.clock);
+    GGPL = 1;
 }

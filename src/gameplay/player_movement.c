@@ -11,30 +11,6 @@
 #include "my_rpg.h"
 #include "sfml_tools.h"
 
-void player_key_pressed(global_t *global)
-{
-    if (sfKeyboard_isKeyPressed(GGPC.up)) {
-        GGPC.on_up = true;
-        GGP.sprite = GGP.ss[3][GGP.frame];
-    } else
-        GGPC.on_up = false;
-    if (sfKeyboard_isKeyPressed(GGPC.left)) {
-        GGPC.on_left = true;
-        GGP.sprite = GGP.ss[1][GGP.frame];
-    } else
-        GGPC.on_left = false;
-    if (sfKeyboard_isKeyPressed(GGPC.down)) {
-        GGPC.on_down = true;
-        GGP.sprite = GGP.ss[0][GGP.frame];
-    } else
-        GGPC.on_down = false;
-    if (sfKeyboard_isKeyPressed(GGPC.right)) {
-        GGPC.on_right = true;
-        GGP.sprite = GGP.ss[2][GGP.frame];
-    } else
-        GGPC.on_right = false;
-}
-
 void check_next_pos(global_t *global, sfVector2f *next_pos)
 {
     if (GGPC.on_up)
