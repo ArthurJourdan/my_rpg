@@ -24,7 +24,7 @@ bool error_msg(int ac, char **av)
     }
     if (ac == 2) {
         if (my_strcmp("-h", av[1])) {
-            my_dprintf(2, "USAGE\n\t%s <config_file.xml>\n", av[0]);
+            my_dprintf(2, "USAGE\n\t%s <config_global.xml>\n", av[0]);
             my_dprintf(2, "DESCRIPTION\n");
             my_dprintf(2, "%a\n", DESCRIPTION);
             return false;

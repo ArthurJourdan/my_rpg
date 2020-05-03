@@ -76,7 +76,6 @@ void destroy_game(global_t *global)
     sfRenderWindow_destroy(global->window);
     for (size_t i = 0; GS->scenes[i] != NULL; i++) {
         destroy_scene(GS->scenes[i]);
-        // free(GS->scenes[i]);
     }
     player_destroy(global);
     pixels_destroy(global);

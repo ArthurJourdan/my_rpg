@@ -29,4 +29,3 @@ char *cpy_var_name_double_arr(char ward[], char var_name[], char *file[])
     var = cpy_var_name(var_name, file[pos]);
     return var;
 }
-

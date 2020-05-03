@@ -71,4 +71,3 @@ char **rm_char_in_double_arr(char **arr, const char ch)
     }
     return arr;
 }
-
