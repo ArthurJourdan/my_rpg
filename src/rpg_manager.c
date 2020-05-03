@@ -54,6 +54,10 @@ static void gameplay(global_t *global)
             check_spell(global, 0, &GGP);
         player_spells(global);
     }
+    if (GGLMM[GGLP.y][GGLP.x].weather == 0)
+        make_it_rain(global);
+    if (GGLMM[GGLP.y][GGLP.x].weather == 1)
+        make_it_snow(global);
 }
 
 static void rpg_game(global_t *global, sfClock **game_clock)
@@ -63,13 +67,13 @@ static void rpg_game(global_t *global, sfClock **game_clock)
 
     if (nb_fram >= 1.0f) {
         sfClock_restart(*game_clock);
+        display_everything(global);
         for (float a = 0; a < nb_fram; a++) {
             if (!global->cinematic) {
                 sfRenderWindow_pollEvent(GW, &GG.event);
                 gameplay(global);
             }
         }
-        display_everything(global);
     }
 }
 

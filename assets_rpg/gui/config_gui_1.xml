@@ -15,7 +15,7 @@
 </Scene>
 <Scene name="Pause">
     <Image name="cobble" image="assets_rpg/images/castle1.png" fullscreen="true"/>
-    <Button name="Starting menu" action="Starting_menu" text="Menu" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="50" x="800" height="125" width="775"  size="100"/>
+    <Button name="Starting menu" action="Restarting_menu" text="Menu" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="50" x="800" height="125" width="775"  size="100"/>
     <Button name="Resume" action="Resume" text="Resume" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="200" x="800" height="125" width="415"  size="100"/>
     <Button name="Leave game" action="Quit" text="Quit" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="500" x="800" height="125" width="615" size="100"/>
     <Button name="Options" action="Options" text="Options" font="assets_rpg/font/legionary.ttf" x="800" y="350" height="125" width="420" size="100"/>
@@ -30,7 +30,7 @@
     <Button text_color="Black" name="sound ++" text="Sounds up" action="Volume_all_sounds_up" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="575" x="10" height="125" width="625" size="100"/>
     <Button text_color="Black" name="up fps" text="fps up" action="Increase_fps" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="700" x="10" height="125" width="625" size="100"/>
     <Button text_color="Black" name="down fps" text="fps down" action="Decrease_fps" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="825" x="10" height="125" width="625" size="100"/>
-    <Button text_color="Black" name="Starting menu"  text="Home" action="Starting_menu" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="1" x="800" height="150" width="799"  size="102"/>
+    <Button text_color="Black" name="Starting menu"  text="Home" action="Restarting_menu" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="1" x="800" height="150" width="799"  size="102"/>
     <Button text_color="Black" name="Resume" text="Play" action="Resume" font="assets_rpg/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="151" x="800" height="150" width="799"  size="125"/>
     <Text   text_color="Black" name="Options" text="Options" font="assets_rpg/font/legionary.ttf" x="100" y="20" size="100"/>
     <Music name="music2" audio="assets_rpg/audio/musics/it_s_raining.ogg" volume="40" loop="true"/>

@@ -21,6 +21,7 @@ static actions_t const all_actions[] = {
     {"Resume", &go_back_to_game},
     {"Options", &go_options},
     {"Starting_menu", &go_starting_menu},
+    {"Restarting_menu", &go_restart},
     {"Volume_music_up", &volume_music_up},
     {"Volume_music_down", &volume_music_down},
     {"Volume_all_musics_up", &volume_all_musics_up},
