@@ -54,7 +54,7 @@ int scene_nb, int button_index)
     size_t info_nb = 0;
 
     if (is_file_openable(info)) {
-        add_texture_RectShape(SCL_B[button_index]->rect, info);
+        add_texture_rectshape(SCL_B[button_index]->rect, info);
         info = free_char_to_null(info);
         info_nb = cpy_var_int(" nb_animations=", line);
         SCL_B[button_index]->nb_animations = info_nb;
