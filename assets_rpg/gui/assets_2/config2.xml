@@ -26,8 +26,8 @@
     <Image name="cobble" image="assets_rpg/images/cobblestones4.png" fullscreen="true"/>
     <Button text_color="Black" name="Music --" text="Musics dowm"  action="Volume_all_musics_down" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="200" x="10" height="125" width="625" size="100"/>
     <Button text_color="Black" name="Music ++" text="Musics up" action="Volume_all_musics_up" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="325" x="10" height="125" width="625" size="100"/>
-    <Button text_color="Black" name="sound --" text="Sounds dowm"  action="Volume_all_sound_down" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="450" x="10" height="125" width="625" size="100"/>
-    <Button text_color="Black" name="sound ++" text="Sounds up" action="Volume_all_sound_up" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="575" x="10" height="125" width="625" size="100"/>
+    <Button text_color="Black" name="sound --" text="Sounds dowm"  action="Volume_all_sounds_down" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="450" x="10" height="125" width="625" size="100"/>
+    <Button text_color="Black" name="sound ++" text="Sounds up" action="Volume_all_sounds_up" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="575" x="10" height="125" width="625" size="100"/>
     <Button text_color="Black" name="up fps" text="fps up" action="Increase_fps" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="700" x="10" height="125" width="625" size="100"/>
     <Button text_color="Black" name="down fps" text="fps down" action="Decrease_fps" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="825" x="10" height="125" width="625" size="100"/>
     <Button text_color="Black" name="Starting menu"  text="Home" action="Starting_menu" font="assets_rpg/gui/assets_2/font/legionary.ttf" sound="assets_rpg/audio/sounds/button.ogg" y="1" x="800" height="150" width="799"  size="102"/>
@@ -45,6 +45,8 @@
     <Text name="third" text="by killing ennemies or dashing as fast as possible" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="100" y="300" size="50"/>
     <Text text_color="White" name="keys" text="Use" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="10" y="575" size="40"/>
     <Text text_color="White"  name="keyZ" text="'Z' to go up" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="650" size="30"/>
+    <Text text_color="White"  name="keyA" text="'A' to use first spell" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="230" y="650" size="30"/>
+    <Text text_color="White"  name="keyE" text="'E' to use second spell" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="230" y="750" size="30"/>
     <Text text_color="White"  name="keyQ" text="'Q' to go left" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="750" size="30"/>
     <Text text_color="White"  name="keyS" text="'S' to go down" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="850" size="30"/>
     <Text text_color="White"  name="keyD" text="'D' to go right" font="assets_rpg/gui/assets_2/font/legionary.ttf" x="30" y="950" size="30"/>

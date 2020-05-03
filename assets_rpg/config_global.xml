@@ -2,6 +2,6 @@
 <Volume volume="20"/>
 <FPS fps="60"/>
 <Maze_size size="5"/>
-<GUI path="assets_rpg/gui/assets_2/config2.xml"/>
+<GUI path="assets_rpg/gui/assets/config.xml"/>
 <Maps path="assets_rpg/images/maps/"/>
 <Game path="assets_rpg/images/config_game.xml"/>
