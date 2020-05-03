@@ -8,7 +8,7 @@
 #include "my_rpg.h"
 
 static const char *FILEPATH = "assets_rpg/images/player_sprite/down2.png";
-static const char *PLAYER_SHEET = "assets_rpg/images/player_sprite/actor3_ss.png";
+static const char *PLAYER_SHEET = "assets_rpg/images/player_sprite/actor3.png";
 static const char *DASH_SHEET = "assets_rpg/images/player_sprite/mist.png";
 static const sfVector2f COLLIDER = {50, 75};
 static const float HITBOX = 20;

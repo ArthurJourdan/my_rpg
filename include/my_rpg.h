@@ -59,6 +59,7 @@ void move_check(sfVector2f next, global_t *global);
 void swap_map(sfVector2f next, global_t *global);
 void player_dash(sfVector2f next, global_t *global, sfColor dash_color);
 sfVector2f my_goto(sfVector2f *pos, sfVector2f start, sfVector2f target, float speed);
+sfColor get_pixel_color(sfVector2f next, global_t *global);
 
 /*PIXELS*/
 fbuffer_t *framebuffer_create(unsigned int width, unsigned int heght);

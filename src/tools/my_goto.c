@@ -26,7 +26,8 @@ static sfVector2f direction(sfVector2f pos, sfVector2f end)
     return dir;
 }
 
-sfVector2f my_goto(sfVector2f *pos, sfVector2f start, sfVector2f target, float speed)
+sfVector2f my_goto(sfVector2f *pos, sfVector2f start,
+sfVector2f target, float speed)
 {
     sfVector2f dir = direction(*pos, target);
 

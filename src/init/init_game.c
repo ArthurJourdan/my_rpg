@@ -24,7 +24,8 @@ static void init_game_rain(global_t *global)
         rd = rand() % GGH + GGH / 2;
         GGPS(0)[i] = sfV2F{3000 / GGPR(0) * (i + 1), rand() % GGH - GGH};
         GGPP(0)[i] = sfV2F{GGPS(0)[i].x, GGPS(0)[i].y};
-        GGPE(0)[i] = sfV2F{GGPS(0)[i].x + (rd * DIR.x), GGPS(0)[i].y + (rd * DIR.y)};
+        GGPE(0)[i] = sfV2F{GGPS(0)[i].x + (rd * DIR.x),
+        GGPS(0)[i].y + (rd * DIR.y)};
         GGPX(0)[i] = rand() % 3 + 1;
     }
 }
@@ -43,7 +44,8 @@ static void init_game_snow(global_t *global)
         rd = rand() % GGH + GGH / 2;
         GGPS(1)[i] = sfV2F{3000 / GGPR(1) * (i + 1), rand() % GGH - GGH};
         GGPP(1)[i] = sfV2F{GGPS(1)[i].x, GGPS(1)[i].y};
-        GGPE(1)[i] = sfV2F{GGPS(1)[i].x + (rd * DIR.x), GGPS(1)[i].y + (rd * DIR.y)};
+        GGPE(1)[i] = sfV2F{GGPS(1)[i].x + (rd * DIR.x),
+        GGPS(1)[i].y + (rd * DIR.y)};
         GGPX(1)[i] = rand() % 3 + 1;
     }
 }

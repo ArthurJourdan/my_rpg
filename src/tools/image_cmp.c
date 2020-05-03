@@ -9,9 +9,7 @@
 
 void move_check(sfVector2f next, global_t *global)
 {
-    sfVector2f scale = {(float)1650 / (float)GGW, (float)990 / (float)GGH};
-    sfVector2f size = {next.x * scale.x, next.y * scale.y};
-    sfColor color = sfImage_getPixel(GGLMM[GGLP.y][GGLP.x].coll, size.x, size.y);
+    sfColor color = get_pixel_color(next, global);
 
     if (!my_colorcmp(color, sfBlack) &&
         next.x > 0 && next.x < GGW &&
@@ -41,23 +39,25 @@ void generate_enemies(global_t *global, sfColor color)
 
 void swap_map(sfVector2f next, global_t *global)
 {
-    sfVector2f scale = {(float)1650 / (float)GGW, (float)990 / (float)GGH};
-    sfVector2f size = {next.x * scale.x, next.y * scale.y};
-    sfColor color = sfImage_getPixel(GGLMM[GGLP.y][GGLP.x].coll, size.x, size.y);
+    sfColor color = get_pixel_color(next, global);
 
     if (!my_colorcmp(color, sfRed))
         return;
-    if (GGP.pos.x > GGW - 300 && GGLP.x < (GGM - 1) && GGLMM[GGLP.y][GGLP.x + 1].is_open) {
+    if (GGP.pos.x > GGW - 300 && GGLP.x < (GGM - 1) &&
+        GGLMM[GGLP.y][GGLP.x + 1].is_open) {
         GGP.pos.x = 100;
         GGLP.x++;
-    } else if (GGP.pos.x < 300 && GGLP.x > 0 && GGLMM[GGLP.y][GGLP.x - 1].is_open) {
+    } else if (GGP.pos.x < 300 && GGLP.x > 0 &&
+    GGLMM[GGLP.y][GGLP.x - 1].is_open) {
         GGP.pos.x = GGW - 100;
         GGLP.x--;
     }
-    if (GGP.pos.y > GGH - 300 && GGLP.y < (GGM - 1) && GGLMM[GGLP.y + 1][GGLP.x].is_open) {
+    if (GGP.pos.y > GGH - 300 && GGLP.y < (GGM - 1) &&
+        GGLMM[GGLP.y + 1][GGLP.x].is_open) {
         GGP.pos.y = 100;
         GGLP.y++;
-    } else if (GGP.pos.y < 300 && GGLP.y > 0 && GGLMM[GGLP.y - 1][GGLP.x].is_open) {
+    } else if (GGP.pos.y < 300 && GGLP.y > 0 &&
+    GGLMM[GGLP.y - 1][GGLP.x].is_open) {
         GGP.pos.y = GGH - 100;
         GGLP.y--;
     }
@@ -76,9 +76,7 @@ void dash_cooldown(global_t *global)
 
 void player_dash(sfVector2f next, global_t *global, sfColor dash_color)
 {
-    sfVector2f scale = {(float)1650 / (float)GGW, (float)990 / (float)GGH};
-    sfVector2f size = {next.x * scale.x, next.y * scale.y};
-    sfColor color = sfImage_getPixel(GGLMM[GGLP.y][GGLP.x].coll, size.x, size.y);
+    sfColor color = get_pixel_color(next, global);
     float speed = GGP.speed * 4;
 
     if (sfKeyboard_isKeyPressed(GGPC.dash) && GGPC.dash_enable &&

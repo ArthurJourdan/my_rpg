@@ -29,15 +29,6 @@ void enemy_tab_init(global_t *global)
     return;
 }
 
-// void enemy_init_cod(global_t *global, int i, int id)
-// {
-//     GGOE[i]->collider = malloc(sizeof(sfIntRect));
-//     GGOE[i]->collider->height = E_DICT[id]->hitbox.height;
-//     GGOE[i]->collider->width = E_DICT[id]->hitbox.width;
-//     GGOE[i]->collider->left = E_DICT[id]->hitbox.left;
-//     GGOE[i]->collider->top = E_DICT[id]->hitbox.top;
-// }
-
 void enemy_init(global_t *global, int id, sfVector2f pos)
 {
     int i = 0;
