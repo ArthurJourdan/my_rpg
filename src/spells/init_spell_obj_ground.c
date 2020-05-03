@@ -18,20 +18,9 @@ void init_spell_text(s_obj_g *obj_ground)
     (char * const)font_path, text_size);
 }
 
-void init_spell_obj_g(global_t *global)
+static void init_sp_obj(global_t *global, int arr_len, sfVector2f s_pos)
 {
-    sfVector2f s_pos = {500, 500};
-    int arr_len = -1;
-    int i;
-
-    if (!GGS) {
-        GGO = NULL;
-        return;
-    }
-    while (GGS[++arr_len]);
-    GGO->sp_obj_g = malloc(sizeof(s_obj_g) * arr_len);
-    init_spell_text(&GGO->sp_obj_g[0]);
-    for (i = 0; i < arr_len; i++) {
+    for (int i = 0; i < arr_len; i++) {
         GGO->sp_obj_g[i].active = 1;
         GGO->sp_obj_g[i].id = GGS[i]->id;
         GGO->sp_obj_g[i].image = sfSprite_copy(GGS[i]->spell_img);
@@ -41,5 +30,20 @@ void init_spell_obj_g(global_t *global)
         GGO->sp_obj_g[i].collider->width = OBJ_SIZE;
         GGO->sp_obj_g[i].collider->height = OBJ_SIZE;
     }
-    GGO->sp_obj_g[i].id = -1;
+}
+
+void init_spell_obj_g(global_t *global)
+{
+    sfVector2f s_pos = {500, 500};
+    int arr_len = -1;
+
+    if (!GGS) {
+        GGO = NULL;
+        return;
+    }
+    while (GGS[++arr_len]);
+    GGO->sp_obj_g = malloc(sizeof(s_obj_g) * arr_len);
+    init_spell_text(&GGO->sp_obj_g[0]);
+    init_sp_obj(global, arr_len, s_pos);
+    GGO->sp_obj_g[arr_len - 1].id = -1;
 }
