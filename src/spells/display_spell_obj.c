@@ -42,8 +42,12 @@ void display_spell(global_t *global)
 
 void display_spell_obj_ground(global_t *global, int index)
 {
-    sfVector2f spr_pos = {GGO->sp_obj_g[index].CO, GGO->sp_obj_g[index].CT};
+    sfVector2f spr_pos = {0, 0};
 
+    if (!GGO)
+        return;
+    spr_pos.x = GGO->sp_obj_g[index].CO;
+    spr_pos.y = GGO->sp_obj_g[index].CT;
     if (GGO->sp_obj_g[index].active && !GGLP.x && !GGLP.y) {
         sfSprite_setPosition(GGO->sp_obj_g[index].image, spr_pos);
         sfRenderWindow_drawSprite(GW, GGO->sp_obj_g[index].image, NULL);
