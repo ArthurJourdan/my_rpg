@@ -30,6 +30,8 @@ void display_spell_obj_txt(global_t *global, int text)
 
 void display_spell(global_t *global)
 {
+    if (!GGO)
+        return;
     for (int i = 0; i < 2; i++) {
         if (GGO->s_obj[i].obj_status) {
             sfSprite_setPosition(GGO->s_obj[i].img, GGO->s_obj[i].pos);
