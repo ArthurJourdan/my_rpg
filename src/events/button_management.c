@@ -54,8 +54,10 @@ static void change_button_state(button_t *button, unsigned short state)
 
 static void activate_button(global_t *global, button_t *button, sfEvent event)
 {
-    if (left_mouse_released(event)) {
-        sfSound_play(button->sound);
+    if (left_mouse_released(event) ) {
+        if (button && button->sound) {
+            sfSound_play(button->sound);
+        }
         if (button->action)
             button->action(global);
     } else {
