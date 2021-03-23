@@ -1,7 +1,9 @@
 # my_rpg
 RPG made in CSFML
 
-Fully customizable trough configuration files
+- Fully customizable trough configuration files
+- Integrated maze generator
+- Amazing gameplay
 
 ## Install
   ```
