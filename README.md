@@ -1,5 +1,5 @@
 # my_rpg
-RPG made in CSFML
+EPITECH - First year project : RPG made in CSFML
 
 - Fully customizable trough configuration files
 - Integrated maze generator
